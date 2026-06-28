@@ -82,7 +82,7 @@ export const ScanLines: React.FC<ProjectTileProps> = ({
             ))}
             {description && (
                 <p className="text-xs text-white/50 font-mono mt-4 leading-relaxed max-w-[90%] opacity-0 group-hover:opacity-100 transition-opacity">
-                    > {description}
+                    &gt; {description}
                 </p>
             )}
         </div>

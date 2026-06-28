@@ -19,6 +19,7 @@ import { GlareHoverEffect } from './components/tiles/GlareHoverEffect';
 import { InteractiveGridMorph } from './components/tiles/InteractiveGridMorph';
 import { ParallaxTextReveal } from './components/tiles/ParallaxTextReveal';
 import { BlobCursorFollow } from './components/tiles/BlobCursorFollow';
+import { CopyToClipboard } from './components/tiles/CopyToClipboard';
 import { CharacterShuffleHover } from './components/tiles/CharacterShuffleHover';
 import { Card3DTilt } from './components/tiles/Card3DTilt';
 import { GradientFollow } from './components/tiles/GradientFollow';
@@ -182,11 +183,17 @@ const App: React.FC = () => {
                 category="Layering" 
                 description="Multi-plane z-axis translation creates depth perception during interaction."
              />
-             <BlobCursorFollow 
-                index={5} 
-                title="Organic Blob Cursor" 
-                category="Fluidity" 
+             <BlobCursorFollow
+                index={5}
+                title="Organic Blob Cursor"
+                category="Fluidity"
                 description="Liquid cursor element that trails movement with calculated physics drag."
+             />
+             <CopyToClipboard
+                index={6}
+                title="Copy To Clipboard"
+                category="Utility"
+                description="One-click snippet copy with an animated checkmark morph and confirmation toast."
              />
           </div>
         </section>
