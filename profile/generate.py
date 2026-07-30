@@ -146,9 +146,14 @@ def normalise(user: dict) -> dict:
 
 
 def daily_series(days: list[dict]) -> list[dict]:
-    """Calendar days up to today, oldest first. GitHub pads the trailing week."""
-    today = dt.date.today().isoformat()
-    return [d for d in days if d["date"] <= today]
+    """The last 365 days, oldest first.
+
+    GitHub pads the calendar out to whole weeks at both ends, so the raw range
+    runs a few days long — enough to make "N of 369 days" show up on the page.
+    """
+    today = dt.date.today()
+    first = (today - dt.timedelta(days=364)).isoformat()
+    return [d for d in days if first <= d["date"] <= today.isoformat()]
 
 
 def streaks(days: list[dict]) -> tuple[dict, dict]:
@@ -198,10 +203,9 @@ def language_totals(repos: list[dict], limit: int) -> tuple[list, list]:
     total = sum(by_bytes.values()) or 1
     top_bytes = sorted(by_bytes.items(), key=lambda kv: -kv[1])[:limit]
     top_repos = sorted(by_repos.items(), key=lambda kv: -kv[1])[:limit]
-    return (
-        [(name, size, round(100 * size / total)) for name, size in top_bytes],
-        top_repos,
-    )
+    ranked = [(name, size, round(100 * size / total)) for name, size in top_bytes]
+    # A language that rounds to 0% is noise, not a row.
+    return [row for row in ranked if row[2] > 0], top_repos
 
 
 def summarise(data: dict, cfg: dict) -> dict:
@@ -448,7 +452,7 @@ def heatmap_block(stats: dict) -> str:
             month_row[week : week + len(name)] = list(name)
     lines.append("    " + "".join(month_row).rstrip())
     for row in range(7):
-        lines.append(f"{label.get(row, ''):<4}" + "".join(grid[row]).rstrip())
+        lines.append((f"{label.get(row, ''):<4}" + "".join(grid[row])).rstrip())
     lines.append("")
     lines.append(
         f"{stats['active_days']} of {stats['total_days']} days had a contribution"

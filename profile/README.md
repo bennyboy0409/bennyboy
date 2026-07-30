@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=690ef2a4">
-  <img alt="25 contributions in the last year" src="assets/hero-light.svg?v=690ef2a4">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=a84c7e70">
+  <img alt="25 contributions in the last year" src="assets/hero-light.svg?v=a84c7e70">
 </picture>
 
 <p align="center"><a href="https://github.com/bennyboy0409">github</a></p>
@@ -44,7 +44,6 @@ BY BYTES                                  BY REPOS
 typescript  █████████████████       76%   typescript  ██████████  2
 html        █████                   23%   html        █████       1
 css         █                        1%
-javascript                           0%
 
 THE YEAR
     aug  sep oct nov  dec jan  feb mar apr may  jun jul
@@ -52,11 +51,11 @@ THE YEAR
 mon                                                   :
                                                      :
 wed                                                     #
-    
-fri 
+
+fri
                        :
 
-5 of 369 days had a contribution
+5 of 365 days had a contribution
 ```
 
 <sub>generated from the GitHub API · last run 2026-07-30 13:36:34 UTC</sub>
