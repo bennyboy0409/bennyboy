@@ -1,0 +1,58 @@
+name: profile readme
+
+on:
+  schedule:
+    # 05:17 UTC daily. Cron only fires from the default branch.
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+      - claude/github-integration-k03tdb
+    # Only the inputs. The job's own output (README, assets, data) is left out
+    # so a refresh commit cannot trigger another run.
+    paths:
+      - profile/config.json
+      - profile/generate.py
+      - profile/assets/portrait.*
+      - .github/workflows/profile-readme.yml
+
+permissions:
+  contents: write
+
+concurrency:
+  group: profile-readme
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - run: pip install --quiet pillow
+
+      - name: Generate
+        env:
+          # A classic PAT with read:user gives the real contribution calendar.
+          # Without it the job falls back to the built-in token, which only ever
+          # sees public activity.
+          GH_PROFILE_TOKEN: ${{ secrets.GH_PROFILE_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python3 profile/generate.py
+
+      - name: Commit refreshed output
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add profile
+          if git diff --staged --quiet; then
+            echo "nothing changed"
+          else
+            git commit -m "chore(profile): refresh stats"
+            git push
+          fi

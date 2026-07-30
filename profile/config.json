@@ -1,0 +1,60 @@
+{
+  "login": "bennyboy0409",
+
+  "_comment_about": "This file is the only thing you need to edit by hand. Everything else is generated.",
+
+  "tagline": "Web things, mostly TypeScript. Built small, shipped early, kept only if it works.",
+
+  "about": [
+    "Self-taught, prototype-first. I'd rather have a rough thing running in front of someone this week than a clean thing running in front of nobody next month.",
+    "Public repos here are the ones I'm happy to have read. The rest stays private until it earns its place."
+  ],
+
+  "links": [
+    { "label": "github", "url": "https://github.com/bennyboy0409" }
+  ],
+
+  "stack": [
+    "typescript", "javascript", "react", "vite", "tailwind",
+    "node", "python", "swift", "html", "css", "git"
+  ],
+
+  "_comment_projects": "Entries are merged with your public GitHub repos. 'repo' pulls name/description/language from the API; anything you set here wins. Entries without 'repo' are external projects.",
+
+  "projects": [
+    {
+      "repo": "neuro-psy"
+    },
+    {
+      "repo": "hermes-showcase"
+    },
+    {
+      "name": "vantage-studio",
+      "repo": "bennyboy",
+      "tags": ["react", "typescript"],
+      "description": "Two dozen hover, scroll and cursor interaction tiles in one page. A parts bin for landing pages."
+    },
+    {
+      "name": "rockie",
+      "url": "https://rockie-energy-guide.lovable.app",
+      "tags": ["react", "typescript"],
+      "description": "Guided energy-advice chat. Walks through an assessment step by step and shows the maths behind every recommendation."
+    }
+  ],
+
+  "_comment_portrait": "Drop a photo at profile/assets/portrait.jpg (or .png) and it gets rendered as ASCII on every run. Without a photo the block is skipped entirely. light_mode: 'invert' draws it as ink on white; 'reuse' keeps the dark-mode artwork in both themes (better for photos with a dark background).",
+  "portrait": {
+    "enabled": true,
+    "columns": 100,
+    "contrast": 1.35,
+    "gamma": 0.9,
+    "crop": "square",
+    "light_mode": "invert"
+  },
+
+  "_comment_repos": "include_private only affects the aggregate language stats; private repo names are never printed.",
+  "stats": {
+    "include_private": false,
+    "max_languages": 5
+  }
+}
