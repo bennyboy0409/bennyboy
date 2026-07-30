@@ -301,7 +301,12 @@ def hero_svg(stats: dict, theme: str) -> str:
 RAMP = " .'`^\",:;Il!i><~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
 
 
-def find_portrait() -> Path | None:
+def find_portrait(override: str | None) -> Path | None:
+    if override:
+        path = Path(override).expanduser()
+        if not path.exists():
+            raise SystemExit(f"no such photo: {path}")
+        return path
     for ext in ("jpg", "jpeg", "png", "webp"):
         candidate = ASSETS / f"portrait.{ext}"
         if candidate.exists():
@@ -331,9 +336,10 @@ def prepare_portrait(path: Path, cols: int, contrast: float, crop: str):
 def ascii_rows(img, cols: int, gamma: float, invert: bool) -> list[str]:
     """Map pixels onto the density ramp.
 
-    On a dark background dense glyphs read as *bright*, so brightness maps
-    straight onto density. On a light background the ink is dark, so the
-    mapping has to flip or the picture comes out as a negative.
+    Which end of the ramp the subject lands on depends on the photo, not the
+    theme: shot against a dark backdrop, the subject is the bright part and
+    brightness maps straight onto density. Shot against a bright wall, that
+    fills the whole frame with glyphs and the mapping has to flip.
     """
     pixels = img.tobytes()
     last = len(RAMP) - 1
@@ -670,6 +676,12 @@ def main() -> int:
     ap = argparse.ArgumentParser()
     ap.add_argument("--offline", action="store_true", help="use the cached stats.json")
     ap.add_argument("--sample", action="store_true", help="render with generated demo data")
+    ap.add_argument(
+        "--photo",
+        metavar="PATH",
+        help="re-render the ASCII portrait from this image. Keep it outside the "
+        "repository: only the generated SVG is meant to be committed.",
+    )
     args = ap.parse_args()
 
     cfg = load_config()
@@ -709,31 +721,37 @@ def main() -> int:
         written.append(path)
 
     portrait_cfg = cfg.get("portrait", {})
-    source = find_portrait() if portrait_cfg.get("enabled", True) else None
+    portrait_paths = [ASSETS / f"portrait-{theme}.svg" for theme in THEMES]
+    enabled = portrait_cfg.get("enabled", True)
+    source = find_portrait(args.photo) if enabled else None
     has_portrait = False
+
     if source:
         try:
             cols = portrait_cfg.get("columns", 100)
-            gamma = portrait_cfg.get("gamma", 0.9)
             img = prepare_portrait(
                 source,
                 cols,
-                portrait_cfg.get("contrast", 1.35),
+                portrait_cfg.get("contrast", 1.9),
                 portrait_cfg.get("crop", "square"),
             )
-            # "invert" is tonally right on white paper, but a photo shot against a
-            # dark background then floods the page with ink. "reuse" keeps the
-            # dark-mode artwork in both themes instead.
-            light_mode = portrait_cfg.get("light_mode", "invert")
-            for theme in THEMES:
-                invert = theme == "light" and light_mode == "invert"
-                rows = ascii_rows(img, cols, gamma, invert=invert)
-                path = ASSETS / f"portrait-{theme}.svg"
+            rows = ascii_rows(
+                img,
+                cols,
+                portrait_cfg.get("gamma", 0.9),
+                invert=portrait_cfg.get("ink", "dark") == "dark",
+            )
+            for path, theme in zip(portrait_paths, THEMES):
                 path.write_text(portrait_svg(rows, cols, theme))
-                written.append(path)
+            written.extend(portrait_paths)
             has_portrait = True
         except ImportError:
             print("Pillow missing — skipping the portrait", file=sys.stderr)
+    elif enabled and all(p.exists() for p in portrait_paths):
+        # The source photo is deliberately kept out of the repository, so a CI
+        # run has nothing to render from. Keep the committed artwork.
+        written.extend(portrait_paths)
+        has_portrait = True
 
     stamp = hashlib.sha256(
         b"".join(p.read_bytes() for p in sorted(written))

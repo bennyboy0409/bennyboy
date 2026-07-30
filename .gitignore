@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+__pycache__/
+# The portrait is published as generated ASCII only — never the photograph.
+profile/assets/portrait.jpg
+profile/assets/portrait.jpeg
+profile/assets/portrait.png
+profile/assets/portrait.webp

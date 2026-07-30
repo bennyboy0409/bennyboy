@@ -42,14 +42,14 @@
     }
   ],
 
-  "_comment_portrait": "Drop a photo at profile/assets/portrait.jpg (or .png) and it gets rendered as ASCII on every run. Without a photo the block is skipped entirely. light_mode: 'invert' draws it as ink on white; 'reuse' keeps the dark-mode artwork in both themes (better for photos with a dark background).",
+  "_comment_portrait": "The ASCII portrait is rendered once from a photo and committed as SVG; the photo itself stays out of the repository. Re-render with: python3 profile/generate.py --photo ~/somewhere/face.jpg. ink: 'dark' draws the dark parts of the photo (right for a bright background), 'bright' draws the light parts (the other way round).",
   "portrait": {
     "enabled": true,
     "columns": 100,
-    "contrast": 1.35,
+    "contrast": 1.9,
     "gamma": 0.9,
     "crop": "square",
-    "light_mode": "invert"
+    "ink": "dark"
   },
 
   "_comment_repos": "include_private only affects the aggregate language stats; private repo names are never printed.",

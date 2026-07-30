@@ -8,7 +8,7 @@ edit [`config.json`](config.json) instead.
 
 | Part | Source |
 | --- | --- |
-| ASCII portrait | `assets/portrait.jpg` (or `.png`), re-rendered every run |
+| ASCII portrait | rendered once from a photo, committed as SVG |
 | Big number, sparkline, active days, best week | GitHub contribution calendar |
 | Streaks, language bars, year heatmap | contribution calendar + repo language sizes |
 | about / tagline / stack / links | `config.json`, by hand |
@@ -28,12 +28,22 @@ To count activity in private repos as well, also tick `repo` on the token and se
 `stats.include_private` to `true` in `config.json`. Private *names* are never
 printed either way — only the aggregate byte counts move.
 
-**2. Add a photo.** Drop it at `profile/assets/portrait.jpg`. A head-and-shoulders
-crop against a plain background works best. Without a photo the portrait block is
-skipped and the rest of the page still builds.
+**2. The portrait.** Already rendered and committed as
+`assets/portrait-dark.svg` / `assets/portrait-light.svg`.
 
-Note that the photo itself is committed to the repository, so it is public if the
-repository is.
+The photograph it came from is **not** in this repository and is not meant to be.
+Only the ASCII output ships — plain `<text>` elements, no embedded image data, so
+the photo cannot be recovered from it. `.gitignore` blocks `profile/assets/portrait.*`
+as a second line of defence.
+
+To re-render from a different photo, point the generator at one anywhere on disk:
+
+```sh
+python3 profile/generate.py --offline --photo ~/Pictures/face.jpg
+```
+
+Then commit the two SVGs it rewrites. CI has no photo to work from, so it leaves
+the committed artwork alone and only refreshes the numbers.
 
 **3. Let it run.** The workflow rebuilds on every push that touches `config.json`,
 `generate.py` or the portrait, once a day on a schedule, and on demand from the
@@ -60,9 +70,9 @@ In `config.json` under `portrait`:
 - `columns` — width in characters. More columns, more detail, wider image.
 - `contrast` / `gamma` — raise the contrast, lower the gamma, if the face reads
   flat.
-- `light_mode` — `invert` draws the portrait as dark ink on white. If your photo
-  has a dark background that turns the light-theme version into a solid block;
-  set it to `reuse` to keep the dark-theme artwork in both.
+- `ink` — which end of the photo becomes glyphs. `dark` draws the dark parts and
+  leaves a bright background empty; `bright` does the opposite, for a photo shot
+  against a dark backdrop. Pick wrong and the frame fills in solid.
 
 ## Moving it to your profile
 

@@ -1,6 +1,13 @@
+<p align="center">
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=a84c7e70">
-  <img alt="25 contributions in the last year" src="assets/hero-light.svg?v=a84c7e70">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/portrait-dark.svg?v=f1c88c9d">
+  <img alt="ASCII portrait" src="assets/portrait-light.svg?v=f1c88c9d">
+</picture>
+</p>
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=f1c88c9d">
+  <img alt="25 contributions in the last year" src="assets/hero-light.svg?v=f1c88c9d">
 </picture>
 
 <p align="center"><a href="https://github.com/bennyboy0409">github</a></p>
