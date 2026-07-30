@@ -314,15 +314,20 @@ def find_portrait(override: str | None) -> Path | None:
     return None
 
 
-def prepare_portrait(path: Path, cols: int, contrast: float, crop: str):
-    """Return the greyscale image resampled onto the character grid."""
+def prepare_portrait(path: Path, cols: int, contrast: float, crop: str, crop_top: float):
+    """Return the greyscale image resampled onto the character grid.
+
+    crop_top slides the square window down the frame: 0 hugs the top edge, 1 the
+    bottom. Where the head sits depends entirely on how the photo was framed, so
+    there is no sensible automatic value.
+    """
     from PIL import Image, ImageEnhance, ImageOps
 
     img = Image.open(path).convert("L")
     if crop == "square":
         side = min(img.size)
         left = (img.width - side) // 2
-        top = (img.height - side) // 3  # bias upward: heads sit above centre
+        top = round((img.height - side) * min(max(crop_top, 0.0), 1.0))
         img = img.crop((left, top, left + side, top + side))
 
     img = ImageOps.autocontrast(img, cutoff=1)
@@ -734,6 +739,7 @@ def main() -> int:
                 cols,
                 portrait_cfg.get("contrast", 1.9),
                 portrait_cfg.get("crop", "square"),
+                portrait_cfg.get("crop_top", 0.5),
             )
             rows = ascii_rows(
                 img,

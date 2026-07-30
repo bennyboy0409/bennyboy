@@ -42,14 +42,15 @@
     }
   ],
 
-  "_comment_portrait": "The ASCII portrait is rendered once from a photo and committed as SVG; the photo itself stays out of the repository. Re-render with: python3 profile/generate.py --photo ~/somewhere/face.jpg. ink: 'dark' draws the dark parts of the photo (right for a bright background), 'bright' draws the light parts (the other way round).",
+  "_comment_portrait": "The ASCII portrait is rendered once from a photo and committed as SVG; the photo itself stays out of the repository. Re-render with: python3 profile/generate.py --photo ~/somewhere/face.jpg. ink: 'bright' draws the light parts of the photo (right for a subject lit against a darker backdrop), 'dark' draws the dark parts (right for a bright wall). crop_top slides the square window down the frame, 0 = top edge, 1 = bottom.",
   "portrait": {
     "enabled": true,
     "columns": 100,
-    "contrast": 1.9,
-    "gamma": 0.9,
+    "contrast": 2.6,
+    "gamma": 2.9,
     "crop": "square",
-    "ink": "dark"
+    "crop_top": 0.24,
+    "ink": "bright"
   },
 
   "_comment_repos": "include_private only affects the aggregate language stats; private repo names are never printed.",
