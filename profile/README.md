@@ -1,6 +1,6 @@
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=99d915de">
-  <img alt="937 contributions in the last year" src="assets/hero-light.svg?v=99d915de">
+  <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg?v=690ef2a4">
+  <img alt="25 contributions in the last year" src="assets/hero-light.svg?v=690ef2a4">
 </picture>
 
 <p align="center"><a href="https://github.com/bennyboy0409">github</a></p>
@@ -22,11 +22,10 @@ css  git
 
 ## projects
 
-**[neuro-psy](https://github.com/bennyboy0409/neuro-psy)** · `typescript`  
-Interactive explainers for neuroscience and psychology topics.
+**[neuro-psy](https://github.com/bennyboy0409/neuro-psy)** · `typescript`
 
 **[hermes-showcase](https://github.com/bennyboy0409/hermes-showcase)** · `html`  
-Website demos and design building blocks.
+Website-Demos: Roestwerk, Ton und Form + Design-Bausteine
 
 **[vantage-studio](https://github.com/bennyboy0409/bennyboy)** · `react, typescript`  
 Two dozen hover, scroll and cursor interaction tiles in one page. A parts bin for landing pages.
@@ -37,27 +36,27 @@ Guided energy-advice chat. Walks through an assessment step by step and shows th
 ## stats
 
 ```
-1                          12
+1                          2
 current streak             longest streak
-jul 30 – jul 30            oct 29 – nov 9
+jul 29 – jul 29            jul 12 – jul 13
 
 BY BYTES                                  BY REPOS
-typescript  ███████████████         67%   typescript  ██████████  2
-html        ████                    20%   html        █████       1
-css         ██                      11%
-javascript  █                        2%
+typescript  █████████████████       76%   typescript  ██████████  2
+html        █████                   23%   html        █████       1
+css         █                        1%
+javascript                           0%
 
 THE YEAR
     aug  sep oct nov  dec jan  feb mar apr may  jun jul
-     ····  ·    : ::·· ·  :· : ·· ··  ·   · ·· · ·: ·
-mon   ·· ·::: ::·:: :·::·  : ··· :·   ··  :·     · ·:··:
-      :· ·  ·:: : :·+: ·· + :··   :··  ·  ·  ·    :··: ·
-wed   :·: :·:::#+::·+:: ·    +:··:···      ··  ·· ·:·· ·
-    ·:::::: · : :::+ ::··:·· : · : ·: · · ·· :··  · ·  ::
-fri   :·: ::  :::+·   ::::: : ··:·· ·   ·· :      · ·::·
-       :· :·:  ·:·: :: : ·· :·   ·   ·      ·    ···  ··
+                                                      :
+mon                                                   :
+                                                     :
+wed                                                     #
+    
+fri 
+                       :
 
-210 of 365 days had a contribution
+5 of 369 days had a contribution
 ```
 
-<sub>sample data — the numbers fill in on the first workflow run</sub>
+<sub>generated from the GitHub API · last run 2026-07-30 13:36:34 UTC</sub>
