@@ -1,5 +1,12 @@
 # Island-Roadtrip-Karte — Stand
 
+**Live:** https://bennyboy0409.github.io/bennyboy/ — für jeden ohne Login
+öffenbar. Veröffentlicht per GitHub Pages, aktualisiert sich bei jedem Push
+auf `main` von selbst (Workflow `.github/workflows/pages.yml`); Änderungen
+vom Arbeits-Branch dafür nach `main` mergen. Die Google-Maps-Variante liegt
+unter `/karte-google-maps.html`. Fürs Offline-Nutzen in Island die Seite
+einmal mit Netz öffnen und lokal speichern.
+
 ## Dateien
 
 | Datei | Was es ist |
