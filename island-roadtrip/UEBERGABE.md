@@ -1,75 +1,83 @@
-# Island-Roadtrip-Karte — Übergabe an eine lokale Sitzung
-
-Stand der Arbeit und was als Nächstes zu tun ist. Geschrieben für eine
-Claude-Code-Sitzung, die lokal läuft und **freien Netzzugang** hat.
+# Island-Roadtrip-Karte — Stand
 
 ## Dateien
 
 | Datei | Was es ist |
 |---|---|
-| `karte.html` | Die Hauptkarte. Eine einzige Datei, komplett eigenständig, kein Build, keine Abhängigkeiten. Im Browser öffnen. |
+| `karte.html` | Die Hauptkarte. Eine einzige Datei, komplett eigenständig, kein Build, keine Abhängigkeiten, **kein Internet nötig**. Im Browser öffnen. |
 | `karte-google-maps.html` | Zweitversion mit echtem Satellitenbild und Live-Fahrzeiten von Google. Braucht einen eigenen API-Key, oben im Skript einzutragen. |
+| `fotos-quellen.csv` | Herkunft aller 38 Fotos: Fotograf, Lizenz, Quell-URL. |
 
 ## Was `karte.html` kann
 
 - Islandkarte aus Natural-Earth-Geodaten (Küstenlinie, Gletscher, Straßennetz), direkt eingebettet
 - 7 Unterkünfte mit Datum, Adresse, Koordinaten, Telefonnummer
 - 8 Etappen mit Strecke, Fahrzeit und Straßennummern
-- 34 Sehenswürdigkeiten, alle mit einem 2WD-Mietwagen (Toyota Yaris Cross) erreichbar
-- 6 bewusst ausgeschlossene Ziele mit Begründung (F-Straßen, Furten)
+- 38 Sehenswürdigkeiten, bis auf Sigöldugljúfur alle mit einem 2WD-Mietwagen (Toyota Yaris Cross) erreichbar
+- 5 bewusst ausgeschlossene Ziele mit Begründung (F-Straßen, Furten)
 - Weiche Kamera mit Trägheit, Pinch-Zoom, Doppeltipp, Tastatursteuerung
 - Beim Reinzoomen erscheinen Bildkärtchen an jedem Ziel
 - Eigene Punkte per Klick setzbar, Export als Code
 
-## Die offene Aufgabe: echte Fotos fest einbauen
+## Fotos — erledigt (8. August 2026)
 
-Aktuell zeigt die Karte **gezeichnete Motive** pro Kategorie. Der Grund: die
-Sitzung, in der sie gebaut wurde, lief in einer Cloud-Umgebung, deren
-Netzrichtlinie jeden Bildhost blockiert hat (`403` am Egress-Proxy) — weder
-Wikimedia noch Unsplash noch Flickr waren erreichbar, und ein veröffentlichtes
-Artifact auf claude.ai darf ohnehin keine fremden Server ansprechen.
+Alle **38 Sehenswürdigkeiten haben ein echtes Foto**, fest als `data:`-URI im
+`POIS`-Array. Die Karte braucht dafür kein Internet mehr — wichtig in Island,
+wo das Netz zwischen den Fjorden gern wegbricht.
 
-Als Zwischenlösung lädt die Datei die Fotos **zur Laufzeit** nach, wenn man sie
-lokal im Browser öffnet — siehe `fetchPhotos()`. Das funktioniert, ist aber vom
-Netz abhängig und liefert nicht immer das schönste Bild.
+- Quelle: Unsplash und Pexels (nicht Wikimedia Commons wie ursprünglich geplant).
+  Benedek hatte die Bilder bereits ausgewählt und heruntergeladen, die Auswahl
+  steht in `fotos-quellen.csv`.
+- Auswahlregel eingehalten: Sommeraufnahmen, kein Schnee, keine Nordlichter.
+  Ausnahme wie besprochen bei `Jökulsárlón`, `Diamond Beach`, `Sólheimajökull`
+  und `Vatnajökull — Gletschertour`, dort gehört das Eis zum Motiv.
+- Format: 640×360, JPEG Qualität 72, mittiger Ausschnitt leicht nach oben
+  versetzt. Zusammen 1,46 MB, als base64 im HTML 2,16 MB — die Artifact-Grenze
+  liegt bei 16 MB.
+- 34 der 38 Einträge haben ein Feld `credit` mit Quelle, Fotograf und Lizenz.
+  Das steht im Popup unter „Foto: …". Die vier ohne siehe Nachtrag unten.
+- `PHOTOS_ON` steht jetzt auf `false`, `fetchPhotos()` läuft also gar nicht mehr.
+  Der Code bleibt drin, falls man später neue Ziele ohne Bild ergänzt.
 
-**Zu tun:** Die Fotos herunterladen, verkleinern und als `data:`-URI fest in das
-`POIS`-Array eintragen. Dann braucht die Karte kein Internet mehr, und die
-Bilder funktionieren auch als veröffentlichtes Artifact.
+Geprüft im Browser: hell und dunkel, 1440 px und 375 px, keine Konsolenfehler,
+kein seitliches Scrollen, alle 38 Bilder dekodieren sauber auf 640×360.
 
-### Vorgehen
+### Ein Foto austauschen
 
-1. Benedek hat eine Datei `island-fotos-uebersicht.csv` mit ausgewählten Bildern.
-   Zuerst danach fragen und sie verwenden. Falls es sie nicht mehr gibt, die
-   Bilder selbst von Wikimedia Commons holen.
+Neues Bild nach `Downloads` legen, den Dateinamen in `fotos-quellen.csv`
+eintragen und dieses Skript laufen lassen — es schneidet zu, kodiert und setzt
+den Eintrag samt Credit neu:
 
-2. **Auswahlregeln** (wichtig, wurde ausdrücklich so gewünscht):
-   - Sommeraufnahmen. Kein Schnee, kein Winter, keine Nordlichter, keine Nacht.
-   - Ausnahme: bei `Jökulsárlón`, `Diamond Beach`, `Sólheimajökull` und
-     `Vatnajökull — Gletschertour` ist Eis erwünscht, das ist dort das Motiv.
-   - Querformat, freie Lizenz (Commons), Fotograf und Lizenz notieren.
+```
+python C:\Users\varga\bennyboy\island-roadtrip\tools\embed_fotos.py
+```
 
-3. Bilder auf **640×360** beschneiden und als JPEG mit Qualität ~72 speichern.
-   Bei 34 Bildern landet man so bei etwa 1,5–2,5 MB Gesamtgröße — die Obergrenze
-   für ein Artifact liegt bei 16 MB, das passt bequem.
+Das Skript überspringt alle POIs, die schon ein Bild haben. Um eins zu
+**ersetzen**, vorher im `POIS`-Array die betroffene `img:"data:…"`-Zeile wieder
+auf `img:null` setzen und die `credit`-Zeile löschen.
 
-4. Pro Eintrag im `POIS`-Array setzen:
-   ```js
-   img: "data:image/jpeg;base64,...",
-   credit: "Commons · Fotograf · CC BY-SA 4.0"
-   ```
-   Die Anzeige funktioniert dann automatisch — `attachPhoto()` und `drawThumbs()`
-   bevorzugen `img` gegenüber der Zeichnung, das ist schon eingebaut.
+Sind `Fotograf` und `Lizenz` in der CSV leer, bekommt der Eintrag gar kein
+`credit`-Feld — im Popup steht dann nur die Koordinate, keine falsche Quelle.
 
-5. `fetchPhotos()` überspringt alle Ziele, die bereits ein `img` haben. Wenn
-   am Ende alle 34 versorgt sind, kann man `PHOTOS_ON = false` setzen, dann
-   entfallen die Netzabfragen komplett.
+## Nachtrag 8. August: vier weitere Ziele
 
-6. Prüfen mit Playwright (Chromium liegt unter `/opt/pw-browsers`), in hell und
-   dunkel, auf 1440 px und 390 px Breite. Auf Fehler in der Konsole achten und
-   darauf, dass die Seite nicht seitlich scrollt.
+Kirkjufell, Gunnuhver, Þjórsárdalur und Sigöldugljúfur sind dazugekommen,
+alle vier mit Foto. Dabei zu beachten:
 
-## Zwei Sachen, die noch offen sind
+- **Sigöldugljúfur stand vorher in `NO_GO`** und ist jetzt ein normaler
+  Kartenpunkt. Der Grund für den Ausschluss gilt aber weiter: die letzten 2 km
+  sind F208. Keine Furt, aber F-Straßen sind im Mietvertrag verboten und die
+  Versicherung greift dort nicht. Steht so als Warnung im Popup.
+- **Zwei Fotos sind fachlich fraglich** (siehe `fotos-quellen.csv`):
+  `thjorsardalur.jpg` zeigt eine Küstenwiese mit Meer und Tafelberg —
+  Þjórsárdalur liegt aber im Binnenland, das passt nicht.
+  `sigoldugljufur.jpg` zeigt einen einzelnen Fall in einer Moosschlucht statt
+  der bekannten Wasserfallreihe.
+- **Quellenangaben fehlen** bei allen vier — Herkunft unbekannt, deshalb steht
+  im Popup bewusst keine Zeile „Foto: …". Sobald Bene die Quelle nennt, in die
+  CSV eintragen und das Skript neu laufen lassen.
+
+## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
   `Vestra-Fíflholt` sind geschätzt und in der Karte mit „ca." markiert. Beide
