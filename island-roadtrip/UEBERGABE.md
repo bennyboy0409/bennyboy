@@ -19,6 +19,10 @@
 - Beim Reinzoomen erscheinen Bildkärtchen an jedem Ziel
 - Eigene Punkte per Klick setzbar, Export als Code
 - 16 Kostenstellen rot markiert: Maut, Parkgebühren, Eintritte
+- Zwei Kartenstile: „Atlas" (Standard) und „Natur" mit Satelliten-Optik
+- Eigener Standort per GPS (blauer Punkt), Vollbildmodus
+- Ziele als besucht abhakbar, Zähler in der Seitenleiste
+- Sonnenauf- und -untergang pro Übernachtung
 
 ## Fotos — erledigt (8. August 2026)
 
@@ -145,6 +149,29 @@ heißt also nicht sicher, dass es nichts kostet.
 Preise ändern sich in Island fast jede Saison — vor der Abfahrt kurz gegenprüfen
 und in `COSTS` nachziehen.
 
+## Nachtrag 12. August: Handy, Natur-Stil, GPS, Besucht-Häkchen
+
+- **Kartenstil „Natur"** (Umschalter unten in der Ebenen-Box): Satelliten-Optik
+  aus den vorhandenen Vektordaten — dunkler Ozean mit Küstenschein, moosgrünes
+  Land, weiße Gletscher. Kein echtes Satellitenbild: jede Bildquelle (NASA,
+  ArcGIS, EOX, Wikimedia) war aus dieser Umgebung heraus blockiert, und
+  Online-Tiles würden die Offline-Fähigkeit zerstören. Für echten Satellit gibt
+  es weiter `karte-google-maps.html`. Die Stilwahl bleibt in localStorage.
+- **GPS-Knopf** (◉): zeigt den eigenen Standort als blauen Punkt mit
+  Genauigkeitskreis, erster Fix zentriert die Karte. GPS braucht kein
+  Datennetz — genau dafür ist die Offline-Karte da. Auf iOS muss die Datei
+  dafür über die Dateien-App im Safari geöffnet werden, sonst fehlt die
+  Standort-Berechtigung.
+- **Vollbild** (⛶): legt die Karte über die ganze Seite, Esc oder ✕ beendet.
+  Bewusst kein Fullscreen-API — das scheitert auf iOS.
+- **Besucht-Häkchen**: im Popup jedes Ziels abhakbar, bleibt in localStorage.
+  Besuchte Ziele werden auf der Karte blass, in der Tagesliste steht ein grünes
+  ✓, oben in der Seitenleiste zählt „✓ n/38" mit.
+- **Sonnenzeiten**: jede Unterkunft zeigt ☀ Aufgang–Untergang für ihr Datum
+  (NOAA-Näherung, ±3 Minuten; Island läuft ganzjährig auf UTC).
+- **Handy**: Karte 66 statt 56 dvh, Zoomknöpfe 42 px, kompakter Kopf, Popup
+  passt sich der Bildschirmbreite an.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
@@ -167,6 +194,10 @@ Alles in `karte.html`, ein einziges `<script>`:
 | `const COSTS` | Kostenstellen: Maut, Parken, Eintritt |
 | `assignCosts` | hängt jede Kostenstelle an die nächste Etappe |
 | `drawCosts` | zeichnet die roten Punkte und Preisplaketten |
+| `setMapStyle` | Umschalter Atlas ↔ Natur |
+| `drawGps` | blauer Standortpunkt mit Genauigkeitskreis |
+| `VISIT_KEY` | Besucht-Häkchen, localStorage |
+| `sunTimes` | Sonnenauf-/-untergang, NOAA-Näherung |
 | `WIKI_TERMS` | Suchbegriffe fürs Foto-Nachladen |
 | `SCENES` | Die gezeichneten Motive, ein Objekt pro Kategorie |
 | `fetchPhotos` | Ladekette Wikipedia de → en → Commons, mit Winterfilter |

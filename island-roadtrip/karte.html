@@ -100,6 +100,22 @@
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
   }
 
+  /* Kartenstil „Natur": Satelliten-Optik aus den eingebetteten
+     Vektordaten — dunkler Ozean, moosgrün-braunes Land, weiße
+     Gletscher, Straßen wie helle Pisten. Bewusst nur die
+     Kartenfarben; die Bedienleisten behalten das Hell/Dunkel-Thema.
+     Steht NACH den Theme-Blöcken, damit es in beiden gewinnt. */
+  :root[data-mapstyle="natur"]{
+    --ocean:#1D3A52;
+    --ocean-deep:#10263A;
+    --land:#77805F;
+    --land-edge:#59624A;
+    --glacier:#F2F8FA;
+    --glacier-edge:#B9D2DC;
+    --road:#9DA184;
+    --road-major:#D8D2B4;
+  }
+
   *{box-sizing:border-box}
   body{
     margin:0;
@@ -409,10 +425,55 @@
   }
   @media (max-width:640px){
     .legend{display:none}
-    .mapwrap{height:56dvh;min-height:300px}
+    /* Am Handy ist die Karte die Hauptsache — mehr Höhe,
+       größere Daumenziele, kompakterer Kopf. */
+    .mapwrap{height:66dvh;min-height:340px}
     .mapui.bl{bottom:.6rem}
-    .zoomer button{width:36px;height:36px}
-    .btn{padding:.5rem .7rem}
+    .zoomer button{width:42px;height:42px;font-size:1.15rem}
+    .btn{padding:.55rem .75rem}
+    .masthead{padding:.55rem .8rem;gap:.15rem .8rem}
+    .masthead h1{font-size:1.05rem}
+    .masthead .dates{font-size:.68rem}
+    .masthead .totals{gap:.35rem .8rem;font-size:.66rem}
+    .card{width:min(300px, calc(100vw - 20px))}
+    .stylerow button{padding:.45rem .5rem}
+  }
+
+  /* Vollbild: die Karte legt sich über alles — fürs Navigieren unterwegs */
+  .mapwrap.fullmap{
+    position:fixed;inset:0;z-index:60;height:100dvh !important;
+    min-height:0 !important;
+  }
+
+  /* Kartenstil-Umschalter in der Ebenen-Box */
+  .stylerow{
+    display:flex;gap:.3rem;margin-top:.45rem;padding-top:.45rem;
+    border-top:1px dashed var(--rule);
+  }
+  .stylerow button{
+    flex:1;padding:.3rem .5rem;border:1px solid var(--rule);border-radius:2px;
+    background:transparent;color:var(--ink-2);cursor:pointer;
+    font-family:var(--mono);font-size:.62rem;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .stylerow button.active{
+    background:var(--poi);border-color:var(--poi);color:var(--on-accent);
+  }
+
+  /* GPS-Knopf: aktiv = gefüllt */
+  #gpsBtn.on{background:var(--poi);color:var(--on-accent)}
+
+  /* Besucht-Knopf im Popup */
+  .visitbtn{
+    display:block;width:100%;margin-top:.55rem;padding:.4rem .5rem;
+    border:1px solid var(--rule);border-radius:2px;cursor:pointer;
+    background:transparent;color:var(--ink-2);
+    font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;
+  }
+  .visitbtn.done{background:#2E8B57;border-color:#2E8B57;color:#fff}
+  .poilist .seen{color:#2E8B57;font-weight:700;margin-left:.25rem}
+  .visitcount{
+    margin-left:auto;font-family:var(--mono);font-size:.66rem;
+    color:var(--ink-3);font-variant-numeric:tabular-nums;
   }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;transition-duration:.001ms !important}
@@ -439,6 +500,8 @@
         <button id="zin" title="Hineinzoomen" aria-label="Hineinzoomen">+</button>
         <button id="zout" title="Herauszoomen" aria-label="Herauszoomen">−</button>
         <button id="zfit" title="Ganz Island zeigen" aria-label="Ganz Island zeigen">⤢</button>
+        <button id="fsBtn" title="Vollbild" aria-label="Vollbild umschalten">⛶</button>
+        <button id="gpsBtn" title="Meinen Standort zeigen" aria-label="Meinen Standort zeigen">◉</button>
       </div>
       <details class="panelbox layers" id="layersBox">
         <summary>Ebenen</summary>
@@ -448,6 +511,10 @@
         <label><input type="checkbox" id="lyLabels" checked> Ortsnamen</label>
         <label><input type="checkbox" id="lyTimes" checked> Fahrzeiten</label>
         <label><input type="checkbox" id="lyCost" checked> Kostenstellen</label>
+        <div class="stylerow" role="group" aria-label="Kartenstil">
+          <button id="styAtlas" class="active" type="button">Atlas</button>
+          <button id="styNatur" type="button">Natur</button>
+        </div>
       </details>
     </div>
 
@@ -481,6 +548,7 @@
         <p class="cardnote" id="cardNote"></p>
         <p class="cardpay" id="cardPayNote" hidden></p>
         <p class="cardgeo" id="cardGeo"></p>
+        <button class="visitbtn" id="cardVisit" type="button">✓ als besucht markieren</button>
       </div>
     </div>
   </div>
@@ -488,6 +556,7 @@
   <aside class="rail">
     <div class="railhead">
       <h2>Etappen &amp; Übernachtungen</h2>
+      <span class="visitcount" id="visitCount" title="Als besucht markierte Ziele"></span>
     </div>
     <div class="stack" id="itin"></div>
 
@@ -1231,6 +1300,12 @@ function draw(){
     }
     ctx.closePath();
   }
+  /* Weicher Küstensaum: das Land wirft einen hellen Schein in den
+     Ozean — gibt der Küstenlinie Tiefe, kostet einen Fill. */
+  ctx.save();
+  ctx.shadowColor = C.glacierEdge; ctx.shadowBlur = 14;
+  ctx.fillStyle = C.land; ctx.fill("evenodd");
+  ctx.restore();
   ctx.fillStyle = C.land; ctx.fill("evenodd");
   ctx.strokeStyle = C.landEdge; ctx.lineWidth = 0.8; ctx.stroke();
 
@@ -1317,8 +1392,9 @@ function draw(){
       const s = pt(p.lon, p.lat);
       if(!onScreen(s[0],s[1])) continue;
       const hot = (p === hoverPoi);
+      const seen = visited && visited.has(p.name);
       ctx.beginPath(); ctx.arc(s[0],s[1], hot?6.6:4.6, 0,7);
-      ctx.fillStyle = C.poi; ctx.fill();
+      ctx.fillStyle = seen ? C.poiSoft : C.poi; ctx.fill();
       ctx.strokeStyle = C.surface2; ctx.lineWidth = 1.4; ctx.stroke();
       reserve(s[0]-6, s[1]-6, 12, 12);
     }
@@ -1350,6 +1426,8 @@ function draw(){
 
   // Kleinere Orte füllen auf, was noch frei ist
   if(layers.labels) drawPlaces("minor");
+
+  drawGps();
 
   // Übernachtungs-Marker
   drawStops();
@@ -2258,6 +2336,7 @@ function showCard(p){
     drawScene(g, p.cat, 0, 0, cardImg.width, cardImg.height);
   }
 
+  syncVisitBtn();
   card.hidden = false;
   positionCard();
 }
@@ -2313,6 +2392,137 @@ pinBtn.onclick = ()=>{
   document.getElementById(id).addEventListener("change", e=>{ layers[key]=e.target.checked?1:0; draw(); });
 });
 
+/* ── Kartenstil: Atlas ↔ Natur ──────────────────────────────────
+   „Natur" färbt nur die Kartenfarben um (CSS-Variablen), die
+   Bedienelemente behalten das Hell/Dunkel-Thema. Wahl bleibt in
+   localStorage erhalten. */
+const STYLE_KEY = "island-mapstyle";
+function setMapStyle(s){
+  if(s==="natur") document.documentElement.dataset.mapstyle = "natur";
+  else delete document.documentElement.dataset.mapstyle;
+  document.getElementById("styAtlas").classList.toggle("active", s!=="natur");
+  document.getElementById("styNatur").classList.toggle("active", s==="natur");
+  try{ localStorage.setItem(STYLE_KEY, s); }catch(e){}
+  readTokens(); draw();
+}
+document.getElementById("styAtlas").onclick = ()=>setMapStyle("atlas");
+document.getElementById("styNatur").onclick = ()=>setMapStyle("natur");
+try{ if(localStorage.getItem(STYLE_KEY)==="natur") setMapStyle("natur"); }catch(e){}
+
+/* ── Vollbild ───────────────────────────────────────────────────
+   Kein Fullscreen-API: das scheitert auf iOS. Die Karte wird
+   einfach fix über die ganze Seite gelegt — funktioniert überall. */
+const fsBtn = document.getElementById("fsBtn");
+function setFullmap(on){
+  cv.parentElement.classList.toggle("fullmap", on);
+  fsBtn.textContent = on ? "✕" : "⛶";
+  fsBtn.title = on ? "Vollbild verlassen" : "Vollbild";
+  resize();
+}
+fsBtn.onclick = ()=>setFullmap(!cv.parentElement.classList.contains("fullmap"));
+window.addEventListener("keydown", e=>{
+  if(e.key==="Escape" && cv.parentElement.classList.contains("fullmap")) setFullmap(false);
+});
+
+/* ── Eigener Standort (GPS) ─────────────────────────────────────
+   GPS braucht kein Datennetz — gerade zwischen den Fjorden ist
+   das der Punkt. Erster Fix zentriert die Karte, danach wandert
+   nur der Punkt mit. */
+let gpsWatch = null, gpsPos = null, gpsCentered = false;
+const gpsBtn = document.getElementById("gpsBtn");
+gpsBtn.onclick = ()=>{
+  if(gpsWatch!==null){
+    navigator.geolocation.clearWatch(gpsWatch);
+    gpsWatch = null; gpsPos = null; gpsCentered = false;
+    gpsBtn.classList.remove("on"); draw(); return;
+  }
+  if(!navigator.geolocation){ gpsBtn.title = "Kein GPS in diesem Browser"; return; }
+  gpsBtn.classList.add("on");
+  gpsWatch = navigator.geolocation.watchPosition(pos=>{
+    gpsPos = { lon:pos.coords.longitude, lat:pos.coords.latitude,
+               acc:pos.coords.accuracy||0 };
+    if(!gpsCentered){
+      gpsCentered = true;
+      const m = fwd(gpsPos.lon, gpsPos.lat);
+      goTo(m[0], m[1], Math.max(view.k, kForKm(60)), true);
+    }
+    draw();
+  }, err=>{
+    gpsBtn.classList.remove("on"); gpsWatch = null;
+    gpsBtn.title = "Standort nicht verfügbar ("+err.message+")";
+  }, { enableHighAccuracy:true, maximumAge:5000, timeout:20000 });
+};
+
+function drawGps(){
+  if(!gpsPos) return;
+  const s = pt(gpsPos.lon, gpsPos.lat);
+  if(!onScreen(s[0],s[1],80)) return;
+  const pxPerKm = W / visibleKm();
+  const accR = Math.min(gpsPos.acc/1000 * pxPerKm, W);
+  if(accR > 8){
+    ctx.beginPath(); ctx.arc(s[0],s[1],accR,0,7);
+    ctx.fillStyle = "#1A73E8"; ctx.globalAlpha = .10; ctx.fill();
+    ctx.globalAlpha = .35; ctx.strokeStyle = "#1A73E8"; ctx.lineWidth = 1; ctx.stroke();
+    ctx.globalAlpha = 1;
+  }
+  ctx.beginPath(); ctx.arc(s[0],s[1],7,0,7);
+  ctx.fillStyle = "#1A73E8"; ctx.fill();
+  ctx.strokeStyle = "#FFFFFF"; ctx.lineWidth = 2.4; ctx.stroke();
+}
+
+/* ── Besucht-Häkchen ────────────────────────────────────────────
+   Abhaken direkt im Popup, bleibt in localStorage. Besuchte Ziele
+   werden auf der Karte blass und bekommen ein Häkchen in der
+   Tagesliste — man sieht, was vom Tag noch aussteht. */
+const VISIT_KEY = "island-visited";
+let visited;
+try{ visited = new Set(JSON.parse(localStorage.getItem(VISIT_KEY) || "[]")); }
+catch(e){ visited = new Set(); }
+function saveVisited(){
+  try{ localStorage.setItem(VISIT_KEY, JSON.stringify([...visited])); }catch(e){}
+}
+function updateVisitCount(){
+  const n = POIS.length;
+  const v = POIS.filter(p=>visited.has(p.name)).length;
+  document.getElementById("visitCount").textContent = v ? "✓ "+v+"/"+n : "";
+}
+document.getElementById("cardVisit").onclick = ()=>{
+  if(!cardPoi) return;
+  if(visited.has(cardPoi.name)) visited.delete(cardPoi.name);
+  else visited.add(cardPoi.name);
+  saveVisited(); syncVisitBtn(); updateVisitCount(); renderRail(); draw();
+};
+function syncVisitBtn(){
+  const b = document.getElementById("cardVisit");
+  const done = cardPoi && visited.has(cardPoi.name);
+  b.classList.toggle("done", !!done);
+  b.textContent = done ? "✓ besucht — tippen zum Zurücknehmen" : "✓ als besucht markieren";
+}
+updateVisitCount();
+
+/* ── Sonnenauf- und -untergang ──────────────────────────────────
+   NOAA-Näherung, auf die Minute genau genug. Island lebt ganzjährig
+   auf UTC, es ist also keine Zeitzonenrechnung nötig. */
+function sunTimes(lat, lon, dayOfAug){
+  const N = 212 + dayOfAug;                    // Tag im Jahr 2026 (31.7. = 212)
+  const g = 2*Math.PI/365 * (N-1);
+  const eq = 229.18*(0.000075 + 0.001868*Math.cos(g) - 0.032077*Math.sin(g)
+                     - 0.014615*Math.cos(2*g) - 0.040849*Math.sin(2*g));
+  const dec = 0.006918 - 0.399912*Math.cos(g) + 0.070257*Math.sin(g)
+            - 0.006758*Math.cos(2*g) + 0.000907*Math.sin(2*g)
+            - 0.002697*Math.cos(3*g) + 0.00148*Math.sin(3*g);
+  const la = lat*D2R;
+  const cosHA = (Math.cos(90.833*D2R) - Math.sin(la)*Math.sin(dec))
+              / (Math.cos(la)*Math.cos(dec));
+  if(cosHA < -1 || cosHA > 1) return null;     // Mitternachtssonne / Polarnacht
+  const ha = Math.acos(cosHA)/D2R;
+  const fmt = min => {
+    min = ((min%1440)+1440)%1440;
+    return String(Math.floor(min/60)).padStart(2,"0")+":"+String(Math.round(min%60)).padStart(2,"0");
+  };
+  return { rise: fmt(720 - 4*(lon+ha) - eq), set: fmt(720 - 4*(lon-ha) - eq) };
+}
+
 document.getElementById("expBtn").onclick = ()=>{
   const out = document.getElementById("exportOut");
   const lines = allPois().map(p=>
@@ -2365,6 +2575,9 @@ function renderRail(){
         <span${st.approx?' class="approx"':''}>${st.approx?"ca. ":""}${st.lat.toFixed(4)}, ${st.lon.toFixed(4)}</span>
         ${st.stars?`<span>${"★".repeat(st.stars)}</span>`:""}
         ${st.tel?`<span>${st.tel}</span>`:""}
+        ${(()=>{ const d=+(st.from.match(/(\d{1,2})\./)||[])[1];
+                 const su=d?sunTimes(st.lat,st.lon,d):null;
+                 return su?`<span title="Sonnenaufgang und -untergang am ${d}. August">☀ ${su.rise}–${su.set}</span>`:""; })()}
         ${st.detail?`<span style="flex:1 1 100%;color:var(--ink-2)">${st.detail}</span>`:""}
       </div>
       ${pois.length?`<ul class="poilist">${pois.map((p,pi)=>{
@@ -2372,7 +2585,8 @@ function renderRail(){
         const chip = c
           ? `<span class="poiisk${c.free?" isfree":""}" title="${esc(COST_KIND[c.kind])} · ${esc(c.pay)}">${esc(costLabel(c))}</span>`
           : "";
-        return `<li data-poi="${st.id}:${pi}"><span class="pin"></span><span>${p.name}${chip}${p.note?` <span class="note">· ${p.note}</span>`:""}</span></li>`;
+        const seen = visited.has(p.name) ? `<span class="seen" title="besucht">✓</span>` : "";
+        return `<li data-poi="${st.id}:${pi}"><span class="pin"></span><span>${p.name}${seen}${chip}${p.note?` <span class="note">· ${p.note}</span>`:""}</span></li>`;
       }).join("")}</ul>`:""}
     `;
     card.querySelectorAll("[data-poi]").forEach((li,pi)=>{
