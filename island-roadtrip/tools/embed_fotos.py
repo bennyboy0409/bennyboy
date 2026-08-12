@@ -1,10 +1,13 @@
 # -*- coding: utf-8 -*-
-"""Schneidet die 34 Island-Fotos auf 640x360 und baut sie als data:-URI in karte.html ein."""
+"""Schneidet die 38 Island-Fotos auf 640x360 und baut sie als data:-URI in karte.html ein."""
 import base64, csv, io, os, re, sys
 from PIL import Image, ImageOps
 
 HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-DL   = os.path.join(os.path.expanduser("~"), "Downloads")   # hier liegen die Original-JPEGs
+SOURCE_DIR = os.path.join(HERE, "source-fotos")
+# Die Originale gehören zum Projekt. Der Downloads-Ordner bleibt nur ein
+# Rückwärtskompatibilitäts-Fallback für ältere lokale Checkouts.
+DL   = SOURCE_DIR if os.path.isdir(SOURCE_DIR) else os.path.join(os.path.expanduser("~"), "Downloads")
 CSV  = os.path.join(HERE, "fotos-quellen.csv")
 HTML = os.path.join(HERE, "karte.html")
 
