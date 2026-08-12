@@ -1,0 +1,45 @@
+# Veröffentlicht die Island-Roadtrip-Karte als GitHub-Pages-Seite.
+# Läuft bei jedem Push auf den Karten-Branch — der Link bleibt gleich,
+# der Inhalt aktualisiert sich.
+name: Karte auf GitHub Pages
+
+on:
+  push:
+    branches: [claude/island-roadtrip-map-ph4aml]
+    paths: ['island-roadtrip/**', '.github/workflows/pages.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Seite zusammenstellen
+        run: |
+          mkdir _site
+          cp island-roadtrip/karte.html _site/index.html
+          cp island-roadtrip/karte-google-maps.html _site/karte-google-maps.html
+
+      - name: Pages aktivieren (falls noch nie eingeschaltet)
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - uses: actions/upload-pages-artifact@v3
+
+      - name: Veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4
