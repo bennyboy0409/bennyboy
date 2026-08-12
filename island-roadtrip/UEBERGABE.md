@@ -23,6 +23,8 @@
 - Eigener Standort per GPS (blauer Punkt), Vollbildmodus
 - Ziele als besucht abhakbar, Zähler in der Seitenleiste
 - Sonnenauf- und -untergang pro Übernachtung
+- Tagesplaner: rechnet die schnellste Reihenfolge der Tagesziele aus,
+  vom Standort (GPS) oder der letzten Unterkunft bis zum Hotel des Tages
 
 ## Fotos — erledigt (8. August 2026)
 
@@ -172,6 +174,38 @@ und in `COSTS` nachziehen.
 - **Handy**: Karte 66 statt 56 dvh, Zoomknöpfe 42 px, kompakter Kopf, Popup
   passt sich der Bildschirmbreite an.
 
+## Tagesplaner — neu (12. August 2026, abends)
+
+Aufklappbare Box ganz oben in der Seitenleiste. Ablauf: Tag wählen (bei
+laufender Reise ist das echte Heute vorgewählt), Ziele anhaken (schon
+besuchte sind automatisch abgewählt), „Reihenfolge berechnen". Ergebnis:
+nummerierte Liste mit km und Minuten pro Abschnitt, und die Route liegt
+türkis mit Nummernpunkten auf der Karte, die dorthin zoomt.
+
+Start ist die Unterkunft des Vortags — oder **der eigene Standort, wenn
+GPS (◉) läuft**. Ziel ist immer automatisch die Unterkunft des gewählten
+Tages. Man kann den Plan also mittags neu rechnen: Gesehenes abhaken,
+neu berechnen, und er plant den Rest des Tages ab dem aktuellen Standort.
+
+Technik, komplett offline:
+
+- Gerechnet wird auf dem eingebetteten Natural-Earth-Straßennetz
+  (93 Linien, ~2.600 Knoten, 5.076 km). `buildRoadGraph` heftet
+  Linienenden unter 2,5 km aneinander, `dijkstra` liefert die
+  Distanzmatrix samt Pfadgeometrie fürs Zeichnen.
+- Die Reihenfolge (Start fest, Ende fest) löst `tspOrder` exakt per
+  Bitmasken-DP bis 13 Ziele, darüber Greedy mit 2-Opt.
+- Anfahrt vom Punkt zum Netz zählt als Luftlinie ×1,3; sind zwei Punkte
+  im Netz nicht verbunden, fällt das Paar auf Luftlinie ×1,35 zurück.
+- Zeitschätzung: 62 km/h Schnitt, ausgewiesen als „grob geschätzt".
+  Das Netz ist generalisiert — die *Reihenfolge* ist verlässlich,
+  einzelne km-Angaben können 10–20 % danebenliegen.
+
+Stichprobe geprüft: Südküsten-Tag (11 Ziele) ergibt exakt die richtige
+West-Reihenfolge Lagune → Skaftafell → Fjaðrárgljúfur → Vík → … →
+Seljalandsfoss, 369 km gegen real ~360; Rechenzeit ~0,5 s inklusive
+Graphaufbau.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
@@ -198,6 +232,9 @@ Alles in `karte.html`, ein einziges `<script>`:
 | `drawGps` | blauer Standortpunkt mit Genauigkeitskreis |
 | `VISIT_KEY` | Besucht-Häkchen, localStorage |
 | `sunTimes` | Sonnenauf-/-untergang, NOAA-Näherung |
+| `buildRoadGraph` | Straßennetz → Routing-Graph (einmalig) |
+| `tspOrder` | beste Besuchsreihenfolge, exakt bis 13 Ziele |
+| `drawPlan` | türkise Tagesroute mit Nummernpunkten |
 | `WIKI_TERMS` | Suchbegriffe fürs Foto-Nachladen |
 | `SCENES` | Die gezeichneten Motive, ein Objekt pro Kategorie |
 | `fetchPhotos` | Ladekette Wikipedia de → en → Commons, mit Winterfilter |

@@ -475,6 +475,57 @@
     margin-left:auto;font-family:var(--mono);font-size:.66rem;
     color:var(--ink-3);font-variant-numeric:tabular-nums;
   }
+
+  /* ---------- Tagesplaner ---------- */
+  .planner{
+    margin:0 0 1rem;border:1px solid var(--rule);border-radius:3px;
+    background:var(--surface-2);
+  }
+  .planner summary{
+    cursor:pointer;padding:.55rem .7rem;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--ink-2);font-weight:500;
+  }
+  .planner[open] summary{border-bottom:1px dashed var(--rule)}
+  .planner > *:not(summary){margin:.6rem .7rem}
+  .plannerhint{font-size:.74rem;color:var(--ink-3);line-height:1.45}
+  .planner select{
+    /* width:100% + die .7rem-Seitenränder der Containerregel wären
+       zusammen breiter als der Platz — deshalb abgezogen */
+    width:calc(100% - 1.4rem);min-width:0;
+    padding:.4rem .5rem;border:1px solid var(--rule);border-radius:2px;
+    background:var(--surface);color:var(--ink);font:inherit;font-size:.8rem;
+  }
+  .planstart{font-size:.74rem;color:var(--ink-2)}
+  .planstart b{color:var(--poi)}
+  .planpois{display:flex;flex-direction:column;gap:.28rem;max-height:15rem;overflow-y:auto}
+  .planpois label{
+    display:flex;gap:.45rem;align-items:baseline;font-size:.78rem;color:var(--ink-2);
+    cursor:pointer;
+  }
+  .planpois label .note{color:var(--ink-3);font-size:.7rem}
+  .planpois label .seen{color:#2E8B57;font-weight:700}
+  .planner .row{display:flex;gap:.4rem;flex-wrap:wrap}
+  .planlist{
+    list-style:none;margin:.6rem .7rem .8rem;padding:0;
+    display:flex;flex-direction:column;gap:.35rem;
+  }
+  .planlist li{
+    display:flex;gap:.5rem;align-items:baseline;font-size:.78rem;color:var(--ink-2);
+  }
+  .planlist .n{
+    flex:none;width:1.15rem;height:1.15rem;border-radius:50%;
+    background:var(--poi);color:var(--on-accent);
+    font-family:var(--mono);font-size:.62rem;font-weight:700;
+    display:flex;align-items:center;justify-content:center;transform:translateY(.15rem);
+  }
+  .planlist .n.endflag{background:var(--route)}
+  .planlist b{color:var(--ink);font-weight:600}
+  .planlist .hop{margin-left:auto;flex:none;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
+  .planlist .tot{
+    border-top:1px dashed var(--rule);padding-top:.45rem;margin-top:.2rem;
+    font-family:var(--mono);font-size:.72rem;color:var(--ink);
+  }
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;transition-duration:.001ms !important}
   }
@@ -558,6 +609,21 @@
       <h2>Etappen &amp; Übernachtungen</h2>
       <span class="visitcount" id="visitCount" title="Als besucht markierte Ziele"></span>
     </div>
+
+    <details class="planner" id="plannerBox">
+      <summary>Tagesplaner — beste Reihenfolge</summary>
+      <p class="plannerhint">Tag wählen, Ziele anhaken — die Karte rechnet die
+      schnellste Reihenfolge über das Straßennetz aus, vom Startpunkt bis zur
+      Unterkunft des Tages. Läuft GPS (◉), startet die Route bei euch.</p>
+      <select id="planDay" aria-label="Reisetag"></select>
+      <div class="planstart" id="planStart"></div>
+      <div class="planpois" id="planPois"></div>
+      <div class="row">
+        <button class="btn" id="planBtn">Reihenfolge berechnen</button>
+        <button class="btn" id="planClr" hidden>Plan löschen</button>
+      </div>
+      <ol class="planlist" id="planOut" hidden></ol>
+    </details>
     <div class="stack" id="itin"></div>
 
     <section class="nogo">
@@ -1417,6 +1483,7 @@ function draw(){
   }
 
   if(layers.cost) drawCosts();
+  drawPlan();
 
   // Grosse Orte zuerst — sie sind die Orientierung und haben Vorrang
   if(layers.labels) drawPlaces("major");
@@ -2434,7 +2501,7 @@ gpsBtn.onclick = ()=>{
   if(gpsWatch!==null){
     navigator.geolocation.clearWatch(gpsWatch);
     gpsWatch = null; gpsPos = null; gpsCentered = false;
-    gpsBtn.classList.remove("on"); draw(); return;
+    gpsBtn.classList.remove("on"); updatePlanStart(); draw(); return;
   }
   if(!navigator.geolocation){ gpsBtn.title = "Kein GPS in diesem Browser"; return; }
   gpsBtn.classList.add("on");
@@ -2445,6 +2512,7 @@ gpsBtn.onclick = ()=>{
       gpsCentered = true;
       const m = fwd(gpsPos.lon, gpsPos.lat);
       goTo(m[0], m[1], Math.max(view.k, kForKm(60)), true);
+      updatePlanStart();
     }
     draw();
   }, err=>{
@@ -2522,6 +2590,294 @@ function sunTimes(lat, lon, dayOfAug){
   };
   return { rise: fmt(720 - 4*(lon+ha) - eq), set: fmt(720 - 4*(lon-ha) - eq) };
 }
+
+/* ══════════════════════════════════════════════════════════════
+   TAGESPLANER — schnellste Reihenfolge für die Ziele eines Tages
+
+   Kein Nachladen, kein Routing-Dienst: gerechnet wird auf dem
+   eingebetteten Natural-Earth-Straßennetz (93 Linien, ~2.600
+   Knoten, 5.076 km). Das Netz ist generalisiert — Distanzen sind
+   Näherungen, aber die *Reihenfolge* stimmt damit verlässlich,
+   auch dort, wo die Luftlinie lügt (quer über einen Fjord).
+
+   Drei Schritte:
+   1. Straßengraph einmalig aufbauen (Linienzüge → Kanten,
+      Linienenden werden an den nächsten fremden Knoten geheftet)
+   2. Dijkstra von jedem gewählten Punkt → Distanzmatrix
+   3. Kürzester Pfad durch alle Ziele mit festem Start und festem
+      Ende (exakt per Bitmasken-DP bis 13 Ziele, darüber Greedy
+      mit 2-Opt-Nachbesserung)
+   ══════════════════════════════════════════════════════════════ */
+let RG = null;                       // der Graph, gebaut beim ersten Klick
+
+function buildRoadGraph(){
+  const nodes = [], adj = [], seen = new Map();
+  const nid = p => {
+    const k = p[0].toFixed(4)+","+p[1].toFixed(4);
+    let id = seen.get(k);
+    if(id===undefined){ id = nodes.length; nodes.push([p[0],p[1]]); adj.push([]); seen.set(k,id); }
+    return id;
+  };
+  const link = (a,b,w) => { adj[a].push([b,w]); adj[b].push([a,w]); };
+
+  const lines = [];
+  for(const r of GEO.roads){
+    const ids = r.p.map(nid);
+    for(let i=1;i<ids.length;i++){
+      if(ids[i]!==ids[i-1]) link(ids[i-1], ids[i], haversine(r.p[i-1], r.p[i]));
+    }
+    lines.push(ids);
+  }
+  /* Linienenden anheften: Natural Earth lässt an Kreuzungen oft
+     ein paar hundert Meter Luft. Alles unter 2,5 km wird verbunden. */
+  lines.forEach((ids, li)=>{
+    for(const e of [ids[0], ids[ids.length-1]]){
+      let best=2.5, bi=-1;
+      lines.forEach((other, lj)=>{
+        if(li===lj) return;
+        for(const v of other){
+          if(v===e) continue;
+          const d = haversine(nodes[e], nodes[v]);
+          if(d<best){ best=d; bi=v; }
+        }
+      });
+      if(bi>=0) link(e, bi, best);
+    }
+  });
+  return { nodes, adj };
+}
+
+function nearestRoadNode(lon,lat){
+  let best=Infinity, bi=-1;
+  for(let i=0;i<RG.nodes.length;i++){
+    const d = haversine([lon,lat], RG.nodes[i]);
+    if(d<best){ best=d; bi=i; }
+  }
+  return { id:bi, km:best };
+}
+
+/* Dijkstra mit kleinem Binärheap — liefert Distanzen und Vorgänger */
+function dijkstra(src){
+  const n = RG.nodes.length;
+  const dist = new Float64Array(n).fill(Infinity);
+  const prev = new Int32Array(n).fill(-1);
+  const heap = [[0,src]]; dist[src]=0;
+  const up = i => { for(let p;i>0 && heap[i][0]<heap[p=(i-1)>>1][0];i=p){ const t=heap[i];heap[i]=heap[p];heap[p]=t; } };
+  const dn = i => { for(;;){ let s=i;
+      const l=2*i+1, r=l+1;
+      if(l<heap.length && heap[l][0]<heap[s][0]) s=l;
+      if(r<heap.length && heap[r][0]<heap[s][0]) s=r;
+      if(s===i) break; const t=heap[i];heap[i]=heap[s];heap[s]=t; i=s; } };
+  while(heap.length){
+    const [d,u] = heap[0];
+    const last = heap.pop();
+    if(heap.length){ heap[0]=last; dn(0); }
+    if(d>dist[u]) continue;
+    for(const [v,w] of RG.adj[u]){
+      const nd = d+w;
+      if(nd < dist[v]){ dist[v]=nd; prev[v]=u; heap.push([nd,v]); up(heap.length-1); }
+    }
+  }
+  return { dist, prev };
+}
+
+/* Reihenfolge: Start fest (Index 0), Ende fest (Index n+1).
+   Exakt bis 13 Ziele, sonst Greedy + 2-Opt. */
+function tspOrder(M, n){
+  if(n===0) return [];
+  if(n===1) return [0];
+  if(n<=13){
+    const full=(1<<n)-1, dp=[], par=[];
+    for(let m=0;m<=full;m++){ dp.push(new Float64Array(n).fill(Infinity)); par.push(new Int8Array(n).fill(-1)); }
+    for(let j=0;j<n;j++) dp[1<<j][j] = M[0][j+1];
+    for(let m=1;m<=full;m++) for(let j=0;j<n;j++){
+      if(!(m>>j&1) || dp[m][j]===Infinity) continue;
+      for(let k2=0;k2<n;k2++){
+        if(m>>k2&1) continue;
+        const nm=m|1<<k2, nd=dp[m][j]+M[j+1][k2+1];
+        if(nd<dp[nm][k2]){ dp[nm][k2]=nd; par[nm][k2]=j; }
+      }
+    }
+    let bj=0, bd=Infinity;
+    for(let j=0;j<n;j++){ const d=dp[full][j]+M[j+1][n+1]; if(d<bd){bd=d;bj=j;} }
+    const order=[]; let m=full, j=bj;
+    while(j>=0){ order.unshift(j); const pj=par[m][j]; m^=1<<j; j=pj; }
+    return order;
+  }
+  // Greedy ab Start, dann 2-Opt bis nichts mehr besser wird
+  const left=new Set(Array.from({length:n},(_,i)=>i)), order=[];
+  let cur=0;
+  while(left.size){
+    let bj=-1, bd=Infinity;
+    for(const j of left){ const d=M[cur][j+1]; if(d<bd){bd=d;bj=j;} }
+    order.push(bj); left.delete(bj); cur=bj+1;
+  }
+  const cost = o => {
+    let c=M[0][o[0]+1];
+    for(let i=1;i<o.length;i++) c+=M[o[i-1]+1][o[i]+1];
+    return c+M[o[o.length-1]+1][n+1];
+  };
+  for(let improved=true; improved;){
+    improved=false;
+    for(let a=0;a<order.length-1;a++) for(let b=a+1;b<order.length;b++){
+      const alt=order.slice(0,a).concat(order.slice(a,b+1).reverse(), order.slice(b+1));
+      if(cost(alt)<cost(order)-1e-9){ order.splice(0,order.length,...alt); improved=true; }
+    }
+  }
+  return order;
+}
+
+/* ── Planner-UI ────────────────────────────────────────────── */
+const planDaySel = document.getElementById("planDay");
+const planPoisEl = document.getElementById("planPois");
+const planOut    = document.getElementById("planOut");
+let dayPlan = null;                  // {geom, marks} — wird in draw() gezeichnet
+let planPois = [];
+
+function depDate(st){ return +((st.to||st.from).match(/(\d{1,2})\./)||[])[1]; }
+
+LEGS.forEach((_, i)=>{
+  const o = document.createElement("option");
+  o.value = i;
+  o.textContent = depDate(STOPS[i])+". Aug — "+
+    (STOPS[i].kind==="terminus"?"Ankunft KEF":STOPS[i].name.split("—")[0].trim())
+    +" → "+(STOPS[i+1].kind==="terminus"?"KEF (Rückflug)":STOPS[i+1].name.split("—")[0].trim());
+  planDaySel.appendChild(o);
+});
+/* Liegt das echte Heute in der Reisezeit, ist der Tag vorgewählt */
+(function(){
+  const now = new Date();
+  if(now.getFullYear()===2026 && now.getMonth()===7){
+    const d = now.getDate();
+    for(let i=0;i<LEGS.length;i++) if(depDate(STOPS[i])===d){ planDaySel.value=i; break; }
+  }
+})();
+
+function renderPlanDay(){
+  const i = +planDaySel.value;
+  planPois = allPois().filter(p=>p.day===STOPS[i].id);
+  planPoisEl.innerHTML = planPois.length ? planPois.map((p,pi)=>{
+    const seen = visited.has(p.name);
+    return `<label><input type="checkbox" data-i="${pi}" ${seen?"":"checked"}>
+      <span>${esc(p.name)}${seen?' <span class="seen" title="schon besucht">✓</span>':""}
+      ${p.note?`<span class="note">· ${esc(p.note)}</span>`:""}</span></label>`;
+  }).join("") : `<p class="plannerhint">Für diesen Tag sind keine Ziele eingetragen.</p>`;
+  updatePlanStart();
+  clearPlan();
+}
+planDaySel.addEventListener("change", renderPlanDay);
+
+function updatePlanStart(){
+  const i = +planDaySel.value;
+  document.getElementById("planStart").innerHTML =
+    "Start: " + (gpsPos ? "<b>◉ euer Standort</b>" : esc(STOPS[i].name))
+    + " &nbsp;·&nbsp; Ziel: " + esc(STOPS[i+1].name);
+}
+
+function clearPlan(){
+  dayPlan = null;
+  planOut.hidden = true; planOut.innerHTML = "";
+  document.getElementById("planClr").hidden = true;
+  draw();
+}
+document.getElementById("planClr").onclick = clearPlan;
+
+document.getElementById("planBtn").onclick = ()=>{
+  const i = +planDaySel.value;
+  const chosen = [...planPoisEl.querySelectorAll("input:checked")].map(el=>planPois[+el.dataset.i]);
+  const start = gpsPos
+    ? { lon:gpsPos.lon, lat:gpsPos.lat, name:"euer Standort (GPS)" }
+    : { lon:STOPS[i].lon, lat:STOPS[i].lat, name:STOPS[i].name };
+  const end = STOPS[i+1];
+  if(!RG) RG = buildRoadGraph();
+
+  const pts = [start, ...chosen, end];
+  const snap = pts.map(p=>nearestRoadNode(p.lon,p.lat));
+  const runs = pts.map((p,j)=>dijkstra(snap[j].id));
+
+  /* Matrix: Anfahrt zum Netz (Luftlinie ×1,3) + Straßenkilometer.
+     Unerreichbar (getrennte Netzteile) → Luftlinie ×1,35. */
+  const k = pts.length;
+  const M = Array.from({length:k},()=>new Float64Array(k));
+  for(let a=0;a<k;a++) for(let b=0;b<k;b++){
+    if(a===b) continue;
+    const road = runs[a].dist[snap[b].id];
+    M[a][b] = isFinite(road)
+      ? snap[a].km*1.3 + road + snap[b].km*1.3
+      : haversine([pts[a].lon,pts[a].lat],[pts[b].lon,pts[b].lat])*1.35;
+  }
+
+  const order = tspOrder(M, chosen.length);
+  const seq = [0, ...order.map(j=>j+1), k-1];
+
+  /* Geometrie: die tatsächlichen Dijkstra-Pfade, fürs Zeichnen */
+  const geom = [], marks = [];
+  for(let s=1;s<seq.length;s++){
+    const a=seq[s-1], b=seq[s];
+    const leg=[[pts[a].lon,pts[a].lat]];
+    if(isFinite(runs[a].dist[snap[b].id])){
+      const chain=[]; let v=snap[b].id;
+      while(v!==-1 && v!==snap[a].id){ chain.push(RG.nodes[v]); v=runs[a].prev[v]; }
+      chain.push(RG.nodes[snap[a].id]);
+      chain.reverse().forEach(n=>leg.push(n));
+    }
+    leg.push([pts[b].lon,pts[b].lat]);
+    geom.push(leg);
+  }
+  order.forEach((j,rank)=>marks.push({ lon:chosen[j].lon, lat:chosen[j].lat, n:rank+1 }));
+  dayPlan = { geom, marks };
+
+  /* Ergebnisliste */
+  const hopKm = seq.slice(1).map((b,s)=>M[seq[s]][b]);
+  const fmtHop = km => Math.round(km)+" km · ~"+Math.round(km/62*60)+" min";
+  let total = hopKm.reduce((x,y)=>x+y,0);
+  planOut.innerHTML =
+    `<li><span class="n">◉</span><b>${esc(start.name)}</b></li>` +
+    order.map((j,r)=>`<li><span class="n">${r+1}</span><b>${esc(chosen[j].name)}</b>
+       <span class="hop">${fmtHop(hopKm[r])}</span></li>`).join("") +
+    `<li><span class="n endflag">🛏</span><b>${esc(end.name)}</b>
+       <span class="hop">${fmtHop(hopKm[hopKm.length-1])}</span></li>` +
+    `<li class="tot">gesamt ≈ ${Math.round(total)} km · ${fmtDur(Math.round(total/62*60))} reine Fahrt —
+       grob geschätzt, ohne Stopps</li>`;
+  planOut.hidden = false;
+  document.getElementById("planClr").hidden = false;
+
+  /* Karte auf die Tagesroute zoomen */
+  let x0=1,y0=1,x1=0,y1=0;
+  for(const leg of geom) for(const p of leg){
+    const m = fwd(p[0],p[1]);
+    x0=Math.min(x0,m[0]); x1=Math.max(x1,m[0]);
+    y0=Math.min(y0,m[1]); y1=Math.max(y1,m[1]);
+  }
+  const kFit = Math.min((W-90)/Math.max(x1-x0,1e-6), (H-90)/Math.max(y1-y0,1e-6));
+  goTo((x0+x1)/2, (y0+y1)/2, Math.min(kFit, kForKm(30)), true);
+};
+
+/* Der geplante Weg auf der Karte: türkis über der Etappenlinie,
+   nummerierte Punkte in Besuchsreihenfolge */
+function drawPlan(){
+  if(!dayPlan) return;
+  ctx.lineCap="round"; ctx.lineJoin="round";
+  for(const leg of dayPlan.geom){
+    const pts = leg.map(p=>pt(p[0],p[1]));
+    ctx.beginPath();
+    pts.forEach((s,i)=> i?ctx.lineTo(s[0],s[1]):ctx.moveTo(s[0],s[1]));
+    ctx.strokeStyle = C.surface2; ctx.lineWidth = 5.5; ctx.globalAlpha=.85; ctx.stroke();
+    ctx.strokeStyle = C.poi; ctx.lineWidth = 3; ctx.globalAlpha=1; ctx.stroke();
+  }
+  ctx.textAlign="center"; ctx.textBaseline="middle";
+  ctx.font = "700 10px "+cssFont("--mono");
+  for(const m of dayPlan.marks){
+    const s = pt(m.lon, m.lat);
+    ctx.beginPath(); ctx.arc(s[0],s[1],9,0,7);
+    ctx.fillStyle = C.poi; ctx.fill();
+    ctx.strokeStyle = C.surface2; ctx.lineWidth=2; ctx.stroke();
+    ctx.fillStyle = C.onAccent; ctx.fillText(String(m.n), s[0], s[1]+.5);
+    reserve(s[0]-9,s[1]-9,18,18);
+  }
+}
+
+renderPlanDay();
 
 document.getElementById("expBtn").onclick = ()=>{
   const out = document.getElementById("exportOut");
