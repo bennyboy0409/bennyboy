@@ -310,8 +310,14 @@
     cursor:pointer;
     transition:background .12s ease, border-color .12s ease;
   }
-  .stop:hover,.stop.active{background:var(--surface-3)}
-  .stop.active{border-color:var(--route)}
+  .stop:hover{background:var(--surface-3)}
+  /* Gewählter Tag: deutlich heller und mit Ring — man soll auf einen
+     Blick sehen, welcher Tag gerade "dran" ist. */
+  .stop.active{
+    background:color-mix(in srgb, var(--surface-2) 55%, var(--poi-soft) 45%);
+    border-color:var(--poi);
+    box-shadow:0 0 0 2px color-mix(in srgb, var(--poi) 45%, transparent), var(--shadow);
+  }
   .stop.terminus{border-left-color:var(--ink-3)}
 
   .stop .top{display:flex;align-items:baseline;gap:.5rem}
@@ -479,56 +485,36 @@
     color:var(--ink-3);font-variant-numeric:tabular-nums;
   }
 
-  /* ---------- Tagesplaner ---------- */
-  .planner{
-    margin:0 0 1rem;border:1px solid var(--rule);border-radius:3px;
-    background:var(--surface-2);
+  /* ---------- Tagesplan in der Tageskarte ---------- */
+  .btn.mini{padding:.3rem .55rem;font-size:.7rem;box-shadow:none}
+  .dayplanbar{
+    display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem;
+    padding-top:.5rem;border-top:1px dashed var(--rule);
   }
-  .planner summary{
-    cursor:pointer;padding:.55rem .7rem;
-    font-family:var(--mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
-    color:var(--ink-2);font-weight:500;
+  .poilist input[type="checkbox"]{
+    accent-color:var(--poi);margin:0 .1rem 0 0;flex:none;transform:translateY(1px);
   }
-  .planner[open] summary{border-bottom:1px dashed var(--rule)}
-  .planner > *:not(summary){margin:.6rem .7rem}
-  .plannerhint{font-size:.74rem;color:var(--ink-3);line-height:1.45}
-  .planner select{
-    /* width:100% + die .7rem-Seitenränder der Containerregel wären
-       zusammen breiter als der Platz — deshalb abgezogen */
-    width:calc(100% - 1.4rem);min-width:0;
-    padding:.4rem .5rem;border:1px solid var(--rule);border-radius:2px;
-    background:var(--surface);color:var(--ink);font:inherit;font-size:.8rem;
+  .ablauf{
+    margin-top:.55rem;padding:.5rem .6rem;
+    border-left:3px solid;border-radius:2px;
+    background:color-mix(in srgb, var(--surface-3) 55%, transparent);
   }
-  .planstart{font-size:.74rem;color:var(--ink-2)}
-  .planstart b{color:var(--poi)}
-  .planpois{display:flex;flex-direction:column;gap:.28rem;max-height:15rem;overflow-y:auto}
-  .planpois label{
-    display:flex;gap:.45rem;align-items:baseline;font-size:.78rem;color:var(--ink-2);
-    cursor:pointer;
+  .ablauf .ablauftitle{
+    font-family:var(--mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase;
+    font-weight:700;margin-bottom:.35rem;
   }
-  .planpois label .note{color:var(--ink-3);font-size:.7rem}
-  .planpois label .seen{color:#2E8B57;font-weight:700}
-  .planner .row{display:flex;gap:.4rem;flex-wrap:wrap}
-  .planlist{
-    list-style:none;margin:.6rem .7rem .8rem;padding:0;
-    display:flex;flex-direction:column;gap:.35rem;
+  .ablauf ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.22rem}
+  .ablauf li{
+    display:flex;gap:.45rem;align-items:baseline;
+    font-size:.76rem;color:var(--ink-2);
   }
-  .planlist li{
-    display:flex;gap:.5rem;align-items:baseline;font-size:.78rem;color:var(--ink-2);
+  .ablauf .t{
+    flex:none;font-family:var(--mono);font-size:.72rem;font-weight:600;
+    font-variant-numeric:tabular-nums;color:var(--ink);min-width:3.6rem;
   }
-  .planlist .n{
-    flex:none;width:1.15rem;height:1.15rem;border-radius:50%;
-    background:var(--poi);color:var(--on-accent);
-    font-family:var(--mono);font-size:.62rem;font-weight:700;
-    display:flex;align-items:center;justify-content:center;transform:translateY(.15rem);
-  }
-  .planlist .n.endflag{background:var(--route)}
-  .planlist b{color:var(--ink);font-weight:600}
-  .planlist .hop{margin-left:auto;flex:none;font-family:var(--mono);font-size:.68rem;color:var(--ink-3);font-variant-numeric:tabular-nums;white-space:nowrap}
-  .planlist .tot{
-    border-top:1px dashed var(--rule);padding-top:.45rem;margin-top:.2rem;
-    font-family:var(--mono);font-size:.72rem;color:var(--ink);
-  }
+  .ablauf .dann{color:var(--ink-3);font-size:.68rem;flex:none}
+  .ablauf .hopkm{margin-left:auto;flex:none;font-family:var(--mono);font-size:.64rem;color:var(--ink-3)}
+  .ablauf .start{color:var(--ink-3);font-size:.7rem}
   @media (prefers-reduced-motion: reduce){
     *{animation-duration:.001ms !important;transition-duration:.001ms !important}
   }
@@ -613,20 +599,6 @@
       <span class="visitcount" id="visitCount" title="Als besucht markierte Ziele"></span>
     </div>
 
-    <details class="planner" id="plannerBox">
-      <summary>Tagesplaner — beste Reihenfolge</summary>
-      <p class="plannerhint">Tag wählen, Ziele anhaken — die Karte rechnet die
-      schnellste Reihenfolge über das Straßennetz aus, vom Startpunkt bis zur
-      Unterkunft des Tages. Läuft GPS (◉), startet die Route bei euch.</p>
-      <select id="planDay" aria-label="Reisetag"></select>
-      <div class="planstart" id="planStart"></div>
-      <div class="planpois" id="planPois"></div>
-      <div class="row">
-        <button class="btn" id="planBtn">Reihenfolge berechnen</button>
-        <button class="btn" id="planClr" hidden>Plan löschen</button>
-      </div>
-      <ol class="planlist" id="planOut" hidden></ol>
-    </details>
     <div class="stack" id="itin"></div>
 
     <section class="nogo">
@@ -1487,7 +1459,7 @@ function draw(){
   }
 
   if(layers.cost) drawCosts();
-  drawPlan();
+  drawPlans();
 
   // Grosse Orte zuerst — sie sind die Orientierung und haben Vorrang
   if(layers.labels) drawPlaces("major");
@@ -2505,7 +2477,7 @@ gpsBtn.onclick = ()=>{
   if(gpsWatch!==null){
     navigator.geolocation.clearWatch(gpsWatch);
     gpsWatch = null; gpsPos = null; gpsCentered = false;
-    gpsBtn.classList.remove("on"); updatePlanStart(); draw(); return;
+    gpsBtn.classList.remove("on"); draw(); return;
   }
   if(!navigator.geolocation){ gpsBtn.title = "Kein GPS in diesem Browser"; return; }
   gpsBtn.classList.add("on");
@@ -2516,7 +2488,6 @@ gpsBtn.onclick = ()=>{
       gpsCentered = true;
       const m = fwd(gpsPos.lon, gpsPos.lat);
       goTo(m[0], m[1], Math.max(view.k, kForKm(60)), true);
-      updatePlanStart();
     }
     draw();
   }, err=>{
@@ -2731,76 +2702,43 @@ function tspOrder(M, n){
   return order;
 }
 
-/* ── Planner-UI ────────────────────────────────────────────── */
-const planDaySel = document.getElementById("planDay");
-const planPoisEl = document.getElementById("planPois");
-const planOut    = document.getElementById("planOut");
-let dayPlan = null;                  // {geom, marks} — wird in draw() gezeichnet
-let planPois = [];
+/* ── Tagespläne — direkt in den Tageskarten ──────────────────
+   Ablauf: Tageskarte antippen → „Besuchsorte markieren" → Ziele
+   anhaken → „Route berechnen". Die Reihenfolge kommt aus derselben
+   Maschinerie wie bisher (Straßengraph + Dijkstra + tspOrder),
+   das Ergebnis liegt als eigene farbige Strecke auf der Karte und
+   als Ablauf mit Zeiten in der Tageskarte. Pläne mehrerer Tage
+   bleiben gleichzeitig sichtbar, jeder in seiner Farbe, und
+   überleben in localStorage einen Neustart. */
+const DAY_COLORS = ["#7C3AED","#0EA5E9","#D97706","#DB2777","#059669","#B45309","#2563EB","#65A30D"];
+const dayColor = i => DAY_COLORS[i % DAY_COLORS.length];
 
 function depDate(st){ return +((st.to||st.from).match(/(\d{1,2})\./)||[])[1]; }
 
-LEGS.forEach((_, i)=>{
-  const o = document.createElement("option");
-  o.value = i;
-  o.textContent = depDate(STOPS[i])+". Aug — "+
-    (STOPS[i].kind==="terminus"?"Ankunft KEF":STOPS[i].name.split("—")[0].trim())
-    +" → "+(STOPS[i+1].kind==="terminus"?"KEF (Rückflug)":STOPS[i+1].name.split("—")[0].trim());
-  planDaySel.appendChild(o);
-});
-/* Liegt das echte Heute in der Reisezeit, ist der Tag vorgewählt */
-(function(){
-  const now = new Date();
-  if(now.getFullYear()===2026 && now.getMonth()===7){
-    const d = now.getDate();
-    for(let i=0;i<LEGS.length;i++) if(depDate(STOPS[i])===d){ planDaySel.value=i; break; }
-  }
-})();
+const DAYPLAN_KEY = "island-dayplans";
+let dayPlans = {};      // legIdx -> {sel, startName, hops, totalMin, totalKm, geom, marks}
+let markMode = {};      // legIdx -> true, solange die Häkchen offen sind
+try{ dayPlans = JSON.parse(localStorage.getItem(DAYPLAN_KEY) || "{}"); }catch(e){ dayPlans = {}; }
+function saveDayPlans(){ try{ localStorage.setItem(DAYPLAN_KEY, JSON.stringify(dayPlans)); }catch(e){} }
 
-function renderPlanDay(){
-  const i = +planDaySel.value;
-  planPois = allPois().filter(p=>p.day===STOPS[i].id);
-  planPoisEl.innerHTML = planPois.length ? planPois.map((p,pi)=>{
-    const seen = visited.has(p.name);
-    return `<label><input type="checkbox" data-i="${pi}" ${seen?"":"checked"}>
-      <span>${esc(p.name)}${seen?' <span class="seen" title="schon besucht">✓</span>':""}
-      ${p.note?`<span class="note">· ${esc(p.note)}</span>`:""}</span></label>`;
-  }).join("") : `<p class="plannerhint">Für diesen Tag sind keine Ziele eingetragen.</p>`;
-  updatePlanStart();
-  clearPlan();
-}
-planDaySel.addEventListener("change", renderPlanDay);
+function poisOfDay(i){ return allPois().filter(p=>p.day===STOPS[i].id); }
 
-function updatePlanStart(){
-  const i = +planDaySel.value;
-  document.getElementById("planStart").innerHTML =
-    "Start: " + (gpsPos ? "<b>◉ euer Standort</b>" : esc(STOPS[i].name))
-    + " &nbsp;·&nbsp; Ziel: " + esc(STOPS[i+1].name);
+function endLabel(st){
+  return st.kind==="terminus" ? "Flughafen KEF" : st.name.split("—")[0].trim();
 }
 
-function clearPlan(){
-  dayPlan = null;
-  planOut.hidden = true; planOut.innerHTML = "";
-  document.getElementById("planClr").hidden = true;
-  draw();
-}
-document.getElementById("planClr").onclick = clearPlan;
-
-document.getElementById("planBtn").onclick = ()=>{
-  const i = +planDaySel.value;
-  const chosen = [...planPoisEl.querySelectorAll("input:checked")].map(el=>planPois[+el.dataset.i]);
+function computeDayPlan(i, chosen){
+  if(!RG) RG = buildRoadGraph();
   const start = gpsPos
     ? { lon:gpsPos.lon, lat:gpsPos.lat, name:"euer Standort (GPS)" }
     : { lon:STOPS[i].lon, lat:STOPS[i].lat, name:STOPS[i].name };
   const end = STOPS[i+1];
-  if(!RG) RG = buildRoadGraph();
-
-  const pts = [start, ...chosen, end];
+  const pts  = [start, ...chosen, end];
   const snap = pts.map(p=>nearestRoadNode(p.lon,p.lat));
   const runs = pts.map((p,j)=>dijkstra(snap[j].id));
 
-  /* Matrix: Anfahrt zum Netz (Luftlinie ×1,3) + Straßenkilometer.
-     Unerreichbar (getrennte Netzteile) → Luftlinie ×1,35. */
+  /* Anfahrt zum Netz als Luftlinie ×1,3; getrennte Netzteile
+     fallen aufs Paar Luftlinie ×1,35 zurück. */
   const k = pts.length;
   const M = Array.from({length:k},()=>new Float64Array(k));
   for(let a=0;a<k;a++) for(let b=0;b<k;b++){
@@ -2814,8 +2752,8 @@ document.getElementById("planBtn").onclick = ()=>{
   const order = tspOrder(M, chosen.length);
   const seq = [0, ...order.map(j=>j+1), k-1];
 
-  /* Geometrie: die tatsächlichen Dijkstra-Pfade, fürs Zeichnen */
-  const geom = [], marks = [];
+  const geom = [], marks = [], hops = [];
+  let totalKm = 0;
   for(let s=1;s<seq.length;s++){
     const a=seq[s-1], b=seq[s];
     const leg=[[pts[a].lon,pts[a].lat]];
@@ -2827,61 +2765,93 @@ document.getElementById("planBtn").onclick = ()=>{
     }
     leg.push([pts[b].lon,pts[b].lat]);
     geom.push(leg);
+    const km = M[a][b];
+    totalKm += km;
+    hops.push({ to: b===k-1 ? (end.kind==="terminus" ? "✈ " : "🛏 ")+endLabel(end)
+                         : chosen[order[s-1]].name,
+                end: b===k-1,
+                min: Math.max(1, Math.round(km/62*60)),
+                km: Math.round(km) });
   }
   order.forEach((j,rank)=>marks.push({ lon:chosen[j].lon, lat:chosen[j].lat, n:rank+1 }));
-  dayPlan = { geom, marks };
 
-  /* Ergebnisliste */
-  const hopKm = seq.slice(1).map((b,s)=>M[seq[s]][b]);
-  const fmtHop = km => Math.round(km)+" km · ~"+Math.round(km/62*60)+" min";
-  let total = hopKm.reduce((x,y)=>x+y,0);
-  planOut.innerHTML =
-    `<li><span class="n">◉</span><b>${esc(start.name)}</b></li>` +
-    order.map((j,r)=>`<li><span class="n">${r+1}</span><b>${esc(chosen[j].name)}</b>
-       <span class="hop">${fmtHop(hopKm[r])}</span></li>`).join("") +
-    `<li><span class="n endflag">🛏</span><b>${esc(end.name)}</b>
-       <span class="hop">${fmtHop(hopKm[hopKm.length-1])}</span></li>` +
-    `<li class="tot">gesamt ≈ ${Math.round(total)} km · ${fmtDur(Math.round(total/62*60))} reine Fahrt —
-       grob geschätzt, ohne Stopps</li>`;
-  planOut.hidden = false;
-  document.getElementById("planClr").hidden = false;
+  return { sel: chosen.map(p=>p.name), startName: start.name,
+           hops, totalMin: hops.reduce((a,h)=>a+h.min,0),
+           totalKm: Math.round(totalKm), geom, marks };
+}
 
-  /* Karte auf die Tagesroute zoomen */
+/* Karte auf einen Tagesplan zoomen */
+function zoomToPlan(plan){
   let x0=1,y0=1,x1=0,y1=0;
-  for(const leg of geom) for(const p of leg){
+  for(const leg of plan.geom) for(const p of leg){
     const m = fwd(p[0],p[1]);
     x0=Math.min(x0,m[0]); x1=Math.max(x1,m[0]);
     y0=Math.min(y0,m[1]); y1=Math.max(y1,m[1]);
   }
   const kFit = Math.min((W-90)/Math.max(x1-x0,1e-6), (H-90)/Math.max(y1-y0,1e-6));
   goTo((x0+x1)/2, (y0+y1)/2, Math.min(kFit, kForKm(30)), true);
-};
+}
 
-/* Der geplante Weg auf der Karte: türkis über der Etappenlinie,
-   nummerierte Punkte in Besuchsreihenfolge */
-function drawPlan(){
-  if(!dayPlan) return;
+/* Alle gespeicherten Tagesrouten zeichnen, jede in ihrer Farbe.
+   Der gerade gewählte Tag wird kräftiger gezogen. */
+function drawPlans(){
   ctx.lineCap="round"; ctx.lineJoin="round";
-  for(const leg of dayPlan.geom){
-    const pts = leg.map(p=>pt(p[0],p[1]));
-    ctx.beginPath();
-    pts.forEach((s,i)=> i?ctx.lineTo(s[0],s[1]):ctx.moveTo(s[0],s[1]));
-    ctx.strokeStyle = C.surface2; ctx.lineWidth = 5.5; ctx.globalAlpha=.85; ctx.stroke();
-    ctx.strokeStyle = C.poi; ctx.lineWidth = 3; ctx.globalAlpha=1; ctx.stroke();
-  }
-  ctx.textAlign="center"; ctx.textBaseline="middle";
-  ctx.font = "700 10px "+cssFont("--mono");
-  for(const m of dayPlan.marks){
-    const s = pt(m.lon, m.lat);
-    ctx.beginPath(); ctx.arc(s[0],s[1],9,0,7);
-    ctx.fillStyle = C.poi; ctx.fill();
-    ctx.strokeStyle = C.surface2; ctx.lineWidth=2; ctx.stroke();
-    ctx.fillStyle = C.onAccent; ctx.fillText(String(m.n), s[0], s[1]+.5);
-    reserve(s[0]-9,s[1]-9,18,18);
+  for(const [is, plan] of Object.entries(dayPlans)){
+    const i = +is, col = dayColor(i);
+    const hot = (activeStop===i || hoverStop===i);
+    for(const leg of plan.geom){
+      const pts = leg.map(p=>pt(p[0],p[1]));
+      ctx.beginPath();
+      pts.forEach((s,j)=> j?ctx.lineTo(s[0],s[1]):ctx.moveTo(s[0],s[1]));
+      ctx.strokeStyle = C.surface2; ctx.lineWidth = hot?6:4.5; ctx.globalAlpha=.8; ctx.stroke();
+      ctx.strokeStyle = col; ctx.lineWidth = hot?3.4:2.4; ctx.globalAlpha = hot?1:.85; ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+    ctx.textAlign="center"; ctx.textBaseline="middle";
+    ctx.font = "700 10px "+cssFont("--mono");
+    for(const m of plan.marks){
+      const s = pt(m.lon, m.lat);
+      ctx.beginPath(); ctx.arc(s[0],s[1],9,0,7);
+      ctx.fillStyle = col; ctx.fill();
+      ctx.strokeStyle = C.surface2; ctx.lineWidth=2; ctx.stroke();
+      ctx.fillStyle = "#FFFFFF"; ctx.fillText(String(m.n), s[0], s[1]+.5);
+      reserve(s[0]-9,s[1]-9,18,18);
+    }
   }
 }
 
-renderPlanDay();
+/* Häkchen-Zwischenstand, solange ein Tag im Markier-Modus ist */
+let markSel = {};
+
+/* Der Block unterhalb der Zielliste einer Tageskarte:
+   Ablauf (falls Plan da) + Knopfleiste */
+function dayplanHTML(i, pois){
+  if(i>=LEGS.length || !pois.length) return "";
+  const plan = dayPlans[i], col = dayColor(i);
+  let out = "";
+  if(plan && !markMode[i]) out += ablaufHTML(i, plan);
+  out += `<div class="dayplanbar">` + (markMode[i]
+    ? `<button class="btn mini" data-dp="go" style="background:${col};border-color:${col};color:#fff">✓ Route berechnen</button>
+       <button class="btn mini" data-dp="cancel">abbrechen</button>`
+    : (plan
+        ? `<button class="btn mini" data-dp="mark">✎ Besuchsorte ändern</button>
+           <button class="btn mini" data-dp="clear">✕ Plan löschen</button>`
+        : `<button class="btn mini" data-dp="mark">✦ Besuchsorte markieren</button>`))
+    + `</div>`;
+  return out;
+}
+
+function ablaufHTML(i, plan){
+  const col = dayColor(i);
+  const rows = plan.hops.map((h,r)=>
+    `<li>${r?`<span class="dann">dann</span>`:""}<span class="t">${fmtDur(h.min)}</span><span>${esc(h.to)}</span><span class="hopkm">${h.km} km</span></li>`
+  ).join("");
+  return `<div class="ablauf" style="border-color:${col}">
+    <div class="ablauftitle" style="color:${col}">Ablauf — insgesamt ${fmtDur(plan.totalMin)} Fahrt · ~${plan.totalKm} km</div>
+    <div class="start">ab ${esc(plan.startName)} · reine Fahrzeit, grob geschätzt</div>
+    <ol>${rows}</ol>
+  </div>`;
+}
 
 document.getElementById("expBtn").onclick = ()=>{
   const out = document.getElementById("exportOut");
@@ -2946,19 +2916,62 @@ function renderRail(){
           ? `<span class="poiisk${c.free?" isfree":""}" title="${esc(COST_KIND[c.kind])} · ${esc(c.pay)}">${esc(costLabel(c))}</span>`
           : "";
         const seen = visited.has(p.name) ? `<span class="seen" title="besucht">✓</span>` : "";
-        return `<li data-poi="${st.id}:${pi}"><span class="pin"></span><span>${p.name}${seen}${chip}${p.note?` <span class="note">· ${p.note}</span>`:""}</span></li>`;
+        const box = markMode[i]
+          ? `<input type="checkbox" data-selpoi="${pi}" ${markSel[i] && markSel[i].has(p.name) ? "checked":""}>`
+          : "";
+        return `<li data-poi="${st.id}:${pi}">${box}<span class="pin"></span><span>${p.name}${seen}${chip}${p.note?` <span class="note">· ${p.note}</span>`:""}</span></li>`;
       }).join("")}</ul>`:""}
+      ${dayplanHTML(i, pois)}
     `;
+    if(dayPlans[i]) card.style.borderLeftColor = dayColor(i);
+
     card.querySelectorAll("[data-poi]").forEach((li,pi)=>{
       li.style.cursor = "pointer";
       li.addEventListener("click", ev=>{
         ev.stopPropagation();
+        /* Im Markier-Modus schaltet der Klick das Häkchen um,
+           statt zur Sehenswürdigkeit zu fliegen */
+        if(markMode[i]){
+          const box = li.querySelector("[data-selpoi]");
+          if(box && ev.target!==box) box.checked = !box.checked;
+          const p = pois[pi];
+          if(box.checked) markSel[i].add(p.name); else markSel[i].delete(p.name);
+          return;
+        }
         const p = pois[pi];
         const m = fwd(p.lon, p.lat);
         goTo(m[0], m[1], Math.max(view.k, kForKm(70)), true);
         setTimeout(()=>showCard(p), 640);
       });
     });
+
+    /* Knöpfe des Tagesplans */
+    card.querySelectorAll("[data-dp]").forEach(btn=>{
+      btn.addEventListener("click", ev=>{
+        ev.stopPropagation();
+        const act = btn.dataset.dp;
+        if(act==="mark"){
+          markSel[i] = new Set(dayPlans[i] ? dayPlans[i].sel
+                                           : pois.filter(p=>!visited.has(p.name)).map(p=>p.name));
+          markMode[i] = true; selectStop(i); renderRail();
+        }
+        else if(act==="cancel"){ markMode[i] = false; renderRail(); }
+        else if(act==="go"){
+          const chosen = pois.filter(p=>markSel[i].has(p.name));
+          if(!chosen.length){ markMode[i] = false; renderRail(); return; }
+          btn.textContent = "rechnet …";
+          setTimeout(()=>{
+            dayPlans[i] = computeDayPlan(i, chosen);
+            markMode[i] = false;
+            saveDayPlans(); renderRail(); draw(); zoomToPlan(dayPlans[i]);
+          }, 30);
+        }
+        else if(act==="clear"){
+          delete dayPlans[i]; saveDayPlans(); renderRail(); draw();
+        }
+      });
+    });
+
     card.addEventListener("click", ()=>selectStop(i));
     card.addEventListener("keydown", e=>{ if(e.key==="Enter"||e.key===" "){ e.preventDefault(); selectStop(i);} });
     card.addEventListener("mouseenter", ()=>{ hoverStop=i; draw(); });

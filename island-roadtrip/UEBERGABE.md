@@ -183,18 +183,31 @@ und in `COSTS` nachziehen.
 - **Handy**: Karte 66 statt 56 dvh, Zoomknöpfe 42 px, kompakter Kopf, Popup
   passt sich der Bildschirmbreite an.
 
-## Tagesplaner — neu (12. August 2026, abends)
+## Tagesplaner — direkt in den Tageskarten (12. August 2026, abends)
 
-Aufklappbare Box ganz oben in der Seitenleiste. Ablauf: Tag wählen (bei
-laufender Reise ist das echte Heute vorgewählt), Ziele anhaken (schon
-besuchte sind automatisch abgewählt), „Reihenfolge berechnen". Ergebnis:
-nummerierte Liste mit km und Minuten pro Abschnitt, und die Route liegt
-türkis mit Nummernpunkten auf der Karte, die dorthin zoomt.
+Kein separates Kastl mehr: Die Planung sitzt in jeder Tageskarte der
+Seitenleiste. Der gewählte Tag ist deutlich hervorgehoben (heller, mit
+türkisem Ring). Ablauf:
 
-Start ist die Unterkunft des Vortags — oder **der eigene Standort, wenn
-GPS (◉) läuft**. Ziel ist immer automatisch die Unterkunft des gewählten
-Tages. Man kann den Plan also mittags neu rechnen: Gesehenes abhaken,
-neu berechnen, und er plant den Rest des Tages ab dem aktuellen Standort.
+1. „✦ Besuchsorte markieren" in der Tageskarte → neben jedem Ziel
+   erscheint ein Häkchen (schon Besuchtes ist abgewählt)
+2. anhaken, was ihr sehen wollt → „✓ Route berechnen"
+3. Ergebnis direkt in der Karte des Tages: **Ablauf** mit Gesamtzeit
+   („insgesamt 5:59 h Fahrt · ~369 km") und jedem Abschnitt
+   („0:20 h Diamond Beach, dann 0:10 h Jökulsárlón, …"), und auf der
+   Landkarte liegt die Strecke **in einer eigenen Farbe pro Tag** mit
+   nummerierten Punkten in Besuchsreihenfolge.
+
+Pläne mehrerer Tage bleiben gleichzeitig sichtbar, jeder in seiner
+Farbe (Palette `DAY_COLORS`), der linke Kartenrand der Tageskarte trägt
+dieselbe Farbe. Alles überlebt in localStorage einen Neustart.
+„✎ Besuchsorte ändern" rechnet neu, „✕ Plan löschen" räumt weg.
+
+Start ist die Unterkunft des Tages — oder **der eigene Standort, wenn
+GPS (◉) läuft**. Man kann also mittags neu rechnen: Gesehenes abhaken,
+neu berechnen, und der Rest des Tages wird ab der aktuellen Position
+geplant. Ziel ist automatisch die nächste Unterkunft (bzw. der
+Flughafen am letzten Tag).
 
 Technik, komplett offline:
 
