@@ -28,6 +28,11 @@
     --poi-soft:#8FCDD3;
     --on-accent:#FFFFFF;
 
+    /* Kostenpflichtig. Bewusst ein kühles Karminrot, nicht das warme
+       Orangerot der Route — sonst verschwimmen Etappe und Gebühr. */
+    --pay:#C81E4A;
+    --pay-soft:#EBA2B5;
+
     --shadow:0 1px 2px rgba(20,31,38,.10), 0 8px 24px rgba(20,31,38,.07);
 
     --serif:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,ui-serif,serif;
@@ -59,6 +64,9 @@
       --poi-soft:#1E5A61;
       --on-accent:#0A171F;
 
+      --pay:#FF4E77;
+      --pay-soft:#7A2138;
+
       --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
     }
   }
@@ -85,6 +93,9 @@
     --poi:#35B8C4;
     --poi-soft:#1E5A61;
     --on-accent:#0A171F;
+
+    --pay:#FF4E77;
+    --pay-soft:#7A2138;
 
     --shadow:0 1px 2px rgba(0,0,0,.4), 0 10px 30px rgba(0,0,0,.35);
   }
@@ -117,11 +128,12 @@
     color:var(--ink-3);text-transform:uppercase;
   }
   .masthead .totals{
-    margin-left:auto;display:flex;gap:1.1rem;
+    margin-left:auto;display:flex;gap:1.1rem;flex-wrap:wrap;
     font-family:var(--mono);font-size:.78rem;font-variant-numeric:tabular-nums;
     color:var(--ink-2);
   }
   .masthead .totals b{color:var(--ink);font-weight:600}
+  .masthead .totals b.pay{color:var(--pay)}
 
   /* ---------- shell ---------- */
   .shell{
@@ -228,10 +240,19 @@
     padding:.12rem .38rem;border-radius:2px;background:var(--poi);color:var(--on-accent);
   }
   .tag.warn{background:var(--route)}
+  .tag.pay{background:var(--pay)}
   .tag.ghost{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
   .card h3{font-family:var(--serif);font-size:1rem;margin:0 0 .2rem;font-weight:600;line-height:1.25}
   .cardfact{margin:0;font-size:.78rem;color:var(--ink-2)}
   .cardnote{margin:.3rem 0 0;font-size:.76rem;color:var(--ink-3);line-height:1.45}
+  .cardpay{
+    margin:.4rem 0 0;padding-left:.5rem;border-left:2px solid var(--pay);
+    font-size:.74rem;color:var(--ink-2);line-height:1.45;
+  }
+  .cardpay[hidden]{display:none}
+  .cardpay b{color:var(--pay)}
+  .cardpay.isfree{border-left-color:var(--rule)}
+  .cardpay.isfree b{color:var(--ink-3)}
   .cardgeo{margin:.4rem 0 0;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
 
   /* ---------- Nicht erreichbar ---------- */
@@ -301,6 +322,15 @@
   .poilist li{display:flex;gap:.45rem;align-items:baseline;font-size:.78rem;color:var(--ink-2)}
   .poilist .pin{width:7px;height:7px;border-radius:50%;background:var(--poi);flex:none;transform:translateY(-1px)}
   .poilist .note{color:var(--ink-3);font-size:.72rem}
+  /* Preisschildchen am Ziel — fängt die Gebühren ab, für die man
+     erst von der Fahrlinie abbiegt und die deshalb an keiner
+     Etappe hängen (Þingvellir, Kerið, Stokksnes, Blaue Lagune). */
+  .poilist .poiisk{
+    display:inline-block;margin-left:.35rem;padding:.02rem .3rem;border-radius:2px;
+    background:var(--pay);color:var(--on-accent);white-space:nowrap;
+    font-family:var(--mono);font-size:.6rem;font-variant-numeric:tabular-nums;
+  }
+  .poilist .poiisk.isfree{background:transparent;color:var(--ink-3);border:1px solid var(--rule)}
 
   .leg{
     display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .55rem;
@@ -327,6 +357,17 @@
     flex:1 1 100%;font-size:.73rem;color:var(--ink-3);line-height:1.4;
   }
   .leg .via.warn{color:var(--route)}
+
+  /* Kostenpflichtige Stelle auf der Etappe */
+  .leg .via.pay{
+    flex:1 1 100%;color:var(--pay);font-weight:600;
+    display:flex;gap:.35rem;align-items:baseline;
+  }
+  .leg .via.pay .isk{
+    font-family:var(--mono);font-variant-numeric:tabular-nums;flex:none;
+  }
+  .leg .via.pay .payhow{font-weight:400;color:var(--ink-3)}
+  .leg .via.nopay{flex:1 1 100%;font-size:.73rem;color:var(--ink-3);line-height:1.4}
 
   .stack{display:flex;flex-direction:column}
 
@@ -385,6 +426,7 @@
   <div class="totals">
     <span>Fahrstrecke <b id="totKm">–</b></span>
     <span>Fahrzeit <b id="totHrs">–</b></span>
+    <span>Gebühren <b id="totIsk">–</b></span>
   </div>
 </header>
 
@@ -405,6 +447,7 @@
         <label><input type="checkbox" id="lyRoads" checked> Straßennetz</label>
         <label><input type="checkbox" id="lyLabels" checked> Ortsnamen</label>
         <label><input type="checkbox" id="lyTimes" checked> Fahrzeiten</label>
+        <label><input type="checkbox" id="lyCost" checked> Kostenstellen</label>
       </details>
     </div>
 
@@ -418,6 +461,7 @@
         <div class="row"><span class="swatch" style="background:var(--route)"></span> Etappe mit Fahrzeit</div>
         <div class="row"><span class="dot" style="background:var(--route)"></span> Übernachtung</div>
         <div class="row"><span class="dot" style="background:var(--poi)"></span> Sehenswürdigkeit</div>
+        <div class="row"><span class="dot" style="background:var(--pay)"></span> kostet Geld (Maut, Parken, Eintritt)</div>
         <div class="row"><span class="swatch" style="background:var(--road-major)"></span> Hauptstraße</div>
         <div class="row"><span class="dot" style="background:var(--glacier);border:1px solid var(--glacier-edge)"></span> Gletscher</div>
       </div>
@@ -431,10 +475,11 @@
       <canvas class="cardimg" id="cardImg" width="520" height="290"></canvas>
       <img class="cardimg" id="cardPhoto" alt="" hidden>
       <div class="cardbody">
-        <div class="cardtags"><span class="tag" id="cardAccess"></span><span class="tag ghost" id="cardRoad"></span></div>
+        <div class="cardtags"><span class="tag" id="cardAccess"></span><span class="tag ghost" id="cardRoad"></span><span class="tag pay" id="cardPay" hidden></span></div>
         <h3 id="cardName"></h3>
         <p class="cardfact" id="cardFact"></p>
         <p class="cardnote" id="cardNote"></p>
+        <p class="cardpay" id="cardPayNote" hidden></p>
         <p class="cardgeo" id="cardGeo"></p>
       </div>
     </div>
@@ -759,6 +804,106 @@ const NO_GO = [
   { name:"Färöer", why:"anderes Land — von Island nur per Fähre (Norræna, 2 Tage ab Seyðisfjörður) oder Flug." }
 ];
 
+/* ══════════════════════════════════════════════════════════════
+   4b) KOSTENSTELLEN — wo unterwegs Geld fällig wird
+
+   Jeder Eintrag ist ein Punkt auf der Landkarte. Liegt er nah genug
+   an einer Etappe, hängt sich die Karte ihn automatisch an genau
+   diese Etappe — auch an neue. Man muss also nichts nachpflegen,
+   wenn sich die Route ändert.
+
+   kind   "maut" Tunnelmaut · "parken" Parkgebühr · "eintritt"
+          Eintritt auf Privatgrund · "tour" gebuchte Führung
+   isk    Preis. null = kostet etwas, Betrag hängt vom Anbieter ab
+          (fließt dann nicht in die Summe ein)
+   per    "auto" einmal pro Fahrzeug · "person" pro Kopf
+   unsure true, wenn sich die Quellen widersprechen — im Popup
+          erscheint dann ein „ca."
+   free   true = ausdrücklich gratis. Steht nur drin, wo häufig das
+          Gegenteil behauptet wird. Wird grau gezeichnet, nicht rot.
+   seg    Tunnelmund zu Tunnelmund, damit die Röhre selbst und nicht
+          nur ein Punkt markiert wird
+   alt    kostenlose Ausweichmöglichkeit
+
+   Preisstand August 2026. In Island ändern sich die Parkgebühren
+   fast jede Saison — vor der Abfahrt kurz gegenprüfen.
+   ══════════════════════════════════════════════════════════════ */
+const ISK_EUR = 0.0068;                 // Richtwert August 2026
+
+const COSTS = [
+  /* ── Die einzige Maut des Landes ─────────────────────────── */
+  { name:"Vaðlaheiðargöng", lat:65.6970, lon:-17.9950, kind:"maut",
+    isk:2216, per:"auto", seg:[[-18.0630,65.6870],[-17.9280,65.7060]],
+    pay:"tunnel.is — vorher oder bis 3 h danach, Kennzeichenerkennung",
+    note:"Islands einziger Mauttunnel. 7,5 km unter dem Vaðlaheiði, spart gut 16 km und rund 12 Minuten.",
+    alt:"Gratis drumherum: die alte Straße 1 über den Víkurskarð-Pass." },
+
+  /* ── Ausdrücklich gratis, wird aber oft anders behauptet ─── */
+  { name:"Hvalfjarðargöng", lat:64.3320, lon:-21.6800, kind:"maut",
+    isk:0, per:"auto", free:true, seg:[[-21.7500,64.3020],[-21.6000,64.3610]],
+    pay:"nichts zu zahlen",
+    note:"Seit 28. September 2018 mautfrei. Ältere Reiseführer und Blogs nennen noch eine Gebühr — die stimmt nicht mehr." },
+
+  { name:"Fáskrúðsfjarðargöng", lat:64.9500, lon:-14.1300, kind:"maut",
+    isk:0, per:"auto", free:true,
+    pay:"nichts zu zahlen",
+    note:"Der Ostfjord-Tunnel ist gebührenfrei. Nur Vaðlaheiðargöng kostet." },
+
+  /* ── Parkgebühren und Eintritte an der Route ─────────────── */
+  { name:"Þingvellir", lat:64.2559, lon:-21.1300, kind:"parken",
+    isk:1000, per:"auto", pay:"Parka-App",
+    note:"Nationalpark. Wer am selben Tag schon woanders im Park gezahlt hat, bekommt oft die Hälfte erlassen." },
+
+  { name:"Kerið Kratersee", lat:64.0410, lon:-20.8850, kind:"eintritt",
+    isk:800, per:"person", unsure:true, pay:"bar oder Karte am Eingang",
+    note:"Privatgrund. Die Angaben schwanken zwischen 600 und 1.000 ISK pro Kopf, teils zusätzlich Parkgebühr über EasyPark." },
+
+  { name:"Reykjadalur", lat:64.0330, lon:-21.2050, kind:"parken",
+    isk:750, per:"auto", unsure:true, pay:"Parkautomat / App",
+    note:"Parkplatz am Wanderstart in Hveragerði. Für Hin- und Rückweg plus Baden rechnet man 3–4 Stunden." },
+
+  { name:"Seljalandsfoss", lat:63.6156, lon:-19.9930, kind:"parken",
+    isk:1000, per:"auto", pay:"Parka-App",
+    note:"Gilt für den ganzen Tag." },
+
+  { name:"Gljúfrabúi", lat:63.6208, lon:-20.0006, kind:"parken",
+    isk:0, per:"auto", free:true, pay:"im Seljalandsfoss-Ticket enthalten",
+    note:"Nur 600 m nördlich von Seljalandsfoss und derselbe Parkplatz — kein zweites Mal zahlen." },
+
+  { name:"Skógafoss", lat:63.5321, lon:-19.5114, kind:"parken",
+    isk:1000, per:"auto", unsure:true, pay:"Parka-App, gilt 8 Stunden",
+    note:"Achtung: neben dem kostenpflichtigen Hauptplatz gibt es einen kostenlosen Platz etwas abseits. Vor dem Zahlen kurz umsehen." },
+
+  { name:"Sólheimajökull", lat:63.5290, lon:-19.3690, kind:"parken",
+    isk:1000, per:"auto", unsure:true, pay:"Automat am Platz",
+    note:"Gletscherzunge. Die geführte Eiswanderung kostet extra." },
+
+  { name:"Reynisfjara", lat:63.4030, lon:-19.0450, kind:"parken",
+    isk:1000, per:"auto", pay:"Parka-App",
+    note:"Schwarzer Strand bei Vík. Die Sneaker-Wellen dort sind lebensgefährlich — nie den Rücken zum Meer." },
+
+  { name:"Skaftafell / Svartifoss", lat:64.0166, lon:-16.9660, kind:"parken",
+    isk:1000, per:"auto", pay:"Parka-App",
+    note:"Zugang zum Vatnajökull-Nationalpark. Von hier 45 Minuten bergauf zum Svartifoss." },
+
+  { name:"Jökulsárlón", lat:64.0784, lon:-16.2306, kind:"parken",
+    isk:1000, per:"auto", pay:"Parka-App",
+    note:"Gilt den ganzen Tag und deckt auch den Diamond Beach gegenüber ab." },
+
+  { name:"Stokksnes / Vestrahorn", lat:64.2470, lon:-14.9950, kind:"eintritt",
+    isk:1100, per:"person", unsure:true, pay:"Viking Café, Karte geht",
+    note:"Privatgelände. Preis wird pro Kopf verlangt, nicht pro Auto; die Angaben reichen von 900 bis 1.100 ISK." },
+
+  /* ── Kostet, aber der Betrag hängt vom Anbieter ab ────────── */
+  { name:"Blaue Lagune", lat:63.8804, lon:-22.4495, kind:"eintritt",
+    isk:null, per:"person", pay:"nur mit vorab gebuchtem Zeitfenster",
+    note:"Mit Abstand der teuerste Posten der Reise. Startet bei rund 9.900 ISK pro Person und steigt je nach Uhrzeit und Paket deutlich." },
+
+  { name:"Vatnajökull — Gletschertour", lat:64.0160, lon:-16.9750, kind:"tour",
+    isk:null, per:"person", pay:"Anbieter vorab buchen",
+    note:"Aufs Eis kommt man nur geführt, mit Steigeisen. Preis je nach Anbieter und Dauer." }
+];
+
 /* Zusätzliche Ortsnamen für die Karte (Natural Earth liefert nur 9) */
 const EXTRA_PLACES = [
   {n:"Hólmavík",lon:-21.680,lat:65.705},{n:"Hvammstangi",lon:-20.945,lat:65.395},
@@ -799,7 +944,7 @@ const cv = document.getElementById("map");
 const ctx = cv.getContext("2d");
 let W=0, H=0, DPR=1;
 const view = { cx:0.4465, cy:0.2587, k:20000 };   // Mercator-Zentrum + px pro Einheit
-let hoverStop = null, activeStop = null, pinMode = false, hoverPoi = null;
+let hoverStop = null, activeStop = null, pinMode = false, hoverPoi = null, hoverCost = null;
 let thumbBoxes = [];   // Trefferflächen der aufgeklappten Bildkärtchen
 
 function css(v){ return getComputedStyle(document.documentElement).getPropertyValue(v).trim(); }
@@ -813,6 +958,7 @@ function readTokens(){
     ink:css("--ink"), ink2:css("--ink-2"), ink3:css("--ink-3"),
     route:css("--route"), routeSoft:css("--route-soft"),
     poi:css("--poi"), poiSoft:css("--poi-soft"),
+    pay:css("--pay"), paySoft:css("--pay-soft"),
     surface2:css("--surface-2"), rule:css("--rule"), onAccent:css("--on-accent")
   };
 }
@@ -949,8 +1095,99 @@ function smooth(ctx, pts){
 
 function fmtDur(min){ const h=Math.floor(min/60), m=min%60; return h+":"+String(m).padStart(2,"0")+" h"; }
 
+/* ── Kostenstellen an der Route festmachen ──────────────────────
+   Grobe Ebenenprojektion mit fester Bezugsbreite. Island liegt
+   zwischen 63° und 67°, der Fehler bleibt damit unter etwa 6 % —
+   für einen Schwellwert von ein paar Kilometern reicht das. */
+const KM_DEG = 111.32, COS_REF = Math.cos(65*Math.PI/180);
+function kmPt(lon,lat){ return [lon*KM_DEG*COS_REF, lat*KM_DEG]; }
+
+function kmDist(lon1,lat1,lon2,lat2){
+  const a=kmPt(lon1,lat1), b=kmPt(lon2,lat2);
+  return Math.hypot(a[0]-b[0], a[1]-b[1]);
+}
+
+/* Abstand eines Punktes zur nächsten Kante eines Streckenzugs */
+function distToPathKm(lon,lat,path){
+  const p = kmPt(lon,lat);
+  let best = Infinity;
+  for(let i=1;i<path.length;i++){
+    const a = kmPt(path[i-1][0], path[i-1][1]);
+    const b = kmPt(path[i][0],   path[i][1]);
+    const vx=b[0]-a[0], vy=b[1]-a[1];
+    const len=vx*vx+vy*vy;
+    let t = len ? ((p[0]-a[0])*vx + (p[1]-a[1])*vy)/len : 0;
+    t = t<0 ? 0 : (t>1 ? 1 : t);
+    const d = Math.hypot(p[0]-(a[0]+vx*t), p[1]-(a[1]+vy*t));
+    if(d<best) best=d;
+  }
+  return best;
+}
+
+/* Wie nah eine Kostenstelle an der Fahrlinie liegen muss, um als
+   „liegt auf dieser Etappe" zu gelten. 6 km fängt Tunnel und
+   straßennahe Parkplätze ein, ohne Ziele zu greifen, für die man
+   erst einen Abstecher fahren muss. */
+const COST_ON_LEG_KM = 6;
+
+function assignCosts(){
+  const paths = LEGS.map((_,i)=>legPath(i));
+  for(const c of COSTS){
+    let best=Infinity, bi=null;
+    for(let i=0;i<paths.length;i++){
+      const d = distToPathKm(c.lon, c.lat, paths[i]);
+      if(d<best){ best=d; bi=i; }
+    }
+    c._dist = best;
+    c._leg  = best<=COST_ON_LEG_KM ? bi : null;
+    /* Sitzt die Gebühr auf einer Sehenswürdigkeit, wird sie als
+       kleine Plakette daneben gezeichnet statt über den Punkt. */
+    c._onPoi = POIS.some(p=>p.name===c.name);
+  }
+}
+assignCosts();
+
+/* Zeichenposition — POI-gebundene Gebühren rücken zur Seite */
+function costScreenPos(c){
+  const s = pt(c.lon, c.lat);
+  if(c._onPoi){ s[0] += 12; s[1] -= 12; }
+  return s;
+}
+
+function costsOfLeg(i){ return COSTS.filter(c=>c._leg===i); }
+
+/* Gehört zu dieser Sehenswürdigkeit eine Gebühr? Zuerst über den
+   Namen — der ist eindeutig —, sonst über die Entfernung. */
+function costFor(p){
+  if(!p) return null;
+  for(const c of COSTS) if(c.name===p.name) return c;
+  let best=null, bd=1.5;
+  for(const c of COSTS){
+    const d = kmDist(c.lon,c.lat,p.lon,p.lat);
+    if(d<bd){ bd=d; best=c; }
+  }
+  return best;
+}
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, ch =>
+    ({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;"}[ch]));
+}
+
+function fmtIsk(n){ return n.toLocaleString("de-DE")+" ISK"; }
+function iskEur(n){ return "≈ "+Math.round(n*ISK_EUR)+" €"; }
+
+/* Kurzform fürs Etappen- und Kartenlabel */
+function costLabel(c){
+  if(c.free)        return "gratis";
+  if(c.isk===null)  return "Preis variiert";
+  return (c.unsure?"ca. ":"")+fmtIsk(c.isk)+(c.per==="person"?" p. P.":"");
+}
+
+const COST_KIND = { maut:"Maut", parken:"Parken", eintritt:"Eintritt", tour:"Tour" };
+
 /* ── Zeichnen ───────────────────────────────────────────────── */
-const layers = { route:1, poi:1, roads:1, labels:1, times:1 };
+const layers = { route:1, poi:1, roads:1, labels:1, times:1, cost:1 };
 
 /* Belegungsraster: verhindert übereinanderliegende Beschriftungen */
 let occupied = [];
@@ -1039,6 +1276,27 @@ function draw(){
       ctx.beginPath(); smooth(ctx, pts);
       ctx.strokeStyle = C.route; ctx.lineWidth = hot ? 3.4 : 2.2; ctx.stroke();
     }
+
+    /* Tunnelröhren: die kostenpflichtige rot überzeichnen, die
+       gebührenfreie gestrichelt grau — damit man auf einen Blick
+       sieht, welche der beiden Röhren wirklich Geld kostet. */
+    if(layers.cost){
+      for(const c of COSTS){
+        if(!c.seg) continue;
+        const a = pt(c.seg[0][0], c.seg[0][1]);
+        const b = pt(c.seg[1][0], c.seg[1][1]);
+        if(!onScreen(a[0],a[1]) && !onScreen(b[0],b[1])) continue;
+        ctx.beginPath(); ctx.moveTo(a[0],a[1]); ctx.lineTo(b[0],b[1]);
+        ctx.strokeStyle = c.free ? C.ink3 : C.pay;
+        ctx.lineWidth = c.free ? 3 : 5;
+        ctx.lineCap = "round";
+        ctx.globalAlpha = c.free ? .55 : .95;
+        if(c.free) ctx.setLineDash([5,4]);
+        ctx.stroke();
+        ctx.setLineDash([]);
+        ctx.globalAlpha = 1;
+      }
+    }
   }
 
   // Beschriftungsflächen zurücksetzen und Marker-Scheiben vorab belegen
@@ -1081,6 +1339,8 @@ function draw(){
       }
     }
   }
+
+  if(layers.cost) drawCosts();
 
   // Grosse Orte zuerst — sie sind die Orientierung und haben Vorrang
   if(layers.labels) drawPlaces("major");
@@ -1619,6 +1879,56 @@ function drawLegBadges(){
   }
 }
 
+/* ── Kostenstellen ──────────────────────────────────────────────
+   Rote Scheibe mit „kr". Gebührenfreie Stellen, die oft für
+   kostenpflichtig gehalten werden, stehen als hohler grauer Ring
+   daneben — sie sollen die rote Warnung nicht verwässern.
+   Ab mittlerer Zoomstufe kommt der Betrag als Plakette dazu. */
+/* Der Betrag erscheint erst, wenn man wirklich in eine Region
+   hineingezoomt hat — in der Islandübersicht bleiben es Punkte,
+   sonst pflastert die Südküste zu. */
+const COST_LABEL_KM = 420;
+
+function drawCosts(){
+  ctx.textAlign="center"; ctx.textBaseline="middle";
+  const showPrice = visibleKm() < COST_LABEL_KM;
+  for(const c of COSTS){
+    const s = costScreenPos(c);
+    if(!onScreen(s[0],s[1])) continue;
+    const hot = (c === hoverCost);
+    const col = c.free ? C.ink3 : C.pay;
+    const R   = (c._onPoi ? 6 : 7.5) + (hot ? 1.5 : 0);
+
+    ctx.beginPath(); ctx.arc(s[0],s[1],R+3.5,0,7);
+    ctx.fillStyle = col; ctx.globalAlpha = hot ? .32 : .16; ctx.fill(); ctx.globalAlpha = 1;
+
+    ctx.beginPath(); ctx.arc(s[0],s[1],R,0,7);
+    ctx.fillStyle   = c.free ? C.surface2 : col;   ctx.fill();
+    ctx.strokeStyle = c.free ? col : C.surface2;   ctx.lineWidth = 1.8; ctx.stroke();
+
+    ctx.font = "700 "+(R>6.8?9:8)+"px "+cssFont("--mono");
+    ctx.fillStyle = c.free ? col : C.onAccent;
+    ctx.fillText("kr", s[0], s[1]+.5);
+    reserve(s[0]-R, s[1]-R, R*2, R*2);
+
+    if(showPrice || hot){
+      const txt = hot ? c.name+" · "+costLabel(c) : costLabel(c);
+      ctx.font = "600 10px "+cssFont("--mono");
+      const w = ctx.measureText(txt).width + 10, h = 16;
+      const x = s[0]+R+5, y = s[1]-h/2;
+      if(hot || free(x,y,w,h,2)){
+        reserve(x,y,w,h);
+        ctx.beginPath();
+        if(ctx.roundRect) ctx.roundRect(x,y,w,h,3); else ctx.rect(x,y,w,h);
+        ctx.fillStyle = c.free ? C.surface2 : col; ctx.fill();
+        if(c.free){ ctx.strokeStyle = C.rule; ctx.lineWidth = 1; ctx.stroke(); }
+        ctx.fillStyle = c.free ? C.ink3 : C.onAccent;
+        ctx.fillText(txt, x+w/2, y+h/2+.5);
+      }
+    }
+  }
+}
+
 function drawStops(){
   ctx.textAlign="center"; ctx.textBaseline="middle";
   STOPS.forEach((st,i)=>{
@@ -1785,11 +2095,33 @@ function pickAt(xy, coarse){
       }
     }
   }
-  if(hit!==hoverStop || ph!==hoverPoi){
-    hoverStop=hit; hoverPoi=ph;
-    cv.style.cursor = (hit!=null||ph) ? "pointer" : (pinMode?"crosshair":"grab");
+  /* Kostenstellen liegen über allem anderen, greifen aber nur,
+     wenn nicht schon eine Unterkunft oder ein Ziel getroffen ist. */
+  let pc=null;
+  if(hit==null && !ph && layers.cost){
+    let bd = coarse ? 20 : 12;
+    for(const c of COSTS){
+      const s = costScreenPos(c);
+      const d = Math.hypot(s[0]-mx, s[1]-my);
+      if(d<bd){ bd=d; pc=c; }
+    }
+  }
+
+  if(hit!==hoverStop || ph!==hoverPoi || pc!==hoverCost){
+    hoverStop=hit; hoverPoi=ph; hoverCost=pc;
+    cv.title = pc ? costTooltip(pc) : "";
+    cv.style.cursor = (hit!=null||ph||pc) ? "pointer" : (pinMode?"crosshair":"grab");
     draw();
   }
+}
+
+/* Volltext fürs Browser-Tooltip — vor allem für die Tunnel, die
+   keinen eigenen Kartenpunkt in POIS haben. */
+function costTooltip(c){
+  const head = COST_KIND[c.kind]+" · "+costLabel(c)
+             + (c.isk ? "  ("+iskEur(c.isk)+")" : "");
+  return [c.name, head, "Zahlung: "+c.pay, c.note, c.alt||""]
+         .filter(Boolean).join("\n");
 }
 function endDrag(e){
   pointers.delete(e.pointerId);
@@ -1896,6 +2228,27 @@ function showCard(p){
   rd.textContent = p.road ? ("Straße "+p.road) : "";
   rd.hidden = !p.road;
 
+  /* Gebühr, falls für dieses Ziel eine hinterlegt ist */
+  const cst     = costFor(p);
+  const payTag  = document.getElementById("cardPay");
+  const payNote = document.getElementById("cardPayNote");
+  if(cst){
+    payTag.hidden    = false;
+    payTag.className = cst.free ? "tag ghost" : "tag pay";
+    payTag.textContent = cst.free ? "gratis" : (COST_KIND[cst.kind]+" "+costLabel(cst));
+
+    payNote.hidden    = false;
+    payNote.className = cst.free ? "cardpay isfree" : "cardpay";
+    payNote.innerHTML =
+      "<b>"+(cst.free ? "Kostenlos" : COST_KIND[cst.kind]+" "+costLabel(cst)
+             + (cst.isk ? " ("+iskEur(cst.isk)+")" : ""))+"</b> · "
+      + esc(cst.pay) + ". " + esc(cst.note)
+      + (cst.alt ? " " + esc(cst.alt) : "");
+  } else {
+    payTag.hidden = true;
+    payNote.hidden = true;
+  }
+
   if(p._img && p._img.complete && p._img.naturalWidth){
     cardPhoto.src = p.img; cardPhoto.hidden = false; cardImg.hidden = true;
   } else {
@@ -1955,7 +2308,7 @@ pinBtn.onclick = ()=>{
   cv.style.cursor = pinMode ? "crosshair" : "grab";
 };
 
-[["lyRoute","route"],["lyPoi","poi"],["lyRoads","roads"],["lyLabels","labels"],["lyTimes","times"]]
+[["lyRoute","route"],["lyPoi","poi"],["lyRoads","roads"],["lyLabels","labels"],["lyTimes","times"],["lyCost","cost"]]
 .forEach(([id,key])=>{
   document.getElementById(id).addEventListener("change", e=>{ layers[key]=e.target.checked?1:0; draw(); });
 });
@@ -2014,8 +2367,13 @@ function renderRail(){
         ${st.tel?`<span>${st.tel}</span>`:""}
         ${st.detail?`<span style="flex:1 1 100%;color:var(--ink-2)">${st.detail}</span>`:""}
       </div>
-      ${pois.length?`<ul class="poilist">${pois.map((p,pi)=>
-        `<li data-poi="${st.id}:${pi}"><span class="pin"></span><span>${p.name}${p.note?` <span class="note">· ${p.note}</span>`:""}</span></li>`).join("")}</ul>`:""}
+      ${pois.length?`<ul class="poilist">${pois.map((p,pi)=>{
+        const c = costFor(p);
+        const chip = c
+          ? `<span class="poiisk${c.free?" isfree":""}" title="${esc(COST_KIND[c.kind])} · ${esc(c.pay)}">${esc(costLabel(c))}</span>`
+          : "";
+        return `<li data-poi="${st.id}:${pi}"><span class="pin"></span><span>${p.name}${chip}${p.note?` <span class="note">· ${p.note}</span>`:""}</span></li>`;
+      }).join("")}</ul>`:""}
     `;
     card.querySelectorAll("[data-poi]").forEach((li,pi)=>{
       li.style.cursor = "pointer";
@@ -2043,6 +2401,14 @@ function renderRail(){
         <span class="via">Straße ${L.road}</span>
         ${L.warn?`<span class="via warn">⚠ ${L.warn}</span>`:""}
         ${L.alt?`<span class="via">${L.alt}</span>`:""}
+        ${costsOfLeg(i).map(c => c.free
+          ? `<span class="via nopay">○ ${esc(c.name)} — ${esc(c.pay)}</span>`
+          : `<span class="via pay">
+               <span class="isk">${esc(costLabel(c))}</span>
+               <span>${esc(COST_KIND[c.kind])} · ${esc(c.name)}<span class="payhow"> — ${esc(c.pay)}${
+                 c.alt ? " · " + esc(c.alt) : ""}</span></span>
+             </span>`
+        ).join("")}
       `;
       wrap.appendChild(leg);
     }
@@ -2055,6 +2421,26 @@ function renderRail(){
   const min = LEGS.reduce((a,l)=>a+l.min,0);
   document.getElementById("totKm").textContent = km.toLocaleString("de-DE")+" km";
   document.getElementById("totHrs").textContent = fmtDur(min);
+
+  /* Gebühren: pro Auto und pro Kopf getrennt, weil sich das nicht
+     sinnvoll addieren lässt, solange die Personenzahl offen ist.
+     Posten ohne festen Preis bleiben draußen und werden nur gezählt. */
+  const paid = COSTS.filter(c=>!c.free);
+  const perCar = paid.filter(c=>c.isk!==null && c.per==="auto")
+                     .reduce((a,c)=>a+c.isk,0);
+  const perHead = paid.filter(c=>c.isk!==null && c.per==="person")
+                      .reduce((a,c)=>a+c.isk,0);
+  const open = paid.filter(c=>c.isk===null).length;
+
+  const el = document.getElementById("totIsk");
+  el.className = "pay";
+  el.textContent = fmtIsk(perCar) + (perHead ? " + "+fmtIsk(perHead)+" p. P." : "");
+  el.title =
+    "Wenn ihr überall haltet, wo etwas kostet:\n"
+    + "· pro Auto  "+fmtIsk(perCar)+"  ("+iskEur(perCar)+")\n"
+    + "· pro Person "+fmtIsk(perHead)+"  ("+iskEur(perHead)+")\n"
+    + (open ? "· dazu "+open+" Posten ohne festen Preis (Blaue Lagune, Gletschertour)\n" : "")
+    + "\nRichtwert, Stand August 2026. Parkgebühren ändern sich in Island fast jede Saison.";
 })();
 
 /* Nicht erreichbare Ziele */

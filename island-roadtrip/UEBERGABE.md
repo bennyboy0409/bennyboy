@@ -18,6 +18,7 @@
 - Weiche Kamera mit Trägheit, Pinch-Zoom, Doppeltipp, Tastatursteuerung
 - Beim Reinzoomen erscheinen Bildkärtchen an jedem Ziel
 - Eigene Punkte per Klick setzbar, Export als Code
+- 16 Kostenstellen rot markiert: Maut, Parkgebühren, Eintritte
 
 ## Fotos — erledigt (8. August 2026)
 
@@ -77,6 +78,73 @@ alle vier mit Foto. Dabei zu beachten:
   im Popup bewusst keine Zeile „Foto: …". Sobald Bene die Quelle nennt, in die
   CSV eintragen und das Skript neu laufen lassen.
 
+## Kostenstellen — neu (12. August 2026)
+
+Überall dort, wo unterwegs Geld fällig wird, steht jetzt ein roter Punkt mit
+„kr". Beim Reinzoomen kommt der Betrag als Plakette dazu; in der Islandübersicht
+bleiben es bewusst nur Punkte, sonst pflastert die Südküste zu.
+
+Das Rot ist ein eigenes Karminrot (`--pay`), **nicht** das Orangerot der Route.
+Beide nebeneinander wären nicht auseinanderzuhalten.
+
+Die Daten stehen in einem Array `COSTS`, ein Eintrag pro Stelle. Wichtig: die
+Zuordnung zur Etappe passiert **automatisch über die Entfernung zur Fahrlinie**
+(`assignCosts`, Schwelle 6 km). Ändert sich die Route, ordnet sich das von
+selbst neu — man muss nichts nachpflegen.
+
+Wo es auftaucht:
+
+| Stelle | Was man sieht |
+|---|---|
+| Karte | roter Punkt, ab ca. 420 km Sichtbreite mit Preis |
+| Karte, Tunnel | die Röhre selbst wird rot überzeichnet |
+| Etappenzeile | rote Zeile mit Preis, Zahlweg und Gratis-Alternative |
+| Zielliste im Tag | kleines rotes Preisschildchen hinter dem Namen |
+| Popup | roter Reiter oben und ein Absatz mit den Details |
+| Kopfzeile | Summe „Gebühren", getrennt nach pro Auto und pro Kopf |
+| Ebenen | Häkchen „Kostenstellen" blendet alles aus |
+
+### Die drei wichtigsten Fakten dahinter
+
+- **Vaðlaheiðargöng ist Islands einzige Maut.** 2.216 ISK, zu zahlen auf
+  `tunnel.is` vorher oder bis 3 h nach der Durchfahrt, Kennzeichenerkennung.
+  Liegt auf eurer Etappe 4 (Hofsós → Aðaldalur). Gratis drumherum: die alte
+  Straße 1 über den Víkurskarð-Pass, kostet ~16 km und ~12 Minuten.
+- **Der Hvalfjörður-Tunnel ist seit 28. September 2018 mautfrei.** Ältere
+  Reiseführer behaupten das Gegenteil. Er liegt auf Etappe 2 und steht deshalb
+  ausdrücklich als grauer, gestrichelter „gratis"-Eintrag drin — damit niemand
+  nach einer Zahlstelle sucht, die es nicht mehr gibt. Dasselbe gilt für den
+  Ostfjord-Tunnel Fáskrúðsfjörður auf Etappe 6.
+- **Parkgebühren liegen fast überall bei 1.000 ISK pro Auto und Tag**, meist
+  über die Parka-App. Þingvellir und Jökulsárlón gehören zu Nationalparks und
+  erlassen einem oft die Hälfte, wenn man am selben Tag schon woanders im Park
+  gezahlt hat.
+
+### Wie belastbar sind die Preise
+
+Stand August 2026, recherchiert über Vermieter- und Tourismusseiten. Einträge,
+bei denen sich die Quellen widersprechen, tragen `unsure:true` und erscheinen
+mit einem „ca." — betrifft Kerið, Reykjadalur, Skógafoss, Sólheimajökull und
+Stokksnes. Zwei Posten haben `isk:null`, weil der Preis vom Anbieter abhängt
+(Blaue Lagune, Gletschertour); sie sind rot markiert, fließen aber nicht in die
+Summe ein.
+
+Zwei Dinge, die man wissen sollte:
+
+- **Bei Skógafoss gibt es neben dem kostenpflichtigen Hauptplatz einen
+  kostenlosen Platz etwas abseits.** Steht als Warnung im Popup.
+- **Stokksnes und Kerið werden pro Kopf verlangt, nicht pro Auto.** Deshalb
+  weist die Kopfzeile zwei getrennte Summen aus — das ließe sich sonst nicht
+  ehrlich addieren, solange die Personenzahl nicht feststeht.
+
+Die Liste ist **nicht vollständig**. Aufgenommen wurde nur, was sich belegen
+ließ; bei Zielen wie Goðafoss, Dettifoss oder Hengifoss war die Quellenlage zu
+dünn, um „gratis" oder „kostet" zu behaupten. Dass dort kein roter Punkt steht,
+heißt also nicht sicher, dass es nichts kostet.
+
+Preise ändern sich in Island fast jede Saison — vor der Abfahrt kurz gegenprüfen
+und in `COSTS` nachziehen.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
@@ -96,6 +164,9 @@ Alles in `karte.html`, ein einziges `<script>`:
 | `const LEGS` | Etappen: Fahrzeit in Minuten, km, Wegpunkte für die Linie |
 | `const POIS` | Sehenswürdigkeiten — hier kommen die Fotos rein |
 | `const NO_GO` | Ziele, die 4x4 oder Hochlandbus brauchen |
+| `const COSTS` | Kostenstellen: Maut, Parken, Eintritt |
+| `assignCosts` | hängt jede Kostenstelle an die nächste Etappe |
+| `drawCosts` | zeichnet die roten Punkte und Preisplaketten |
 | `WIKI_TERMS` | Suchbegriffe fürs Foto-Nachladen |
 | `SCENES` | Die gezeichneten Motive, ein Objekt pro Kategorie |
 | `fetchPhotos` | Ladekette Wikipedia de → en → Commons, mit Winterfilter |
