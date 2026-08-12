@@ -7,6 +7,8 @@
 | `karte.html` | Die Hauptkarte. Eine einzige Datei, komplett eigenständig, kein Build, keine Abhängigkeiten, **kein Internet nötig**. Im Browser öffnen. |
 | `karte-google-maps.html` | Zweitversion mit echtem Satellitenbild und Live-Fahrzeiten von Google. Braucht einen eigenen API-Key, oben im Skript einzutragen. |
 | `fotos-quellen.csv` | Herkunft aller 38 Fotos: Fotograf, Lizenz, Quell-URL. |
+| `source-fotos/` | Die 38 Original-JPEGs. Nicht für den Betrieb der Offline-Karte nötig, aber zum erneuten Zuschneiden oder Austauschen der eingebetteten Bilder. |
+| `tools/embed_fotos.py` | Schneidet Originalfotos auf 640 × 360 zu und bettet sie in `karte.html` ein. |
 
 ## Was `karte.html` kann
 
@@ -51,7 +53,7 @@ kein seitliches Scrollen, alle 38 Bilder dekodieren sauber auf 640×360.
 
 ### Ein Foto austauschen
 
-Neues Bild nach `Downloads` legen, den Dateinamen in `fotos-quellen.csv`
+Neues Bild nach `source-fotos/` legen, den Dateinamen in `fotos-quellen.csv`
 eintragen und dieses Skript laufen lassen — es schneidet zu, kodiert und setzt
 den Eintrag samt Credit neu:
 

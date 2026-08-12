@@ -1070,8 +1070,9 @@ function inv(x,y){
   return [lon,lat];
 }
 function haversine(a,b){ // [lon,lat]
-  const R=6371, dφ=(b[1]-a[1])*D2R, dλ=(b[0]-a[0])*D2R;
-  const h=Math.sin(dφ/2)**2 + Math.cos(a[1]*D2R)*Math.cos(b[1]*D2R)*Math.sin(dλ/2)**2;
+  // ASCII-Namen halten die Karte auch auf Servern ohne expliziten UTF-8-Header lauffähig.
+  const R=6371, dLat=(b[1]-a[1])*D2R, dLon=(b[0]-a[0])*D2R;
+  const h=Math.sin(dLat/2)**2 + Math.cos(a[1]*D2R)*Math.cos(b[1]*D2R)*Math.sin(dLon/2)**2;
   return 2*R*Math.asin(Math.sqrt(h));
 }
 
