@@ -3,9 +3,11 @@
 # der Inhalt aktualisiert sich.
 name: Karte auf GitHub Pages
 
+# Nur main: die github-pages-Umgebung lässt ohnehin nur den
+# Default-Branch deployen, alles andere schlüge dort auf.
 on:
   push:
-    branches: [claude/island-roadtrip-map-ph4aml]
+    branches: [main]
     paths: ['island-roadtrip/**', '.github/workflows/pages.yml']
   workflow_dispatch:
 
