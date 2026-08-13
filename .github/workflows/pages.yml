@@ -43,7 +43,22 @@ jobs:
           GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
         run: |
           test -n "$GOOGLE_MAPS_API_KEY"
-          python -c "from pathlib import Path; import os; p = Path('_site/karte-google-maps.html'); placeholder = 'HIER_DEINEN_KEY_EINSETZEN'; text = p.read_text(encoding='utf-8'); assert placeholder in text, 'Maps-Key-Platzhalter fehlt'; p.write_text(text.replace(placeholder, os.environ['GOOGLE_MAPS_API_KEY']), encoding='utf-8')"
+          # index.html IST die Satellitenkarte — beide Kopien patchen,
+          # sonst liefert die Startseite den Platzhalter aus
+          python - <<'PY'
+          from pathlib import Path
+          import os
+          key = os.environ['GOOGLE_MAPS_API_KEY']
+          placeholder = 'HIER_DEINEN_KEY_EINSETZEN'
+          patched = 0
+          for name in ('index.html', 'karte-google-maps.html'):
+              p = Path('_site')/name
+              text = p.read_text(encoding='utf-8')
+              if placeholder in text:
+                  p.write_text(text.replace(placeholder, key), encoding='utf-8')
+                  patched += 1
+          assert patched == 2, f'Platzhalter nur in {patched} von 2 Dateien gefunden'
+          PY
 
       - name: Pages aktivieren (falls noch nie eingeschaltet)
         uses: actions/configure-pages@v5
