@@ -230,9 +230,14 @@ Technik, komplett offline:
   Reihenfolge „erst Kirkjufell, dann Hraunfossar" erzeugte. Wichtig
   beim Ergänzen weiterer Straßen: Endpunkte exakt auf vorhandene
   Netzknoten legen, das Anheften über Distanz greift nur unter 2,5 km.
-- Das Netz ist generalisiert — die *Reihenfolge* ist verlässlich,
-  einzelne Zeit- und km-Angaben können 10–20 % danebenliegen
-  (Schotterstücke wie die 643 sind eher zu optimistisch gerechnet).
+- **Die Etappenzeiten Hotel→Hotel in `LEGS` sind bewusst fest** —
+  recherchierte Werte aus echter Routenplanung, genauer als der
+  generalisierte Graph. Der Graph rechnet nur den Tagesplaner.
+  Abgleich (13.8.): 6 von 8 Etappen trifft der Graph auf ±12 min;
+  dafür sind `GRAVEL_ZONES` (Strandir-Schotter, 50 km/h) und der
+  Fáskrúðsfjarðargöng in `EXTRA_ROADS` nötig gewesen. Restabweichung
+  ±10–15 % bleibt (Südküste rechnet er ~40 min flotter als die
+  bewusst konservative Etappenangabe).
 - Alte gespeicherte Pläne wurden mit dem Schlüsselwechsel auf
   `island-dayplans-v2` bewusst verworfen (waren mit dem kaputten
   Graphen gerechnet).
