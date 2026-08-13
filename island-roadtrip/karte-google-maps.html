@@ -236,6 +236,35 @@ function initMap(){
 
   render();
   routeAll();
+  watchGps();
+}
+
+/* Eigener Standort: blauer Punkt + Genauigkeitskreis, fragt beim
+   Öffnen automatisch nach der Berechtigung. GPS braucht kein
+   Datennetz — die Karte darunter allerdings schon. */
+function watchGps(){
+  if(!navigator.geolocation) return;
+  let dot=null, ring=null, centered=false;
+  navigator.geolocation.watchPosition(pos=>{
+    const at = {lat:pos.coords.latitude, lng:pos.coords.longitude};
+    if(!dot){
+      dot = new google.maps.Marker({
+        position:at, map, zIndex:200, title:"euer Standort",
+        icon:{ path:google.maps.SymbolPath.CIRCLE, scale:8,
+               fillColor:"#1A73E8", fillOpacity:1,
+               strokeColor:"#ffffff", strokeWeight:2.5 }
+      });
+      ring = new google.maps.Circle({
+        map, center:at, radius:pos.coords.accuracy||0,
+        fillColor:"#1A73E8", fillOpacity:.12,
+        strokeColor:"#1A73E8", strokeOpacity:.4, strokeWeight:1
+      });
+    } else {
+      dot.setPosition(at);
+      ring.setCenter(at); ring.setRadius(pos.coords.accuracy||0);
+    }
+    if(!centered){ centered=true; map.panTo(at); map.setZoom(Math.max(map.getZoom(),9)); }
+  }, ()=>{}, {enableHighAccuracy:true, maximumAge:5000, timeout:20000});
 }
 
 /* Alle Etappen nacheinander bei Google berechnen lassen */
@@ -258,6 +287,14 @@ function routeAll(){
         });
         const leg = res.routes[0].legs[0];
         legData[idx] = { sec:leg.duration.value, m:leg.distance.value, summary:res.routes[0].summary };
+        /* Die Offline-Karte (karte.html) liest das mit und zeigt dann
+           Googles echte Fahrzeiten statt der Schätzwerte. */
+        try{
+          const store = legData.map(l=>l && !l.error
+            ? {min:Math.round(l.sec/60), km:Math.round(l.m/1000)} : null);
+          localStorage.setItem("island-google-legs",
+            JSON.stringify({ts:Date.now(), legs:store}));
+        }catch(e){}
       } else {
         legData[idx] = { error:status };
       }
@@ -353,6 +390,11 @@ window.gm_authFailure = function(){
   const s = document.createElement("script");
   s.src = "https://maps.googleapis.com/maps/api/js?key="+encodeURIComponent(GOOGLE_MAPS_API_KEY)+"&callback=initMap&language=de&region=IS";
   s.async = true;
+  /* Kein Internet (Island, Fjord): automatisch zur Offline-Karte.
+     gm_authFailure (abgelehnter Key) bleibt davon unberührt. */
+  const offline = ()=>location.replace("karte.html");
+  s.onerror = offline;
+  setTimeout(()=>{ if(!window.google || !window.google.maps) offline(); }, 10000);
   document.head.appendChild(s);
 })();
 </script>

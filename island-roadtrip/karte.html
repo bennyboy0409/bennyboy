@@ -400,6 +400,7 @@
     background:var(--surface-2);border:1px solid var(--route-soft);
     padding:.12rem .42rem;border-radius:2px;
   }
+  .leg .drive .gsup{font-size:.55rem;opacity:.7;margin-left:.1rem}
   .leg .km{
     flex:none;white-space:nowrap;
     font-family:var(--mono);font-size:.73rem;color:var(--ink-3);
@@ -3096,6 +3097,11 @@ function selectStop(i){
 function renderRail(){
   const wrap = document.getElementById("itin");
   wrap.innerHTML = "";
+  /* Hat die Satellitenseite (Google) schon echte Fahrzeiten
+     berechnet, stehen sie in localStorage — dann zeigen wir die. */
+  let GL = null;
+  try{ const g = JSON.parse(localStorage.getItem("island-google-legs")||"null");
+       if(g && Array.isArray(g.legs)) GL = g.legs; }catch(e){}
   STOPS.forEach((st,i)=>{
     const card = document.createElement("div");
     card.className = "stop" + (st.kind==="terminus" ? " terminus":"") + (activeStop===i?" active":"");
@@ -3195,9 +3201,10 @@ function renderRail(){
       const L = LEGS[i];
       const leg = document.createElement("div");
       leg.className = "leg";
+      const G = GL && GL[i];
       leg.innerHTML = `
-        <span class="drive">${fmtDur(L.min)}</span>
-        <span class="km">${L.km} km</span>
+        <span class="drive" title="${G ? "echte Google-Fahrzeit (schnellste Route)" : "geplanter Richtwert"}">${fmtDur(G?G.min:L.min)}${G?'<sup class="gsup">G</sup>':""}</span>
+        <span class="km">${G?G.km:L.km} km</span>
         <span class="via">Straße ${L.road}</span>
         ${L.warn?`<span class="via warn">⚠ ${L.warn}</span>`:""}
         ${L.alt?`<span class="via">${L.alt}</span>`:""}
@@ -3216,11 +3223,18 @@ function renderRail(){
 }
 
 /* Summen */
-(function totals(){
-  const km = LEGS.reduce((a,l)=>a+l.km,0);
-  const min = LEGS.reduce((a,l)=>a+l.min,0);
+function updateTotals(){
+  let GL = null;
+  try{ const g = JSON.parse(localStorage.getItem("island-google-legs")||"null");
+       if(g && Array.isArray(g.legs)) GL = g.legs; }catch(e){}
+  const km  = LEGS.reduce((a,l,i)=>a+((GL&&GL[i])?GL[i].km:l.km),0);
+  const min = LEGS.reduce((a,l,i)=>a+((GL&&GL[i])?GL[i].min:l.min),0);
   document.getElementById("totKm").textContent = km.toLocaleString("de-DE")+" km";
-  document.getElementById("totHrs").textContent = fmtDur(min);
+  document.getElementById("totHrs").textContent = fmtDur(min)+(GL?" ᴳ":"");
+}
+
+(function totals(){
+  updateTotals();
 
   /* Gebühren: pro Auto und pro Kopf getrennt, weil sich das nicht
      sinnvoll addieren lässt, solange die Personenzahl offen ist.

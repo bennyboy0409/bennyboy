@@ -1,11 +1,22 @@
 # Island-Roadtrip-Karte — Stand
 
 **Live:** https://bennyboy0409.github.io/bennyboy/ — für jeden ohne Login
-öffenbar. Veröffentlicht per GitHub Pages, aktualisiert sich bei jedem Push
-auf `main` von selbst (Workflow `.github/workflows/pages.yml`); Änderungen
-vom Arbeits-Branch dafür nach `main` mergen. Die Google-Maps-Variante liegt
-unter `/karte-google-maps.html`. Fürs Offline-Nutzen in Island die Seite
-einmal mit Netz öffnen und lokal speichern.
+öffenbar. **Der Einstieg ist seit 13. August die Satellitenkarte** (Google,
+Key kommt beim Deploy aus dem GitHub-Secret); lädt Google nicht (kein
+Internet, Fjord), leitet sie automatisch auf `/karte.html` um — die
+Offline-Karte. Beide sind gegenseitig verlinkt („Satellit ↗" in der
+Ebenen-Box bzw. „← Offline-Karte"). Veröffentlicht per GitHub Pages,
+aktualisiert sich bei jedem Push auf `main` (Workflow
+`.github/workflows/pages.yml`); Änderungen vom Arbeits-Branch dafür nach
+`main` mergen. Fürs Offline-Nutzen in Island `/karte.html` einmal mit Netz
+öffnen und lokal speichern.
+
+**Google-Fahrzeiten überall:** Die Satellitenseite rechnet die acht
+Etappen live über die Directions API und legt sie in localStorage ab
+(`island-google-legs`); die Offline-Karte zeigt dann dieselben Zeiten in
+den Etappenzeilen (kleines „G" samt Tooltip) statt der Richtwerte —
+einmal die Satellitenseite öffnen genügt. Die Satellitenseite fragt beim
+Öffnen automatisch nach dem Standort (blauer Punkt, Genauigkeitskreis).
 
 ## Dateien
 
