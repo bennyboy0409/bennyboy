@@ -35,6 +35,13 @@ jobs:
           cp island-roadtrip/karte.html _site/index.html
           cp island-roadtrip/karte-google-maps.html _site/karte-google-maps.html
 
+      - name: Eingeschraenkten Maps-Schluessel einsetzen
+        env:
+          GOOGLE_MAPS_API_KEY: ${{ secrets.GOOGLE_MAPS_API_KEY }}
+        run: |
+          test -n "$GOOGLE_MAPS_API_KEY"
+          python -c "from pathlib import Path; import os; p = Path('_site/karte-google-maps.html'); placeholder = 'HIER_DEINEN_KEY_EINSETZEN'; text = p.read_text(encoding='utf-8'); assert placeholder in text, 'Maps-Key-Platzhalter fehlt'; p.write_text(text.replace(placeholder, os.environ['GOOGLE_MAPS_API_KEY']), encoding='utf-8')"
+
       - name: Pages aktivieren (falls noch nie eingeschaltet)
         uses: actions/configure-pages@v5
         with:
