@@ -33,6 +33,9 @@ jobs:
         run: |
           mkdir _site
           cp island-roadtrip/karte.html _site/index.html
+          # zusätzlich unter eigenem Namen, damit der "← Offline-Karte"-Link
+          # der Satellitenseite auf Pages UND bei lokalen Dateien funktioniert
+          cp island-roadtrip/karte.html _site/karte.html
           cp island-roadtrip/karte-google-maps.html _site/karte-google-maps.html
 
       - name: Eingeschraenkten Maps-Schluessel einsetzen

@@ -66,6 +66,9 @@
   <h1>Island — Roadtrip</h1>
   <span class="sub">12.–20. August 2026 · 7 Nächte · Satellit</span>
   <span class="tot">Fahrstrecke <b id="totKm">wird berechnet…</b> · Fahrzeit <b id="totHrs">…</b></span>
+  <a href="karte.html" style="margin-left:auto;font-size:.78rem;white-space:nowrap;
+     color:inherit;opacity:.75;text-decoration:none;border:1px solid currentColor;
+     border-radius:3px;padding:.25rem .55rem">← Offline-Karte</a>
 </header>
 
 <div class="shell">
@@ -328,6 +331,7 @@ window.gm_authFailure = function(){
   if(!GOOGLE_MAPS_API_KEY || GOOGLE_MAPS_API_KEY.indexOf("HIER_DEINEN") === 0){
     document.body.innerHTML = `
       <div class="setup">
+        <p><a href="karte.html" style="color:inherit">← zurück zur Offline-Karte</a></p>
         <h2>Kurz einrichten — dann läuft's</h2>
         <ol>
           <li>Auf <code>console.cloud.google.com</code> ein Projekt anlegen.</li>

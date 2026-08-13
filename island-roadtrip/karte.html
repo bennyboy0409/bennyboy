@@ -581,6 +581,8 @@
         <div class="stylerow" role="group" aria-label="Kartenstil">
           <button id="styAtlas" class="active" type="button">Atlas</button>
           <button id="styNatur" type="button">Natur</button>
+          <button id="stySat" type="button"
+            title="Echtes Google-Satellitenbild mit Live-Fahrzeiten — braucht Internet">Satellit ↗</button>
         </div>
       </details>
     </div>
@@ -2601,6 +2603,10 @@ function setMapStyle(s){
 }
 document.getElementById("styAtlas").onclick = ()=>setMapStyle("atlas");
 document.getElementById("styNatur").onclick = ()=>setMapStyle("natur");
+/* Kein Stil, sondern die Schwester-Seite: echtes Satellitenbild mit
+   Live-Fahrzeiten (Google). Liegt im selben Ordner bzw. auf derselben
+   Pages-Seite — funktioniert nur mit Internet. */
+document.getElementById("stySat").onclick = ()=>{ location.href = "karte-google-maps.html"; };
 try{ if(localStorage.getItem(STYLE_KEY)==="natur") setMapStyle("natur"); }catch(e){}
 
 /* ── Vollbild ───────────────────────────────────────────────────
