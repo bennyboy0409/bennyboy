@@ -281,6 +281,16 @@
   .carddrone[hidden]{display:none}
   .carddrone b{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em}
   .cardgeo{margin:.4rem 0 0;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
+  /* Das Foto ist der Star — Notiz, Kosten, Drohne & Koordinaten
+     klappen erst auf Wunsch auf */
+  .cardmore{margin-top:.4rem}
+  .cardmore summary{
+    cursor:pointer;list-style:none;
+    font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--poi);user-select:none;
+  }
+  .cardmore summary::-webkit-details-marker{display:none}
+  .cardmore[open] summary{margin-bottom:.15rem}
 
   /* Foto-Vergrößerung: Tipp aufs Bild im Popup */
   #cardPhoto{cursor:zoom-in}
@@ -622,10 +632,13 @@
         <div class="cardtags"><span class="tag" id="cardAccess"></span><span class="tag ghost" id="cardRoad"></span><span class="tag pay" id="cardPay" hidden></span></div>
         <h3 id="cardName"></h3>
         <p class="cardfact" id="cardFact"></p>
-        <p class="cardnote" id="cardNote"></p>
-        <p class="cardpay" id="cardPayNote" hidden></p>
-        <p class="carddrone" id="cardDrone" hidden></p>
-        <p class="cardgeo" id="cardGeo"></p>
+        <details class="cardmore" id="cardMore">
+          <summary>ℹ️ Mehr Infos</summary>
+          <p class="cardnote" id="cardNote"></p>
+          <p class="cardpay" id="cardPayNote" hidden></p>
+          <p class="carddrone" id="cardDrone" hidden></p>
+          <p class="cardgeo" id="cardGeo"></p>
+        </details>
         <button class="visitbtn" id="cardVisit" type="button">✓ als besucht markieren</button>
       </div>
     </div>
@@ -2724,6 +2737,7 @@ function showCard(p){
   }
 
   syncVisitBtn();
+  document.getElementById("cardMore").open = false;
   card.hidden = false;
   positionCard();
 }

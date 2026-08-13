@@ -335,6 +335,21 @@ eine entsprechende Meldung. Restaurants sind bewusst nicht in der
 Offline-Karte (zu volatil zum Einbetten); Tankstellen schon, weil
 sicherheitsrelevant.
 
+## Popup-Aufräumen + Fotos am Satelliten (14. August 2026, früh)
+
+Das Foto ist wieder der Star: In beiden Karten zeigt das Popup nur noch
+Bild, Name und Kurzfakt — Notiz, Kosten, Drohnen-Ampel und Koordinaten
+klappen erst über „ℹ️ Mehr Infos" auf (frisch geöffnete Popups starten
+zugeklappt).
+
+Die Satellitenseite zeigt jetzt auch Fotos: Der Pages-Deploy schreibt
+die 38 eingebetteten Bilder als `fotos/<slug>.jpg` heraus (Schritt im
+Workflow, Slug = kleingeschrieben, alles außer a–z0–9 wird „-"), das
+Popup lädt sie einzeln nach (~40 KB pro Antippen). Zusatz-Tipps ohne
+Datei versuchen den localStorage-Cache der Offline-Karte (gleiche
+Origin), sonst bleibt das Popup ohne Bild. Lokal geöffnet (ohne
+fotos/-Ordner) verschwindet das Bild sauber per onerror.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und

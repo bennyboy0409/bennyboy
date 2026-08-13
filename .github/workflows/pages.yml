@@ -60,6 +60,29 @@ jobs:
           assert patched == 2, f'Platzhalter nur in {patched} von 2 Dateien gefunden'
           PY
 
+      - name: POI-Fotos als Einzeldateien herausschreiben
+        # Die Satellitenkarte lädt pro Antippen fotos/<slug>.jpg (~40 KB),
+        # statt die 2,2 MB eingebetteten Bilder mitzuschleppen.
+        run: |
+          python - <<'PY'
+          import re, base64, os
+          src = open('_site/karte.html', encoding='utf-8').read()
+          os.makedirs('_site/fotos', exist_ok=True)
+          def slug(name):
+              return re.sub(r'[^a-z0-9]+', '-', name.lower()).strip('-')
+          i0 = src.index('const POIS = [')
+          body = src[i0:src.index('\n];', i0)]
+          n = 0
+          for ch in re.split(r'\{ name:"', body)[1:]:
+              name = ch.split('"', 1)[0]
+              m = re.search(r'img:"data:image/jpeg;base64,([A-Za-z0-9+/=]+)"', ch)
+              if not m: continue
+              open('_site/fotos/'+slug(name)+'.jpg', 'wb').write(base64.b64decode(m.group(1)))
+              n += 1
+          assert n >= 38, f'nur {n} Fotos extrahiert'
+          print(n, 'Fotos')
+          PY
+
       - name: Pages aktivieren (falls noch nie eingeschaltet)
         uses: actions/configure-pages@v5
         with:
