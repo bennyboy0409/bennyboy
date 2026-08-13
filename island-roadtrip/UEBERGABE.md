@@ -319,6 +319,13 @@ Position = Ortsmitte, „ca."). Eigene Ebene „Tankstellen"
 Hinweistext: zwischen Hólmavík und der kleinen Pumpe in Norðurfjörður
 kommt nichts.
 
+**Supermärkte:** Array `SHOPS` (26 Orte, grüne Punkte in derselben
+Ebene „Tanken & Einkaufen"). Bónus/Krónan/Nettó = günstige Ketten
+(Bónus öffnet meist erst 11 Uhr), Dorfläden schließen 18–19 Uhr.
+Hólmavík ist der letzte richtige Einkauf vor Strandir. Auf der
+Satellitenseite gibt es zusätzlich den dritten Live-Knopf
+„🛒 Supermärkte" (Places-Typ `supermarket`).
+
 **Restaurants & Tankstellen live (Satellitenseite):** Zwei Knöpfe über
 der Etappenliste suchen den sichtbaren Kartenausschnitt per Google
 Places ab (Marker mit Name, Adresse, Bewertung, offen/zu). **Dafür muss

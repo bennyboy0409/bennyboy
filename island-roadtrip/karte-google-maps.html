@@ -96,6 +96,7 @@
     <div class="findbar">
       <button id="findFuel" type="button">⛽ Tankstellen</button>
       <button id="findFood" type="button">🍽 Restaurants</button>
+      <button id="findShop" type="button">🛒 Supermärkte</button>
       <span id="findHint"></span>
     </div>
     <h2>Etappen &amp; Übernachtungen</h2>
@@ -298,6 +299,7 @@ function initMap(){
   watchGps();
   document.getElementById("findFuel").onclick = ()=>runFind("fuel");
   document.getElementById("findFood").onclick = ()=>runFind("food");
+  document.getElementById("findShop").onclick = ()=>runFind("shop");
 }
 
 /* Eigener Standort: blauer Punkt + Genauigkeitskreis, fragt beim
@@ -525,14 +527,17 @@ function render(){
    Live über Google Places, immer aktuell (Öffnungszeiten inklusive,
    soweit Google sie kennt). Suche gilt für den sichtbaren Ausschnitt
    — beim Weiterfahren einfach erneut drücken. */
-let findMarkers = { fuel:[], food:[] };
+let findMarkers = { fuel:[], food:[], shop:[] };
+const FIND_BTN = { fuel:"findFuel", food:"findFood", shop:"findShop" };
+const FIND_TYPE = { fuel:"gas_station", food:"restaurant", shop:"supermarket" };
+const FIND_COL  = { fuel:"#F0A32A", food:"#E4572E", shop:"#3E9B5F" };
 function clearFind(kind){
   findMarkers[kind].forEach(m=>m.setMap(null));
   findMarkers[kind]=[];
-  document.getElementById(kind==="fuel"?"findFuel":"findFood").classList.remove("on");
+  document.getElementById(FIND_BTN[kind]).classList.remove("on");
 }
 function runFind(kind){
-  const btn = document.getElementById(kind==="fuel"?"findFuel":"findFood");
+  const btn = document.getElementById(FIND_BTN[kind]);
   const hint = document.getElementById("findHint");
   if(findMarkers[kind].length){ clearFind(kind); hint.textContent=""; return; }
   if(!google.maps.places){
@@ -543,7 +548,7 @@ function runFind(kind){
   const svc = new google.maps.places.PlacesService(map);
   svc.nearbySearch({
     bounds: map.getBounds(),
-    type: kind==="fuel" ? "gas_station" : "restaurant"
+    type: FIND_TYPE[kind]
   }, (results, status)=>{
     if(status !== "OK" || !results){
       hint.textContent = status==="ZERO_RESULTS"
@@ -551,7 +556,7 @@ function runFind(kind){
         : "Suche fehlgeschlagen ("+status+") — ist die Places API aktiviert?";
       return;
     }
-    const col = kind==="fuel" ? "#F0A32A" : "#E4572E";
+    const col = FIND_COL[kind];
     findMarkers[kind] = results.map(r=> {
       const mk = new google.maps.Marker({
         position:r.geometry.location, map, zIndex:80,
