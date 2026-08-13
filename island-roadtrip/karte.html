@@ -277,6 +277,9 @@
   .cardpay b{color:var(--pay)}
   .cardpay.isfree{border-left-color:var(--rule)}
   .cardpay.isfree b{color:var(--ink-3)}
+  .carddrone{margin:.4rem 0 0;font-size:.74rem;color:var(--ink-2);line-height:1.45}
+  .carddrone[hidden]{display:none}
+  .carddrone b{font-family:var(--mono);font-size:.68rem;letter-spacing:.04em}
   .cardgeo{margin:.4rem 0 0;font-family:var(--mono);font-size:.66rem;color:var(--ink-3);font-variant-numeric:tabular-nums}
 
   /* Foto-Vergrößerung: Tipp aufs Bild im Popup */
@@ -579,6 +582,7 @@
         <label><input type="checkbox" id="lyLabels" checked> Ortsnamen</label>
         <label><input type="checkbox" id="lyTimes" checked> Fahrzeiten</label>
         <label><input type="checkbox" id="lyCost" checked> Kostenstellen</label>
+        <label><input type="checkbox" id="lyFuel" checked> Tankstellen</label>
         <div class="stylerow" role="group" aria-label="Kartenstil">
           <button id="styAtlas" class="active" type="button">Atlas</button>
           <button id="styNatur" type="button">Natur</button>
@@ -599,6 +603,7 @@
         <div class="row"><span class="dot" style="background:var(--route)"></span> Übernachtung</div>
         <div class="row"><span class="dot" style="background:var(--poi)"></span> Sehenswürdigkeit</div>
         <div class="row"><span class="dot" style="background:var(--tip)"></span> Zusatz-Tipp (neu dazu)</div>
+        <div class="row"><span class="dot" style="background:#F0A32A"></span> Tankstelle (Ortsmitte, ca.)</div>
         <div class="row"><span class="dot" style="background:var(--pay)"></span> kostet Geld (Maut, Parken, Eintritt)</div>
         <div class="row"><span class="swatch" style="background:var(--road-major)"></span> Hauptstraße</div>
         <div class="row"><span class="dot" style="background:var(--glacier);border:1px solid var(--glacier-edge)"></span> Gletscher</div>
@@ -618,6 +623,7 @@
         <p class="cardfact" id="cardFact"></p>
         <p class="cardnote" id="cardNote"></p>
         <p class="cardpay" id="cardPayNote" hidden></p>
+        <p class="carddrone" id="cardDrone" hidden></p>
         <p class="cardgeo" id="cardGeo"></p>
         <button class="visitbtn" id="cardVisit" type="button">✓ als besucht markieren</button>
       </div>
@@ -655,6 +661,16 @@
       <b>Zu den Bildern:</b> <span id="photoNote">Die 38 Hauptziele tragen fest eingebaute Fotos, die auch offline da sind. Die violetten Zusatz-Tipps laden ihr Foto einmalig von Wikipedia, sobald die Karte mit Internet offen ist, und merken es sich dann dauerhaft. Ein Tipp aufs Foto im Popup zeigt es groß.</span>
       <br><br>
       <b>Zu den Zahlen:</b> Entfernungen und Fahrzeiten sind Richtwerte für Sommer und trockene Straße, ohne Pausen und Fotostopps. Die Etappe nach Norðurfjörður enthält rund 100&nbsp;km Schotterpiste (Straße 643) — dort ist realistisch eher weniger als 60&nbsp;km/h drin.
+      <br><br>
+      <b>Zur Drohne (&lt;250 g mit Kamera):</b> EU-Regeln gelten auch in Island —
+      Betreiber-Registrierung ist wegen der Kamera Pflicht, max. 120 m, Sichtkontakt.
+      Im Popup jedes Ziels steht, ob dort geflogen werden darf. Seit Mai 2026 gibt es
+      in gelisteten Schutzgebieten keine Hobby-Genehmigungen mehr; bis 15. September
+      ist außerdem Brutzeit. Vor dem Start aktuell prüfen: <code>dronamap.is</code>.
+      <br><br>
+      <b>Zu den Tankstellen:</b> Positionen sind die Ortsmitte, nicht die Zapfsäule.
+      Selbstbedienung mit Bankkarte, meist 24 h. Achtung Strandir: zwischen Hólmavík
+      und der kleinen Pumpe in Norðurfjörður kommt nichts — dort vorher volltanken.
       <br><br>
       <b>Zu den Positionen:</b> Die Koordinaten von <i>Hótel Jökulsárlón</i> und <i>Vestra-Fíflholt</i> sind geschätzt (mit „ca.“ markiert) — beide Adressen sind Höfe ohne Hausnummer. Wenn du sie in Google Maps nachschaust, trag die exakten Werte im Array <code>STOPS</code> ein.
     </p>
@@ -1032,6 +1048,105 @@ const NO_GO = [
    Preisstand August 2026. In Island ändern sich die Parkgebühren
    fast jede Saison — vor der Abfahrt kurz gegenprüfen.
    ══════════════════════════════════════════════════════════════ */
+
+/* ══════════════════════════════════════════════════════════════
+   DROHNEN-INFO je Ziel — für eine <250-g-Drohne MIT Kamera.
+   Grundlage (Stand August 2026, Quellen in UEBERGABE.md):
+   - EU-Regeln gelten (EWR): Klasse A1, Betreiber-Registrierung ist
+     wegen der Kamera PFLICHT, max. 120 m, Sichtkontakt.
+   - Seit 17. Mai 2026 gibt es in gelisteten Schutzgebieten KEINE
+     Hobby-Genehmigungen mehr (Gullfoss, Geysir, Goðafoss,
+     Dyrhólaey, Mývatn, Háifoss, Fjallabak …).
+   - Vatnajökull-NP: Skaftafell & Jökulsárgljúfur (Dettifoss,
+     Ásbyrgi) für Freizeitflüge zu; Jökulsárlón nur mit Zeitfenster.
+   - Þingvellir-Kernzone: täglich 9–18 Uhr gesperrt.
+   - 1. Mai – 15. Sept. Brutzeit: viele Vogelfelsen tabu.
+   ok: "ja" | "nein" | "bedingt"  — Details in der Notiz.
+   Vor dem Start immer aktuell prüfen: dronamap.is / nattura.is
+   ══════════════════════════════════════════════════════════════ */
+const DRONE = {
+  "Blaue Lagune":               ["nein","Betreiber verbietet Drohnen auf dem Gelände."],
+  "Gunnuhver":                  ["ja","Abstand zu Dampfschwaden und Besuchern halten."],
+  "Brücke zwischen den Kontinenten":["ja","Nähe Flughafen KEF — unter 120 m bleiben, Flugverkehr beachten."],
+  "Seltún / Krýsuvík":          ["bedingt","liegt im Schutzgebiet Reykjanesfólkvangur — nur mit Rücksicht, Lage vorab prüfen."],
+  "Arnarstapi":                 ["bedingt","Vogelfelsen — in der Brutzeit (bis 15.9.) nicht an der Klippe fliegen."],
+  "Kirkjufell":                 ["ja","beliebtes Motiv, nicht über Menschen am Fotospot."],
+  "Deildartunguhver":           ["ja","Privatgrund des Bades nebenan meiden."],
+  "Hraunfossar":                ["bedingt","Naturdenkmal — Drohnen dort ungern gesehen, Beschilderung beachten."],
+  "Grábrók-Krater":             ["bedingt","Naturdenkmal — Beschilderung vor Ort beachten."],
+  "Djúpavík":                   ["ja","freie Küste, kaum Menschen."],
+  "Kolugljúfur":                ["ja","Vorsicht bei Wind in der Schlucht."],
+  "Hvítserkur":                 ["bedingt","Vogelbrutfelsen — bis 15.9. Abstand zum Felsen halten."],
+  "Glaumbær Torfhöfe":          ["bedingt","Museumsgelände — nicht über Besucher, am besten fragen."],
+  "Schwimmbad Hofsós":          ["nein","Kamera überm Schwimmbad ist tabu (Privatsphäre)."],
+  "Goðafoss":                   ["nein","gelistetes Schutzgebiet — seit Mai 2026 keine Hobby-Genehmigungen mehr."],
+  "Mývatn":                     ["nein","Schutzgebiet Mývatn–Laxá, auf der Verbotsliste."],
+  "Grjótagjá":                  ["nein","gehört zum Schutzgebiet Mývatn."],
+  "Víti-Krater (Krafla)":       ["ja","Kraftwerksanlagen meiden; oft sehr windig."],
+  "Húsavík":                    ["bedingt","über Ort/Hafen nicht über Menschen; kleiner Flugplatz südlich."],
+  "Dettifoss (Westseite)":      ["nein","Jökulsárgljúfur (Vatnajökull-NP) ist für Freizeitflüge gesperrt."],
+  "Selfoss (Wasserfall)":       ["nein","gleiches NP-Gebiet wie Dettifoss."],
+  "Ásbyrgi":                    ["nein","Jökulsárgljúfur (Vatnajökull-NP) ist für Freizeitflüge gesperrt."],
+  "Stuðlagil":                  ["ja","enger Canyon, auf Fallwinde achten."],
+  "Hengifoss":                  ["bedingt","Schutzstatus unklar — Beschilderung am Startpunkt prüfen."],
+  "Rjúkandi":                   ["ja","direkt an der Ringstraße — Abstand zur Straße."],
+  "Seyðisfjörður":              ["bedingt","über dem Ort nicht über Menschen; Fährverkehr beachten."],
+  "Eystrahorn / Hvalnes":       ["ja","freier Strand, meist wenig los."],
+  "Stokksnes / Vestrahorn":     ["ja","Privatgelände — beim Viking Café Bescheid geben."],
+  "Steinasafn Petru":           ["bedingt","privates Gelände im Ort — vorher fragen."],
+  "Jökulsárlón":                ["bedingt","Vatnajökull-NP: nur zu festgelegten Zeitfenstern, Regeln vor Ort/nattura.is prüfen."],
+  "Diamond Beach":              ["bedingt","NP-Randzone — gleiche Zeitfenster-Regeln wie an der Lagune anwenden."],
+  "Fjallsárlón":                ["bedingt","Vatnajökull-NP — wie Jökulsárlón behandeln."],
+  "Vatnajökull — Gletschertour":["nein","Skaftafell-Gebiet ist für Freizeitflüge gesperrt."],
+  "Svartifoss":                 ["nein","Skaftafell (Vatnajökull-NP) ist für Freizeitflüge gesperrt."],
+  "Fjaðrárgljúfur":             ["bedingt","Schutzgebiet mit wechselnden Sperren — Beschilderung zwingend beachten."],
+  "Dyrhólaey":                  ["nein","gelistetes Schutzgebiet + Vogelbrutfelsen — keine Hobby-Genehmigungen."],
+  "Reynisfjara":                ["bedingt","kein formales Verbot bekannt, aber Vogelfelsen (Brutzeit bis 15.9.) und viele Menschen."],
+  "Sólheimajökull":             ["ja","nicht über Gletschergruppen fliegen."],
+  "Kvernufoss":                 ["ja","meist leer — freie Bahn."],
+  "Skógafoss":                  ["ja","nicht über der Menschenmenge am Fuß des Falls."],
+  "Seljalandsfoss":             ["ja","viel Publikum — seitlich ausweichen."],
+  "Gljúfrabúi":                 ["ja","in der Felsspalte selbst zu eng — draußen fliegen."],
+  "Reykjadalur":                ["bedingt","nicht über Badende im Fluss (Kamera/Privatsphäre)."],
+  "Þingvellir":                 ["bedingt","NP-Kernzone täglich 9–18 Uhr gesperrt — nur früh oder abends."],
+  "Geysir / Strokkur":          ["nein","gelistetes Schutzgebiet — keine Hobby-Genehmigungen."],
+  "Gullfoss":                   ["nein","gelistetes Schutzgebiet — keine Hobby-Genehmigungen."],
+  "Kerið Kratersee":            ["bedingt","Privatgelände — am Eingang fragen."],
+  "Brúarfoss":                  ["ja","Rücksicht auf Angler am Fluss."],
+  "Urriðafoss":                 ["ja","freies Feld an der Ringstraße."],
+  "Þjórsárdalur":               ["ja","Achtung: der Háifoss weiter oben ist gelistet und tabu."],
+  "Sigöldugljúfur":             ["bedingt","nahe Fjallabak-Schutzgebiet (gelistet) — Grenze vorab auf dronamap.is prüfen."]
+};
+const DRONE_COLOR = { ja:"#2E8B57", bedingt:"#B45309", nein:"#C81E4A" };
+const DRONE_LABEL = { ja:"erlaubt", bedingt:"eingeschränkt", nein:"verboten" };
+
+/* ══════════════════════════════════════════════════════════════
+   TANKSTELLEN entlang der Route. Positionen = Ortsmitte („ca."),
+   fürs Tankstopp-Planen genau genug. Island tankt Selbstbedienung
+   mit Karte, fast alle Stationen sind 24 h. Zwischen Hólmavík und
+   Norðurfjörður (Strandir) NICHTS verpassen!
+   ══════════════════════════════════════════════════════════════ */
+const FUEL = [
+  {n:"Keflavík",lon:-22.560,lat:63.999},{n:"Grindavík",lon:-22.434,lat:63.842},
+  {n:"Reykjavík (viele)",lon:-21.895,lat:64.135},{n:"Mosfellsbær",lon:-21.700,lat:64.167},
+  {n:"Borgarnes",lon:-21.920,lat:64.539},{n:"Búðardalur",lon:-21.767,lat:65.107},
+  {n:"Hólmavík — letzte große vor Strandir!",lon:-21.671,lat:65.706},
+  {n:"Norðurfjörður (kleine Pumpe)",lon:-21.546,lat:65.955},
+  {n:"Hvammstangi",lon:-20.945,lat:65.396},{n:"Blönduós",lon:-20.280,lat:65.660},
+  {n:"Varmahlíð",lon:-19.447,lat:65.556},{n:"Sauðárkrókur",lon:-19.639,lat:65.746},
+  {n:"Hofsós",lon:-19.410,lat:65.893},{n:"Siglufjörður",lon:-18.910,lat:66.150},
+  {n:"Akureyri",lon:-18.090,lat:65.680},{n:"Húsavík",lon:-17.339,lat:66.045},
+  {n:"Reykjahlíð (Mývatn)",lon:-16.913,lat:65.642},{n:"Egilsstaðir",lon:-14.394,lat:65.263},
+  {n:"Seyðisfjörður",lon:-14.010,lat:65.260},{n:"Reyðarfjörður",lon:-14.210,lat:65.030},
+  {n:"Fáskrúðsfjörður",lon:-14.010,lat:64.930},{n:"Breiðdalsvík",lon:-14.011,lat:64.793},
+  {n:"Djúpivogur",lon:-14.283,lat:64.656},{n:"Höfn",lon:-15.210,lat:64.253},
+  {n:"Freysnes (bei Skaftafell)",lon:-16.906,lat:64.010},
+  {n:"Kirkjubæjarklaustur",lon:-18.060,lat:63.791},{n:"Vík",lon:-19.010,lat:63.420},
+  {n:"Hvolsvöllur",lon:-20.222,lat:63.749},{n:"Hella",lon:-20.400,lat:63.830},
+  {n:"Selfoss",lon:-21.000,lat:63.930},{n:"Hveragerði",lon:-21.190,lat:64.000},
+  {n:"Flúðir",lon:-20.310,lat:64.140},{n:"Laugarvatn",lon:-20.730,lat:64.215}
+];
+
 const ISK_EUR = 0.0068;                 // Richtwert August 2026
 
 const COSTS = [
@@ -1400,7 +1515,7 @@ function costLabel(c){
 const COST_KIND = { maut:"Maut", parken:"Parken", eintritt:"Eintritt", tour:"Tour" };
 
 /* ── Zeichnen ───────────────────────────────────────────────── */
-const layers = { route:1, poi:1, roads:1, labels:1, times:1, cost:1 };
+const layers = { route:1, poi:1, roads:1, labels:1, times:1, cost:1, fuel:1 };
 
 /* Belegungsraster: verhindert übereinanderliegende Beschriftungen */
 let occupied = [];
@@ -1561,6 +1676,7 @@ function draw(){
   }
 
   if(layers.cost) drawCosts();
+  if(layers.fuel) drawFuel();
   drawPlans();
 
   // Grosse Orte zuerst — sie sind die Orientierung und haben Vorrang
@@ -2187,6 +2303,32 @@ function drawCosts(){
   }
 }
 
+/* Tankstellen: kleine bernsteinfarbene Tropfen, Name beim Reinzoomen */
+function drawFuel(){
+  ctx.textAlign="center"; ctx.textBaseline="middle";
+  const showName = visibleKm() < 300;
+  for(const f of FUEL){
+    const s = pt(f.lon, f.lat);
+    if(!onScreen(s[0],s[1])) continue;
+    ctx.beginPath(); ctx.arc(s[0],s[1],5,0,7);
+    ctx.fillStyle = "#F0A32A"; ctx.fill();
+    ctx.strokeStyle = C.surface2; ctx.lineWidth = 1.3; ctx.stroke();
+    ctx.fillStyle = "#3A2A05";
+    ctx.font = "700 7px "+cssFont("--sans");
+    ctx.fillText("⛽", s[0], s[1]+.5);
+    reserve(s[0]-5,s[1]-5,10,10);
+    if(showName){
+      ctx.font = "500 9.5px "+cssFont("--sans");
+      const w = ctx.measureText(f.n).width;
+      if(free(s[0]+7, s[1]-5, w, 11)){
+        reserve(s[0]+7, s[1]-5, w, 11);
+        ctx.fillStyle = C.ink3;
+        halo(f.n, s[0]+7, s[1]);
+      }
+    }
+  }
+}
+
 function drawStops(){
   ctx.textAlign="center"; ctx.textBaseline="middle";
   STOPS.forEach((st,i)=>{
@@ -2486,6 +2628,15 @@ function showCard(p){
   rd.textContent = p.road ? ("Straße "+p.road) : "";
   rd.hidden = !p.road;
 
+  /* Drohnen-Info (<250 g mit Kamera) */
+  const dr = DRONE[p.name];
+  const droneEl = document.getElementById("cardDrone");
+  if(dr){
+    droneEl.hidden = false;
+    droneEl.innerHTML = "🚁 <b style=\"color:"+DRONE_COLOR[dr[0]]+"\">Drohne (&lt;250 g): "
+      + DRONE_LABEL[dr[0]].toUpperCase() + "</b> · " + esc(dr[1]);
+  } else { droneEl.hidden = true; }
+
   /* Gebühr, falls für dieses Ziel eine hinterlegt ist */
   const cst     = costFor(p);
   const payTag  = document.getElementById("cardPay");
@@ -2584,7 +2735,7 @@ pinBtn.onclick = ()=>{
   cv.style.cursor = pinMode ? "crosshair" : "grab";
 };
 
-[["lyRoute","route"],["lyPoi","poi"],["lyRoads","roads"],["lyLabels","labels"],["lyTimes","times"],["lyCost","cost"]]
+[["lyRoute","route"],["lyPoi","poi"],["lyRoads","roads"],["lyLabels","labels"],["lyTimes","times"],["lyCost","cost"],["lyFuel","fuel"]]
 .forEach(([id,key])=>{
   document.getElementById(id).addEventListener("change", e=>{ layers[key]=e.target.checked?1:0; draw(); });
 });

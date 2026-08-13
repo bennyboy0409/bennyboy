@@ -298,6 +298,36 @@ blockiert die Seite selbst fremde Server (CSP), dort bleiben die
 Tipps bei den gezeichneten Motiven — auf der GitHub-Pages-Seite und
 bei der lokalen Datei lädt es.
 
+## Drohne, Tankstellen, Restaurants (13. August 2026, Nacht)
+
+**Drohnen-Info an jedem Ziel** (für <250 g MIT Kamera): Im Popup jeder
+Sehenswürdigkeit (beide Karten) steht farbig ERLAUBT / EINGESCHRÄNKT /
+VERBOTEN plus Begründung. Datenbasis `DRONE` in karte.html, Stand
+August 2026: EU-Regeln gelten (Betreiber-Registrierung wegen Kamera
+Pflicht, 120 m, Sichtkontakt); seit 17. Mai 2026 keine
+Hobby-Genehmigungen mehr in gelisteten Schutzgebieten (Gullfoss,
+Geysir, Goðafoss, Dyrhólaey, Mývatn, Háifoss, Fjallabak …);
+Vatnajökull-NP: Skaftafell/Jökulsárgljúfur zu, Jökulsárlón nur
+Zeitfenster; Þingvellir-Kern 9–18 Uhr zu; Brutzeit bis 15.9.
+Quellen: jvn.photo/drone-flying-in-iceland, icelandplanner.com,
+nattura.is. Einträge mit unklarem Schutzstatus stehen bewusst auf
+„eingeschränkt" mit Prüfauftrag. Vor jedem Start: dronamap.is.
+
+**Tankstellen offline:** Array `FUEL` (34 Orte entlang der Route,
+Position = Ortsmitte, „ca."). Eigene Ebene „Tankstellen"
+(bernsteinfarbene Punkte, Namen beim Reinzoomen). Merksatz im
+Hinweistext: zwischen Hólmavík und der kleinen Pumpe in Norðurfjörður
+kommt nichts.
+
+**Restaurants & Tankstellen live (Satellitenseite):** Zwei Knöpfe über
+der Etappenliste suchen den sichtbaren Kartenausschnitt per Google
+Places ab (Marker mit Name, Adresse, Bewertung, offen/zu). **Dafür muss
+im Google-Projekt die „Places API" aktiviert und in der
+API-Beschränkung des Keys ergänzt werden** — sonst zeigen die Knöpfe
+eine entsprechende Meldung. Restaurants sind bewusst nicht in der
+Offline-Karte (zu volatil zum Einbetten); Tankstellen schon, weil
+sicherheitsrelevant.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
