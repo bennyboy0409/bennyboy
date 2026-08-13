@@ -242,6 +242,37 @@ West-Reihenfolge Lagune → Skaftafell → Fjaðrárgljúfur → Vík → … �
 Seljalandsfoss, 369 km gegen real ~360; Rechenzeit ~0,5 s inklusive
 Graphaufbau.
 
+## Zusatz-Tipps, Lightbox, Foto-Nachladen (13. August 2026)
+
+**13 neue Ziele** entlang der Route, violett markiert (`src:"tipp"`,
+Farbe `--tip`), mit „Tipp"-Chip in der Tagesliste und eigener
+Legendenzeile: Kontinentalbrücke und Seltún (Ankunftstag), Grábrók,
+Kolugljúfur, Schwimmbad Hofsós, Víti/Krafla, Húsavík, Rjúkandi,
+Steinasafn Petru, Fjallsárlón, Kvernufoss, Urriðafoss, Brúarfoss.
+Alle 2WD-tauglich (Kolugljúfur: 6 km Schotter). Petra (Eintritt) und
+Húsavík (Waltour) stehen auch in `COSTS`.
+
+**Lightbox:** Tipp aufs Foto im Popup zeigt es groß über der Karte,
+mit Name und Bildnachweis. Schließen per Tipp oder Esc (Esc schließt
+erst das Großbild, dann das Popup).
+
+**Foto-Nachladen mit Gedächtnis:** `PHOTOS_ON` steht wieder auf
+`true`, greift aber nur für Ziele **ohne** eingebettetes Bild — also
+die neuen Tipps. Die alte Wikipedia-Kette (de → en → Commons,
+Winterfilter) läuft auf dem Gerät des Nutzers; ein geladenes Foto
+wird auf 640×360 zugeschnitten und in localStorage gelegt
+(`cachePhoto`), beim nächsten Start kommt es von dort — einmal mit
+Internet öffnen genügt also, danach ist es offline da. Ohne Internet
+oder ohne Treffer bleibt das gezeichnete Motiv, ohne Fehler.
+
+Ehrlicher Vorbehalt: Der Live-Abruf von Wikipedia ließ sich aus der
+Arbeitsumgebung nicht testen (Netz dorthin gesperrt) — der Code ist
+die früher nachweislich funktionierende Kette plus Cache; Fallback
+und Cache-Pfad sind im Browser durchgetestet. Auf dem claude.ai-Link
+blockiert die Seite selbst fremde Server (CSP), dort bleiben die
+Tipps bei den gezeichneten Motiven — auf der GitHub-Pages-Seite und
+bei der lokalen Datei lädt es.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
