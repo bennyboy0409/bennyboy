@@ -11,6 +11,15 @@ aktualisiert sich bei jedem Push auf `main` (Workflow
 `main` mergen. Fürs Offline-Nutzen in Island `/karte.html` einmal mit Netz
 öffnen und lokal speichern.
 
+**Tagesplaner auch auf der Satellitenseite (13.8., spät):** Jede
+Tageskarte hat dort dieselben Knöpfe wie offline („Besuchsorte
+markieren" → anhaken → „Route berechnen"). Die Reihenfolge optimiert
+Google selbst (`optimizeWaypoints`), die Route liegt in der Tagesfarbe
+mit nummerierten Pins auf dem Satellitenbild, der Ablauf zeigt echte
+Google-Zeiten je Abschnitt. Läuft GPS, startet die Route am eigenen
+Standort. Pläne dort sind bewusst nicht persistent (jede Berechnung
+ist ein API-Aufruf; neu rechnen ist billig und immer aktuell).
+
 **Google-Fahrzeiten überall:** Die Satellitenseite rechnet die acht
 Etappen live über die Directions API und legt sie in localStorage ab
 (`island-google-legs`); die Offline-Karte zeigt dann dieselben Zeiten in

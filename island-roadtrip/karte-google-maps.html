@@ -39,6 +39,18 @@
   .poi li{font-size:.78rem;color:var(--ink2);display:flex;gap:.45rem;align-items:baseline}
   .poi .d{width:7px;height:7px;border-radius:50%;background:var(--poi);flex:none}
   .poi .n{color:var(--ink3);font-size:.72rem}
+  .poi input{accent-color:#b07ce8;margin:0 .1rem 0 0;flex:none}
+  .dpbar{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--rule)}
+  .dpbar button{
+    padding:.3rem .55rem;font-size:.7rem;border:1px solid var(--rule);border-radius:3px;
+    background:var(--panel2);color:var(--ink);cursor:pointer;font-family:inherit;
+  }
+  .ablauf{margin-top:.55rem;padding:.5rem .6rem;border-left:3px solid;border-radius:2px;background:var(--panel2)}
+  .ablauf .t1{font-family:var(--mono);font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;margin-bottom:.35rem}
+  .ablauf ol{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:.22rem}
+  .ablauf li{display:flex;gap:.45rem;align-items:baseline;font-size:.76rem;color:var(--ink2)}
+  .ablauf .tt{flex:none;font-family:var(--mono);font-size:.72rem;font-weight:600;min-width:3.6rem;color:var(--ink);font-variant-numeric:tabular-nums}
+  .ablauf .kk{margin-left:auto;flex:none;font-family:var(--mono);font-size:.64rem;color:var(--ink3)}
   .leg{display:flex;flex-wrap:wrap;align-items:center;gap:.25rem .55rem;padding:.5rem 0 .5rem 1.15rem;position:relative}
   .leg::before{content:"";position:absolute;left:calc(1.15rem - 1px);top:0;bottom:0;width:2px;background:#8a4222}
   .leg .drive{font-family:var(--mono);font-size:.82rem;font-weight:600;color:var(--route);
@@ -276,11 +288,13 @@ function initMap(){
 /* Eigener Standort: blauer Punkt + Genauigkeitskreis, fragt beim
    Öffnen automatisch nach der Berechtigung. GPS braucht kein
    Datennetz — die Karte darunter allerdings schon. */
+let lastGps = null;   // Startpunkt für Tagesrouten, wenn GPS läuft
 function watchGps(){
   if(!navigator.geolocation) return;
   let dot=null, ring=null, centered=false;
   navigator.geolocation.watchPosition(pos=>{
     const at = {lat:pos.coords.latitude, lng:pos.coords.longitude};
+    lastGps = at;
     if(!dot){
       dot = new google.maps.Marker({
         position:at, map, zIndex:200, title:"euer Standort",
@@ -347,6 +361,83 @@ function totals(){
   document.getElementById("totHrs").textContent = fmt(sec);
 }
 
+/* ── Tagesplaner (Google-Variante) ─────────────────────────────
+   Wie in der Offline-Karte: Ziele des Tages anhaken, Google findet
+   die schnellste Reihenfolge selbst (optimizeWaypoints) und liefert
+   echte Fahrzeiten je Abschnitt. Läuft GPS, startet die Route dort. */
+const DAY_COLORS = ["#7C3AED","#0EA5E9","#D97706","#DB2777","#059669","#B45309","#2563EB","#65A30D"];
+let dpMark = {}, dpSel = {}, dayPlans = {};
+
+function dpUI(i, pois){
+  if(i >= STOPS.length-1 || !pois.length) return "";
+  const plan = dayPlans[i], col = DAY_COLORS[i%DAY_COLORS.length];
+  let out = (plan && plan.html && !dpMark[i]) ? plan.html : "";
+  out += `<div class="dpbar">` + (dpMark[i]
+    ? `<button data-dp="go" style="background:${col};border-color:${col};color:#fff">✓ Route berechnen</button>
+       <button data-dp="cancel">abbrechen</button>`
+    : (plan
+        ? `<button data-dp="mark">✎ Besuchsorte ändern</button>
+           <button data-dp="clear">✕ Route entfernen</button>`
+        : `<button data-dp="mark">✦ Besuchsorte markieren</button>`)) + `</div>`;
+  return out;
+}
+
+function dpClear(i){
+  const p = dayPlans[i];
+  if(p){
+    if(p.renderer) p.renderer.setMap(null);
+    (p.markers||[]).forEach(m=>m.setMap(null));
+  }
+  delete dayPlans[i];
+}
+
+function computeDayRoute(i, chosen){
+  const a = STOPS[i], b = STOPS[i+1], col = DAY_COLORS[i%DAY_COLORS.length];
+  new google.maps.DirectionsService().route({
+    origin: lastGps ? lastGps : {lat:a.lat, lng:a.lon},
+    destination: {lat:b.lat, lng:b.lon},
+    waypoints: chosen.map(p=>({location:{lat:p.lat, lng:p.lon}, stopover:true})),
+    optimizeWaypoints: true,
+    travelMode: google.maps.TravelMode.DRIVING,
+    avoidFerries: true
+  }, (res, status)=>{
+    dpMark[i] = false;
+    if(status !== "OK"){
+      dayPlans[i] = { html:`<div class="ablauf" style="border-color:${col}">
+        <div class="t1" style="color:${col}">Route fehlgeschlagen (${status}) — nochmal versuchen</div></div>` };
+      render(); return;
+    }
+    dpClear(i);
+    const route = res.routes[0];
+    const renderer = new google.maps.DirectionsRenderer({
+      map, directions:res, suppressMarkers:true, preserveViewport:false,
+      polylineOptions:{ strokeColor:col, strokeWeight:5, strokeOpacity:.95 }
+    });
+    const order = route.waypoint_order;
+    const markers = order.map((oi,rank)=> new google.maps.Marker({
+      position:{lat:chosen[oi].lat, lng:chosen[oi].lon}, map, zIndex:150,
+      icon: pinSvg(rank+1, col), title: chosen[oi].name
+    }));
+    let tot=0, totm=0;
+    const rows = route.legs.map((L,r)=>{
+      tot += L.duration.value; totm += L.distance.value;
+      const target = r < order.length
+        ? chosen[order[r]].name
+        : (b.kind==="terminus" ? "✈ " : "🛏 ") + b.name;
+      return `<li><span class="tt">${fmt(L.duration.value)}</span><span>${target}</span>
+              <span class="kk">${Math.round(L.distance.value/1000)} km</span></li>`;
+    });
+    dayPlans[i] = { renderer, markers, sel: chosen.map(p=>p.name), html:
+      `<div class="ablauf" style="border-color:${col}">
+         <div class="t1" style="color:${col}">Ablauf — insgesamt ${fmt(tot)} Fahrt · ${Math.round(totm/1000)} km</div>
+         <div style="font-size:.7rem;color:var(--ink3);margin-bottom:.3rem">
+           ab ${lastGps ? "eurem Standort (GPS)" : a.name} · echte Google-Zeiten, ohne Stopps</div>
+         <ol>${rows.join("")}</ol>
+       </div>` };
+    render();
+  });
+}
+
 function render(){
   const wrap = document.getElementById("itin");
   wrap.innerHTML = "";
@@ -362,13 +453,40 @@ function render(){
       <h3>${s.name}</h3>
       <p>${s.addr}</p>
       ${s.detail?`<p style="margin-top:.25rem;color:var(--ink3);font-size:.75rem">${s.detail}</p>`:""}
-      ${pois.length?`<ul class="poi">${pois.map(p=>
-        `<li><span class="d"${p.src==="tipp"?' style="background:#b07ce8"':""}></span><span>${p.name}${p.note?` <span class="n">· ${p.note}</span>`:""}</span></li>`).join("")}</ul>`:""}
+      ${pois.length?`<ul class="poi">${pois.map((p,pi)=>
+        `<li>${dpMark[i]?`<input type="checkbox" data-i="${pi}" ${dpSel[i]&&dpSel[i].has(p.name)?"checked":""}>`:""}<span class="d"${p.src==="tipp"?' style="background:#b07ce8"':""}></span><span>${p.name}${p.note?` <span class="n">· ${p.note}</span>`:""}</span></li>`).join("")}</ul>`:""}
+      ${dpUI(i, pois)}
     `;
     card.addEventListener("click", ()=>{
       map.panTo({lat:s.lat, lng:s.lon});
       map.setZoom(11);
       if(s._marker) google.maps.event.trigger(s._marker, "click");
+    });
+    /* Tagesplaner-Knöpfe und Häkchen dürfen den Karten-Sprung nicht auslösen */
+    card.querySelectorAll("[data-dp]").forEach(btn=>{
+      btn.addEventListener("click", ev=>{
+        ev.stopPropagation();
+        const act = btn.dataset.dp;
+        if(act==="mark"){
+          dpSel[i] = new Set(dayPlans[i] && dayPlans[i].sel ? dayPlans[i].sel : pois.map(p=>p.name));
+          dpMark[i] = true; render();
+        }
+        else if(act==="cancel"){ dpMark[i] = false; render(); }
+        else if(act==="clear"){ dpClear(i); render(); }
+        else if(act==="go"){
+          const chosen = pois.filter(p=>dpSel[i].has(p.name));
+          if(!chosen.length){ dpMark[i]=false; render(); return; }
+          btn.textContent = "rechnet …";
+          computeDayRoute(i, chosen);
+        }
+      });
+    });
+    card.querySelectorAll(".poi input").forEach(box=>{
+      box.addEventListener("click", ev=>{
+        ev.stopPropagation();
+        const p = pois[+box.dataset.i];
+        if(box.checked) dpSel[i].add(p.name); else dpSel[i].delete(p.name);
+      });
     });
     wrap.appendChild(card);
 
