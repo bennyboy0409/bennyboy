@@ -142,29 +142,62 @@ const STOPS = [
       day = id der Unterkunft, von der aus ihr hinfahrt.
    ════════════════════════════════════════════════════════════════ */
 const POIS = [
-  { name:"Blaue Lagune",        lat:63.8804, lon:-22.4495, day:"kef-in",    note:"5 km von KEF" },
-  { name:"Þingvellir",          lat:64.2559, lon:-21.1300, day:"rvk",       note:"Golden Circle" },
-  { name:"Geysir / Strokkur",   lat:64.3104, lon:-20.3024, day:"rvk",       note:"Golden Circle" },
-  { name:"Gullfoss",            lat:64.3271, lon:-20.1199, day:"rvk",       note:"Golden Circle" },
-  { name:"Deildartunguhver",    lat:64.6630, lon:-21.4110, day:"rvk",       note:"an der Route" },
-  { name:"Hraunfossar",         lat:64.7025, lon:-20.9789, day:"rvk",       note:"25 km Umweg ab Borgarnes" },
-  { name:"Djúpavík",            lat:65.9200, lon:-21.5600, day:"nordur",    note:"an der 643" },
-  { name:"Hvítserkur",          lat:65.6060, lon:-20.6390, day:"nordur",    note:"Umweg über Vatnsnes" },
-  { name:"Glaumbær Torfhöfe",   lat:65.6100, lon:-19.5000, day:"hofsos",    note:"an der 75" },
-  { name:"Goðafoss",            lat:65.6828, lon:-17.5500, day:"hofsos",    note:"an der Route 1" },
-  { name:"Mývatn / Reykjahlíð", lat:65.6417, lon:-16.9128, day:"adaldalur", note:"Naturbäder, Krater" },
-  { name:"Dettifoss",           lat:65.8145, lon:-16.3846, day:"adaldalur", note:"30 km Umweg" },
-  { name:"Ásbyrgi",             lat:66.0200, lon:-16.5100, day:"adaldalur", note:"nördlicher Umweg" },
-  { name:"Seyðisfjörður",       lat:65.2600, lon:-14.0100, day:"reydar",    note:"27 km ab Egilsstaðir" },
-  { name:"Jökulsárlón",         lat:64.0784, lon:-16.2306, day:"jokul",     note:"Gletscherlagune" },
-  { name:"Diamond Beach",       lat:64.0430, lon:-16.1780, day:"jokul",     note:"gegenüber der Lagune" },
-  { name:"Skaftafell",          lat:64.0160, lon:-16.9750, day:"jokul",     note:"Svartifoss" },
-  { name:"Fjaðrárgljúfur",      lat:63.7710, lon:-18.1720, day:"jokul",     note:"bei Kirkjubæjarklaustur" },
-  { name:"Reynisfjara",         lat:63.4030, lon:-19.0450, day:"jokul",     note:"schwarzer Strand, Vík" },
-  { name:"Skógafoss",           lat:63.5321, lon:-19.5114, day:"jokul",     note:"an der Route 1" },
-  { name:"Seljalandsfoss",      lat:63.6156, lon:-19.9930, day:"fiflholt",  note:"15 km ab Hvolsvöllur" },
-  { name:"Kerið Kratersee",     lat:64.0410, lon:-20.8850, day:"fiflholt",  note:"auf dem Weg nach KEF" }
+  /* Automatisch aus karte.html übernommen (13.8.) — gleiche 51 Ziele
+     wie die Offline-Karte, nur ohne die eingebetteten Fotos.
+     src:"tipp" = nachträglich ergänzter Zusatz-Tipp (violett). */
+  {"name":"Blaue Lagune","lat":63.8804,"lon":-22.4495,"day":"kef-in","note":"5 km von KEF — nur mit Zeitfenster-Buchung"},
+  {"name":"Gunnuhver","lat":63.8186,"lon":-22.6836,"day":"kef-in","note":"20 km ab KEF, Holzstege durchs Dampffeld — gut mit der Blauen Lagune zu verbinden"},
+  {"name":"Arnarstapi","lat":64.768,"lon":-23.622,"day":"rvk","note":"⚠ Snæfellsnes — 4 h Umweg, liegt nicht an eurer Route"},
+  {"name":"Kirkjufell","lat":64.9276,"lon":-23.3068,"day":"rvk","note":"⚠ Snæfellsnes — Nordseite, mit Arnarstapi an einem Tag machbar, liegt aber nicht an eurer Route"},
+  {"name":"Deildartunguhver","lat":64.663,"lon":-21.411,"day":"rvk","note":"ergiebigste heiße Quelle Europas, an der Route"},
+  {"name":"Hraunfossar","lat":64.7025,"lon":-20.9789,"day":"rvk","note":"25 km Umweg ab Borgarnes"},
+  {"name":"Djúpavík","lat":65.92,"lon":-21.56,"day":"nordur","note":"direkt an der Schotterpiste, 5 km vor der Unterkunft"},
+  {"name":"Hvítserkur","lat":65.606,"lon":-20.639,"day":"nordur","note":"Umweg über die Vatnsnes-Halbinsel, ca. 1 h"},
+  {"name":"Glaumbær Torfhöfe","lat":65.61,"lon":-19.5,"day":"hofsos","note":"direkt an der 75"},
+  {"name":"Goðafoss","lat":65.6828,"lon":-17.55,"day":"hofsos","note":"Parkplatz direkt an der Ringstraße"},
+  {"name":"Mývatn","lat":65.6,"lon":-17,"day":"adaldalur","note":"Naturbäder, Dimmuborgir, Hverir"},
+  {"name":"Grjótagjá","lat":65.626,"lon":-16.883,"day":"adaldalur","note":"Lavahöhle mit heißer Quelle — Baden verboten, nur anschauen"},
+  {"name":"Dettifoss (Westseite)","lat":65.8145,"lon":-16.3846,"day":"adaldalur","note":"Westseite über die asphaltierte 862 — die Ostseite (864) ist grober Schotter"},
+  {"name":"Selfoss (Wasserfall)","lat":65.806,"lon":-16.386,"day":"adaldalur","note":"1 km flussaufwärts von Dettifoss, gleicher Parkplatz"},
+  {"name":"Ásbyrgi","lat":66.02,"lon":-16.51,"day":"adaldalur","note":"nördlicher Umweg, ca. 1,5 h"},
+  {"name":"Stuðlagil","lat":65.147,"lon":-15.32,"day":"adaldalur","note":"ca. 14 km gute Schotterstrecke; Ostseite = kurzer Weg zum Aussichtspunkt"},
+  {"name":"Hengifoss","lat":65.077,"lon":-14.885,"day":"adaldalur","note":"rote Tonschichten im Fels; 2,5 km Aufstieg, ca. 1,5 h hin und zurück"},
+  {"name":"Seyðisfjörður","lat":65.26,"lon":-14.01,"day":"reydar","note":"27 km ab Egilsstaðir über den Pass"},
+  {"name":"Eystrahorn / Hvalnes","lat":64.402,"lon":-14.565,"day":"reydar","note":"schwarzer Strand direkt an der Ringstraße"},
+  {"name":"Stokksnes / Vestrahorn","lat":64.247,"lon":-14.995,"day":"reydar","note":"Privatgelände, Eintritt ca. 900 ISK im Viking Café"},
+  {"name":"Jökulsárlón","lat":64.0784,"lon":-16.2306,"day":"jokul","note":"direkt an der Ringstraße"},
+  {"name":"Diamond Beach","lat":64.043,"lon":-16.178,"day":"jokul","note":"gegenüber der Lagune"},
+  {"name":"Vatnajökull — Gletschertour","lat":64.016,"lon":-16.975,"day":"jokul","note":"geführte Wanderung auf dem Falljökull/Svínafellsjökull, 3–5 h — vorher buchen"},
+  {"name":"Svartifoss","lat":64.0277,"lon":-16.975,"day":"jokul","note":"45 Min. Aufstieg ab Skaftafell-Besucherzentrum"},
+  {"name":"Fjaðrárgljúfur","lat":63.771,"lon":-18.172,"day":"jokul","note":"2 km Schotter ab der Ringstraße"},
+  {"name":"Dyrhólaey","lat":63.4025,"lon":-19.1275,"day":"jokul","note":"Benes Favorit (!!!). Obere Straße steil, im August offen und 2WD-tauglich"},
+  {"name":"Reynisfjara","lat":63.403,"lon":-19.045,"day":"jokul","note":"⚠ Grundbrecher — nie mit dem Rücken zum Meer, nie ans Wasser"},
+  {"name":"Sólheimajökull","lat":63.529,"lon":-19.369,"day":"jokul","note":"3 km Schotter, dann 15 Min. Fußweg zur Eiskante"},
+  {"name":"Skógafoss","lat":63.5321,"lon":-19.5114,"day":"jokul","note":"527 Stufen auf die Kante"},
+  {"name":"Seljalandsfoss","lat":63.6156,"lon":-19.993,"day":"jokul","note":"Regenjacke mitnehmen, man wird nass"},
+  {"name":"Gljúfrabúi","lat":63.6208,"lon":-20.0006,"day":"jokul","note":"das „dahinter\" von deinem Zettel — 600 m nördlich von Seljalandsfoss, durch den Bach hinein"},
+  {"name":"Reykjadalur","lat":64.033,"lon":-21.205,"day":"fiflholt","note":"der „warme Bach\" — 3 km Aufstieg ab Parkplatz, ca. 1 h"},
+  {"name":"Þingvellir","lat":64.2559,"lon":-21.13,"day":"fiflholt","note":"Parkgebühr 1000 ISK"},
+  {"name":"Geysir / Strokkur","lat":64.3104,"lon":-20.3024,"day":"fiflholt","note":"Strokkur ist der aktive — der große Geysir schläft"},
+  {"name":"Gullfoss","lat":64.3271,"lon":-20.1199,"day":"fiflholt","note":"Golden Circle"},
+  {"name":"Þjórsárdalur","lat":64.1094,"lon":-19.8461,"day":"fiflholt","note":"Hjálparfoss liegt an der asphaltierten 32. Háifoss weiter oben braucht die grobe 332 — mit dem Yaris heikel"},
+  {"name":"Sigöldugljúfur","lat":64.1728,"lon":-19.1358,"day":"fiflholt","note":"⚠ die letzten 2 km sind F208 — keine Furt, aber F-Straßen sind im Mietvertrag verboten, dort greift die Versicherung nicht"},
+  {"name":"Kerið Kratersee","lat":64.041,"lon":-20.885,"day":"fiflholt","note":"Eintritt 600 ISK, auf dem Weg nach KEF"},
+  {"name":"Brücke zwischen den Kontinenten","lat":63.8683,"lon":-22.6755,"day":"kef-in","note":"5 Minuten ab KEF — Europa auf der einen, Amerika auf der anderen Seite","src":"tipp"},
+  {"name":"Seltún / Krýsuvík","lat":63.8965,"lon":-22.0565,"day":"kef-in","note":"buntes Geothermalfeld, deutlich ruhiger als Geysir","src":"tipp"},
+  {"name":"Grábrók-Krater","lat":64.7708,"lon":-21.5324,"day":"rvk","note":"direkt an der Ringstraße bei Bifröst — 30-Minuten-Stopp am Weg nach Norden","src":"tipp"},
+  {"name":"Kolugljúfur","lat":65.3369,"lon":-20.5633,"day":"nordur","note":"6 km ab der Ringstraße, kurzes Schotterstück — Sage der Riesin Kola","src":"tipp"},
+  {"name":"Schwimmbad Hofsós","lat":65.8926,"lon":-19.4083,"day":"hofsos","note":"eines der schönsten Bäder Islands, 200 m von eurer Unterkunft — Badehose bereithalten","src":"tipp"},
+  {"name":"Víti-Krater (Krafla)","lat":65.7171,"lon":-16.7561,"day":"adaldalur","note":"asphaltierte Stichstraße durchs Krafla-Gebiet, nahe Mývatn","src":"tipp"},
+  {"name":"Húsavík","lat":66.0449,"lon":-17.3389,"day":"adaldalur","note":"Buckelwale fast garantiert; Touren 3 h, vorher buchen","src":"tipp"},
+  {"name":"Rjúkandi","lat":65.348,"lon":-15.426,"day":"adaldalur","note":"Parkplatz direkt an der Ringstraße im Jökuldalur — 10-Minuten-Stopp","src":"tipp"},
+  {"name":"Steinasafn Petru","lat":64.8331,"lon":-13.879,"day":"reydar","note":"Lebenswerk der Petra Sveinsdóttir in Stöðvarfjörður, liegt an eurer 96","src":"tipp"},
+  {"name":"Fjallsárlón","lat":64.0157,"lon":-16.3796,"day":"jokul","note":"10 Minuten vor Jökulsárlón, viel ruhiger — Gletscherfront zum Greifen nah","src":"tipp"},
+  {"name":"Kvernufoss","lat":63.5265,"lon":-19.4786,"day":"jokul","note":"Geheimtipp 10 Gehminuten hinterm Skógar-Museum — die meisten übersehen ihn","src":"tipp"},
+  {"name":"Urriðafoss","lat":63.9166,"lon":-20.6803,"day":"fiflholt","note":"nur 1 km ab der Ringstraße kurz vor Selfoss — perfekter letzter Wasserfall","src":"tipp"},
+  {"name":"Brúarfoss","lat":64.2645,"lon":-20.5169,"day":"fiflholt","note":"seit 2023 eigener Parkplatz an der 37, kurzer Fußweg — passt zwischen Geysir und Þingvellir","src":"tipp"}
 ];
+
 
 /* ════════════════════════════════════════════════════════════════
    Karte + Live-Routing
@@ -225,7 +258,8 @@ function initMap(){
     const mk = new google.maps.Marker({
       position:{lat:p.lat, lng:p.lon}, map, title:p.name,
       icon:{ path:google.maps.SymbolPath.CIRCLE, scale:6,
-             fillColor:"#35b8c4", fillOpacity:1, strokeColor:"#ffffff", strokeWeight:2 },
+             fillColor: p.src==="tipp" ? "#b07ce8" : "#35b8c4",
+             fillOpacity:1, strokeColor:"#ffffff", strokeWeight:2 },
       zIndex: 50
     });
     mk.addListener("click", ()=>{
@@ -329,7 +363,7 @@ function render(){
       <p>${s.addr}</p>
       ${s.detail?`<p style="margin-top:.25rem;color:var(--ink3);font-size:.75rem">${s.detail}</p>`:""}
       ${pois.length?`<ul class="poi">${pois.map(p=>
-        `<li><span class="d"></span><span>${p.name}${p.note?` <span class="n">· ${p.note}</span>`:""}</span></li>`).join("")}</ul>`:""}
+        `<li><span class="d"${p.src==="tipp"?' style="background:#b07ce8"':""}></span><span>${p.name}${p.note?` <span class="n">· ${p.note}</span>`:""}</span></li>`).join("")}</ul>`:""}
     `;
     card.addEventListener("click", ()=>{
       map.panTo({lat:s.lat, lng:s.lon});
