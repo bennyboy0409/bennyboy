@@ -217,11 +217,25 @@ Technik, komplett offline:
   Distanzmatrix samt Pfadgeometrie fürs Zeichnen.
 - Die Reihenfolge (Start fest, Ende fest) löst `tspOrder` exakt per
   Bitmasken-DP bis 13 Ziele, darüber Greedy mit 2-Opt.
+- **Optimiert wird nach Fahrzeit, nicht nach Kilometern** (13. August):
+  Hauptstraßen 88 km/h, Nebenstraßen 68, Anfahrt abseits des Netzes 40.
+  Damit bevorzugt der Planer die Strecke, die man wirklich fahren würde.
 - Anfahrt vom Punkt zum Netz zählt als Luftlinie ×1,3; sind zwei Punkte
   im Netz nicht verbunden, fällt das Paar auf Luftlinie ×1,35 zurück.
-- Zeitschätzung: 62 km/h Schnitt, ausgewiesen als „grob geschätzt".
-  Das Netz ist generalisiert — die *Reihenfolge* ist verlässlich,
-  einzelne km-Angaben können 10–20 % danebenliegen.
+- **`EXTRA_ROADS`**: zwei Straßen, die im Natural-Earth-Netz fehlen und
+  die Optimierung nachweislich verfälscht haben — die Vatnaleið (56)
+  über Snæfellsnes und der 5-km-Anschluss der Skógarströnd (54) an
+  die 60. Ohne letzteren wurde alles von Snæfellsnes nach Norden über
+  Borgarnes zurückgeschickt (~80 km Umweg), was am Tag 2 die falsche
+  Reihenfolge „erst Kirkjufell, dann Hraunfossar" erzeugte. Wichtig
+  beim Ergänzen weiterer Straßen: Endpunkte exakt auf vorhandene
+  Netzknoten legen, das Anheften über Distanz greift nur unter 2,5 km.
+- Das Netz ist generalisiert — die *Reihenfolge* ist verlässlich,
+  einzelne Zeit- und km-Angaben können 10–20 % danebenliegen
+  (Schotterstücke wie die 643 sind eher zu optimistisch gerechnet).
+- Alte gespeicherte Pläne wurden mit dem Schlüsselwechsel auf
+  `island-dayplans-v2` bewusst verworfen (waren mit dem kaputten
+  Graphen gerechnet).
 
 Stichprobe geprüft: Südküsten-Tag (11 Ziele) ergibt exakt die richtige
 West-Reihenfolge Lagune → Skaftafell → Fjaðrárgljúfur → Vík → … →
