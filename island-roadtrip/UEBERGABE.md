@@ -416,7 +416,28 @@ wie ein Ort aussieht. Zwei Dinge:
    Einträge der Satellitenkarte jetzt das `wiki`-Feld (28 Stück,
    Sync-Skript-Logik wie gehabt: karte.html ist die Quelle).
 
-## Nord-Tour auf Tag 3 → 4 verlegt (15. August 2026, unterwegs)
+## Tag-3-Tour umgebaut: Ziel Húsavík (15. August 2026, mittags — AKTUELL)
+
+Benedek hat unterwegs umgeplant. Die heutige Tour ist jetzt:
+**Goðafoss + Aldeyjarfoss + Hverir/Námaskarð + Dimmuborgir + Hverfjall
++ Skútustaðagígar, Ziel Húsavík** (nicht die Unterkunft!). Engine-
+Schätzung ab Frændgarður: **5:12 h, ~394 km** — Reihenfolge
+Aldeyjarfoss → Goðafoss → Skútustaðagígar → Dimmuborgir → Hverfjall →
+Hverir → Húsavík. Mývatn-See/Dettifoss/Ásbyrgi/Grjótagjá/Víti/Selfoss
+sind **zurück auf Tag 4 → 5** (ab morgen machbar); Múlagljúfur war
+schon als Tipp bei Tag 6 (Südküste) drin — Benedek hatte ihn für heute
+gelistet, liegt aber ~400 km entfernt beim Fjallsárlón.
+
+Technik: `computeDayPlan(i, chosen, endOv)` bzw.
+`computeDayRoute(i, chosen, endOv)` können jetzt ein vom nächsten
+Hotel abweichendes Tagesziel (`kind:"via"`, Anzeige 📍) bekommen —
+genutzt vom Preset (`PRESET_END` = Húsavík). Migration erweitert:
+`OLD_PRESETS`-Liste, unveränderte alte Auto-Vorschläge auf Tag 3 UND 4
+werden ersetzt, eigene Pläne nie. Achtung: „Besuchsorte ändern" auf
+Tag 3 rechnet wieder zur Unterkunft — Húsavík ist als POI auf Tag 3
+anwählbar, wenn es Endpunkt bleiben soll.
+
+## Nord-Tour auf Tag 3 → 4 verlegt (15. August 2026, früh — überholt, s. o.)
 
 Benedek fährt die Runde **heute** auf dem Weg Hofsós → Vestmannsvatn,
 nicht erst morgen Richtung Reyðarfjörður. Deshalb:
