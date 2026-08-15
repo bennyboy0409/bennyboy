@@ -396,6 +396,26 @@ durchgehend asphaltiert bis Ásbyrgi, fehlte in Natural Earth komplett
 (Dettifoss wäre sonst als 20-km-Anfahrt abseits des Netzes gerechnet
 worden). Endpunkte exakt auf Netzknoten der 1 bzw. 85.
 
+## Nachschlage-Links + Wikipedia-Fotos am Satelliten (15. August 2026)
+
+Benedek wollte bei den Tipps ohne eingebettetes Foto nachschauen können,
+wie ein Ort aussieht. Zwei Dinge:
+
+1. **Jedes Popup hat jetzt Links** — „🔍 Fotos ansehen" (Google-Bildersuche
+   nach `wiki`-Begriff bzw. Name + Iceland) und, wo ein `wiki`-Feld
+   existiert, „📖 Wikipedia". Offline-Karte: `#cardLook` in `showCard()`;
+   Satellitenkarte: `look`-Zeile in `poiCard()`. Öffnen im neuen Tab,
+   brauchen naturgemäß Internet.
+2. **Die Satellitenkarte lädt Fotos jetzt selbst von Wikipedia nach**
+   (`wikiFotoUrl()` + `stashFoto()`): schlägt `fotos/<slug>.jpg` fehl
+   (Tipps sind nicht unter den 38 extrahierten), versucht sie de/en-
+   Wikipedia-Artikelbild, dann Commons (JPEGs, Winterbilder gemieden) —
+   und legt den Treffer unter `island-photo:<name>` in localStorage ab,
+   **derselbe Schlüssel wie auf der Offline-Karte**: einmal am Satelliten
+   angetippt = Foto auch offline da. Dafür tragen die kompakten POI-
+   Einträge der Satellitenkarte jetzt das `wiki`-Feld (28 Stück,
+   Sync-Skript-Logik wie gehabt: karte.html ist die Quelle).
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
