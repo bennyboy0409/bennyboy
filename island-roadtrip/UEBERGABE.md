@@ -382,6 +382,20 @@ pflegen, sondern das Sync-Vorgehen aus der Git-History nutzen.
   hybrid nicht stylen, deshalb ist „satellite" der Standard;
   „Hybrid" mit Ortsnamen liegt im Umschalter oben links.
 
+## Voreingestellte Nord-Tour + Straße 862 (14. August, nachmittags)
+
+Benedeks Pflichtprogramm für den Tag Aðaldalur → Reyðarfjörður steckt
+jetzt als **automatischer Tagesplan** in beiden Karten (erscheint beim
+Laden, solange kein eigener Plan gespeichert ist; „Besuchsorte ändern"
+überschreibt): **Goðafoss (0:30) → Mývatn (0:38) → Hverir (0:21) →
+Dettifoss (0:24) → Ásbyrgi (0:20) → Hótel Austur (2:46) — 4:59 h,
+~365 km.** Goðafoss gehört offiziell zum Vortag, ist bewusst drin.
+
+Dafür nötig: **Straße 862 (Dettifossvegur)** in `EXTRA_ROADS` —
+durchgehend asphaltiert bis Ásbyrgi, fehlte in Natural Earth komplett
+(Dettifoss wäre sonst als 20-km-Anfahrt abseits des Netzes gerechnet
+worden). Endpunkte exakt auf Netzknoten der 1 bzw. 85.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und

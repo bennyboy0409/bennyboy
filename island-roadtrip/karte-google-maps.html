@@ -409,6 +409,17 @@ function initMap(){
   document.getElementById("findFuel").onclick = ()=>runFind("fuel");
   document.getElementById("findFood").onclick = ()=>runFind("food");
   document.getElementById("findShop").onclick = ()=>runFind("shop");
+
+  /* Voreingestellte Nord-Tour (Goðafoss–Mývatn–Hverir–Dettifoss–
+     Ásbyrgi) am Tag Aðaldalur → Reyðarfjörður. Startet erst, wenn
+     die acht Basisrouten durch sind (Rate-Limit), und nur solange
+     der Nutzer selbst noch nichts geplant hat. */
+  setTimeout(()=>{
+    if(dayPlans[4]) return;
+    const names = ["Goðafoss","Mývatn","Hverir / Námaskarð","Dettifoss (Westseite)","Ásbyrgi"];
+    const chosen = names.map(n=>POIS.find(p=>p.name===n)).filter(Boolean);
+    if(chosen.length === names.length){ dpSel[4] = new Set(names); computeDayRoute(4, chosen); }
+  }, 4500);
 }
 
 /* Eigener Standort: blauer Punkt + Genauigkeitskreis, fragt beim

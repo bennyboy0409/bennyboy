@@ -3090,6 +3090,12 @@ const EXTRA_ROADS = [
     p:[[-22.7631,64.8488],[-22.800,64.900],[-22.840,64.940],[-22.8884,64.979]] },
   { l:"54→60", kmh:80,
     p:[[-21.7013,65.0473],[-21.7341,65.0661]] },
+  /* Dettifossvegur 862 (durchgehend asphaltiert bis Ásbyrgi):
+     fehlt in Natural Earth komplett — ohne sie würde Dettifoss als
+     20-km-Feldweg gerechnet. Endpunkte exakt auf Netzknoten
+     (Route 1 bzw. 85 bei Ásbyrgi). */
+  { l:"862", kmh:80,
+    p:[[-16.8147,65.6593],[-16.62,65.72],[-16.39,65.812],[-16.44,65.93],[-16.4943,66.0221]] },
   /* Fáskrúðsfjarðargöng (seit 2005, mautfrei): Natural Earth kennt
      nur die alte Küstenschleife um Vattarnes. Portal lt. Wikidata
      bei 64,988/-14,192; Endpunkte auf Netzknoten beider Fjordufer. */
@@ -3367,6 +3373,24 @@ let markSel = {};
 
 /* Der Block unterhalb der Zielliste einer Tageskarte:
    Ablauf (falls Plan da) + Knopfleiste */
+/* Voreingestellte Nord-Tour (Benedeks Wunsch, 14.8.): Goðafoss,
+   Mývatn, Hverir, Dettifoss und Ásbyrgi am Tag Aðaldalur →
+   Reyðarfjörður. Erscheint automatisch, solange kein eigener Plan
+   für den Tag gespeichert ist — „Besuchsorte ändern" überschreibt.
+   Goðafoss gehört offiziell zum Vortag, ist hier bewusst mit drin
+   (20 Minuten westlich der Unterkunft). */
+const PRESET_DAY = 4;
+const PRESET_SEL = ["Goðafoss","Mývatn","Hverir / Námaskarð","Dettifoss (Westseite)","Ásbyrgi"];
+function applyPresetPlan(){
+  try{
+    if(dayPlans[PRESET_DAY]) return;
+    const chosen = PRESET_SEL.map(n=>POIS.find(p=>p.name===n)).filter(Boolean);
+    if(chosen.length !== PRESET_SEL.length) return;
+    dayPlans[PRESET_DAY] = computeDayPlan(PRESET_DAY, chosen);
+    saveDayPlans(); renderRail(); draw();
+  }catch(e){}
+}
+
 function dayplanHTML(i, pois){
   if(i>=LEGS.length || !pois.length) return "";
   const plan = dayPlans[i], col = dayColor(i);
@@ -3598,6 +3622,7 @@ preloadPhotos();
 fetchPhotos();
 document.getElementById("layersBox").open = window.innerWidth > 640;
 window.addEventListener("resize", resize);
+setTimeout(applyPresetPlan, 700);
 const mq = window.matchMedia("(prefers-color-scheme: dark)");
 (mq.addEventListener ? mq.addEventListener("change", ()=>{readTokens();draw();}) : mq.addListener(()=>{readTokens();draw();}));
 resize();
