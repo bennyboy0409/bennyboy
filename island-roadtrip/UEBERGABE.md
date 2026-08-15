@@ -416,6 +416,25 @@ wie ein Ort aussieht. Zwei Dinge:
    Einträge der Satellitenkarte jetzt das `wiki`-Feld (28 Stück,
    Sync-Skript-Logik wie gehabt: karte.html ist die Quelle).
 
+## Nord-Tour auf Tag 3 → 4 verlegt (15. August 2026, unterwegs)
+
+Benedek fährt die Runde **heute** auf dem Weg Hofsós → Vestmannsvatn,
+nicht erst morgen Richtung Reyðarfjörður. Deshalb:
+
+- `PRESET_DAY` von 4 auf **3** (beide Karten). Neue Rechnung ab
+  Frændgarður: **Goðafoss (2:15) → Mývatn (0:38) → Hverir (0:21) →
+  Dettifoss (0:24) → Ásbyrgi (0:20) → Vestmannsvatn (1:22) —
+  5:20 h, ~416 km.** Am Handy startet die Route ab GPS-Position.
+- **Migration:** lag der alte, unveränderte Tag-4-Vorschlag noch in
+  localStorage, löscht `applyPresetPlan()` ihn einmalig (Abgleich der
+  `sel`-Namen). Selbst gebaute Tag-4-Pläne bleiben unangetastet.
+- **12 Ziele umgehängt** (`day:"adaldalur"` → `"hofsos"`): Mývatn,
+  Grjótagjá, Dimmuborgir, Hverfjall, Skútustaðagígar, Hverir/Námaskarð,
+  Víti-Krater, Dettifoss W, Selfoss, Ásbyrgi, Húsavík, Aldeyjarfoss —
+  sie stehen jetzt in der Tageskarte 3 und sind dort an-/abwählbar.
+  Stuðlagil, Hengifoss und Rjúkandi bleiben auf Tag 4 → 5 (liegen an
+  der Strecke nach Osten).
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
