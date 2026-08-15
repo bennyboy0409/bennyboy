@@ -167,9 +167,9 @@ const STOPS = [
       day = id der Unterkunft, von der aus ihr hinfahrt.
    ════════════════════════════════════════════════════════════════ */
 const POIS = [
-  /* Automatisch aus karte.html übernommen — 51 Ziele mit fact/Drohnen-Info.
-     foto:true = Bild liegt beim Deploy unter fotos/<slug>.jpg. */
-  {"name":"Blaue Lagune","lat":63.8804,"lon":-22.4495,"day":"kef-in","fact":"38–40 °C","note":"5 km von KEF — nur mit Zeitfenster-Buchung","foto":true,"drone":["nein","Betreiber verbietet Drohnen auf dem Gelände."]},
+  /* Automatisch aus karte.html übernommen — 60 Ziele mit fact,
+     Drohnen-Info und Kostenzeile. foto:true = Bild unter fotos/<slug>.jpg. */
+  {"name":"Blaue Lagune","lat":63.8804,"lon":-22.4495,"day":"kef-in","fact":"38–40 °C","note":"5 km von KEF — nur mit Zeitfenster-Buchung","foto":true,"drone":["nein","Betreiber verbietet Drohnen auf dem Gelände."],"cost":"Eintritt Preis variiert — nur mit vorab gebuchtem Zeitfenster","costFree":false},
   {"name":"Gunnuhver","lat":63.8186,"lon":-22.6836,"day":"kef-in","fact":"Dampfloch, bis 300 °C","note":"20 km ab KEF, Holzstege durchs Dampffeld — gut mit der Blauen Lagune zu verbinden","foto":true,"drone":["ja","Abstand zu Dampfschwaden und Besuchern halten."]},
   {"name":"Arnarstapi","lat":64.768,"lon":-23.622,"day":"rvk","fact":"Basaltbögen an der Steilküste","note":"⚠ Snæfellsnes — 4 h Umweg, liegt nicht an eurer Route","foto":true,"drone":["bedingt","Vogelfelsen — in der Brutzeit (bis 15.9.) nicht an der Klippe fliegen."]},
   {"name":"Kirkjufell","lat":64.9276,"lon":-23.3068,"day":"rvk","fact":"463 m, davor Kirkjufellsfoss","note":"⚠ Snæfellsnes — Nordseite, mit Arnarstapi an einem Tag machbar, liegt aber nicht an eurer Route","foto":true,"drone":["ja","beliebtes Motiv, nicht über Menschen am Fotospot."]},
@@ -188,39 +188,72 @@ const POIS = [
   {"name":"Hengifoss","lat":65.077,"lon":-14.885,"day":"adaldalur","fact":"128 m — dritthöchster Islands","note":"rote Tonschichten im Fels; 2,5 km Aufstieg, ca. 1,5 h hin und zurück","foto":true,"drone":["bedingt","Schutzstatus unklar — Beschilderung am Startpunkt prüfen."]},
   {"name":"Seyðisfjörður","lat":65.26,"lon":-14.01,"day":"reydar","fact":"Regenbogenstraße & blaue Kirche","note":"27 km ab Egilsstaðir über den Pass","foto":true,"drone":["bedingt","über dem Ort nicht über Menschen; Fährverkehr beachten."]},
   {"name":"Eystrahorn / Hvalnes","lat":64.402,"lon":-14.565,"day":"reydar","fact":"Gabbro-Berge, 756 m","note":"schwarzer Strand direkt an der Ringstraße","foto":true,"drone":["ja","freier Strand, meist wenig los."]},
-  {"name":"Stokksnes / Vestrahorn","lat":64.247,"lon":-14.995,"day":"reydar","fact":"454 m steil aus dem Meer","note":"Privatgelände, Eintritt ca. 900 ISK im Viking Café","foto":true,"drone":["ja","Privatgelände — beim Viking Café Bescheid geben."]},
-  {"name":"Jökulsárlón","lat":64.0784,"lon":-16.2306,"day":"jokul","fact":"bis 248 m tief","note":"direkt an der Ringstraße","foto":true,"drone":["bedingt","Vatnajökull-NP: nur zu festgelegten Zeitfenstern, Regeln vor Ort/nattura.is prüfen."]},
+  {"name":"Stokksnes / Vestrahorn","lat":64.247,"lon":-14.995,"day":"reydar","fact":"454 m steil aus dem Meer","note":"Privatgelände, Eintritt ca. 900 ISK im Viking Café","foto":true,"drone":["ja","Privatgelände — beim Viking Café Bescheid geben."],"cost":"Eintritt ca. 1.100 ISK p. P. — Viking Café, Karte geht","costFree":false},
+  {"name":"Jökulsárlón","lat":64.0784,"lon":-16.2306,"day":"jokul","fact":"bis 248 m tief","note":"direkt an der Ringstraße","foto":true,"drone":["bedingt","Vatnajökull-NP: nur zu festgelegten Zeitfenstern, Regeln vor Ort/nattura.is prüfen."],"cost":"Parken 1.000 ISK — Parka-App","costFree":false},
   {"name":"Diamond Beach","lat":64.043,"lon":-16.178,"day":"jokul","fact":"Eisblöcke auf schwarzem Sand","note":"gegenüber der Lagune","foto":true,"drone":["bedingt","NP-Randzone — gleiche Zeitfenster-Regeln wie an der Lagune anwenden."]},
-  {"name":"Vatnajökull — Gletschertour","lat":64.016,"lon":-16.975,"day":"jokul","fact":"8100 km², größter Gletscher Europas","note":"geführte Wanderung auf dem Falljökull/Svínafellsjökull, 3–5 h — vorher buchen","foto":true,"drone":["nein","Skaftafell-Gebiet ist für Freizeitflüge gesperrt."]},
+  {"name":"Vatnajökull — Gletschertour","lat":64.016,"lon":-16.975,"day":"jokul","fact":"8100 km², größter Gletscher Europas","note":"geführte Wanderung auf dem Falljökull/Svínafellsjökull, 3–5 h — vorher buchen","foto":true,"drone":["nein","Skaftafell-Gebiet ist für Freizeitflüge gesperrt."],"cost":"Tour Preis variiert — Anbieter vorab buchen","costFree":false},
   {"name":"Svartifoss","lat":64.0277,"lon":-16.975,"day":"jokul","fact":"20 m über Basaltsäulen","note":"45 Min. Aufstieg ab Skaftafell-Besucherzentrum","foto":true,"drone":["nein","Skaftafell (Vatnajökull-NP) ist für Freizeitflüge gesperrt."]},
   {"name":"Fjaðrárgljúfur","lat":63.771,"lon":-18.172,"day":"jokul","fact":"100 m tief, 2 km lang","note":"2 km Schotter ab der Ringstraße","foto":true,"drone":["bedingt","Schutzgebiet mit wechselnden Sperren — Beschilderung zwingend beachten."]},
   {"name":"Dyrhólaey","lat":63.4025,"lon":-19.1275,"day":"jokul","fact":"120 m Kliff mit Felsentor","note":"Benes Favorit (!!!). Obere Straße steil, im August offen und 2WD-tauglich","foto":true,"drone":["nein","gelistetes Schutzgebiet + Vogelbrutfelsen — keine Hobby-Genehmigungen."]},
-  {"name":"Reynisfjara","lat":63.403,"lon":-19.045,"day":"jokul","fact":"Basaltsäulen & Reynisdrangar","note":"⚠ Grundbrecher — nie mit dem Rücken zum Meer, nie ans Wasser","foto":true,"drone":["bedingt","kein formales Verbot bekannt, aber Vogelfelsen (Brutzeit bis 15.9.) und viele Menschen."]},
-  {"name":"Sólheimajökull","lat":63.529,"lon":-19.369,"day":"jokul","fact":"Gletscherzunge des Mýrdalsjökull","note":"3 km Schotter, dann 15 Min. Fußweg zur Eiskante","foto":true,"drone":["ja","nicht über Gletschergruppen fliegen."]},
-  {"name":"Skógafoss","lat":63.5321,"lon":-19.5114,"day":"jokul","fact":"60 m hoch, 25 m breit","note":"527 Stufen auf die Kante","foto":true,"drone":["ja","nicht über der Menschenmenge am Fuß des Falls."]},
-  {"name":"Seljalandsfoss","lat":63.6156,"lon":-19.993,"day":"jokul","fact":"65 m — Weg führt dahinter durch","note":"Regenjacke mitnehmen, man wird nass","foto":true,"drone":["ja","viel Publikum — seitlich ausweichen."]},
-  {"name":"Gljúfrabúi","lat":63.6208,"lon":-20.0006,"day":"jokul","fact":"40 m, versteckt in der Felsspalte","note":"das „dahinter\" von deinem Zettel — 600 m nördlich von Seljalandsfoss, durch den Bach hinein","foto":true,"drone":["ja","in der Felsspalte selbst zu eng — draußen fliegen."]},
-  {"name":"Reykjadalur","lat":64.033,"lon":-21.205,"day":"fiflholt","fact":"Badefluss, 36–40 °C","note":"der „warme Bach\" — 3 km Aufstieg ab Parkplatz, ca. 1 h","foto":true,"drone":["bedingt","nicht über Badende im Fluss (Kamera/Privatsphäre)."]},
-  {"name":"Þingvellir","lat":64.2559,"lon":-21.13,"day":"fiflholt","fact":"Kontinentalspalte & altes Thing","note":"Parkgebühr 1000 ISK","foto":true,"drone":["bedingt","NP-Kernzone täglich 9–18 Uhr gesperrt — nur früh oder abends."]},
+  {"name":"Reynisfjara","lat":63.403,"lon":-19.045,"day":"jokul","fact":"Basaltsäulen & Reynisdrangar","note":"⚠ Grundbrecher — nie mit dem Rücken zum Meer, nie ans Wasser","foto":true,"drone":["bedingt","kein formales Verbot bekannt, aber Vogelfelsen (Brutzeit bis 15.9.) und viele Menschen."],"cost":"Parken 1.000 ISK — Parka-App","costFree":false},
+  {"name":"Sólheimajökull","lat":63.529,"lon":-19.369,"day":"jokul","fact":"Gletscherzunge des Mýrdalsjökull","note":"3 km Schotter, dann 15 Min. Fußweg zur Eiskante","foto":true,"drone":["ja","nicht über Gletschergruppen fliegen."],"cost":"Parken ca. 1.000 ISK — Automat am Platz","costFree":false},
+  {"name":"Skógafoss","lat":63.5321,"lon":-19.5114,"day":"jokul","fact":"60 m hoch, 25 m breit","note":"527 Stufen auf die Kante","foto":true,"drone":["ja","nicht über der Menschenmenge am Fuß des Falls."],"cost":"Parken ca. 1.000 ISK — Parka-App, gilt 8 Stunden","costFree":false},
+  {"name":"Seljalandsfoss","lat":63.6156,"lon":-19.993,"day":"jokul","fact":"65 m — Weg führt dahinter durch","note":"Regenjacke mitnehmen, man wird nass","foto":true,"drone":["ja","viel Publikum — seitlich ausweichen."],"cost":"Parken 1.000 ISK — Parka-App","costFree":false},
+  {"name":"Gljúfrabúi","lat":63.6208,"lon":-20.0006,"day":"jokul","fact":"40 m, versteckt in der Felsspalte","note":"das „dahinter\" von deinem Zettel — 600 m nördlich von Seljalandsfoss, durch den Bach hinein","foto":true,"drone":["ja","in der Felsspalte selbst zu eng — draußen fliegen."],"cost":"gratis — Parken gratis — im Seljalandsfoss-Ticket enthalten","costFree":true},
+  {"name":"Reykjadalur","lat":64.033,"lon":-21.205,"day":"fiflholt","fact":"Badefluss, 36–40 °C","note":"der „warme Bach\" — 3 km Aufstieg ab Parkplatz, ca. 1 h","foto":true,"drone":["bedingt","nicht über Badende im Fluss (Kamera/Privatsphäre)."],"cost":"Parken ca. 750 ISK — Parkautomat / App","costFree":false},
+  {"name":"Þingvellir","lat":64.2559,"lon":-21.13,"day":"fiflholt","fact":"Kontinentalspalte & altes Thing","note":"Parkgebühr 1000 ISK","foto":true,"drone":["bedingt","NP-Kernzone täglich 9–18 Uhr gesperrt — nur früh oder abends."],"cost":"Parken 1.000 ISK — Parka-App","costFree":false},
   {"name":"Geysir / Strokkur","lat":64.3104,"lon":-20.3024,"day":"fiflholt","fact":"Ausbruch alle 5–10 Min., bis 30 m","note":"Strokkur ist der aktive — der große Geysir schläft","foto":true,"drone":["nein","gelistetes Schutzgebiet — keine Hobby-Genehmigungen."]},
   {"name":"Gullfoss","lat":64.3271,"lon":-20.1199,"day":"fiflholt","fact":"2 Stufen, zusammen 32 m","note":"Golden Circle","foto":true,"drone":["nein","gelistetes Schutzgebiet — keine Hobby-Genehmigungen."]},
   {"name":"Þjórsárdalur","lat":64.1094,"lon":-19.8461,"day":"fiflholt","fact":"Hjálparfoss, Gjáin, Stöng","note":"Hjálparfoss liegt an der asphaltierten 32. Háifoss weiter oben braucht die grobe 332 — mit dem Yaris heikel","foto":true,"drone":["ja","Achtung: der Háifoss weiter oben ist gelistet und tabu."]},
   {"name":"Sigöldugljúfur","lat":64.1728,"lon":-19.1358,"day":"fiflholt","fact":"Schlucht der vielen Wasserfälle","note":"⚠ die letzten 2 km sind F208 — keine Furt, aber F-Straßen sind im Mietvertrag verboten, dort greift die Versicherung nicht","foto":true,"drone":["bedingt","nahe Fjallabak-Schutzgebiet (gelistet) — Grenze vorab auf dronamap.is prüfen."]},
-  {"name":"Kerið Kratersee","lat":64.041,"lon":-20.885,"day":"fiflholt","fact":"55 m tief, 3000 Jahre alt","note":"Eintritt 600 ISK, auf dem Weg nach KEF","foto":true,"drone":["bedingt","Privatgelände — am Eingang fragen."]},
+  {"name":"Kerið Kratersee","lat":64.041,"lon":-20.885,"day":"fiflholt","fact":"55 m tief, 3000 Jahre alt","note":"Eintritt 600 ISK, auf dem Weg nach KEF","foto":true,"drone":["bedingt","Privatgelände — am Eingang fragen."],"cost":"Eintritt ca. 800 ISK p. P. — bar oder Karte am Eingang","costFree":false},
   {"name":"Brücke zwischen den Kontinenten","lat":63.8683,"lon":-22.6755,"day":"kef-in","fact":"Fußgängerbrücke über den Plattenriss","note":"5 Minuten ab KEF — Europa auf der einen, Amerika auf der anderen Seite","src":"tipp","drone":["ja","Nähe Flughafen KEF — unter 120 m bleiben, Flugverkehr beachten."]},
   {"name":"Seltún / Krýsuvík","lat":63.8965,"lon":-22.0565,"day":"kef-in","fact":"kochende Schlammtöpfe, Holzstege","note":"buntes Geothermalfeld, deutlich ruhiger als Geysir","src":"tipp","drone":["bedingt","liegt im Schutzgebiet Reykjanesfólkvangur — nur mit Rücksicht, Lage vorab prüfen."]},
   {"name":"Grábrók-Krater","lat":64.7708,"lon":-21.5324,"day":"rvk","fact":"170 Stufen auf den Kraterrand","note":"direkt an der Ringstraße bei Bifröst — 30-Minuten-Stopp am Weg nach Norden","src":"tipp","drone":["bedingt","Naturdenkmal — Beschilderung vor Ort beachten."]},
   {"name":"Kolugljúfur","lat":65.3369,"lon":-20.5633,"day":"nordur","fact":"Wasserfälle in enger Schlucht","note":"6 km ab der Ringstraße, kurzes Schotterstück — Sage der Riesin Kola","src":"tipp","drone":["ja","Vorsicht bei Wind in der Schlucht."]},
   {"name":"Schwimmbad Hofsós","lat":65.8926,"lon":-19.4083,"day":"hofsos","fact":"Infinity-Becken überm Fjord","note":"eines der schönsten Bäder Islands, 200 m von eurer Unterkunft — Badehose bereithalten","src":"tipp","drone":["nein","Kamera überm Schwimmbad ist tabu (Privatsphäre)."]},
   {"name":"Víti-Krater (Krafla)","lat":65.7171,"lon":-16.7561,"day":"adaldalur","fact":"türkiser Kratersee, Ø 300 m","note":"asphaltierte Stichstraße durchs Krafla-Gebiet, nahe Mývatn","src":"tipp","drone":["ja","Kraftwerksanlagen meiden; oft sehr windig."]},
-  {"name":"Húsavík","lat":66.0449,"lon":-17.3389,"day":"adaldalur","fact":"Walhauptstadt Islands","note":"Buckelwale fast garantiert; Touren 3 h, vorher buchen","src":"tipp","drone":["bedingt","über Ort/Hafen nicht über Menschen; kleiner Flugplatz südlich."]},
+  {"name":"Húsavík","lat":66.0449,"lon":-17.3389,"day":"adaldalur","fact":"Walhauptstadt Islands","note":"Buckelwale fast garantiert; Touren 3 h, vorher buchen","src":"tipp","drone":["bedingt","über Ort/Hafen nicht über Menschen; kleiner Flugplatz südlich."],"cost":"Tour Preis variiert — Walbeobachtung vorab buchen","costFree":false},
   {"name":"Rjúkandi","lat":65.348,"lon":-15.426,"day":"adaldalur","fact":"mehrstufiger Schleierfall","note":"Parkplatz direkt an der Ringstraße im Jökuldalur — 10-Minuten-Stopp","src":"tipp","drone":["ja","direkt an der Ringstraße — Abstand zur Straße."]},
-  {"name":"Steinasafn Petru","lat":64.8331,"lon":-13.879,"day":"reydar","fact":"Islands berühmteste Steinsammlung","note":"Lebenswerk der Petra Sveinsdóttir in Stöðvarfjörður, liegt an eurer 96","src":"tipp","drone":["bedingt","privates Gelände im Ort — vorher fragen."]},
+  {"name":"Steinasafn Petru","lat":64.8331,"lon":-13.879,"day":"reydar","fact":"Islands berühmteste Steinsammlung","note":"Lebenswerk der Petra Sveinsdóttir in Stöðvarfjörður, liegt an eurer 96","src":"tipp","drone":["bedingt","privates Gelände im Ort — vorher fragen."],"cost":"Eintritt ca. 2.000 ISK p. P. — Kasse am Eingang, Karte geht","costFree":false},
   {"name":"Fjallsárlón","lat":64.0157,"lon":-16.3796,"day":"jokul","fact":"kleine Schwester von Jökulsárlón","note":"10 Minuten vor Jökulsárlón, viel ruhiger — Gletscherfront zum Greifen nah","src":"tipp","drone":["bedingt","Vatnajökull-NP — wie Jökulsárlón behandeln."]},
   {"name":"Kvernufoss","lat":63.5265,"lon":-19.4786,"day":"jokul","fact":"30 m, man kann dahinter gehen","note":"Geheimtipp 10 Gehminuten hinterm Skógar-Museum — die meisten übersehen ihn","src":"tipp","drone":["ja","meist leer — freie Bahn."]},
   {"name":"Urriðafoss","lat":63.9166,"lon":-20.6803,"day":"fiflholt","fact":"wasserreichster Fall Islands","note":"nur 1 km ab der Ringstraße kurz vor Selfoss — perfekter letzter Wasserfall","src":"tipp","drone":["ja","freies Feld an der Ringstraße."]},
-  {"name":"Brúarfoss","lat":64.2645,"lon":-20.5169,"day":"fiflholt","fact":"leuchtend blaues Gletscherwasser","note":"seit 2023 eigener Parkplatz an der 37, kurzer Fußweg — passt zwischen Geysir und Þingvellir","src":"tipp","drone":["ja","Rücksicht auf Angler am Fluss."]}
+  {"name":"Brúarfoss","lat":64.2645,"lon":-20.5169,"day":"fiflholt","fact":"leuchtend blaues Gletscherwasser","note":"seit 2023 eigener Parkplatz an der 37, kurzer Fußweg — passt zwischen Geysir und Þingvellir","src":"tipp","drone":["ja","Rücksicht auf Angler am Fluss."]},
+  {"name":"Krossneslaug","lat":65.986,"lon":-21.505,"day":"nordur","fact":"Geothermalbecken direkt am Meer","note":"4 km ab eurer Unterkunft ans Ende der Welt — abends fast allein, Kasse des Vertrauens","src":"tipp","drone":["bedingt","nicht über Badende (Kamera/Privatsphäre); Küste selbst frei."],"cost":"Eintritt ca. 1.000 ISK p. P. — Kasse des Vertrauens / Karte","costFree":false},
+  {"name":"Hot Pots Drangsnes","lat":65.689,"lon":-21.447,"day":"nordur","fact":"3 heiße Becken an der Uferstraße","note":"gratis, gegenüber Umkleide — kleiner Schlenker auf dem Rückweg von Strandir","src":"tipp","drone":["bedingt","nicht über Badende (Kamera/Privatsphäre)."]},
+  {"name":"Borgarvirki","lat":65.442,"lon":-20.795,"day":"nordur","fact":"Basaltfestung, 177 m Rundblick","note":"vulkanischer Burgfels mit Wikinger-Wällen — passt zum Hvítserkur-Abstecher","src":"tipp","drone":["ja","freier Rundblick, meist menschenleer."]},
+  {"name":"Staðarbjargavík","lat":65.889,"lon":-19.416,"day":"hofsos","fact":"Basaltsäulen-Bucht unterm Ort","note":"direkt unter Hofsós beim Schwimmbad — 10 Minuten zu Fuß","src":"tipp","drone":["ja","Rücksicht auf Vögel an den Säulen."]},
+  {"name":"Grafarkirkja","lat":65.842,"lon":-19.393,"day":"hofsos","fact":"älteste Torfkirche Islands (17. Jh.)","note":"steht allein im Feld, letztes Stück zu Fuß — Rücksicht am Friedhof","src":"tipp","drone":["ja","Rücksicht am Friedhof — nicht über Trauergäste."]},
+  {"name":"Hólar í Hjaltadal","lat":65.732,"lon":-19.112,"day":"hofsos","fact":"alter Bischofssitz mit Steindom","note":"11 km ab der 76 durchs Hjaltadal — Islands Rom des Nordens","src":"tipp","drone":["bedingt","über dem Ort/Campus nur mit Rücksicht."]},
+  {"name":"Reykjafoss & Fosslaug","lat":65.515,"lon":-19.385,"day":"hofsos","fact":"Wasserfall mit heißer Quelle daneben","note":"5 Minuten ab Varmahlíð, kurzer Fußweg — im Naturpool Fosslaug badet man mit Blick auf den Fall","src":"tipp","drone":["bedingt","nicht über Badende in der Fosslaug."]},
+  {"name":"Akureyri","lat":65.6826,"lon":-18.0907,"day":"hofsos","fact":"Hauptstadt des Nordens","note":"Mittagsstopp: Akureyrarkirkja, Botanischer Garten, Herzampeln — Bónus/Krónan zum Einkaufen","src":"tipp","drone":["nein","Stadtgebiet direkt an der Einflugschneise des Flughafens."]},
+  {"name":"Siglufjörður","lat":66.1512,"lon":-18.911,"day":"hofsos","fact":"Heringsstädtchen am Fjordende","note":"nur auf der Tröllaskagi-Variante (76) — preisgekröntes Heringsmuseum, bunter Hafen","src":"tipp","drone":["bedingt","über Ort und Hafen nicht über Menschen; kleiner Flugplatz."]}
 ];
+
+/* Kostenstellen — dieselben Daten wie auf der Offline-Karte */
+const GCOSTS = [
+  {"name":"Vaðlaheiðargöng","lat":65.697,"lon":-17.995,"kind":"Maut","label":"2.216 ISK","pay":"tunnel.is — vorher oder bis 3 h danach, Kennzeichenerkennung","note":"Islands einziger Mauttunnel. 7,5 km unter dem Vaðlaheiði, spart gut 16 km und rund 12 Minuten.","free":false,"alt":"Gratis drumherum: die alte Straße 1 über den Víkurskarð-Pass.","seg":[[-18.063,65.687],[-17.928,65.706]]},
+  {"name":"Hvalfjarðargöng","lat":64.332,"lon":-21.68,"kind":"Maut","label":"gratis","pay":"nichts zu zahlen","note":"Seit 28. September 2018 mautfrei. Ältere Reiseführer und Blogs nennen noch eine Gebühr — die stimmt nicht mehr.","free":true,"alt":null,"seg":[[-21.75,64.302],[-21.6,64.361]]},
+  {"name":"Fáskrúðsfjarðargöng","lat":64.95,"lon":-14.13,"kind":"Maut","label":"gratis","pay":"nichts zu zahlen","note":"Der Ostfjord-Tunnel ist gebührenfrei. Nur Vaðlaheiðargöng kostet.","free":true,"alt":null,"seg":null},
+  {"name":"Þingvellir","lat":64.2559,"lon":-21.13,"kind":"Parken","label":"1.000 ISK","pay":"Parka-App","note":"Nationalpark. Wer am selben Tag schon woanders im Park gezahlt hat, bekommt oft die Hälfte erlassen.","free":false,"alt":null,"seg":null},
+  {"name":"Kerið Kratersee","lat":64.041,"lon":-20.885,"kind":"Eintritt","label":"ca. 800 ISK p. P.","pay":"bar oder Karte am Eingang","note":"Privatgrund. Die Angaben schwanken zwischen 600 und 1.000 ISK pro Kopf, teils zusätzlich Parkgebühr über EasyPark.","free":false,"alt":null,"seg":null},
+  {"name":"Reykjadalur","lat":64.033,"lon":-21.205,"kind":"Parken","label":"ca. 750 ISK","pay":"Parkautomat / App","note":"Parkplatz am Wanderstart in Hveragerði. Für Hin- und Rückweg plus Baden rechnet man 3–4 Stunden.","free":false,"alt":null,"seg":null},
+  {"name":"Seljalandsfoss","lat":63.6156,"lon":-19.993,"kind":"Parken","label":"1.000 ISK","pay":"Parka-App","note":"Gilt für den ganzen Tag.","free":false,"alt":null,"seg":null},
+  {"name":"Gljúfrabúi","lat":63.6208,"lon":-20.0006,"kind":"Parken","label":"gratis","pay":"im Seljalandsfoss-Ticket enthalten","note":"Nur 600 m nördlich von Seljalandsfoss und derselbe Parkplatz — kein zweites Mal zahlen.","free":true,"alt":null,"seg":null},
+  {"name":"Skógafoss","lat":63.5321,"lon":-19.5114,"kind":"Parken","label":"ca. 1.000 ISK","pay":"Parka-App, gilt 8 Stunden","note":"Achtung: neben dem kostenpflichtigen Hauptplatz gibt es einen kostenlosen Platz etwas abseits. Vor dem Zahlen kurz umsehen.","free":false,"alt":null,"seg":null},
+  {"name":"Sólheimajökull","lat":63.529,"lon":-19.369,"kind":"Parken","label":"ca. 1.000 ISK","pay":"Automat am Platz","note":"Gletscherzunge. Die geführte Eiswanderung kostet extra.","free":false,"alt":null,"seg":null},
+  {"name":"Reynisfjara","lat":63.403,"lon":-19.045,"kind":"Parken","label":"1.000 ISK","pay":"Parka-App","note":"Schwarzer Strand bei Vík. Die Sneaker-Wellen dort sind lebensgefährlich — nie den Rücken zum Meer.","free":false,"alt":null,"seg":null},
+  {"name":"Skaftafell / Svartifoss","lat":64.0166,"lon":-16.966,"kind":"Parken","label":"1.000 ISK","pay":"Parka-App","note":"Zugang zum Vatnajökull-Nationalpark. Von hier 45 Minuten bergauf zum Svartifoss.","free":false,"alt":null,"seg":null},
+  {"name":"Jökulsárlón","lat":64.0784,"lon":-16.2306,"kind":"Parken","label":"1.000 ISK","pay":"Parka-App","note":"Gilt den ganzen Tag und deckt auch den Diamond Beach gegenüber ab.","free":false,"alt":null,"seg":null},
+  {"name":"Stokksnes / Vestrahorn","lat":64.247,"lon":-14.995,"kind":"Eintritt","label":"ca. 1.100 ISK p. P.","pay":"Viking Café, Karte geht","note":"Privatgelände. Preis wird pro Kopf verlangt, nicht pro Auto; die Angaben reichen von 900 bis 1.100 ISK.","free":false,"alt":null,"seg":null},
+  {"name":"Blaue Lagune","lat":63.8804,"lon":-22.4495,"kind":"Eintritt","label":"Preis variiert","pay":"nur mit vorab gebuchtem Zeitfenster","note":"Mit Abstand der teuerste Posten der Reise. Startet bei rund 9.900 ISK pro Person und steigt je nach Uhrzeit und Paket deutlich.","free":false,"alt":null,"seg":null},
+  {"name":"Vatnajökull — Gletschertour","lat":64.016,"lon":-16.975,"kind":"Tour","label":"Preis variiert","pay":"Anbieter vorab buchen","note":"Aufs Eis kommt man nur geführt, mit Steigeisen. Preis je nach Anbieter und Dauer.","free":false,"alt":null,"seg":null},
+  {"name":"Steinasafn Petru","lat":64.8331,"lon":-13.879,"kind":"Eintritt","label":"ca. 2.000 ISK p. P.","pay":"Kasse am Eingang, Karte geht","note":"Petras Steinsammlung in Stöðvarfjörður.","free":false,"alt":null,"seg":null},
+  {"name":"Krossneslaug","lat":65.986,"lon":-21.505,"kind":"Eintritt","label":"ca. 1.000 ISK p. P.","pay":"Kasse des Vertrauens / Karte","note":"Das Meerbecken am Ende der 647.","free":false,"alt":null,"seg":null},
+  {"name":"Húsavík","lat":66.0449,"lon":-17.3389,"kind":"Tour","label":"Preis variiert","pay":"Walbeobachtung vorab buchen","note":"Waltouren ab ca. 11.000 ISK pro Person, 3 Stunden. Der Ort selbst kostet nichts.","free":false,"alt":null,"seg":null}
+];
+
 
 
 
@@ -271,11 +304,12 @@ function poiCard(p){
   const h = document.createElement("div");
   h.innerHTML = "<b>"+p.name+"</b>" + (p.fact?'<br><span style="color:#555">'+p.fact+"</span>":"");
   el.appendChild(h);
-  if(p.note || p.drone){
+  if(p.note || p.drone || p.cost){
     const det = document.createElement("details");
     det.style.cssText = "margin-top:.35rem";
     const DC={ja:"#2E8B57",bedingt:"#B45309",nein:"#C81E4A"}, DL={ja:"ERLAUBT",bedingt:"EINGESCHRÄNKT",nein:"VERBOTEN"};
     det.innerHTML = '<summary style="cursor:pointer;color:#1a73e8">ℹ️ Mehr Infos</summary>'
+      + (p.cost?'<div style="margin-top:.25rem;color:'+(p.costFree?'#555':'#C81E4A')+'">💰 '+p.cost+"</div>":"")
       + (p.note?'<div style="color:#555;margin-top:.25rem">'+p.note+"</div>":"")
       + (p.drone?'<div style="margin-top:.25rem;color:'+DC[p.drone[0]]+'">🚁 Drohne &lt;250 g: <b>'+DL[p.drone[0]]+'</b> <span style="color:#555">'+p.drone[1]+"</span></div>":"");
     el.appendChild(det);
@@ -330,6 +364,35 @@ function initMap(){
       info.setContent(poiCard(p));
       info.open(map, mk);
     });
+  });
+
+  /* Kostenstellen wie auf der Offline-Karte: rote kr-Punkte
+     (grau = ausdrücklich gratis), Mauttunnel als eigene Linie */
+  GCOSTS.forEach(c=>{
+    const free = c.free;
+    const mk = new google.maps.Marker({
+      position:{lat:c.lat, lng:c.lon}, map, zIndex:60, title:c.name,
+      icon:{ path:google.maps.SymbolPath.CIRCLE, scale:6.5,
+             fillColor: free ? "#9aa7ad" : "#C81E4A", fillOpacity: free ? .7 : 1,
+             strokeColor:"#fff", strokeWeight:1.6 },
+      label:{ text:"kr", color:"#fff", fontSize:"9px", fontWeight:"700" }
+    });
+    mk.addListener("click", ()=>{
+      info.setContent(
+        `<div style="font-family:sans-serif;color:#111;max-width:250px"><b>${c.name}</b><br>`+
+        `<span style="color:${free?'#2E8B57':'#C81E4A'};font-weight:700">${c.kind} · ${c.label}</span><br>`+
+        `<span style="color:#555">${c.pay}</span>`+
+        `${c.note?`<br><span style="color:#555">${c.note}</span>`:""}`+
+        `${c.alt?`<br><span style="color:#2E8B57">${c.alt}</span>`:""}</div>`);
+      info.open(map, mk);
+    });
+    if(c.seg){
+      new google.maps.Polyline({
+        map, path: c.seg.map(p=>({lat:p[1], lng:p[0]})),
+        strokeColor: free ? "#9aa7ad" : "#C81E4A",
+        strokeWeight: free ? 3 : 5, strokeOpacity: free ? .6 : .95, zIndex: 55
+      });
+    }
   });
 
   render();

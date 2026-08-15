@@ -350,6 +350,22 @@ Datei versuchen den localStorage-Cache der Offline-Karte (gleiche
 Origin), sonst bleibt das Popup ohne Bild. Lokal geöffnet (ohne
 fotos/-Ordner) verschwindet das Bild sauber per onerror.
 
+## Tag 3/4 aufgefüllt + Kostenstellen am Satelliten (14. August 2026)
+
+**9 neue Zusatz-Tipps** (violett), weil Tag 3 und 4 dünn waren:
+Tag 3 (Strandir→Hofsós): Krossneslaug (Meerbecken 4 km ab der
+Unterkunft!, Eintritt in COSTS), Hot Pots Drangsnes, Borgarvirki.
+Tag 4 (Hofsós→Aðaldalur): Staðarbjargavík, Grafarkirkja, Hólar,
+Reykjafoss & Fosslaug, Akureyri, Siglufjörður (nur Tröllaskagi-
+Variante). Damit 60 Ziele gesamt, alle mit Drohnen-Ampel.
+
+**Kostenstellen jetzt auch auf der Satellitenseite:** rote kr-Marker
+(grau = ausdrücklich gratis) mit Preis/Zahlweg/Alternative im
+Popup, Mauttunnel als Linie, und die 💰-Zeile im „Mehr Infos" jedes
+betroffenen Ziels. Datenquelle bleibt allein `COSTS` in karte.html —
+beim Übertragen aufs Satellitenformat (`GCOSTS`) nichts von Hand
+pflegen, sondern das Sync-Vorgehen aus der Git-History nutzen.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und

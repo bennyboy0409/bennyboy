@@ -1026,7 +1026,47 @@ const POIS = [
   { name:"Brúarfoss", lat:64.2645, lon:-20.5169, day:"fiflholt", cat:"waterfall",
     access:"2wd", road:"37", fact:"leuchtend blaues Gletscherwasser",
     note:"seit 2023 eigener Parkplatz an der 37, kurzer Fußweg — passt zwischen Geysir und Þingvellir", src:"tipp",
-    wiki:"Brúarfoss waterfall", img:null }
+    wiki:"Brúarfoss waterfall", img:null },
+
+  /* ── Nachschub für Tag 3 (Strandir → Hofsós) ──────────────── */
+  { name:"Krossneslaug", lat:65.986, lon:-21.505, day:"nordur", cat:"hotspring",
+    access:"gravel", road:"647", fact:"Geothermalbecken direkt am Meer",
+    note:"4 km ab eurer Unterkunft ans Ende der Welt — abends fast allein, Kasse des Vertrauens", src:"tipp",
+    wiki:"Krossneslaug pool Iceland", img:null },
+  { name:"Hot Pots Drangsnes", lat:65.689, lon:-21.447, day:"nordur", cat:"hotspring",
+    access:"2wd", road:"645", fact:"3 heiße Becken an der Uferstraße",
+    note:"gratis, gegenüber Umkleide — kleiner Schlenker auf dem Rückweg von Strandir", src:"tipp",
+    wiki:"Drangsnes hot tubs", img:null },
+  { name:"Borgarvirki", lat:65.442, lon:-20.795, day:"nordur", cat:"basalt",
+    access:"gravel", road:"717", fact:"Basaltfestung, 177 m Rundblick",
+    note:"vulkanischer Burgfels mit Wikinger-Wällen — passt zum Hvítserkur-Abstecher", src:"tipp",
+    wiki:"Borgarvirki", img:null },
+
+  /* ── Nachschub für Tag 4 (Hofsós → Aðaldalur) ─────────────── */
+  { name:"Staðarbjargavík", lat:65.889, lon:-19.416, day:"hofsos", cat:"basalt",
+    access:"2wd", road:"76", fact:"Basaltsäulen-Bucht unterm Ort",
+    note:"direkt unter Hofsós beim Schwimmbad — 10 Minuten zu Fuß", src:"tipp",
+    wiki:"Staðarbjargavík Hofsós basalt", img:null },
+  { name:"Grafarkirkja", lat:65.842, lon:-19.393, day:"hofsos", cat:"turf",
+    access:"gravel", road:"76 + 1 km Piste", fact:"älteste Torfkirche Islands (17. Jh.)",
+    note:"steht allein im Feld, letztes Stück zu Fuß — Rücksicht am Friedhof", src:"tipp",
+    wiki:"Grafarkirkja turf church", img:null },
+  { name:"Hólar í Hjaltadal", lat:65.732, lon:-19.112, day:"hofsos", cat:"town",
+    access:"2wd", road:"767", fact:"alter Bischofssitz mit Steindom",
+    note:"11 km ab der 76 durchs Hjaltadal — Islands Rom des Nordens", src:"tipp",
+    wiki:"Hólar Iceland", img:null },
+  { name:"Reykjafoss & Fosslaug", lat:65.515, lon:-19.385, day:"hofsos", cat:"waterfall",
+    access:"gravel", road:"753", fact:"Wasserfall mit heißer Quelle daneben",
+    note:"5 Minuten ab Varmahlíð, kurzer Fußweg — im Naturpool Fosslaug badet man mit Blick auf den Fall", src:"tipp",
+    wiki:"Reykjafoss Fosslaug", img:null },
+  { name:"Akureyri", lat:65.6826, lon:-18.0907, day:"hofsos", cat:"town",
+    access:"2wd", road:"1", fact:"Hauptstadt des Nordens",
+    note:"Mittagsstopp: Akureyrarkirkja, Botanischer Garten, Herzampeln — Bónus/Krónan zum Einkaufen", src:"tipp",
+    wiki:"Akureyri", img:null },
+  { name:"Siglufjörður", lat:66.1512, lon:-18.9110, day:"hofsos", cat:"town",
+    access:"2wd", road:"76", fact:"Heringsstädtchen am Fjordende",
+    note:"nur auf der Tröllaskagi-Variante (76) — preisgekröntes Heringsmuseum, bunter Hafen", src:"tipp",
+    wiki:"Siglufjörður", img:null }
 ];
 
 /* ══════════════════════════════════════════════════════════════
@@ -1131,7 +1171,16 @@ const DRONE = {
   "Brúarfoss":                  ["ja","Rücksicht auf Angler am Fluss."],
   "Urriðafoss":                 ["ja","freies Feld an der Ringstraße."],
   "Þjórsárdalur":               ["ja","Achtung: der Háifoss weiter oben ist gelistet und tabu."],
-  "Sigöldugljúfur":             ["bedingt","nahe Fjallabak-Schutzgebiet (gelistet) — Grenze vorab auf dronamap.is prüfen."]
+  "Sigöldugljúfur":             ["bedingt","nahe Fjallabak-Schutzgebiet (gelistet) — Grenze vorab auf dronamap.is prüfen."],
+  "Krossneslaug":               ["bedingt","nicht über Badende (Kamera/Privatsphäre); Küste selbst frei."],
+  "Hot Pots Drangsnes":         ["bedingt","nicht über Badende (Kamera/Privatsphäre)."],
+  "Borgarvirki":                ["ja","freier Rundblick, meist menschenleer."],
+  "Staðarbjargavík":            ["ja","Rücksicht auf Vögel an den Säulen."],
+  "Grafarkirkja":               ["ja","Rücksicht am Friedhof — nicht über Trauergäste."],
+  "Hólar í Hjaltadal":          ["bedingt","über dem Ort/Campus nur mit Rücksicht."],
+  "Reykjafoss & Fosslaug":      ["bedingt","nicht über Badende in der Fosslaug."],
+  "Akureyri":                   ["nein","Stadtgebiet direkt an der Einflugschneise des Flughafens."],
+  "Siglufjörður":               ["bedingt","über Ort und Hafen nicht über Menschen; kleiner Flugplatz."]
 };
 const DRONE_COLOR = { ja:"#2E8B57", bedingt:"#B45309", nein:"#C81E4A" };
 const DRONE_LABEL = { ja:"erlaubt", bedingt:"eingeschränkt", nein:"verboten" };
@@ -1274,6 +1323,10 @@ const COSTS = [
   { name:"Steinasafn Petru", lat:64.8331, lon:-13.8790, kind:"eintritt",
     isk:2000, per:"person", unsure:true, pay:"Kasse am Eingang, Karte geht",
     note:"Petras Steinsammlung in Stöðvarfjörður." },
+
+  { name:"Krossneslaug", lat:65.986, lon:-21.505, kind:"eintritt",
+    isk:1000, per:"person", unsure:true, pay:"Kasse des Vertrauens / Karte",
+    note:"Das Meerbecken am Ende der 647." },
 
   { name:"Húsavík", lat:66.0449, lon:-17.3389, kind:"tour",
     isk:null, per:"person", pay:"Walbeobachtung vorab buchen",
