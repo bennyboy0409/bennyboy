@@ -1066,7 +1066,33 @@ const POIS = [
   { name:"Siglufjörður", lat:66.1512, lon:-18.9110, day:"hofsos", cat:"town",
     access:"2wd", road:"76", fact:"Heringsstädtchen am Fjordende",
     note:"nur auf der Tröllaskagi-Variante (76) — preisgekröntes Heringsmuseum, bunter Hafen", src:"tipp",
-    wiki:"Siglufjörður", img:null }
+    wiki:"Siglufjörður", img:null },
+
+  /* ── Natur pur (14. August) ───────────────────────────────── */
+  { name:"Hverir / Námaskarð", lat:65.6408, lon:-16.8080, day:"adaldalur", cat:"hotspring",
+    access:"2wd", road:"1", fact:"kochende Schlammtöpfe, Marslandschaft",
+    note:"direkt an der Ringstraße hinterm Námaskarð-Pass — riecht nach Schwefel, unvergesslich", src:"tipp",
+    wiki:"Hverir Namaskard", img:null },
+  { name:"Dimmuborgir", lat:65.5911, lon:-16.9119, day:"adaldalur", cat:"basalt",
+    access:"2wd", road:"848", fact:"Lava-Labyrinth der ,dunklen Burgen'",
+    note:"Rundwege 15–60 Min., der Kirkjan-Lavabogen ist das Ziel", src:"tipp",
+    wiki:"Dimmuborgir", img:null },
+  { name:"Hverfjall", lat:65.6027, lon:-16.8752, day:"adaldalur", cat:"crater",
+    access:"gravel", road:"860", fact:"Tephrakrater, Ø 1 km",
+    note:"20 Min. steil auf den Kraterrand — Rundblick über den ganzen Mývatn", src:"tipp",
+    wiki:"Hverfjall", img:null },
+  { name:"Skútustaðagígar", lat:65.5697, lon:-17.0345, day:"adaldalur", cat:"crater",
+    access:"2wd", road:"1", fact:"Pseudokrater am Südufer",
+    note:"kurzer Rundweg zwischen den Kratern, Blick über den See", src:"tipp",
+    wiki:"Skútustaðagígar pseudocraters", img:null },
+  { name:"Aldeyjarfoss", lat:65.442, lon:-17.342, day:"adaldalur", cat:"waterfall",
+    access:"gravel", road:"842", fact:"weißer Fall im schwarzen Basalttrichter",
+    note:"~40 Min. ab Goðafoss das Bárðardalur hinauf, letzte km grober Schotter — lohnt sich", src:"tipp",
+    wiki:"Aldeyjarfoss", img:null },
+  { name:"Múlagljúfur", lat:64.023, lon:-16.406, day:"jokul", cat:"canyon",
+    access:"gravel", road:"1 + 2 km Piste", fact:"Canyon mit Wasserfällen überm Fjallsárlón",
+    note:"unbeschilderter Geheimtipp zwischen Fjallsárlón und Jökulsárlón — 1 h Aufstieg zum Aussichtspunkt", src:"tipp",
+    wiki:"Múlagljúfur canyon", img:null }
 ];
 
 /* ══════════════════════════════════════════════════════════════
@@ -1180,7 +1206,13 @@ const DRONE = {
   "Hólar í Hjaltadal":          ["bedingt","über dem Ort/Campus nur mit Rücksicht."],
   "Reykjafoss & Fosslaug":      ["bedingt","nicht über Badende in der Fosslaug."],
   "Akureyri":                   ["nein","Stadtgebiet direkt an der Einflugschneise des Flughafens."],
-  "Siglufjörður":               ["bedingt","über Ort und Hafen nicht über Menschen; kleiner Flugplatz."]
+  "Siglufjörður":               ["bedingt","über Ort und Hafen nicht über Menschen; kleiner Flugplatz."],
+  "Hverir / Námaskarð":         ["bedingt","Rand des Mývatn-Schutzgebiets, viel Besuch — Lage vorab prüfen."],
+  "Dimmuborgir":                ["nein","gehört zum gelisteten Schutzgebiet Mývatn."],
+  "Hverfjall":                  ["nein","gehört zum gelisteten Schutzgebiet Mývatn."],
+  "Skútustaðagígar":            ["nein","geschützte Pseudokrater im Mývatn-Gebiet."],
+  "Aldeyjarfoss":               ["ja","abgelegen und frei — Vorsicht bei Wind im Trichter."],
+  "Múlagljúfur":                ["bedingt","Randzone des Vatnajökull-NP — Regeln wie an der Lagune anwenden."]
 };
 const DRONE_COLOR = { ja:"#2E8B57", bedingt:"#B45309", nein:"#C81E4A" };
 const DRONE_LABEL = { ja:"erlaubt", bedingt:"eingeschränkt", nein:"verboten" };
@@ -1669,6 +1701,18 @@ function draw(){
   ctx.restore();
   ctx.fillStyle = C.land; ctx.fill("evenodd");
   ctx.strokeStyle = C.landEdge; ctx.lineWidth = 0.8; ctx.stroke();
+
+  // Binnenseen (Mývatn & Co) — gleiche Farbe wie der Ozean
+  ctx.beginPath();
+  for(const lake of LAKES){
+    for(let i=0;i<lake.p.length;i++){
+      const p = pt(lake.p[i][0], lake.p[i][1]);
+      i ? ctx.lineTo(p[0],p[1]) : ctx.moveTo(p[0],p[1]);
+    }
+    ctx.closePath();
+  }
+  ctx.fillStyle = C.ocean; ctx.fill();
+  ctx.strokeStyle = C.landEdge; ctx.lineWidth = 0.7; ctx.globalAlpha=.7; ctx.stroke(); ctx.globalAlpha=1;
 
   // Gletscher
   ctx.beginPath();
@@ -3026,6 +3070,18 @@ let RG = null;                       // der Graph, gebaut beim ersten Klick
      5 km vor der 60 — knapp über der Anheft-Schwelle. Ohne die
      Brücke schickt der Graph alles von Snæfellsnes nach Norden
      über Borgarnes zurück (~80 km Umweg). */
+/* Die drei großen Seen an der Route — Natural Earth 10m liefert im
+   Land-Layer keine Binnenseen, deshalb von Hand nachgezeichnet
+   (grob wie der Rest der Geometrie). */
+const LAKES = [
+  { n:"Mývatn", p:[[-17.05,65.60],[-17.03,65.63],[-16.98,65.64],[-16.93,65.63],
+      [-16.90,65.61],[-16.89,65.58],[-16.92,65.55],[-16.97,65.53],[-17.02,65.54],[-17.04,65.57]] },
+  { n:"Þingvallavatn", p:[[-21.25,64.20],[-21.18,64.25],[-21.10,64.23],[-21.05,64.16],
+      [-21.08,64.11],[-21.17,64.10],[-21.24,64.14]] },
+  { n:"Lagarfljót", p:[[-14.85,65.04],[-14.60,65.15],[-14.38,65.26],[-14.35,65.29],
+      [-14.42,65.28],[-14.62,65.17],[-14.88,65.06]] }
+];
+
 const EXTRA_ROADS = [
   /* Endpunkte liegen EXAKT auf vorhandenen Netzknoten, damit sie
      beim Aufbau verschmelzen — Anheften über Distanz ist bei den

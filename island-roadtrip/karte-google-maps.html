@@ -167,8 +167,7 @@ const STOPS = [
       day = id der Unterkunft, von der aus ihr hinfahrt.
    ════════════════════════════════════════════════════════════════ */
 const POIS = [
-  /* Automatisch aus karte.html übernommen — 60 Ziele mit fact,
-     Drohnen-Info und Kostenzeile. foto:true = Bild unter fotos/<slug>.jpg. */
+  /* Automatisch aus karte.html übernommen — 66 Ziele. */
   {"name":"Blaue Lagune","lat":63.8804,"lon":-22.4495,"day":"kef-in","fact":"38–40 °C","note":"5 km von KEF — nur mit Zeitfenster-Buchung","foto":true,"drone":["nein","Betreiber verbietet Drohnen auf dem Gelände."],"cost":"Eintritt Preis variiert — nur mit vorab gebuchtem Zeitfenster","costFree":false},
   {"name":"Gunnuhver","lat":63.8186,"lon":-22.6836,"day":"kef-in","fact":"Dampfloch, bis 300 °C","note":"20 km ab KEF, Holzstege durchs Dampffeld — gut mit der Blauen Lagune zu verbinden","foto":true,"drone":["ja","Abstand zu Dampfschwaden und Besuchern halten."]},
   {"name":"Arnarstapi","lat":64.768,"lon":-23.622,"day":"rvk","fact":"Basaltbögen an der Steilküste","note":"⚠ Snæfellsnes — 4 h Umweg, liegt nicht an eurer Route","foto":true,"drone":["bedingt","Vogelfelsen — in der Brutzeit (bis 15.9.) nicht an der Klippe fliegen."]},
@@ -228,8 +227,15 @@ const POIS = [
   {"name":"Hólar í Hjaltadal","lat":65.732,"lon":-19.112,"day":"hofsos","fact":"alter Bischofssitz mit Steindom","note":"11 km ab der 76 durchs Hjaltadal — Islands Rom des Nordens","src":"tipp","drone":["bedingt","über dem Ort/Campus nur mit Rücksicht."]},
   {"name":"Reykjafoss & Fosslaug","lat":65.515,"lon":-19.385,"day":"hofsos","fact":"Wasserfall mit heißer Quelle daneben","note":"5 Minuten ab Varmahlíð, kurzer Fußweg — im Naturpool Fosslaug badet man mit Blick auf den Fall","src":"tipp","drone":["bedingt","nicht über Badende in der Fosslaug."]},
   {"name":"Akureyri","lat":65.6826,"lon":-18.0907,"day":"hofsos","fact":"Hauptstadt des Nordens","note":"Mittagsstopp: Akureyrarkirkja, Botanischer Garten, Herzampeln — Bónus/Krónan zum Einkaufen","src":"tipp","drone":["nein","Stadtgebiet direkt an der Einflugschneise des Flughafens."]},
-  {"name":"Siglufjörður","lat":66.1512,"lon":-18.911,"day":"hofsos","fact":"Heringsstädtchen am Fjordende","note":"nur auf der Tröllaskagi-Variante (76) — preisgekröntes Heringsmuseum, bunter Hafen","src":"tipp","drone":["bedingt","über Ort und Hafen nicht über Menschen; kleiner Flugplatz."]}
+  {"name":"Siglufjörður","lat":66.1512,"lon":-18.911,"day":"hofsos","fact":"Heringsstädtchen am Fjordende","note":"nur auf der Tröllaskagi-Variante (76) — preisgekröntes Heringsmuseum, bunter Hafen","src":"tipp","drone":["bedingt","über Ort und Hafen nicht über Menschen; kleiner Flugplatz."]},
+  {"name":"Hverir / Námaskarð","lat":65.6408,"lon":-16.808,"day":"adaldalur","fact":"kochende Schlammtöpfe, Marslandschaft","note":"direkt an der Ringstraße hinterm Námaskarð-Pass — riecht nach Schwefel, unvergesslich","src":"tipp","drone":["bedingt","Rand des Mývatn-Schutzgebiets, viel Besuch — Lage vorab prüfen."]},
+  {"name":"Dimmuborgir","lat":65.5911,"lon":-16.9119,"day":"adaldalur","fact":"Lava-Labyrinth der ,dunklen Burgen'","note":"Rundwege 15–60 Min., der Kirkjan-Lavabogen ist das Ziel","src":"tipp","drone":["nein","gehört zum gelisteten Schutzgebiet Mývatn."]},
+  {"name":"Hverfjall","lat":65.6027,"lon":-16.8752,"day":"adaldalur","fact":"Tephrakrater, Ø 1 km","note":"20 Min. steil auf den Kraterrand — Rundblick über den ganzen Mývatn","src":"tipp","drone":["nein","gehört zum gelisteten Schutzgebiet Mývatn."]},
+  {"name":"Skútustaðagígar","lat":65.5697,"lon":-17.0345,"day":"adaldalur","fact":"Pseudokrater am Südufer","note":"kurzer Rundweg zwischen den Kratern, Blick über den See","src":"tipp","drone":["nein","geschützte Pseudokrater im Mývatn-Gebiet."]},
+  {"name":"Aldeyjarfoss","lat":65.442,"lon":-17.342,"day":"adaldalur","fact":"weißer Fall im schwarzen Basalttrichter","note":"~40 Min. ab Goðafoss das Bárðardalur hinauf, letzte km grober Schotter — lohnt sich","src":"tipp","drone":["ja","abgelegen und frei — Vorsicht bei Wind im Trichter."]},
+  {"name":"Múlagljúfur","lat":64.023,"lon":-16.406,"day":"jokul","fact":"Canyon mit Wasserfällen überm Fjallsárlón","note":"unbeschilderter Geheimtipp zwischen Fjallsárlón und Jökulsárlón — 1 h Aufstieg zum Aussichtspunkt","src":"tipp","drone":["bedingt","Randzone des Vatnajökull-NP — Regeln wie an der Lagune anwenden."]}
 ];
+
 
 /* Kostenstellen — dieselben Daten wie auf der Offline-Karte */
 const GCOSTS = [
@@ -321,8 +327,10 @@ function initMap(){
   map = new google.maps.Map(document.getElementById("map"), {
     center:{lat:64.9, lng:-18.6},
     zoom:6,
-    mapTypeId:"hybrid",            // Satellit mit Beschriftung
-    mapTypeControl:true,
+    mapTypeId:"satellite",         // pur — Googles Orts-/Firmen-Icons bleiben weg
+    mapTypeControl:true,           // "Hybrid" (mit Ortsnamen) ist ein Tipp entfernt
+    gestureHandling:"greedy",      // ein Finger schiebt, wie auf der Offline-Karte
+    clickableIcons:false,
     streetViewControl:false,
     fullscreenControl:true,
     backgroundColor:"#0f1417"

@@ -366,6 +366,22 @@ betroffenen Ziels. Datenquelle bleibt allein `COSTS` in karte.html —
 beim Übertragen aufs Satellitenformat (`GCOSTS`) nichts von Hand
 pflegen, sondern das Sync-Vorgehen aus der Git-History nutzen.
 
+## Seen, Natur-Nachschub, ruhigere Satellitenkarte (14. August, mittags)
+
+- **`LAKES`**: Mývatn, Þingvallavatn und Lagarfljót von Hand
+  nachgezeichnet (Natural Earth liefert keine Binnenseen), gezeichnet
+  in Ozeanfarbe zwischen Land und Gletschern.
+- **6 Natur-Ziele dazu** (violett): Hverir/Námaskarð, Dimmuborgir,
+  Hverfjall, Skútustaðagígar, Aldeyjarfoss, Múlagljúfur — alle mit
+  Drohnen-Ampel (Mývatn-Gebiet weitgehend „nein", steht dabei).
+  Jetzt 66 Ziele gesamt.
+- **Satellitenkarte bedienbar wie offline**: `gestureHandling:
+  "greedy"` (ein Finger schiebt/zoomt), `clickableIcons:false`, und
+  Start in **purer Satellitenansicht** — Googles Häuser-/Friedhofs-/
+  Ortsicons sind Teil der Hybrid-Beschriftung und lassen sich bei
+  hybrid nicht stylen, deshalb ist „satellite" der Standard;
+  „Hybrid" mit Ortsnamen liegt im Umschalter oben links.
+
 ## Was noch offen ist
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
