@@ -41,6 +41,15 @@
   .poi .n{color:var(--ink3);font-size:.72rem}
   .poi input{accent-color:#b07ce8;margin:0 .1rem 0 0;flex:none}
   .dpbar{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.55rem;padding-top:.5rem;border-top:1px dashed var(--rule)}
+  .fixrow{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.45rem}
+  .fixrow button{
+    padding:.3rem .55rem;font-size:.7rem;border:1px solid var(--rule);border-radius:3px;
+    background:var(--panel2);color:var(--ink);cursor:pointer;font-family:inherit;
+  }
+  .navlink{color:#7cc4ff;text-decoration:none;white-space:nowrap;margin-left:.4rem;font-size:.74rem}
+  .approxpos{color:var(--route)}
+  .exactpos{color:#5fd08a;font-weight:600}
+  .dimpos{color:var(--ink3)}
   .findbar{display:flex;gap:.4rem;align-items:center;flex-wrap:wrap;margin-bottom:.8rem}
   .findbar button{
     padding:.35rem .6rem;font-size:.74rem;border:1px solid var(--rule);border-radius:3px;
@@ -134,33 +143,61 @@ const STOPS = [
   { id:"nordur", num:2, name:"Urðartindur Guesthouse & Cottages",
     addr:"Norðurfjörður 1, 524 Norðurfjörður, Iceland",
     lat:65.9556, lon:-21.5464, when:"Do 13. → Fr 14. Aug",
-    detail:"Check-in nur 16–20 Uhr" },
+    checkin:"16:00–20:00" },
 
+  /* Zeiten und Adressen ab hier 1:1 aus den Booking-Bestätigungen
+     (Screenshots vom 16.8.) — Quelle bleibt karte.html. */
   { id:"hofsos", num:3, name:"Frændgarður",
     addr:"Kvosin, 566 Hofsós, Iceland",
-    lat:65.8935, lon:-19.4120, when:"Fr 14. → Sa 15. Aug" },
+    lat:65.8935, lon:-19.4120, when:"Fr 14. → Sa 15. Aug",
+    checkin:"15:00–23:00", checkout:"7:00–11:00" },
 
   { id:"adaldalur", num:4, name:"Vestmannsvatn Guesthouse",
     addr:"Fagraneskot, 641 Aðaldalur, Iceland",
-    lat:65.7930, lon:-17.4230, when:"Sa 15. → So 16. Aug", detail:"+354 864 5652" },
+    lat:65.7930, lon:-17.4230, when:"Sa 15. → So 16. Aug",
+    checkin:"16:00–21:00", checkout:"7:00–11:00", detail:"+354 864 5652" },
 
   { id:"reydar", num:5, name:"Hótel Austur",
     addr:"Búðareyri 6, 730 Reyðarfjörður, Iceland",
-    lat:65.0303, lon:-14.2020, when:"So 16. → Mo 17. Aug", detail:"+354 897 2274" },
+    lat:65.0303, lon:-14.2020, when:"So 16. → Mo 17. Aug",
+    checkin:"16:00–23:00", checkout:"7:00–11:00", detail:"+354 897 2274" },
 
   { id:"jokul", num:6, name:"Hótel Jökulsárlón — Glacier Lagoon Hotel",
-    addr:"Hótel Jökulsárlón, Reynivellir, 781 Hornafjörður, Iceland",
-    lat:64.0330, lon:-15.9750, when:"Mo 17. → Di 18. Aug", detail:"+354 449 7000" },
+    addr:"Reynivellir, 781 Jökulsárlón, Iceland",
+    lat:64.0330, lon:-15.9750, approx:true, when:"Mo 17. → Di 18. Aug",
+    checkin:"ab 16:00", checkout:"bis 11:00", detail:"+354 449 7000" },
 
   { id:"fiflholt", num:7, name:"Vestra-Fíflholt cabin 3",
-    addr:"Vestra Fíflholt, 861 Hvolsvöllur, Iceland",
-    lat:63.6900, lon:-20.3800, when:"Di 18. → Mi 19. Aug",
-    detail:"+354 898 4992 · Check-out 9–10 Uhr" },
+    addr:"Vestra Fíflholt Cabin 1, 861 Hvolsvöllur, Iceland",
+    lat:63.6900, lon:-20.3800, approx:true, when:"Di 18. → Mi 19. Aug",
+    checkin:"ab 16:00", checkout:"9:00–10:00", detail:"+354 898 4992" },
 
   { id:"kef-out", kind:"terminus", label:"Rückflug 20. Aug",
     name:"Keflavík International (KEF)", addr:"Keflavík Airport, Iceland",
     lat:63.9850, lon:-22.6056, detail:"Abflug 0:10 → Wien 6:15 (Austrian)" }
 ];
+
+/* Zwei Adressen sind Höfe ohne Hausnummer (Hótel Jökulsárlón,
+   Vestra-Fíflholt) — Koordinaten geschätzt, mit „ca." markiert.
+   Vor Ort setzt der Knopf in der Karte die echte GPS-Position;
+   sie liegt unter demselben localStorage-Schlüssel wie auf der
+   Offline-Karte, gilt also auf beiden Karten. */
+const STOPFIX_KEY = "island-stopfix-v1";
+let stopFix = {};
+try{ stopFix = JSON.parse(localStorage.getItem(STOPFIX_KEY) || "{}"); }catch(e){ stopFix = {}; }
+function saveStopFix(){ try{ localStorage.setItem(STOPFIX_KEY, JSON.stringify(stopFix)); }catch(e){} }
+function applyStopFix(){
+  STOPS.forEach(s=>{
+    if(s._lat0 === undefined){ s._lat0 = s.lat; s._lon0 = s.lon; s._approx0 = !!s.approx; }
+    const f = stopFix[s.id];
+    if(f && isFinite(f.lat) && isFinite(f.lon)){
+      s.lat = f.lat; s.lon = f.lon; s.approx = false; s.fixed = true;
+    } else {
+      s.lat = s._lat0; s.lon = s._lon0; s.approx = s._approx0; s.fixed = false;
+    }
+  });
+}
+applyStopFix();
 
 /* ════════════════════════════════════════════════════════════════
    3) SEHENSWÜRDIGKEITEN — hier beliebig erweitern.
@@ -672,8 +709,20 @@ function render(){
         <span class="when">${s.when || s.label || ""}</span>
       </div>
       <h3>${s.name}</h3>
-      <p>${s.addr}</p>
+      <p>${s.addr}
+        <a class="navlink" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(s.addr)}">🧭 Navi</a></p>
+      <p style="margin-top:.25rem;font-size:.75rem" class="${s.approx?"approxpos":s.fixed?"exactpos":"dimpos"}"
+         title="${s.approx?"geschätzt — Hof ohne Hausnummer":s.fixed?"vor Ort per GPS gesetzt":""}"
+        >${s.approx?"ca. ":s.fixed?"✓ ":""}${s.lat.toFixed(4)}, ${s.lon.toFixed(4)}</p>
+      ${s.checkin||s.checkout?`<p style="margin-top:.25rem;color:var(--ink3);font-size:.75rem">🔑 ${
+          s.checkin?`Check-in ${s.checkin}`:""}${s.checkin&&s.checkout?" · ":""}${
+          s.checkout?`Check-out ${s.checkout}`:""}</p>`:""}
       ${s.detail?`<p style="margin-top:.25rem;color:var(--ink3);font-size:.75rem">${s.detail}</p>`:""}
+      ${s.kind==="terminus" ? "" : `<div class="fixrow">
+        <button data-fix="set">◉ Position hier übernehmen</button>
+        ${s.fixed?`<button data-fix="reset">↩ zurücksetzen</button>`:""}
+      </div>`}
       ${pois.length?`<ul class="poi">${pois.map((p,pi)=>
         `<li>${dpMark[i]?`<input type="checkbox" data-i="${pi}" ${dpSel[i]&&dpSel[i].has(p.name)?"checked":""}>`:""}<span class="d"${p.src==="tipp"?' style="background:#b07ce8"':""}></span><span>${p.name}${p.note?` <span class="n">· ${p.note}</span>`:""}</span></li>`).join("")}</ul>`:""}
       ${dpUI(i, pois)}
@@ -682,6 +731,28 @@ function render(){
       map.panTo({lat:s.lat, lng:s.lon});
       map.setZoom(11);
       if(s._marker) google.maps.event.trigger(s._marker, "click");
+    });
+    /* Navi-Link und der Positions-Knopf dürfen den Kartensprung
+       nicht auslösen. Der Knopf schreibt in denselben localStorage-
+       Schlüssel wie die Offline-Karte — einmal gesetzt, überall da. */
+    card.querySelectorAll("a.navlink").forEach(a=>
+      a.addEventListener("click", ev=>ev.stopPropagation()));
+    card.querySelectorAll("[data-fix]").forEach(btn=>{
+      btn.addEventListener("click", ev=>{
+        ev.stopPropagation();
+        if(btn.dataset.fix === "reset"){
+          delete stopFix[s.id]; saveStopFix(); applyStopFix(); render(); return;
+        }
+        if(!lastGps){
+          const t = btn.textContent;
+          btn.textContent = "erst Standort freigeben";
+          setTimeout(()=>{ btn.textContent = t; }, 2500);
+          return;
+        }
+        stopFix[s.id] = { lat:+lastGps.lat.toFixed(5), lon:+lastGps.lng.toFixed(5) };
+        saveStopFix(); applyStopFix(); render();
+        if(s._marker) s._marker.setPosition({lat:s.lat, lng:s.lon});
+      });
     });
     /* Tagesplaner-Knöpfe und Häkchen dürfen den Karten-Sprung nicht auslösen */
     card.querySelectorAll("[data-dp]").forEach(btn=>{

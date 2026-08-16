@@ -416,7 +416,54 @@ wie ein Ort aussieht. Zwei Dinge:
    Einträge der Satellitenkarte jetzt das `wiki`-Feld (28 Stück,
    Sync-Skript-Logik wie gehabt: karte.html ist die Quelle).
 
-## Mývatn-Runde auf Tag 4 verschoben (16. August 2026 — AKTUELL)
+## Booking-Daten eingetragen + Position selbst setzen (16. August — AKTUELL)
+
+Benedek hat die Booking-Bestätigungen von fünf Unterkünften geschickt
+(Screenshots). Was daraus **belegt** ist, steht jetzt fest in `STOPS`
+(beide Karten) — neue Felder `checkin` / `checkout`:
+
+| Unterkunft | Adresse | Check-in | Check-out |
+|---|---|---|---|
+| Frændgarður | Kvosin, 566 Hofsós | 15:00–23:00 | 7:00–11:00 |
+| Vestmannsvatn Guesthouse | Fagraneskot, 641 Aðaldalur | 16:00–21:00 | 7:00–11:00 |
+| Hótel Austur ★★★ | Búðareyri 6, 730 Reyðarfjörður | 16:00–23:00 | 7:00–11:00 |
+| Hótel Jökulsárlón | Reynivellir, 781 Jökulsárlón | ab 16:00 | bis 11:00 |
+| Vestra-Fíflholt cabin 3 | Vestra Fíflholt Cabin 1, 861 Hvolsvöllur | ab 16:00 | 9:00–10:00 |
+
+Angezeigt als 🔑-Zeile in der Tageskarte. Telefonnummern sind jetzt
+`tel:`-Links, und jede Unterkunft hat einen „🧭 Navi"-Link, der die
+**Adresse** (nicht unsere Koordinate) in Google Maps öffnet — damit
+kommt man auch dann exakt hin, wenn die Koordinate ungenau ist.
+Für Norðurfjörður und Reykjavík lagen keine Screenshots vor; dort ist
+nur das schon bekannte Check-in-Fenster 16:00–20:00 ins neue Feld
+gewandert.
+
+**Koordinaten: offen geblieben, aber jetzt selbst lösbar.** Booking
+nennt für die zwei Höfe ohne Hausnummer (Hótel Jökulsárlón =
+„Reynivellir", Vestra-Fíflholt) keine Koordinaten, und aus dieser
+Arbeitsumgebung ist jedes Hotelportal und jeder Geocoder gesperrt
+(Proxy-403) — geraten wird hier nichts. Stattdessen:
+
+- **`stopFix` / `island-stopfix-v1`** (beide Karten, gleicher
+  localStorage-Schlüssel): In jeder Unterkunfts-Karte sitzt
+  „◉ Position hier übernehmen". Steht man davor und läuft GPS,
+  schreibt ein Tipp die echte Position; sie ersetzt die Schätzung,
+  überlebt Neustarts und gilt auf **beiden** Karten. Die Anzeige
+  wechselt dabei von rotem „ca. 64.0330, -15.9750" auf grünes
+  „✓ 64.0412, -15.9687" — die Zahlen kann man ablesen und dauerhaft
+  in `STOPS` eintragen. „↩ zurücksetzen" nimmt es wieder raus.
+- `applyStopFix()` läuft direkt nach der `STOPS`-Definition und
+  sichert die Originalwerte in `_lat0`/`_lon0`/`_approx0`, damit
+  Zurücksetzen verlustfrei ist. Die `via`-Linien der Etappen bleiben
+  bewusst unangetastet (handgezeichnete Näherung); der Tagesplaner
+  rechnet dagegen sofort mit der neuen Position.
+
+Geprüft mit Playwright (echte Geolocation simuliert): ohne GPS zeigt
+der Knopf „erst GPS einschalten (◉)" und speichert nichts, mit GPS
+wird gesetzt, überlebt einen Reload und lässt sich zurücksetzen —
+auf beiden Karten, keine Konsolenfehler.
+
+## Mývatn-Runde auf Tag 4 verschoben (16. August 2026)
 
 Benedek hat die Runde gestern nicht gefahren und macht sie heute auf dem
 Weg **Vestmannsvatn → Hótel Austur (Reyðarfjörður)**. Der alte Tag-3-Plan
@@ -499,7 +546,10 @@ nicht erst morgen Richtung Reyðarfjörður. Deshalb:
 
 - **Koordinaten prüfen:** `Hótel Jökulsárlón` (Reynivellir) und
   `Vestra-Fíflholt` sind geschätzt und in der Karte mit „ca." markiert. Beide
-  Adressen sind Höfe ohne Hausnummer. Exakte Werte in `STOPS` eintragen.
+  Adressen sind Höfe ohne Hausnummer, auch Booking nennt keine Koordinaten.
+  Weg dorthin: Benedek tippt vor Ort „◉ Position hier übernehmen" (siehe
+  `stopFix` oben), liest die grünen Zahlen ab — die gehören dann fest in
+  `STOPS`, damit sie auch ohne localStorage stimmen.
 - **Zwei Zeilen vom handschriftlichen Zettel** waren nicht sicher lesbar:
   „Sólheim~foss" (vermutlich Sólheimajökull, so eingetragen) und ein
   „H…~foss" darunter. Benedek fragen.

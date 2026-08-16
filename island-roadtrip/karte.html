@@ -382,6 +382,12 @@
     font-variant-numeric:tabular-nums;
   }
   .stop .meta .approx{color:var(--route)}
+  /* Position, die vor Ort per GPS gesetzt wurde — die gilt */
+  .stop .meta .exact{color:#2E8B57;font-weight:600}
+  .stop .addr .navlink,
+  .stop .meta .navlink{color:#0B62C4;text-decoration:none;white-space:nowrap}
+  .stop .addr .navlink{margin-left:.4rem;font-size:.74rem}
+  .fixrow{display:flex;gap:.35rem;flex-wrap:wrap;margin-top:.45rem}
 
   .poilist{list-style:none;margin:.5rem 0 0;padding:.45rem 0 0;border-top:1px dashed var(--rule);display:flex;flex-direction:column;gap:.22rem}
   .poilist li{display:flex;gap:.45rem;align-items:baseline;font-size:.78rem;color:var(--ink-2)}
@@ -722,36 +728,44 @@ const STOPS = [
     name:"Urðartindur Guesthouse & Cottages", addr:"Norðurfjörður 1, 524 Norðurfjörður",
     lat:65.9556, lon:-21.5464,
     from:"Do 13. Aug", to:"Fr 14. Aug", nights:1,
-    detail:"Strandir, Westfjorde — Check-in nur 16–20 Uhr" },
+    checkin:"16:00–20:00",
+    detail:"Strandir, Westfjorde — enges Check-in-Fenster, rechtzeitig da sein" },
 
+  /* Zeiten und Adressen ab hier 1:1 aus Benedeks Booking-Bestätigungen
+     (Screenshots vom 16.8.) — nicht überschreiben ohne neue Quelle. */
   { id:"hofsos", kind:"hotel", num:3,
     name:"Frændgarður", addr:"Kvosin, 566 Hofsós",
     lat:65.8935, lon:-19.4120,
-    from:"Fr 14. Aug", to:"Sa 15. Aug", nights:1 },
+    from:"Fr 14. Aug", to:"Sa 15. Aug", nights:1,
+    checkin:"15:00–23:00", checkout:"7:00–11:00" },
 
   { id:"adaldalur", kind:"hotel", num:4,
     name:"Vestmannsvatn Guesthouse", addr:"Fagraneskot, 641 Aðaldalur",
     lat:65.7930, lon:-17.4230,
     from:"Sa 15. Aug", to:"So 16. Aug", nights:1,
+    checkin:"16:00–21:00", checkout:"7:00–11:00",
     tel:"+354 864 5652" },
 
   { id:"reydar", kind:"hotel", num:5,
     name:"Hótel Austur", addr:"Búðareyri 6, 730 Reyðarfjörður",
     lat:65.0303, lon:-14.2020,
     from:"So 16. Aug", to:"Mo 17. Aug", nights:1, stars:3,
+    checkin:"16:00–23:00", checkout:"7:00–11:00",
     tel:"+354 897 2274" },
 
   { id:"jokul", kind:"hotel", num:6,
     name:"Hótel Jökulsárlón — Glacier Lagoon Hotel", addr:"Reynivellir, 781 Jökulsárlón",
     lat:64.0330, lon:-15.9750, approx:true,
     from:"Mo 17. Aug", to:"Di 18. Aug", nights:1,
+    checkin:"ab 16:00", checkout:"bis 11:00",
     tel:"+354 449 7000" },
 
   { id:"fiflholt", kind:"hotel", num:7,
     name:"Vestra-Fíflholt cabin 3", addr:"Vestra Fíflholt Cabin 1, 861 Hvolsvöllur",
     lat:63.6900, lon:-20.3800, approx:true,
     from:"Di 18. Aug", to:"Mi 19. Aug", nights:1,
-    tel:"+354 898 4992", detail:"Check-out 9–10 Uhr" },
+    checkin:"ab 16:00", checkout:"9:00–10:00",
+    tel:"+354 898 4992" },
 
   { id:"kef-out", kind:"terminus", label:"Rückflug",
     name:"Keflavík International (KEF)", addr:"Reykjanesbær",
@@ -759,6 +773,31 @@ const STOPS = [
     from:"19. Aug", to:"20. Aug", nights:0,
     detail:"Abflug 20. Aug, 0:10 → Wien 6:15 (Austrian)" }
 ];
+
+/* ── Unterkunfts-Position selbst exakt setzen ──────────────────
+   Zwei Buchungen sind Höfe ohne Hausnummer (Hótel Jökulsárlón =
+   „Reynivellir", Vestra-Fíflholt) — Booking nennt keine Koordinaten,
+   unsere sind geschätzt und mit „ca." markiert. Steht man davor und
+   läuft GPS (◉), übernimmt ein Tipp in der Tageskarte die echte
+   Position. Sie liegt in localStorage, überlebt Neustarts und wird
+   im Kartentext ausgewiesen, damit man sie ablesen und dauerhaft
+   in STOPS eintragen kann. */
+const STOPFIX_KEY = "island-stopfix-v1";
+let stopFix = {};
+try{ stopFix = JSON.parse(localStorage.getItem(STOPFIX_KEY) || "{}"); }catch(e){ stopFix = {}; }
+function saveStopFix(){ try{ localStorage.setItem(STOPFIX_KEY, JSON.stringify(stopFix)); }catch(e){} }
+function applyStopFix(){
+  STOPS.forEach(s=>{
+    if(s._lat0 === undefined){ s._lat0 = s.lat; s._lon0 = s.lon; s._approx0 = !!s.approx; }
+    const f = stopFix[s.id];
+    if(f && isFinite(f.lat) && isFinite(f.lon)){
+      s.lat = f.lat; s.lon = f.lon; s.approx = false; s.fixed = true;
+    } else {
+      s.lat = s._lat0; s.lon = s._lon0; s.approx = s._approx0; s.fixed = false;
+    }
+  });
+}
+applyStopFix();
 
 /* ══════════════════════════════════════════════════════════════
    2) ETAPPEN — Fahrzeit in Minuten, Strecke in km,
@@ -3515,16 +3554,31 @@ function renderRail(){
         <span class="when">${st.kind==="terminus" ? st.label : st.from + " → " + st.to}</span>
       </div>
       <h3>${st.name}</h3>
-      <p class="addr">${st.addr}</p>
+      <p class="addr">${st.addr}
+        <a class="navlink" target="_blank" rel="noopener"
+           href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(st.addr + ", Iceland")}"
+           title="Adresse in Google Maps öffnen — braucht Internet">🧭 Navi</a></p>
       <div class="meta">
-        <span${st.approx?' class="approx"':''}>${st.approx?"ca. ":""}${st.lat.toFixed(4)}, ${st.lon.toFixed(4)}</span>
+        <span class="${st.approx?"approx":st.fixed?"exact":""}"
+              title="${st.approx?"geschätzt — Adresse ist ein Hof ohne Hausnummer"
+                     :st.fixed?"vor Ort per GPS gesetzt":"recherchierte Position"}"
+          >${st.approx?"ca. ":st.fixed?"✓ ":""}${st.lat.toFixed(4)}, ${st.lon.toFixed(4)}</span>
         ${st.stars?`<span>${"★".repeat(st.stars)}</span>`:""}
-        ${st.tel?`<span>${st.tel}</span>`:""}
+        ${st.tel?`<span><a class="navlink" href="tel:${st.tel.replace(/\s/g,"")}">${st.tel}</a></span>`:""}
         ${(()=>{ const d=+(st.from.match(/(\d{1,2})\./)||[])[1];
                  const su=d?sunTimes(st.lat,st.lon,d):null;
                  return su?`<span title="Sonnenaufgang und -untergang am ${d}. August">☀ ${su.rise}–${su.set}</span>`:""; })()}
+        ${st.checkin||st.checkout?`<span style="flex:1 1 100%">🔑 ${
+            st.checkin?`Check-in ${st.checkin}`:""}${
+            st.checkin&&st.checkout?" · ":""}${
+            st.checkout?`Check-out ${st.checkout}`:""}</span>`:""}
         ${st.detail?`<span style="flex:1 1 100%;color:var(--ink-2)">${st.detail}</span>`:""}
       </div>
+      ${st.kind==="terminus" ? "" : `<div class="fixrow">
+        <button class="btn mini" data-fix="set"
+          title="Genaue Position aus dem laufenden GPS übernehmen">◉ Position hier übernehmen</button>
+        ${st.fixed?`<button class="btn mini" data-fix="reset" title="Zurück auf die hinterlegte Position">↩ zurücksetzen</button>`:""}
+      </div>`}
       ${pois.length?`<ul class="poilist">${pois.map((p,pi)=>{
         const c = costFor(p);
         const chip = c
@@ -3559,6 +3613,29 @@ function renderRail(){
         const m = fwd(p.lon, p.lat);
         goTo(m[0], m[1], Math.max(view.k, kForKm(70)), true);
         setTimeout(()=>showCard(p), 640);
+      });
+    });
+
+    /* Genaue Position der Unterkunft vom GPS übernehmen.
+       Der Link „🧭 Navi" darf den Kartensprung nicht auslösen. */
+    card.querySelectorAll("a.navlink").forEach(a=>
+      a.addEventListener("click", ev=>ev.stopPropagation()));
+    card.querySelectorAll("[data-fix]").forEach(btn=>{
+      btn.addEventListener("click", ev=>{
+        ev.stopPropagation();
+        if(btn.dataset.fix === "reset"){
+          delete stopFix[st.id]; saveStopFix(); applyStopFix();
+          renderRail(); draw(); return;
+        }
+        if(!gpsPos){
+          const t = btn.textContent;
+          btn.textContent = "erst GPS einschalten (◉)";
+          setTimeout(()=>{ btn.textContent = t; }, 2500);
+          return;
+        }
+        stopFix[st.id] = { lat:+gpsPos.lat.toFixed(5), lon:+gpsPos.lon.toFixed(5) };
+        saveStopFix(); applyStopFix();
+        renderRail(); draw();
       });
     });
 
