@@ -416,7 +416,46 @@ wie ein Ort aussieht. Zwei Dinge:
    Einträge der Satellitenkarte jetzt das `wiki`-Feld (28 Stück,
    Sync-Skript-Logik wie gehabt: karte.html ist die Quelle).
 
-## Tag-3-Tour umgebaut: Ziel Húsavík (15. August 2026, mittags — AKTUELL)
+## Mývatn-Runde auf Tag 4 verschoben (16. August 2026 — AKTUELL)
+
+Benedek hat die Runde gestern nicht gefahren und macht sie heute auf dem
+Weg **Vestmannsvatn → Hótel Austur (Reyðarfjörður)**. Der alte Tag-3-Plan
+mit den Nummern 1–6 und Ziel Húsavík ist weg, der neue steht auf Tag 4:
+
+**Aldeyjarfoss (0:53) → Goðafoss (0:28) → Skútustaðagígar (0:31) →
+Dimmuborgir (0:15) → Hverfjall (0:19) → Hverir/Námaskarð (0:16) →
+Hótel Austur (2:22) — 5:04 h, ~365 km** (Offline-Engine ab Unterkunft;
+am Handy startet die Route ab GPS). Ziel ist wieder die Unterkunft,
+kein `PRESET_END` mehr.
+
+**Bewusst draußen gelassen**, weil der Tag sonst nicht zu schaffen ist:
+Mývatn-See, Grjótagjá, Víti-Krater, Dettifoss (West), Selfoss, Ásbyrgi,
+Stuðlagil, Hengifoss, Rjúkandi. Sie stehen weiter in der Tagesliste 4 und
+lassen sich über „Besuchsorte ändern" jederzeit dazunehmen.
+
+Dafür geändert (beide Karten synchron):
+
+- **6 Ziele umgehängt** (`day:"hofsos"` → `"adaldalur"`): Goðafoss,
+  Aldeyjarfoss, Hverir/Námaskarð, Dimmuborgir, Hverfjall,
+  Skútustaðagígar. Tageskarte 3 hat damit 9 Ziele, Tageskarte 4 hat 15.
+- `PRESET_DAY` 3 → **4**, `PRESET_END` auf `null`. Auf der
+  Satellitenseite dieselbe Verschiebung im `setTimeout`-Block am Ende von
+  `initMap()` (`dayPlans[4]`, `computeDayRoute(4, chosen)` ohne `endOv`).
+- **Migration robuster gemacht:** Auto-Pläne tragen jetzt eine
+  `presetId` (`PRESET_ID`). `applyPresetPlan()` wirft auf Tag 3 und 4
+  jeden gespeicherten Plan weg, dessen `presetId` nicht der aktuellen
+  entspricht; Pläne ohne `presetId` (aus der Zeit davor) erkennt es
+  weiter an der Zielauswahl über `OLD_PRESETS`. Selbst gebaute Pläne
+  bleiben unangetastet. **Beim nächsten Verschieben genügt es,
+  `PRESET_ID` mitzuändern** — die Namensliste in `OLD_PRESETS` muss man
+  dann nicht mehr pflegen.
+
+Geprüft mit Playwright (390 px und 1440 px, beide Karten, Google-API
+gestubbt): alter Tag-3-Plan wird aus localStorage entfernt, Tag 4 bekommt
+den neuen Plan mit den Marken 1–6, Ablauf endet auf „🛏 Hótel Austur",
+keine Konsolenfehler, kein seitliches Scrollen.
+
+## Tag-3-Tour umgebaut: Ziel Húsavík (15. August 2026, mittags — überholt, s. o.)
 
 Benedek hat unterwegs umgeplant. Die heutige Tour ist jetzt:
 **Goðafoss + Aldeyjarfoss + Hverir/Námaskarð + Dimmuborgir + Hverfjall
