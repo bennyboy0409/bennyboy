@@ -1,41 +1,51 @@
-scenario,cans,cost_line,huf_per_can,eur_per_can,status,note
-BATCH 1 PILOT,1700,Collagen 10 g (hydrolysed bovine),79.0,0.218,ESTIMATE,~10.3 g powder at 97% protein. Cheapest protein per gram at 0.0165 EUR/g protein.
-BATCH 1 PILOT,1700,Whey protein isolate 10 g,118.0,0.325,ESTIMATE,"~11.1 g WPI90. WARNING: European producers reported SOLD OUT April 2026; WPC80 hit EUR 20250/t."
-BATCH 1 PILOT,1700,L-leucine 1.7 g,9.6,0.026,ESTIMATE,Enables the 3 g leucine per can claim. Highest-ROI ingredient in the formula.
-BATCH 1 PILOT,1700,L-tryptophan 150 mg,0.7,0.002,ESTIMATE,Fixes the collagen tryptophan gap for under 1 HUF.
-BATCH 1 PILOT,1700,Sweetener system (sucralose + acesulfame K),6.2,0.017,ESTIMATE,RECOMMENDED system. Far cheaper than erythritol and avoids the EU beverage polyol limit.
-BATCH 1 PILOT,1700,Acid system (citric + malic),2.5,0.007,ESTIMATE,Target pH 3.2.
-BATCH 1 PILOT,1700,Natural flavour (lemon-lime),8.0,0.022,ESTIMATE,At ~0.15% dosage.
-BATCH 1 PILOT,1700,Potassium sorbate,0.8,0.002,ESTIMATE,Only if cold-fill. Omit if tunnel-pasteurised.
-BATCH 1 PILOT,1700,SUBTOTAL INGREDIENTS,224.8,0.619,ESTIMATE,ARCH F pilot pricing. Falls to ~198 HUF at scale.
-BATCH 1 PILOT,1700,Can body + end (co-packer stock),52.0,0.143,QUOTE REQUIRED,"Cannot buy direct - can makers need 150000+ unit truckloads. Must use co-packer stock cans."
-BATCH 1 PILOT,1700,Shrink sleeve + application,42.0,0.116,QUOTE REQUIRED,Blank can + sleeve. Printed cans need 150000-250000 units.
-BATCH 1 PILOT,1700,Filling / tolling variable,60.0,0.165,QUOTE REQUIRED,THE LARGEST UNKNOWN. Ask every co-packer.
-BATCH 1 PILOT,1700,Setup / changeover / recipe fee amortised,70.0,0.193,QUOTE REQUIRED,Dominates at low volume. Allergen changeover for whey may add a surcharge.
-BATCH 1 PILOT,1700,Tray / carton / film,8.0,0.022,ESTIMATE,24-can trays.
-BATCH 1 PILOT,1700,Inbound freight to Hungary,15.0,0.041,ESTIMATE,1 pallet groupage. Higher if Opre fills in Slovakia.
-BATCH 1 PILOT,1700,EPR packaging fee,5.1,0.014,ESTIMATE,2.6 primary + 2.52 secondary. Applies below the DRS threshold.
-BATCH 1 PILOT,1700,Waste / reject allowance 3%,14.0,0.039,ESTIMATE,First runs reject more than mature runs.
-BATCH 1 PILOT,1700,TOTAL LANDED COGS,491.0,1.353,ESTIMATE,"Range 428-620. B6 independently modelled EUR 2000-2600 for ~1700 cans = 428-555 HUF."
-BATCH 1 PILOT,1700,Consumer price incl 27% AFA,799.0,2.201,DECISION,Within the founder's 699-899 ceiling.
-BATCH 1 PILOT,1700,less AFA at 27%,-169.8,-0.468,DERIVED,799 / 1.27 = 629.13 net.
-BATCH 1 PILOT,1700,NET REVENUE,629.0,1.733,DERIVED,Sold direct or on consignment - founder keeps the retail margin.
-BATCH 1 PILOT,1700,CONTRIBUTION PER CAN,138.0,0.380,DERIVED,629 - 491. Positive only because it is NOT wholesaled.
-BATCH 1 PILOT,1700,CONTRIBUTION IF WHOLESALED AT 470 NET,-21.0,-0.058,DERIVED,LOSS. Do not wholesale batch 1.
-BATCH 1 PILOT,1700,CONTRIBUTION AT 899 RRP,217.0,0.598,DERIVED,899 / 1.27 = 707.87 net; minus 491.
-SCALE 5000,5000,TOTAL LANDED COGS,699.0,1.926,ESTIMATE,At the DRS threshold. Setup amortisation and small ingredient buys still dominate.
-SCALE 5000,5000,Gross margin at 470 wholesale,-229.0,-0.631,DERIVED,-47% gross margin. Unsellable at wholesale.
-SCALE 10000,10000,TOTAL LANDED COGS,556.0,1.532,ESTIMATE,DRS now mandatory. Deposit float 500000 HUF = EUR 1377.
-SCALE 10000,10000,Gross margin at 470 wholesale,-86.0,-0.237,DERIVED,-17% gross margin. Still loses money at wholesale.
-SCALE 25000,25000,TOTAL LANDED COGS,420.0,1.157,ESTIMATE,Wholesale becomes marginally viable.
-SCALE 25000,25000,Gross margin at 470 wholesale,50.0,0.138,DERIVED,First volume at which wholesale is positive.
-SCALE 50000,50000,TOTAL LANDED COGS,370.0,1.019,ESTIMATE,
-SCALE 50000,50000,Gross margin at 470 wholesale,100.0,0.275,DERIVED,
-SCALE 100000,100000,TOTAL LANDED COGS,304.0,0.837,ESTIMATE,Iceland-equivalent economics. Reverse-engineered UPP ex-works was 218-261 HUF.
-SCALE 100000,100000,Gross margin at 470 wholesale,166.0,0.457,DERIVED,35% gross margin - a real business.
-CROSSOVER,30000,COGS falls below 400 HUF,400.0,1.102,ESTIMATE,Approximate crossover volume.
-CROSSOVER,75000,COGS falls below 350 HUF,350.0,0.964,ESTIMATE,Founder's maximum acceptable COGS. Needs ~EUR 70000 working capital.
-CROSSOVER,100000,COGS falls below 300 HUF,300.0,0.826,ESTIMATE,Founder's preferred COGS. Only at Iceland-scale volume.
-CROSSOVER,0,COGS falls below 250 HUF,0.0,0.000,NOT REACHABLE,Not reachable at 20 g protein. Ingredients alone are ~198 HUF at scale.
-LOWER PROTEIN OPTION,25000,ARCH G 12 g protein - TOTAL LANDED COGS,300.0,0.826,ESTIMATE,"Fits the 300 HUF box at moderate volume. KEEPS the legal MAGAS FEHERJETARTALMU claim."
-LOWER PROTEIN OPTION,25000,ARCH G contribution at 649 RRP,211.0,0.581,DERIVED,649 / 1.27 = 511 net; minus 300. Viable but loses the 20 g headline.
+section,scenario,cans,line,huf_per_can,eur_per_can,status,note
+INGREDIENTS,BATCH 1,1700,Collagen peptides 11.111 g (hydrolysed bovine),65.18,0.180,ESTIMATE,"Authoritative source: product/04_FORMULATION_V1.csv. 90% protein assumed - CONFIRM ON CoA."
+INGREDIENTS,BATCH 1,1700,Whey protein isolate 11.111 g CLEAR/ACID-STABLE grade,163.90,0.451,ESTIMATE,"BASE CASE. Clear grade is REQUIRED - commodity WPC80/standard WPI will haze at pH 3.2. Optimistic commodity-WPI90 case is 131.08."
+INGREDIENTS,BATCH 1,1700,L-leucine 1.7 g,9.60,0.026,ESTIMATE,Enables the 3 g leucine per can claim.
+INGREDIENTS,BATCH 1,1700,L-tryptophan 150 mg,0.71,0.002,ESTIMATE,"LEGALITY UNVERIFIED - may free amino acids be added to a beverage? See 34_OPEN_QUOTES Tier 1 item 7."
+INGREDIENTS,BATCH 1,1700,Sweetener system (sucralose + acesulfame K),6.19,0.017,ESTIMATE,Cheaper than erythritol and avoids the EU beverage polyol limit.
+INGREDIENTS,BATCH 1,1700,Acid system (citric + malic),2.50,0.007,ESTIMATE,Target pH 3.2.
+INGREDIENTS,BATCH 1,1700,Natural flavour lemon-lime,8.00,0.022,ESTIMATE,~0.15% dosage.
+INGREDIENTS,BATCH 1,1700,Potassium sorbate,0.80,0.002,ESTIMATE,CONDITIONAL - omit if tunnel-pasteurised. Co-packer decides.
+INGREDIENTS,BATCH 1,1700,SUBTOTAL INGREDIENTS (clear-WPI base case),256.88,0.708,ESTIMATE,"Optimistic case with commodity WPI90: 224.06 HUF."
+CONVERSION,BATCH 1,1700,Can body + end (co-packer stock blank),52.00,0.143,QUOTE REQUIRED,Cannot buy direct - can makers need 150000+ truckloads.
+CONVERSION,BATCH 1,1700,Shrink sleeve + application,42.00,0.116,QUOTE REQUIRED,Blank can + sleeve. Printed cans need 150000-250000 units.
+CONVERSION,BATCH 1,1700,Filling / tolling variable,60.00,0.165,QUOTE REQUIRED,LARGEST UNKNOWN.
+CONVERSION,BATCH 1,1700,Setup / changeover / recipe fee amortised,70.00,0.193,QUOTE REQUIRED,"119000 HUF fixed / 1700 cans. Dominates at low volume."
+CONVERSION,BATCH 1,1700,Tray / carton / film,8.00,0.022,ESTIMATE,24-can trays.
+CONVERSION,BATCH 1,1700,Inbound freight to Hungary,15.00,0.041,ESTIMATE,1 pallet groupage. Higher if Opre fills in Slovakia.
+CONVERSION,BATCH 1,1700,EPR packaging fee,5.10,0.014,ESTIMATE,2.6 primary + 2.52 secondary. Applies BELOW the DRS threshold.
+CONVERSION,BATCH 1,1700,Waste / reject allowance 3%,15.30,0.042,ESTIMATE,First runs reject more.
+COGS,BATCH 1 BASE,1700,TOTAL LANDED COGS (clear-WPI base case),524.00,1.444,ESTIMATE,"RANGE 460-620. Optimistic commodity-WPI case = 491."
+COGS,BATCH 1 OPTIMISTIC,1700,TOTAL LANDED COGS (commodity WPI90),491.00,1.353,ESTIMATE,Only valid if a commodity WPI stays clear at pH 3.2 - it probably will not.
+CHANNEL,DIRECT @899,1700,Consumer pays incl 27% AFA,899.00,2.476,DECISION,RECOMMENDED for batch 1. Within the founder's stated 899 maximum.
+CHANNEL,DIRECT @899,1700,less AFA,-191.13,-0.527,DERIVED,899 / 1.27 = 707.87.
+CHANNEL,DIRECT @899,1700,NET REVENUE,707.87,1.950,DERIVED,Founder keeps the full retail margin.
+CHANNEL,DIRECT @899,1700,CONTRIBUTION PER CAN,183.87,0.507,DERIVED,707.87 - 524. THE RECOMMENDED CONFIGURATION.
+CHANNEL,DIRECT @799,1700,NET REVENUE,629.13,1.733,DERIVED,799 / 1.27.
+CHANNEL,DIRECT @799,1700,CONTRIBUTION PER CAN,105.13,0.290,DERIVED,"629.13 - 524. Viable but leaves almost nothing after setup costs."
+CHANNEL,CONSIGNMENT @899 gym keeps 160,1700,Settlement to founder gross,739.00,2.036,DERIVED,899 - 160 gym cut.
+CHANNEL,CONSIGNMENT @899 gym keeps 160,1700,NET REVENUE,581.89,1.603,DERIVED,739 / 1.27.
+CHANNEL,CONSIGNMENT @899 gym keeps 160,1700,CONTRIBUTION PER CAN,57.89,0.159,DERIVED,581.89 - 524. Thin but positive.
+CHANNEL,CONSIGNMENT @899 gym keeps 100,1700,CONTRIBUTION PER CAN,105.13,0.290,DERIVED,"(899-100)/1.27 - 524. PREFERRED consignment structure."
+CHANNEL,CONSIGNMENT @799 gym keeps 160,1700,CONTRIBUTION PER CAN,-20.85,-0.057,DERIVED,"LOSS. (799-160)/1.27 = 503.15 vs 524 COGS. DO NOT USE THIS COMBINATION."
+CHANNEL,WHOLESALE @470 net,1700,CONTRIBUTION PER CAN,-54.00,-0.149,DERIVED,LOSS at batch-1 volume. Wholesale is not viable until ~10000 cans.
+BREAKEVEN,BATCH 1 @899 direct,1700,Cash deployed,994620.00,2740.00,DERIVED,2300 inventory + 440 setup.
+BREAKEVEN,BATCH 1 @899 direct,1700,Sample cans withheld,60.00,0.00,DECISION,"CAPPED AT 60. A 175-can sample budget makes break-even arithmetically impossible."
+BREAKEVEN,BATCH 1 @899 direct,1700,Sellable cans,1640.00,0.00,DERIVED,1700 - 60 samples.
+BREAKEVEN,BATCH 1 @899 direct,1700,Cans needed to recover all cash,1405.00,0.00,DERIVED,994620 / 707.87 = 1405. Feasible: 1405 of 1640 = 86% sell-through.
+BREAKEVEN,BATCH 1 @899 direct,1700,Net result at 100% sell-through,166286.00,458.00,DERIVED,1640 x 707.87 - 994620 = +166286 HUF = +EUR 458.
+BREAKEVEN,BATCH 1 @799 direct,1700,Cans needed to recover all cash,1581.00,0.00,DERIVED,994620 / 629.13 = 1581 of 1640 sellable = 96% sell-through. VERY TIGHT.
+BREAKEVEN,BATCH 1 @799 direct,1700,Net result at 100% sell-through,37157.00,102.00,DERIVED,1640 x 629.13 - 994620 = +37157 HUF = +EUR 102. Essentially break-even.
+SCALE CURVE,unified architecture,1700,TOTAL LANDED COGS,524.00,1.444,ESTIMATE,"All rows below use ONE architecture: blank can + shrink sleeve + co-packer stock + 119000 HUF fixed setup."
+SCALE CURVE,unified architecture,5000,TOTAL LANDED COGS,431.00,1.187,ESTIMATE,Setup amortisation falls from 70 to 24 HUF/can.
+SCALE CURVE,unified architecture,10000,TOTAL LANDED COGS,390.00,1.074,ESTIMATE,WHOLESALE AT 470 NET BECOMES VIABLE HERE (+80 HUF/can).
+SCALE CURVE,unified architecture,25000,TOTAL LANDED COGS,349.00,0.961,ESTIMATE,Meets the founder's 350 HUF maximum COGS target.
+SCALE CURVE,unified architecture,50000,TOTAL LANDED COGS,319.00,0.879,ESTIMATE,
+SCALE CURVE,unified architecture,100000,TOTAL LANDED COGS,296.00,0.815,ESTIMATE,Meets the founder's 300 HUF preferred target. Iceland-equivalent economics.
+CROSSOVER,,10000,COGS falls below 400 HUF,400.00,1.102,DERIVED,Approx 9000-10000 cans.
+CROSSOVER,,25000,COGS falls below 350 HUF,350.00,0.964,DERIVED,"The founder's MAXIMUM acceptable COGS - reached at ~25000 cans, not 75000."
+CROSSOVER,,95000,COGS falls below 300 HUF,300.00,0.826,DERIVED,The founder's PREFERRED COGS - reached at ~95000 cans.
+CROSSOVER,,0,COGS falls below 250 HUF,0.00,0.000,NOT REACHABLE,Not reachable at 20 g protein. Ingredients alone are ~198 HUF at scale.
+LOWER PROTEIN,ARCH G1+ 15-16 g,25000,TOTAL LANDED COGS,282.00,0.777,ESTIMATE,"Ingredients ~145.52 pilot / ~131 scale. Meets the 300 HUF target at 25000 instead of 95000."
+LOWER PROTEIN,ARCH G1+ 15-16 g,1700,TOTAL LANDED COGS,457.00,1.259,ESTIMATE,67 HUF/can cheaper than ARCH F at pilot scale.

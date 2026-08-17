@@ -13,18 +13,18 @@ Prepared 2026-08-16 · 1 EUR = 363 HUF
 | **Business structure** | **Existing family company** (add TEÁOR 4634 + 4725). Fallback: father as **secondary-occupation egyéni vállalkozó** | A minor cannot be an EV or an ügyvezető. Full-time EV costs 101,682 HUF/month with zero revenue |
 | **SKU count** | **ONE** | Two SKUs double artwork, doubles minimum ingredient buys, splits a 1,700-can run into two unsellable halves |
 | **Flavour** | **Lemon–Lime** | Cheapest flavour system, most forgiving of whey astringency at pH 3.2, broadest gym appeal, no colour needed |
-| **Formula architecture** | **ARCH F** — 10 g collagen + 10 g whey isolate + 1.7 g leucine + 150 mg tryptophan | 20 g declared protein at 213 HUF ingredients vs 268–334 HUF for all-whey. The spike fixes the amino-acid profile for 10.31 HUF |
+| **Formula architecture** | **ARCH F** — 10 g collagen + 10 g whey isolate + 1.7 g leucine + 150 mg tryptophan | 20 g declared protein at 257 HUF ingredients vs 268–334 HUF for all-whey at commodity pricing. The spike fixes the amino-acid profile for 10.31 HUF |
 | **Protein composition** | 50% hydrolysed bovine collagen / 50% whey isolate | Exactly what Ölgerðin's UPP does, and what Myprotein already sells in Hungary |
 | **Caffeine** | **NONE in batch 1** | Avoids NETA tax exposure, avoids the mandatory caffeine warning, avoids a second GTIN, avoids under-18 sales questions in gyms |
 | **Manufacturer** | **Opre' Label** (`sales@oprelabel.com`) — one-pallet MOQ, published collagen-beverage capability. Backup: **Bubee Hungary** (`info@bubee.eu`) | Lowest published MOQ reachable from Hungary; Bubee is the best *technical* fit (owns 0.33 L can filling + advertises BCAA/sports drinks) |
 | **Packaging** | **Blank silver can + shrink sleeve** | Printed cans need 150,000–250,000 units. Sleeves let artwork change between runs |
-| **Batch size** | **~1,700 cans** (one pallet) | Fits €2,000–2,600. Stays under the ~5,000 DRS threshold |
+| **Batch size** | **~1,700 cans** (one pallet) | Fits €3,000. Stays under the ~5,000 DRS threshold |
 | **Lab plan** | Nutrition by **calculation**, not analysis (Reg. 1169/2011 Art. 31(4) permits it). Co-packer's own micro + CoA. | Legally sufficient and saves €800–2,000 |
 | **Storage** | Home/garage under the registered food business, ~1 pallet | 1 pallet ≈ 1 m². Ambient, packaged, non-perishable |
-| **Distribution** | **Consignment into gym fridges + direct sales.** No wholesale in batch 1 | At 491 HUF cost, a 470 HUF wholesale price loses money |
-| **Wholesale price** | **N/A batch 1.** From ~25,000 units: **470 HUF net** | Only works once COGS drops below ~350 HUF |
-| **Retail price** | **799 HUF** (899 max) | Validated against the Icelandic benchmark at 704.5 HUF equivalent |
-| **Startup capital** | **€2,000 – €2,600** | €1,000 founder + €1,000–1,600 father |
+| **Distribution** | **Direct sales + limited consignment.** No wholesale in batch 1 | At 524 HUF cost, a 470 HUF wholesale price loses 54 HUF/can |
+| **Wholesale price** | **N/A batch 1.** From **~10,000 units**: **470 HUF net** | At 10,000 cans COGS is ~390 HUF, giving +80 HUF/can |
+| **Retail price** | **899 HUF** for batch 1 | At 1,700 cans, 799 does not return the capital. 799 becomes correct at ~10,000 cans |
+| **Startup capital** | **€3,000** | €1,000 founder + **€2,000 father**. Inventory €2,300 + setup €440 + contingency €260 |
 
 ---
 
@@ -35,7 +35,7 @@ Prepared 2026-08-16 · 1 EUR = 363 HUF
 | Architecture | Composition | Ingredients/can (pilot) | Implied RRP | Verdict |
 |---|---|---|---|---|
 | ARCH A | 20 g collagen only | ~150 HUF `ESTIMATE` | ~600 HUF | Cheapest, but zero gym credibility |
-| **ARCH F** ⭐ | **10 g collagen + 10 g whey + spike** | **213 HUF** | **799 HUF** | **RECOMMENDED** |
+| **ARCH F** ⭐ | **10 g collagen + 10 g whey + spike** | **257 HUF** (clear-WPI base) | **899 HUF** | **RECOMMENDED** |
 | ARCH E | 20 g clear whey isolate | **268–334 HUF** | **1,500–1,900 HUF** | ❌ **REJECTED — 2× your ceiling** |
 | ARCH G | 12 g protein | ~130 HUF `ESTIMATE` | ~649 HUF | Fits 300 HUF box — but loses the 20 g headline |
 
@@ -54,60 +54,62 @@ This lets you print **"3 g leucine per can"** — a claim informed gym buyers re
 
 ## ⚠️ THE HARD FINDING ON YOUR 300 HUF COGS TARGET
 
-**≤300 HUF landed COGS is not achievable at 20 g protein at any volume you can realistically fund.**
-
-Ingredients alone are **198 HUF at scale**. Can + end + sleeve + filling + freight realistically adds **120–180 HUF**. Floor is therefore **~350 HUF**, reached at roughly **70,000–100,000 cans**.
-
-**Your options are honest and limited:**
+**≤300 HUF landed COGS is not achievable at 20 g protein until ~95,000 cans.** Ingredients alone are ~198 HUF at scale; can, sleeve, filling and freight add ~100 HUF.
 
 | If you want | Then |
 |---|---|
-| **≤300 HUF COGS** | Drop to **12–15 g protein**. You *keep* the legal "MAGAS FEHÉRJETARTALMÚ" claim — it is available at every protein level including 12 g `CONFIRMED via Reg. 1924/2006 Annex` |
-| **20 g protein** | Accept **~350 HUF at scale**, price at **799 HUF**, and treat 300 HUF as unreachable |
+| **≤350 HUF COGS** (your stated maximum) | Reached at **~25,000 cans** with 20 g protein |
+| **≤300 HUF COGS** (your preference) | Reached at **~95,000 cans** with 20 g — or at **~25,000 cans** if you drop to 15–16 g |
+| **≤250 HUF** | **Not reachable at 20 g protein.** Ingredients alone are ~198 HUF |
 
-**Recommendation: keep 20 g.** It is the category baseline (five independent formulators converged on 20 g), it is your differentiator against every European product currently shipping at 5.9–15 g, and 799 HUF still clears your ceiling. The 300 HUF target was set before we knew what 20 g costs.
+**Recommendation: keep 20 g.** It is the category baseline (five independent formulators converged on it) and your only differentiator against every European product currently shipping at 5.9–15 g. You *keep* the legal "MAGAS FEHÉRJETARTALMÚ" claim at any level down to 12 g, so dropping protein buys cost, not compliance.
 
 ---
 
 ## LANDED COGS BY VOLUME
 
-| Cans | Landed COGS/can | Total cash | Notes |
-|---|---|---|---|
-| 1,700 | **~491 HUF** `ESTIMATE` | **€2,300** | ⭐ Recommended batch 1. Sub-DRS. |
-| 5,000 | ~699 HUF | €9,600 | At DRS threshold. Worse per-can than 1,700 in some quotes because setup dominates differently — **verify on quote** |
-| 10,000 | ~556 HUF | €15,300 | DRS mandatory. Deposit float €1,377 |
-| 25,000 | ~420 HUF `ESTIMATE` | €28,900 | Wholesale becomes viable |
-| 50,000 | ~370 HUF `ESTIMATE` | €51,000 | |
-| 100,000 | **~304 HUF** | €83,700 | Iceland-equivalent economics |
+All rows use **one consistent architecture**: blank can + shrink sleeve + co-packer stock cans + 119,000 HUF fixed setup amortised.
 
-**Crossover volumes:** <400 HUF at ~30,000 · <350 HUF at ~70,000–80,000 · <300 HUF at ~100,000+ · <250 HUF **not reachable at 20 g protein**
+| Cans | Landed COGS/can | Total inventory cash | Margin at 470 wholesale | Notes |
+|---|---|---|---|---|
+| **1,700** | **~524 HUF** | **€2,300** | −54 ❌ | ⭐ Batch 1. Sub-DRS. **Direct sales only** |
+| 5,000 | ~431 HUF | €5,937 | +39 | At the DRS threshold |
+| **10,000** | **~390 HUF** | €10,744 | **+80 ✅** | **Wholesale becomes viable here** |
+| 25,000 | ~349 HUF | €24,036 | +121 | Meets your 350 HUF maximum |
+| 50,000 | ~319 HUF | €43,939 | +151 | |
+| 100,000 | ~296 HUF | €81,543 | +174 | Meets your 300 HUF preference. Iceland-equivalent |
+
+**Crossovers:** <400 HUF at **~10,000** · <350 HUF at **~25,000** · <300 HUF at **~95,000** · <250 HUF **not reachable**
+
+> **Correction from an earlier draft:** a previous version of this table was non-monotonic (491 → 699 → 556 → 420), because it spliced two incompatible cost models — one using printed cans and a €2,500 one-off, the other using blank co-packer stock cans. Making more cans cannot raise unit cost. The table above is rebuilt on a single architecture. **The practical consequence is good news: wholesale becomes viable at ~10,000 cans, not ~25,000.**
 
 ---
 
-## UNIT ECONOMICS — BATCH 1 (1,700 cans, sold direct at 799 HUF)
+## UNIT ECONOMICS — BATCH 1 (1,700 cans, 60 withheld as samples, 1,640 sellable)
 
-| Line | HUF/can | EUR/can |
-|---|---|---|
-| Consumer pays (incl. 27% ÁFA) | 799 | 2.20 |
-| less ÁFA | −170 | −0.47 |
-| **Net revenue** | **629** | **1.73** |
-| less landed COGS | −491 | −1.35 |
-| **Contribution/can** | **+138** | **+0.38** |
+| Channel | Net revenue/can | less COGS 524 | Contribution |
+|---|---|---|---|
+| **Direct @ 899** ⭐ | 707.87 | −524 | **+183.87** |
+| Direct @ 799 | 629.13 | −524 | +105.13 |
+| Consignment @ 899, gym keeps 100 | 629.13 | −524 | +105.13 |
+| Consignment @ 899, gym keeps 160 | 581.89 | −524 | +57.89 |
+| **Consignment @ 799, gym keeps 160** | 503.15 | −524 | **−20.85 ❌** |
+| **Wholesale @ 470 net** | 470.00 | −524 | **−54.00 ❌** |
 
-**Batch total:** net revenue **€2,944** · COGS **€2,300** · **contribution €644** · less setup **€440** → **net ~€204**
-
-At 899 HUF RRP: contribution/can **+217 HUF**, batch contribution **€1,013**, net after setup **~€573**.
-
-**Break-even arithmetic (the number that matters):**
+**Break-even at 899 direct:**
 
 | | |
 |---|---|
-| Total cash deployed | €2,300 inventory + €440 setup = **€2,740** |
-| Net revenue per can at 799 HUF | 629 HUF = **€1.733** |
-| **Cans to recover all cash** | **€2,740 ÷ €1.733 = ~1,581 cans** |
-| As a share of the batch | **93%** |
+| Cash deployed | €2,300 inventory + €440 setup = **€2,740** = 994,620 HUF |
+| Net revenue per can | 707.87 HUF |
+| **Cans to recover all cash** | **1,405** |
+| Sellable stock | **1,640** |
+| Headroom | **235 cans (14%)** |
+| **Result at full sell-through** | **+166,286 HUF = +€458** |
 
-> **You must sell 93% of the batch to get your money back.** Batch 1 is **paid market validation**, not a profit centre. Plan for it, price it, and do not over-order.
+**At 799 the same batch returns just +€102**, and needs 1,581 of 1,640 cans — a 96% sell-through with almost no margin for error.
+
+> ⚠️ **Two combinations lose money on every can and must never be used in batch 1:** wholesale at 470, and consignment at 799 with a 160 HUF gym cut. Both are below your 524 HUF cost.
 
 ---
 

@@ -36,17 +36,38 @@ The plan below is built around that fact instead of pretending otherwise.
 | **MOQ** | ~1,500–2,500 cans (one pallet) `ESTIMATE` |
 | **Number of cans** | **~1,700** (plan around this; confirm on quote) |
 | **Packaging** | **Blank silver can + shrink sleeve.** No printed cans |
-| **Total startup cash** | **€2,000 – €2,600** `ESTIMATE` |
-| **Founder's €1,000** | Fully used |
-| **Father funding required** | **€1,000 – €1,600** |
-| **Expected landed cost/can** | **~491 HUF (€1.35)** base case `ESTIMATE` |
-| **Wholesale price** | ⚠️ **Do NOT wholesale batch 1** — see below |
-| **Suggested retail price** | **799 HUF** (+50 HUF deposit only if you exceed 5,000 units/yr) |
-| **Contribution/can** | **+138 HUF** at 799 RRP sold direct · **−21 HUF** if wholesaled at 470 |
-| **Break-even** | **~1,581 cans** (93% of the batch) to recover all €2,740 of cash deployed |
-| **First-batch revenue** | **~€2,944** net of VAT (1,700 × 629 HUF) |
-| **First-batch profit** | **~€204** after setup costs → effectively **break-even** |
-| **Biggest risk** | Batch 1 is *paid market validation*, not a profit centre. If you treat it as a profit centre you will be disappointed and will over-order. |
+| **Total startup cash** | **€3,000** (€2,300 inventory + €440 setup + €260 contingency) |
+| **Founder's €1,000** | ~€430 spent in 30 days; rest held |
+| **Father funding required** | **€2,000** |
+| **Expected landed cost/can** | **~524 HUF (€1.44)** base case `ESTIMATE` (range 460–620) |
+| **Wholesale price** | ⚠️ **Do NOT wholesale batch 1** — loses 54 HUF/can. Viable from ~10,000 cans |
+| **Suggested retail price** | **899 HUF** ⚠️ *see the correction below — 799 does not work at this volume* |
+| **Contribution/can** | **+184 HUF** at 899 direct · **+105 HUF** at 799 direct · **+58 HUF** consignment at 899 |
+| **Sample cans budget** | **60 maximum** — a bigger sample budget makes break-even impossible |
+| **Break-even** | **~1,405 cans** of 1,640 sellable (86% sell-through) at 899 direct |
+| **First-batch revenue** | **~€3,198** net of VAT (1,640 × 707.87 HUF) |
+| **First-batch profit** | **~€458** after all costs |
+| **Biggest risk** | Batch 1 is *paid market validation*, not a profit centre. If you treat it as a profit centre you will over-order. |
+
+### ⚠️ CORRECTION — why the price is 899 and not 799
+
+An audit of this plan found that **at 799 HUF the first batch does not return your capital.** The arithmetic:
+
+| At 799 HUF, sold 100% direct | |
+|---|---|
+| Cash deployed | 994,620 HUF (€2,740) |
+| Net revenue per can (799 ÷ 1.27) | 629.13 HUF |
+| Cans needed to break even | **1,581** |
+| Cans available after 60 samples | **1,640** |
+| Result at full sell-through | **+€102 — essentially zero** |
+
+With the originally-planned 175 sample cans it was **−€97: a guaranteed loss even if every remaining can sold.**
+
+**At 899 HUF the same batch returns +€458** and breaks even at 1,405 cans (86% sell-through) instead of 96%.
+
+**899 is your stated absolute maximum, and at 1,700 cans it is what the arithmetic requires.** 799 becomes the right price at ~10,000 cans, where COGS falls to 390 HUF. Price high while you are small; come down as you scale — not the reverse.
+
+> **And never combine 799 RRP with a 160 HUF gym cut on consignment.** That settles at 503 HUF net against a 524 HUF cost — **you lose 21 HUF on every can.** If a gym insists on 799, cap their cut at 100 HUF.
 
 ### The single most important structural decision
 

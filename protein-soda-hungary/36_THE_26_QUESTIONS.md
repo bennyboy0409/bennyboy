@@ -18,7 +18,7 @@ Cheapest: **add TEÁOR codes 4634 (ital nagykereskedelem) + 4725 (ital-kiskeresk
 **Yes, but it is the ceiling, not a starting point.** Five independent formulators converged on 20 g per **355 ml**; your 330 ml is 60.6 g/L — ~7.6% more concentrated. It works only because the *whey* fraction sits at 30.3 g/L, inside the safe corridor. All-whey at 60.6 g/L does not. → `product/05_FOOD_CHEMISTRY.md`
 
 **5. What formulation architecture?**
-**ARCH F:** 10 g hydrolysed bovine collagen + 10 g whey protein isolate + 1.7 g L-leucine + 150 mg L-tryptophan = **20 g declared protein**, ~213 HUF of ingredients. The amino-acid spike costs 10.31 HUF and enables a "3 g leucine per can" claim that neutralises the collagen objection. → `product/03_PRODUCT_ARCHITECTURE.md`
+**ARCH F:** 10 g hydrolysed bovine collagen + 10 g whey protein isolate + 1.7 g L-leucine + 150 mg L-tryptophan = **20 g declared protein**, ~257 HUF of ingredients (clear-grade whey base case). The amino-acid spike costs 10.31 HUF and enables a "3 g leucine per can" claim that neutralises the collagen objection. → `product/03_PRODUCT_ARCHITECTURE.md`
 
 **6. One SKU or two?**
 **One.** Two SKUs split a 1,700-can run into two unsellable halves, need two GTINs, two artworks and two minimum ingredient buys — and the caffeine version triggers the mandatory caffeine warning plus unresolved NETA tax exposure. → `01_FINAL_RECOMMENDATION.md`
@@ -33,10 +33,10 @@ Cheapest: **add TEÁOR codes 4634 (ital nagykereskedelem) + 4725 (ital-kiskeresk
 **One pallet ≈ 1,500–2,500 cans** (Opre', `ESTIMATE`). Sajátital claims **from 1,500 units** but is likely a broker. MONYO's floor is 2,000 litres ≈ 6,060 cans. Private Label Drink publishes 15,000 (7,500 on a first order). **All require confirmation.**
 
 **10. REAL total cost to get that batch into Hungary?**
-**€2,000–2,600** for ~1,700 cans landed (`ESTIMATE`), plus ~€440 of setup and legal. **Total ~€3,000.** → `finance/18_COMPLETE_STARTUP_COSTS.csv`
+**€2,300** for ~1,700 cans landed (`ESTIMATE`, range €2,000–2,600), plus ~€440 setup and legal, plus €260 contingency. **Total €3,000 to raise; €2,740 actually deployed.** → `finance/18_COMPLETE_STARTUP_COSTS.csv`
 
 **11. REAL all-in cost per sellable can?**
-**~491 HUF (€1.35)**, range 428–620. Ingredients 225 · can+end 52 · sleeve 42 · filling 60 · setup amortised 70 · tray 8 · freight 15 · EPR 5 · waste 14. → `finance/19_UNIT_ECONOMICS.csv`
+**~524 HUF (€1.44)** base case, range 460–620. Ingredients 257 (clear-grade whey) · can+end 52 · sleeve 42 · filling 60 · setup amortised 70 · tray 8 · freight 15 · EPR 5 · waste 15. → `finance/19_UNIT_ECONOMICS.csv`
 
 **12. How much of the €1,000 is used?**
 **~€430 in the first 30 days** (legal opinion €275, registration €95, benchmarks €25, domain €15, transport €20). You reach the go/no-go decision with **~57% of your own money still in your pocket** and none of your father's spent. → `execution/30_FIRST_30_DAYS.md`
@@ -45,18 +45,19 @@ Cheapest: **add TEÁOR codes 4634 (ital nagykereskedelem) + 4725 (ital-kiskeresk
 **€2,000.** Not €5,000, not €10,000. → `finance/20_CAPITAL_SCENARIOS.md`
 
 **14. What wholesale price should gyms pay?**
-**For batch 1: none — do not wholesale.** At 491 HUF cost, a 470 HUF wholesale price loses 21 HUF per can. Use **consignment**: gym pays nothing, keeps 160 HUF (20%) per can sold, you net 511 HUF. From ~25,000 cans (COGS ~420 HUF), wholesale at **470–520 HUF net** works. → `finance/22_PRICING.md`
+**For batch 1: none — do not wholesale.** At 524 HUF cost, 470 HUF loses 54 HUF per can. Use **consignment at 899 RRP with a gym cut of 100–160 HUF** (you net 629 or 582). **From ~10,000 cans (COGS ~390 HUF), wholesale at 470 net works (+80/can).** → `finance/22_PRICING.md`
 
 **15. What RRP should gyms charge?**
-**799 HUF** (range 699–899), deposit shown separately if you ever exceed ~5,000 units/yr. Validated against the Icelandic benchmark at 704.5 HUF equivalent.
+**899 HUF for batch 1.** At 1,700 cans, 799 does not return your capital (+€102 vs +€458). **799 becomes the right price at ~10,000 cans**, where COGS falls to 390 HUF.
 
 **16. How much does the founder make per can?**
-**+138 HUF (€0.38)** sold direct at 799 · **+217 HUF** at 899 · **+20 HUF** on consignment at 20% · **−21 HUF** if wholesaled at 470. → `finance/19_UNIT_ECONOMICS.csv`
+**+184 HUF (€0.51)** sold direct at 899 · **+105 HUF** at 799 direct · **+58 HUF** consignment at 899 with a 160 HUF gym cut · **−54 HUF** if wholesaled at 470. → `finance/19_UNIT_ECONOMICS.csv`
 
 **17. How many cans to recover all startup costs?**
-Total cash deployed **€2,740** (€2,300 inventory + €440 setup). Net revenue per can at 799 = 629 HUF = €1.733.
-**€2,740 ÷ €1.733 = ~1,581 cans — about 93% of the batch.**
-Sell the full 1,700 and you finish roughly **€200 ahead**. Batch 1 is paid validation, not profit.
+Total cash deployed **€2,740** (€2,300 inventory + €440 setup) = 994,620 HUF.
+**At 899 HUF direct:** 994,620 ÷ 707.87 = **1,405 cans** of 1,640 sellable (**86% sell-through**). Full sell-through returns **+€458**.
+**At 799 HUF direct:** 1,581 cans of 1,640 — a 96% sell-through returning just **+€102**.
+**This is why the recommended price is 899, not 799.** Cap samples at 60 cans; a 175-can sample budget makes break-even arithmetically impossible.
 
 **18. How many gyms needed to sell the first batch?**
 **8–15 gyms.** A mid-size Hungarian gym might move 25–60 cans/month. At ~40/month, 1,700 cans over 90 days needs ~14 active gyms. Target **8 signed LOIs before ordering**. → `sales/27_GYM_SALES_STRATEGY.md`
@@ -80,7 +81,7 @@ Sell the full 1,700 and you finish roughly **€200 ahead**. Batch 1 is paid val
 **24. Five biggest ways this fails?**
 1. **Ordering cans before securing gym commitments** — most likely failure
 2. **Crossing 5,000 units with artwork carrying no DRS mark** — cans become unsellable, irreversible
-3. **Wholesaling batch 1 at 470 HUF** and losing money on every can while feeling busy
+3. **Wholesaling batch 1 at 470 HUF** (−54 HUF/can) or running consignment at 799 with a 160 HUF gym cut (−21 HUF/can) — losing money on every can while feeling busy
 4. **Whey supply** — WPC80 hit €20,250/t in April 2026 with European producers sold out
 5. **The category closing** — C4 launched into US mass retail 30 July 2026; Premier Protein and Bucked Up are entering. Europe is open *for now*
 
