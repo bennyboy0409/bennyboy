@@ -1,7 +1,7 @@
 # 30 — BRAND AND AUSTRIA
 
 **Date:** 2026-08-16 · **FX: 1 EUR = 363 HUF** (all money given in both)
-**Applies to:** the agreed plan — 330 ml aluminium can, clear carbonated, zero sugar, **20 g protein (ARCH F: 10 g hydrolysed bovine collagen + 10 g whey protein isolate + 1.7 g added L-leucine + 150 mg L-tryptophan)**, ONE SKU, Lemon-Lime, no caffeine, ~1,700 cans batch 1, blank silver can + shrink sleeve, RRP 799 HUF (EUR 2.20).
+**Applies to:** the agreed plan — 330 ml aluminium can, clear carbonated, zero sugar, **20 g protein (ARCH F: 10 g hydrolysed bovine collagen + 10 g whey protein isolate + 1.7 g added L-leucine + 150 mg L-tryptophan)**, ONE SKU, Lemon-Lime, no caffeine, **1,700 cans batch 1 (60 samples → 1,640 sellable)**, blank silver can + shrink sleeve, **RRP 899 HUF (EUR 2.48)**, landed COGS **524 HUF (EUR 1.44)** `ESTIMATE — range 460–620`, **contribution 183.87 HUF (EUR 0.51)/can sold direct**.
 
 **Source:** dossier `C9_austria_and_brand.md`. That dossier was written under a total egress block — **its author made zero successful web searches and opened zero primary sources.** Every Austrian fee in it is UNKNOWN and is UNKNOWN here too. Nothing has been invented to fill the gap.
 
@@ -9,9 +9,9 @@
 
 ## THE TWO ANSWERS, UP FRONT
 
-**BRAND.** The front of the sleeve carries **three** things, in this order: **(1) PROTEIN SODA** — the category word, because a clear fizzy protein drink is an unfamiliar object and an unnamed unfamiliar object does not get picked up; **(2) 20 G PROTEIN** as the single largest graphic on the can, bigger than the wordmark; **(3) ZERO SUGAR**. The brand name is fourth. **Collagen goes on the BACK, not the front** — full, precise, unhidden, but not front-of-can. **"3 G LEUCINE" is your answer to the collagen objection and it belongs where the objection is actually raised: the side panel and the sell sheet, in front of the gym owner, not at 2 metres in a fridge.**
+**BRAND.** The front of the sleeve carries **three** things, in this order: **(1) PROTEIN SODA** — the category word, because a clear fizzy protein drink is an unfamiliar object and an unnamed unfamiliar object does not get picked up; **(2) 20 G PROTEIN** as the single largest graphic on the can, bigger than the wordmark; **(3) ZERO SUGAR**. The brand name is fourth. **Collagen goes on the BACK, not the front** — full, precise, unhidden, but not front-of-can. **The leucine figure is your answer to the collagen objection, but it may NOT go on the pack in batch 1 — see the correction in §3. It is spoken, and it belongs on the sell sheet, not the sleeve.**
 
-**AUSTRIA.** **No. Not in year 1. Not close.** Not because of the EUR 0.25 deposit — that is pass-through and costs you nothing — but because Austria adds **two more fixed registrations (EWP deposit + ARA packaging), probably a paid Austrian authorised representative, probably a second GTIN and therefore a second sleeve artwork**, all of which are fixed costs amortised across **1,700 cans**. At batch-1 volume a fixed Austrian entry cost anywhere in the plausible EUR 200–2,500 range works out at **43–534 HUF per can (EUR 0.12–1.47)** against a gross margin of roughly **138 HUF per can (EUR 0.38)**. It eats the entire company. Spend **two emails** on Austria now (they are free and they make year 2 an execution task); spend **zero forints**.
+**AUSTRIA.** **No. Not in year 1. Not close.** Not because of the EUR 0.25 deposit — that is pass-through and costs you nothing — but because Austria adds **two more fixed registrations (EWP deposit + ARA packaging), probably a paid Austrian authorised representative, probably a second GTIN and therefore a second sleeve artwork**, all of which are fixed costs amortised across **1,700 cans**. At batch-1 volume a fixed Austrian entry cost anywhere in the plausible EUR 200–2,500 range works out at **43–534 HUF per can (EUR 0.12–1.47)** against a contribution of **183.87 HUF per can (EUR 0.51)** — i.e. **23% to 290% of everything the batch earns.** It eats the entire company. Spend **two emails** on Austria now (they are free and they make year 2 an execution task); spend **zero forints**.
 
 ---
 
@@ -67,12 +67,20 @@ One layout, one grid, **one colour per flavour**, and a refusal to add a fourth 
 
 ### The decision
 
+> ### 🔴 CORRECTION — THE LEUCINE FIGURE COMES OFF THE PACK ENTIRELY IN BATCH 1
+> An earlier draft instructed printing **"3 g leucine per can"** on the side panel. **Do not print it anywhere on the can in batch 1.** Three independent reasons, any one of which is sufficient:
+> 1. **Reg. (EC) 1924/2006 Art. 8(1) operates a closed list.** A leucine-content claim is not in the Annex, so it is prohibited **however true it is** — the same defect this project used to kill *"alacsony szénhidráttartalmú"*.
+> 2. `legal/09_LABEL_COMPLIANCE.md` §8 separately warns that a front-panel `+ LEUCIN` flash **triggers QUID** and instructs "Batch 1: keep off the front panel."
+> 3. **The legality of adding free L-leucine to a normal beverage at all is UNKNOWN** under Reg. (EC) 1925/2006 and is flagged as **blocking raw-material purchase**. If the answer is no, the leucine is not in the can and the figure was never printable.
+>
+> **Where it may still be used:** spoken, in the room, and as **off-pack factual copy** on the sell sheet and product page — **and only once the Art. 8(1) question and the free-amino-acid legality question are both answered.** Until then it is a talking point, not a claim. `NEEDS PROFESSIONAL CONFIRMATION.`
+
 | Where | What it says |
 |---|---|
 | **Front of can** | Nothing about protein source. "20 G PROTEIN" only. |
-| **Side/back panel** | Full precise disclosure: *whey protein isolate, hydrolysed bovine collagen peptides, L-leucine, L-tryptophan*, with grams. Plus **"3 g leucine per can"** as a stated figure. |
-| **Sell sheet + gym-owner conversation** | **Lead with the leucine number.** This is where the objection is actually raised and where you can answer it. |
-| **Instagram / product page** | Full formula, openly. One post explaining *why* the blend. |
+| **Side/back panel** | Full precise disclosure: *whey protein isolate, hydrolysed bovine collagen peptides, L-leucine, L-tryptophan*, with grams, **as an ingredient list — not as a leucine claim.** No "3 g leucine" figure on the pack in batch 1. |
+| **Sell sheet + gym-owner conversation** | **This is where the leucine answer lives** — off-pack, factual, and only after the two legality questions above are answered. This is where the objection is actually raised and where you can answer it. |
+| **Instagram / product page** | Full formula, openly. One post explaining *why* the blend. Off-pack copy is subject to the same claims regulation as the label — **do not treat social as a free space.** |
 
 ### Why secondary — four reasons
 
@@ -95,11 +103,13 @@ The dossier's harder line was: *"Do not print 20 G PROTEIN as the hero if it is 
 | 10 g whey protein isolate | ~1.0–1.2 g | **ESTIMATE** — WPI is typically ~10–12% leucine by weight. **QUOTE REQUIRED: read the actual % off your supplier's CoA/spec sheet before printing any number.** |
 | 10 g hydrolysed bovine collagen | ~0.2–0.3 g | **ESTIMATE**, same caveat |
 | Added L-leucine | **1.700 g** | Per agreed formula |
-| **Total** | **≈ 2.9 – 3.2 g → "3 g leucine"** | **DERIVED** from the above. Only printable once the CoAs confirm the first two rows. |
+| **Total** | **≈ 2.9 – 3.2 g → "about 3 g leucine"** | **DERIVED** from two ESTIMATE rows. **Not printable on the pack in batch 1 at all** (§3 correction). Usable off-pack only once the CoAs confirm the first two rows AND the Art. 8(1) and Reg. 1925/2006 questions are answered. |
 
-**~3 g leucine per serving is the threshold figure the whole muscle-protein-synthesis argument is conducted around.** Once you can state it, "but collagen is low in leucine" stops being an objection about your product and becomes a general remark about collagen. **This is the single most valuable sentence in your sell sheet.**
+**~3 g leucine per serving is the threshold figure the whole muscle-protein-synthesis argument is conducted around.** Once you can state it, "but collagen is low in leucine" stops being an objection about your product and becomes a general remark about collagen. **This is the single most valuable sentence in your sell sheet — spoken and off-pack only, per the correction above, and only once the CoAs and the two legality questions land.**
 
-**b) The tryptophan gap is closed on purpose.** 150 mg L-tryptophan is in the formula precisely because collagen contains none. "Incomplete protein" is the standard objection; you have completed it. Say so, in one line, on the back.
+⚠️ **Note what the research actually says about leucine.** Dossier A5's only mention of leucine is a **warning** (§8.4) that collagen's low leucine content makes muscle-mass claims a scrutiny risk. **Nothing in the research base supports a leucine claim.** The ~3 g total is our own arithmetic off two ESTIMATE rows, and it is an argument you make in a conversation, not a claim you underwrite.
+
+**b) The tryptophan gap is closed on purpose.** 150 mg L-tryptophan is in the formula precisely because collagen contains none. "Incomplete protein" is the standard objection; you have completed it. Say so, in one line, on the back. ⚠️ **The dose itself is unsettled:** dossier D2 §8 specifies **25 mg added** tryptophan (a 15 mg deficit plus analytical margin); the deliverables carry **150 mg**. `manufacturing/16_INGREDIENT_SUPPLIERS.csv` flags the conflict. Cost impact is trivial (0.59 HUF/can) but **the co-packer doses what the spec sheet says and the label declares it — settle the number before the RFQ goes out.**
 
 **c) A named competitor already does this openly in your market.** **Myprotein sells a whey + collagen clear protein product in Hungary, openly — SEARCH-VERIFIED per the project brief; not in the C9 dossier, not re-verified here.** If that holds, the blend is not a category taboo in Hungary and you are not pioneering an unsellable structure. **Test it yourself for free: walk into a supplement shop and look at the label.** That single observation is worth more than any further research.
 
@@ -107,7 +117,7 @@ The dossier's harder line was: *"Do not print 20 G PROTEIN as the hero if it is 
 
 ### The one alternative, and the test that settles it
 
-**Option B:** add a single small front line under ZERO SUGAR — `WHEY ISOLATE + COLLAGEN · 3 G LEUCINE`. Gains pre-emptive transparency; costs you a fourth message and roughly halves the impact of "20 G". **I do not recommend it.**
+**Option B:** add a single small front line under ZERO SUGAR — `WHEY ISOLATE + COLLAGEN`. Gains pre-emptive transparency; costs you a fourth message and roughly halves the impact of "20 G". **I do not recommend it.** (An earlier version of Option B appended `· 3 G LEUCINE`. That is now excluded on Art. 8(1) grounds — see the correction at the top of §3.)
 
 **The test (cost: the price of a few cans):** tape two printed mock-up wraps — recommended vs Option B — to real cans, stand in three Budapest gyms, ask twenty people which they'd buy and why. **This is worth more than every piece of secondary research in this project and it is nearly free.** Do it before you pay for final artwork.
 
@@ -115,7 +125,9 @@ The dossier's harder line was: *"Do not print 20 G PROTEIN as the hero if it is 
 
 **The fitness audience punishes concealment far harder than it punishes collagen.** A discovered omission reads as deception and is unrecoverable. Full ingredient honesty on the back, silence on the front — that is a hierarchy decision, not a hiding decision, and if anyone asks, say exactly that.
 
-**Open legal point — NEEDS PROFESSIONAL CONFIRMATION:** whether collagen counts toward the declared "protein" figure and toward the EU "high protein" claim (Reg. 1924/2006). Under FIC 1169/2011 protein is calculated as total nitrogen × 6.25, which would include collagen — **LIKELY, but this is model reasoning, not a sourced finding, and it underwrites your entire front-of-can claim. Get it confirmed by the co-packer's label consultant before artwork is finalised.** The "high protein" claim itself is comfortable on the arithmetic: 20 g × 4 kcal = **80 kcal of protein**, essentially the whole energy content of a zero-sugar can (**DERIVED**).
+**Open legal point — NEEDS PROFESSIONAL CONFIRMATION:** whether collagen counts toward the declared "protein" figure and toward the EU "high protein" claim (Reg. 1924/2006). Under FIC 1169/2011 protein is calculated as total nitrogen × 6.25, which would include collagen — **LIKELY, but this is model reasoning, not a sourced finding, and it underwrites your entire front-of-can claim. Get it confirmed by the co-packer's label consultant before artwork is finalised.**
+
+⚠️ **The "MAGAS FEHÉRJETARTALMÚ" claim itself is `LIKELY — NEEDS PROFESSIONAL CONFIRMATION`, not confirmed.** Two founder-facing files tag it CONFIRMED "via Reg. 1924/2006 Annex"; **no Annex text was ever read — EUR-Lex was 403-blocked**, and dossier A5 tags the ≥20%-of-energy condition `LIKELY — UNVERIFIED`. **Do not let the strongest tag in the set sit on the one claim the whole front panel is built around.** The arithmetic is comfortable — 20 g × 4 kcal = **80 kcal of protein**, essentially the whole energy content of a zero-sugar can (**DERIVED**) — and the claim holds at any protein level down to 12 g **provided total can energy stays below 240 kcal**. It is the wording and the threshold that are unverified, not the sum.
 
 ---
 
@@ -165,13 +177,13 @@ The dossier's harder line was: *"Do not print 20 G PROTEIN as the hero if it is 
 | 1 | **A cleared name** (§4 protocol) | Everything else is downstream. Artwork on an unchecked name can be thrown away entirely. | **0** | **0** |
 | 2 | **A wordmark** — a *typeset name*, not an illustrated logo | One well-chosen licensed typeface, well-spaced, one colour. **At can scale a wordmark beats a pictorial mark.** | **0–150** | **0–54,450** |
 | 3 | **Shrink-sleeve artwork, print-ready** | You cannot sell without it. Must carry the full Hungarian mandatory-particulars block and must be laid out per §7. **Hire for food-label compliance experience, not for aesthetics.** | **150–400** | **54,450–145,200** |
-| 4 | **One-page A4 sell sheet (PDF)** | **Your highest-leverage document.** What it is · 20 g protein / kcal / zero sugar · **3 g leucine** · case size · trade price · RRP 799 HUF (EUR 2.20) · margin per can for the gym · your name and phone. One page, no flourish. Build it yourself. | **0** | **0** |
+| 4 | **One-page A4 sell sheet (PDF)** | **Your highest-leverage document.** What it is · 20 g protein / kcal / zero sugar · case size · **settlement price 799 Ft per can SOLD · RRP 899 HUF (EUR 2.48) · 100 Ft per can to the gym · zero cash out, unsold collected free**. **NO trade/wholesale price** — there is none in batch 1 and a number in writing cannot be withdrawn. **No leucine figure until §3's two legality questions are answered.** One page, no flourish. Build it yourself. | **0** | **0** |
 | 5 | **Instagram account, 9–12 posts** | A gym owner looks you up between your email and your visit. **An empty search result kills the deal.** | **0** | **0** |
 | 6 | **Email on your own domain** | `you@yourbrand.hu` vs. free webmail is the cheapest credibility you can buy. | **10–30/yr** | **3,630–10,890/yr** |
 | 7 | **~20 phone photos of the real can** | In a real gym, daylight, plain wall. Feeds the sell sheet, Instagram and every email. | **0** | **0** |
 | | **TOTAL MANDATORY** | | **≈ 160–580** | **≈ 58,000–210,500** |
 
-**Sanity check against the plan:** this sits inside ~EUR 3,000 total capital alongside a EUR 2,000–2,600 batch. **The brand budget must stay at the low end.** Every euro on an asset that does not directly move a gym owner toward "yes, send a trial case" is a euro not in liquid. **You cannot sell a brand book.**
+**Sanity check against the plan:** this sits inside ~EUR 3,000 total capital alongside a **EUR 2,300 inventory line and EUR 440 of setup/legal (EUR 2,740 deployed, EUR 260 contingency)**. ⚠️ **The EUR 440 setup figure does not visibly contain this table's EUR 150–400 of print-ready sleeve artwork.** Either the artwork is inside the co-packer's sleeve price or the plan is short by up to EUR 400. **Establish which, in writing, before the deposit is paid.** **The brand budget must stay at the low end.** Every euro on an asset that does not directly move a gym owner toward "yes, send a trial case" is a euro not in liquid. **You cannot sell a brand book.**
 
 ## 6. DO NOT SPEND YET
 
@@ -353,9 +365,11 @@ Austrian fixed entry cost is **UNKNOWN**, so here it is as a sensitivity — **f
 | EUR 1,000 / 363,000 HUF | **EUR 0.588 = 214 HUF/can** | EUR 0.100 = 36 HUF | EUR 0.033 = 12 HUF |
 | EUR 2,500 / 907,500 HUF | **EUR 1.471 = 534 HUF/can** | EUR 0.250 = 91 HUF | EUR 0.083 = 30 HUF |
 
-**Set that against your actual margin.** RRP **799 HUF (EUR 2.20)**; landed COGS **491 HUF (EUR 1.35)**. Assuming 799 is VAT-inclusive at 27%, net revenue per can = 799 / 1.27 = **629 HUF (EUR 1.73)**, giving a gross margin of **138 HUF (EUR 0.38) per can** (**DERIVED — confirm the VAT treatment against the finance file before quoting this figure**).
+**Set that against your actual margin.** RRP **899 HUF (EUR 2.48)**; landed COGS **524 HUF (EUR 1.44)**. 899 is VAT-inclusive at 27%, so net revenue per can = 899 / 1.27 = **707.87 HUF (EUR 1.95)**, giving a contribution of **183.87 HUF (EUR 0.51) per can** (**DERIVED — matches `finance/19_UNIT_ECONOMICS.csv`**).
 
-**Read the first column against 138 HUF.** Even at the cheapest bracket, Austrian fixed admin at batch-1 volume takes **31% of your gross margin**. At EUR 500 it takes **77%**. At EUR 1,000 and above it is **more than the entire margin — every Austrian can loses money before you have paid for a gram of whey.** And the whole fixed-cost bracket is the same order of magnitude as the founder's total capital.
+**Read the first column against 183.87 HUF.** Even at the cheapest bracket, Austrian fixed admin at batch-1 volume takes **23% of your entire contribution**. At EUR 500 it takes **58%**. At EUR 1,000 it takes **116% — every Austrian can loses money before you have paid for a gram of whey.** At EUR 2,500 it is **290%**. And the whole fixed-cost bracket is the same order of magnitude as the founder's total capital.
+
+⚠️ **These percentages improved when the RRP moved from 799 to 899 — and the verdict did not change.** That is the point: **the Austria answer is stable across the entire plausible range of both the fees and our own price.**
 
 **This is why the verdict does not depend on getting the exact fees. Across the entire plausible range, the conclusion is stable.**
 
@@ -388,8 +402,8 @@ Austrian fixed entry cost is **UNKNOWN**, so here it is as a sensitivity — **f
 
 | Conflict | Resolution |
 |---|---|
-| Dossier §13.3: *"Do not print 20 G PROTEIN as the hero if it is collagen."* ARCH F is a **50% collagen blend**. | **The agreed formula is not a collagen product — it is a blend with the incomplete half deliberately repaired (1.7 g added leucine, 150 mg tryptophan).** The hero claim stands, on condition that (a) the ~3 g leucine total is confirmed off supplier CoAs and (b) the nitrogen-based protein declaration including collagen is confirmed by a label consultant. **If either fails, revisit the hero claim before printing.** |
-| Dossier §8.2 reproduces C2's Hungarian recommendation of **RRP 950–1,150 HUF**; the agreed plan is **799 HUF**. | **The agreed plan governs.** Note the gap honestly: your RRP is ~16–30% below C2's suggested band and sits just above NOCCO's 690–790 HUF observed range. That is a deliberate challenger position (compare Hell at 319 HUF vs Red Bull at 549 HUF — the most relevant Hungarian pattern in the whole dataset), but **it leaves only ~138 HUF/can of margin, which is exactly why Austria is unaffordable.** |
+| Dossier §13.3: *"Do not print 20 G PROTEIN as the hero if it is collagen."* ARCH F is a **50% collagen blend**. | **The agreed formula is not a collagen product — it is a blend with the incomplete half deliberately repaired (1.7 g added leucine, 150 mg tryptophan).** The hero claim stands, on condition that (a) the ~3 g leucine total is confirmed off supplier CoAs, (b) the nitrogen-based protein declaration including collagen is confirmed by a label consultant, and (c) **the free amino acids are lawful in a beverage at all** (`Reg. 1925/2006` — UNKNOWN, blocks raw-material purchase). **If any of the three fails, revisit the hero claim before printing.** Note also: ARCH F is **exactly 50/50**, so describing it anywhere as "collagen-dominant" is wrong in one direction and describing it as a whey product is wrong in the other. Say "half and half" — it is both accurate and disarming. |
+| Dossier §8.2 reproduces C2's Hungarian recommendation of **RRP 950–1,150 HUF**; the agreed plan is now **899 HUF** (it was 799). | **The agreed plan governs, and it moved toward the dossier.** 799 was abandoned because at 524 HUF COGS it returns only **+EUR 102** on the batch and needs a 96% sell-through; **899 returns +EUR 458 and breaks even at 1,405 of 1,640 cans (86%).** Your RRP is now ~5–22% below C2's suggested band, above NOCCO's 690–790 HUF and **inside Barebells' observed 890–999 HUF**. Still a challenger position, but a funded one. **It leaves 183.87 HUF/can, and Austria is still unaffordable against it.** |
 | Dossier assumes a **caffeine SKU 2** and gives it front-of-can and warning-label treatment. | **Superseded. NO caffeine SKU in batch 1** per the agreed plan. Ignore the dossier's caffeine guidance for now; it becomes live only if a caffeine SKU is ever approved. |
 | Dossier treats the **Hungarian 50 HUF deposit as applicable** and lists MOHU/REpont registration as the #1 launch blocker. | **Superseded by the agreed plan's under-5,000-can strategy**, under which Hungarian DRS very probably does not apply. **Status LIKELY — NEEDS PROFESSIONAL CONFIRMATION.** But the dossier's underlying warning is right and worth keeping: **DRS is the item that is irreversible at the artwork stage. Confirm before print.** |
 | Dossier's asset costs are budgeted against **EUR 1,000** total capital; the real figure is **~EUR 3,000** (EUR 1,000 personal + ~EUR 2,000 family). | The extra EUR 2,000 is committed to the batch (EUR 2,000–2,600), **not to brand.** The brand budget stays at the low end of EUR 160–580. Conclusions unchanged. |
@@ -399,13 +413,16 @@ Austrian fixed entry cost is **UNKNOWN**, so here it is as a sensitivity — **f
 ## 18. Open items — quote or confirm before spending
 
 **Blocks the artwork (settle these before the sleeve goes to print):**
-1. **Hungarian DRS applicability below ~5,000 cans** — NEEDS PROFESSIONAL CONFIRMATION. Determines whether a deposit mark appears. **Irreversible.**
-2. **Whether collagen counts toward the declared protein figure and the "high protein" claim** — NEEDS PROFESSIONAL CONFIRMATION (label consultant / co-packer).
-3. **Actual leucine % of the WPI and the collagen** — QUOTE REQUIRED, from supplier CoA/spec sheets. Determines whether "3 g leucine" is printable.
-4. **Final kcal per 100 ml** — QUOTE REQUIRED from the manufacturer's finished spec.
-5. **Sleeve printer's barcode placement spec for a 330 ml can** — QUOTE REQUIRED.
-6. **Trademark clearance on the chosen name** (class 32, TMview + EUIPO + SZTNH) — all 15 candidates currently UNKNOWN. **Free. Do it before the wordmark.**
-7. **Domain + Instagram handle for the chosen name** — UNKNOWN. Free to check, and register the handle the same day.
+1. **Hungarian DRS applicability below ~5,000 cans** — NEEDS PROFESSIONAL CONFIRMATION. Determines whether a deposit mark appears. **Irreversible.** Operate to a **4,500-can** planning cap, not 5,000 (`legal/10_DRS_REPONT.md` §13).
+2. **Whether collagen counts toward the declared protein figure and the "high protein" claim** — NEEDS PROFESSIONAL CONFIRMATION (label consultant / co-packer). **The claim itself is LIKELY, not CONFIRMED — no Annex text was read.**
+3. **May free L-leucine (1.7 g) and L-tryptophan (150 mg) lawfully be added to a normal BEVERAGE** under Reg. (EC) 1925/2006? — **UNKNOWN. This blocks raw-material purchase and it decides whether there is a leucine story at all.** Stated fallback if the answer is no: drop both amino acids, cost 10.31 HUF/can. **It is not on any pre-spend list in the two files the founder reads first — put it on yours.**
+4. **Actual leucine % of the WPI and the collagen** — QUOTE REQUIRED, from supplier CoA/spec sheets. Determines whether a ~3 g figure can be stated off-pack **at all**, even once item 3 clears.
+5. **Final kcal per 100 ml** — QUOTE REQUIRED from the manufacturer's finished spec.
+6. **Sleeve printer's barcode placement spec for a 330 ml can** — QUOTE REQUIRED.
+7. **Can format: standard 211 (Ø ~66.3 mm) or SLEEK (Ø ~58.1 mm)?** — **UNDECIDED across the project.** Product and competitor files assume sleek; logistics and storage compute pallets, case dimensions and freight on standard. **It changes the sleeve dimensions and therefore the artwork.** Ask the co-packer in the first email.
+8. **Trademark clearance on the chosen name** (class 32, TMview + EUIPO + SZTNH) — all 15 candidates currently UNKNOWN. **Free. Do it before the wordmark.** ⚠️ **`legal/11_LEGAL_CHECKLIST.md` Phase 4 — the "nothing should be missing from here" pre-print tick-list — contains no trade-mark step at all.** A founder working only from that file prints 1,700 sleeves carrying an uncleared name in one of the most crowded trademark classes that exists.
+9. **Domain + Instagram handle for the chosen name** — UNKNOWN. Free to check, and register the handle the same day.
+10. **The tryptophan dose: 25 mg added (dossier D2) or 150 mg (the deliverables)?** — settle it before the RFQ. The co-packer doses the spec sheet and the label declares it.
 
 **Austria, free to ask, not blocking anything in year 1:** EWP minimum annual fee · EWP Lizenzentgelt · whether a separate Austrian GTIN is required · Pfand logo artwork spec · sample submission count/fee/lead time · **whether a Bevollmächtigter is required and its annual retainer** · ARA participation cost and the deposit/EPR boundary · whether Austrian food business registration applies to a HU company with no AT establishment.
 

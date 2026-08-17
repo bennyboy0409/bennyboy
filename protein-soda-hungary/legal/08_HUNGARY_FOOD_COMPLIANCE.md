@@ -52,7 +52,12 @@ Status: LIKELY — model knowledge, not verified 2026-08-16.
 
 The co-packer will offer to "handle the artwork". **They are not liable for it; you are.** The supply agreement must therefore require them to (a) supply true, tested nutritional and allergen data, (b) apply **exactly** the artwork you approve with no substitutions, and (c) indemnify you for deviations. Indemnity wording: **NEEDS PROFESSIONAL CONFIRMATION (lawyer).**
 
-**Sharpening this from 2026-12-09:** Directive (EU) 2024/2853, the new Product Liability Directive, makes the **own-brand seller liable as if it were the manufacturer**. Transposition deadline **2026-12-09** — under four months from today. Status: **CONFIRMED** (`https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng`, retrieved live 2026-08-16 by workstream A1). **Your batch-1 launch lands on or after that date. Plan on being treated as the manufacturer for liability purposes.**
+> ### 🔴 **CORRECTION — the own-brand liability is NOT new, and it does NOT start on 2026-12-09.**
+> An earlier draft of this paragraph framed own-brand-seller-liable-as-manufacturer as an exposure arriving with Directive (EU) 2024/2853. **That was wrong, and it led three files to defer product liability cover past batch 1.**
+> **Ptk. 6:552–6:553 § already puts you in the producer's position, and has done since 1993.** Ptk. **6:553 § (1)** treats as *gyártó* — alongside the actual manufacturer — *"aki a terméken elhelyezett nevével, védjegyével vagy egyéb megkülönböztető jelzés alkalmazásával önmagát a termék gyártójaként tünteti fel"*: whoever holds themselves out as producer by putting their name or mark on the product. That transposes Directive **85/374/EEC** Art. 3(1). **A contract-manufactured can sold under your own brand is exactly this fact pattern. You are strictly liable as producer for can #1, uninsured, today.**
+> Directive (EU) **2024/2853** (transposition deadline **2026-12-09**) **broadens** the definition of "product" and the range of liable operators — importers, fulfilment service providers, substantial modifiers. **It does not create the own-brand limb.**
+> Status: existence of the directive and its deadline **SEARCH-VERIFIED** (`https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng`). Ptk. **6:552–6:553 §** wording: **LIKELY — reproduced from practitioner sources; njt.hu was egress-blocked and the section was not read verbatim. NEEDS PROFESSIONAL CONFIRMATION of the section numbers.** The substance is not in doubt.
+> **Practical consequence: get product-liability quotes before batch 1 ships, not before batch 2.** See `07_HUNGARY_BUSINESS_SETUP.md` §11.
 
 ---
 
@@ -74,7 +79,8 @@ The co-packer will offer to "handle the artwork". **They are not liable for it; 
 | **Reg. (EC) 999/2001** (TSE/BSE) | Bovine collagen raw-material controls. Specify **hide-derived**, demand a TSE statement and hide country of origin. | STRUCTURAL |
 | **Directive 2002/46/EC** (food supplements) | The **dose-form** test that decides normal food vs etrend-kiegeszito. See §9. | LIKELY |
 | **Reg. (EU) 609/2013** (food for specific groups) | Covers infant formula, FSMP, total diet replacement. **It deliberately does NOT create a "sports food" category** — sports foods are normal foods. Load-bearing for §9 — verify. | LIKELY |
-| **Directive (EU) 2024/2853** (new PLD) | Own-brand seller liable as manufacturer. Transposition **2026-12-09**. | **CONFIRMED** (A1, live 2026-08-16) |
+| **Ptk. 6:552–6:553 §** (Hungarian product liability, transposing **85/374/EEC**) | **THE OPERATIVE RULE TODAY.** 6:553 § (1) treats the own-brand seller as *gyártó*. **Strict liability from can #1** — see §1.2. | **LIKELY — section wording not read verbatim (njt.hu blocked). NEEDS PROFESSIONAL CONFIRMATION** |
+| **Directive (EU) 2024/2853** (recast PLD) | **Broadens** product definition and the range of liable operators (importers, fulfilment providers, substantial modifiers). **Does NOT create the own-brand rule — that already exists in Ptk. 6:553 §.** Transposition **2026-12-09**; Hungarian transposing text **UNKNOWN / not published**. | **SEARCH-VERIFIED** (A1, 2026-08-16) |
 
 ### 2.2 Hungarian layer
 
@@ -85,7 +91,7 @@ The co-packer will offer to "handle the artwork". **They are not liable for it; 
 | **210/2009. (IX. 29.) Korm. rendelet** (commercial activities) | **Separate from food law.** Notification of *commercial activity* to the **jegyzo** of the municipality. | Decree confirmed to exist and apply: `https://njt.hu/jogszabaly/2009-210-20-22` (A1, live 2026-08-16). General procedural fee **~3,000 HUF ≈ EUR 8.26** — LIKELY. **Whether it is required at all for wholesale/e-commerce with no shop: NEEDS PROFESSIONAL CONFIRMATION** |
 | **37/2004. (IV. 26.) ESZCSM rendelet** (food supplements) | Hungarian transposition of Dir. 2002/46/EC. Sets the **OGYEI notification** duty and fee for *etrend-kiegeszito*. **Applies only if you are reclassified as a supplement — see §9.** | LIKELY |
 | **Magyar Elelmiszerkonyv** (Codex Alimentarius Hungaricus) | National directives on non-alcoholic beverages. Relevant to any national caffeine cap — **not engaged by batch 1.** `https://elelmiszerlanc.kormany.hu/` | LIKELY |
-| **2011. evi CIII. torveny** (NETA) | Tax, not food law. **Batch 1 has no caffeine and no taurine → NETA = 0.** Covered in the finance files, not here. | CONFIRMED by A2 (NAV Informacios fuzet 53, 2026) |
+| **2011. evi CIII. torveny** (NETA) | Tax, not food law. **Batch 1 has no caffeine and no taurine → NETA = 0.** Covered in the finance files, not here. | SEARCH-VERIFIED via A2 (NAV Informacios fuzet 53, 2026); leaflet not opened this session |
 
 ---
 
@@ -156,7 +162,7 @@ The food-chain notification is filed **by a legal person or a registered sole tr
 | Rate | **0.1 % of the PREVIOUS year's net food-chain-related revenue** | LIKELY — A1, live 2026-08-16, `https://portal.nebih.gov.hu/-/tajekoztatas-az-elelmiszerlanc-felugyeleti-dijrol/2.4` |
 | Flat option | **20,000 HUF/yr ≈ EUR 55.10** for *kistermelo* — **NOT applicable to a distribution company** | LIKELY, same source |
 | **Year 1 liability** | **0 HUF / EUR 0.** Base = *previous* year's revenue = zero. 0.1 % x 0 = 0. | **DERIVED** |
-| **Year 2 liability on batch 1 as planned** | **~1,070 HUF ≈ EUR 2.95** | **DERIVED** — see box below |
+| **Year 2 liability on batch 1 as planned** | **~1,161 HUF ≈ EUR 3.20** | **DERIVED** — see box below |
 | Declaration deadline | **UNKNOWN — NEEDS PROFESSIONAL CONFIRMATION.** A statutory annual deadline exists; the date was not verified and is not guessed. | — |
 | Is a NIL declaration required when the fee is zero? | **UNKNOWN — NEEDS PROFESSIONAL CONFIRMATION. Do not assume "zero fee = nothing to file."** This is the trap. | — |
 | Portal / form | **UNKNOWN.** NEBIH runs an electronic declaration system; URL and form name not verified. | — |
@@ -164,11 +170,11 @@ The food-chain notification is filed **by a legal person or a registered sole tr
 
 ```
 YEAR-2 SUPERVISION FEE, DERIVED FROM THE AGREED PLAN
-  Batch 1 volume                1,700 cans
-  RRP incl. 27% VAT             799 HUF
-  Net unit revenue              799 / 1.27         = 629.13 HUF
-  Net revenue if all sold       629.13 x 1,700     = 1,069,527 HUF = EUR 2,946
-  Supervision fee @ 0.1%        1,069,527 x 0.001  = 1,070 HUF     = EUR 2.95
+  Batch 1 volume                1,700 produced / 1,640 sellable
+  RRP incl. 27% VAT             899 HUF
+  Net unit revenue              899 / 1.27         = 707.87 HUF
+  Net revenue if all sold       707.87 x 1,640     = 1,160,907 HUF = EUR 3,198
+  Supervision fee @ 0.1%        1,160,907 x 0.001  = 1,161 HUF     = EUR 3.20
 ```
 
 **Founder-facing conclusion: the supervision fee is NOT a launch cost and must not influence a single decision. It is EUR 0 in year 1 and about EUR 3 in year 2. The DECLARATION DEADLINE, however, is worth one phone call to +36 1 336 9024 — a missed nil return is a penalty for nothing.**
@@ -602,7 +608,7 @@ The Eltv. provides for an **elelmiszerlanc-felugyeleti birsag**, with a governme
 
 **What can be said safely: fines are turnover-scaled, so a micro-operator's exposure to a FIRST, NON-SAFETY, ADMINISTRATIVE breach sits at the very bottom of the range.**
 
-**→ THE GENUINE FINANCIAL RISK TO THIS COMPANY IS NOT THE FINE. It is (a) the cost of a recall — destroyed stock, lost gym listings, reputational loss in a small market — and (b) the product-liability exposure that Directive (EU) 2024/2853 sharpens for own-brand sellers from 2026-12-09 (CONFIRMED). At 1,700 cans and ~491 HUF landed COGS, a full batch write-off is 834,700 HUF ≈ EUR 2,299 (DERIVED: 1,700 x 491 = 834,700; / 363 = 2,299) — approximately the entire batch budget. THAT is the number to be afraid of, not the fine.**
+**→ THE GENUINE FINANCIAL RISK TO THIS COMPANY IS NOT THE FINE. It is (a) the cost of a recall — destroyed stock, lost gym listings, reputational loss in a small market — and (b) STRICT PRODUCER LIABILITY, which attaches to you as own-brand seller under Ptk. 6:552–6:553 § from the first can sold, uninsured, TODAY (§1.2). Directive (EU) 2024/2853 broadens that regime from 2026-12-09; it is not the start of it. A full batch write-off is EUR 2,300 of inventory plus EUR 440 of setup = EUR 2,740 (994,620 HUF) at a landed COGS of 524 HUF/can, range 460-620 (DERIVED: 2,740 x 363) — the entire batch budget. A liability claim is unbounded and is not capped by the batch budget at all. THAT is the number to be afraid of, not the fine.**
 
 ---
 
@@ -649,13 +655,13 @@ The Eltv. provides for an **elelmiszerlanc-felugyeleti birsag**, with a governme
 
 | Topic | Where | One-line status |
 |---|---|---|
-| **DRS / MOHU deposit on aluminium cans** | DRS file | **Keep year-one volume under ~5,000 cans.** Below that the deposit system very probably does not apply — no 50 HUF deposit, no registration, no 45-day gate, **NO DRS MARK ON ARTWORK**, no deposit float. **Above it, DRS is mandatory and IRREVERSIBLE at the artwork stage.** Status: LIKELY — NEEDS PROFESSIONAL CONFIRMATION. **Batch 1 at ~1,700 cans is comfortably under.** |
+| **DRS / MOHU deposit on aluminium cans** | DRS file | **Keep year-one volume under the 4,500-can PLANNING CAP (`10_DRS_REPONT.md` §13); ~5,000 is the reported legal threshold, not the operating limit.** Below that the deposit system very probably does not apply — no 50 HUF deposit, no registration, no 45-day gate, **NO DRS MARK ON ARTWORK**, no deposit float. **Above it, DRS is mandatory and IRREVERSIBLE at the artwork stage.** Status: **LIKELY — NEEDS PROFESSIONAL CONFIRMATION; 450/2023 was never read.** **Batch 1 at ~1,700 cans is comfortably under.** |
 | **Label artwork, mandatory particulars, Hungarian language, allergen emphasis** | Labelling file | Your Art. 8(1) liability. **Milk must be emphasised in the ingredient list from artwork v1.** |
 | **Nutrition and health claims wording** | Claims file | "Magas feherjetartalmu" clears by 4–5x (§10.7) |
 | **NETA, VAT (27 %), invoicing** | Finance files | **Batch 1: no caffeine, no taurine → NETA = 0** |
 | **Company formation, the minor question in full** | Business setup file | Summarised in §4 |
 | **GS1 / GTIN barcode** | Packaging file | One GTIN — one SKU only in batch 1 |
-| **Product liability insurance** | Finance file | Sharpened by Dir. (EU) 2024/2853 from **2026-12-09** |
+| **Product liability insurance** | Finance file | **Exposure exists NOW under Ptk. 6:552–6:553 § — get quotes before batch 1 ships.** Dir. (EU) 2024/2853 broadens the regime from **2026-12-09**; it is not the trigger |
 
 ---
 

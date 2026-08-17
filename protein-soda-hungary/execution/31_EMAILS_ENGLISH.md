@@ -4,6 +4,8 @@
 
 > **Rule: send to all candidates on the same day.** Sending costs nothing. Waiting costs weeks. You are not being disloyal by contacting five co-packers — this is normal trade practice.
 
+> 💰 **The commercial terms in these templates are 899 Ft RRP with 100–160 Ft to the gym.** At a 524 HUF landed cost: **899 with a 100 Ft cut earns +105 HUF/can · 899 with a 160 Ft cut earns +58 · 799 with a 160 Ft cut LOSES 21 HUF/can · any wholesale price near 470 net LOSES 54.** Open at 100 Ft; 160 Ft is the ceiling. **Never send a 799 Ft offer with a 160 Ft cut, and never quote a wholesale price in batch 1** — once it is in writing you cannot withdraw it without losing the account.
+
 ---
 
 ## 1. CO-PACKER / CONTRACT MANUFACTURER — the most important email in the project
@@ -41,11 +43,14 @@ PRODUCT SPECIFICATION
 - Decoration:    blank/brite can + shrink sleeve (we do not need printed cans)
 
 FIRST ORDER
-We are planning a first commercial run of approximately 1,500–2,500 cans,
+We are planning a first commercial run of approximately 1,700 cans,
 with the intention of scaling to 25,000+ within 12 months if it sells.
 
 COULD YOU PLEASE ANSWER THE FOLLOWING
 
+ 0. HOW MANY 330 ml CANS ARE ON ONE PALLET in your standard
+    configuration, and will you fill and ship a PART pallet?
+    (Please also confirm the can format and diameter you run.)
  1. What is your minimum order quantity for 330 ml cans?
  2. What is your minimum batch volume in LITRES (i.e. your smallest
     practical mixing/syrup tank batch)?
@@ -58,7 +63,10 @@ COULD YOU PLEASE ANSWER THE FOLLOWING
  6. Can you fill a product containing COLLAGEN PEPTIDES? (This is our
     preferred route if whey creates difficulty.)
  7. Is your process hot fill, tunnel pasteurisation, or cold fill with
-    preservative? Which would you recommend for this product?
+    preservative? Which would you recommend for this product? Please
+    state the resulting AMBIENT shelf life in months, in writing, and
+    whether a microbiological challenge test on the finished can is
+    included or must be commissioned separately.
  8. Do you SOURCE THE INGREDIENTS yourself (turnkey), or must we supply
     them? Please quote turnkey if possible.
  9. Do you supply the blank cans and ends, and can you apply shrink sleeves?
@@ -89,6 +97,10 @@ Hungary
 ```
 
 > **Question 15 is not optional.** If Opre' fills in Slovakia rather than Hungary, that changes freight, intra-EU VAT treatment and who registers for Hungarian EPR. Ask it explicitly.
+>
+> **Question 0 is the one that decides whether this plan exists at all.** "From one pallet" is a marketing phrase, not a quantity. This project's own two derivations of cans-per-pallet give **1,680 and 2,880** and cannot both be right. At 2,880 cans the minimum order is ~EUR 4,157 — more than the entire capital raise. **Get the number in writing before any budget is presented to your father.**
+>
+> **Question 7 is a no-go gate, not a preference.** If the answer is cold fill with no thermal step and no challenge test, the real shelf life may be fridge-only and measured in weeks — which would destroy the gym-fridge distribution model after the run is paid for.
 
 ---
 
@@ -109,15 +121,20 @@ scaling:
      Requirements: cold-water soluble, optically CLEAR in solution at
      pH 3.2, low odour, neutral taste, protein content ≥ 90%
 
-  2. Whey protein isolate — 25 kg and 100 kg
-     Requirements: ACID-STABLE / "clear" grade suitable for low-pH
-     transparent beverages, ≥ 90% protein, low fat, low lactose
+  2. Whey protein isolate — CLEAR / ACID-STABLE GRADE — 25 kg and 100 kg
+     Requirements: purpose-engineered CLEAR grade suitable for low-pH
+     transparent beverages, ≥ 90% protein, low ash, LOW CALCIUM, low fat
+     (<1%), low lactose.
+     PLEASE NOTE: we are NOT asking for standard WPI90. If you quote a
+     standard grade, please say so explicitly, because we understand it
+     will haze at pH 3.2 and it is not a substitute for us.
 
   3. L-leucine (food grade) — 5 kg and 25 kg
   4. L-tryptophan (food grade) — 1 kg and 5 kg
 
 COULD YOU PLEASE PROVIDE
 - Price per kg at each quantity, EXW and delivered to Hungary
+- What premium a 25 kg buyer pays over your tonne-scale index price
 - Minimum order quantity
 - Current lead time and AVAILABILITY (we understand the whey market has
   been tight through 2026 — please tell us honestly what you can supply)
@@ -288,8 +305,8 @@ drink it.
 If you like it, here's the offer I'm making to the first gyms:
 
   · You pay nothing upfront. I supply the stock on consignment.
-  · Recommended price to members: 799 Ft
-  · You keep 160 Ft on every can sold
+  · Recommended price to members: 899 Ft
+  · You keep 100 Ft on every can sold
   · I restock and settle with you every two weeks
   · If it doesn't sell, I take it back
 
@@ -300,35 +317,47 @@ Can I bring some by this week?
 ```
 
 > **Why consignment:** it removes every reason to say no. The gym risks nothing. This is the single most effective structural choice in your entire sales approach.
+>
+> 💰 **Send it at 100 Ft. Concede to a maximum of 160 Ft, and only at a 899 Ft RRP.** At a 524 HUF cost the arithmetic is: 899 − 100 = 799 gross ÷ 1.27 = **629.13 net → +105 HUF/can**; 899 − 160 = 739 ÷ 1.27 = **581.89 net → +58 HUF/can**; **799 − 160 = 639 ÷ 1.27 = 503.15 net → −21 HUF/can, a loss on every can.** The break-even gym cut at a 899 RRP is **~234 Ft**, so 160 is already most of your room. **Never send the 799/160 combination — it was in an earlier draft of this file and it loses money.**
 
 ---
 
-## 8. SUPPLEMENT SHOP
+## 8. SUPPLEMENT SHOP — **consignment placement, NOT wholesale**
 
-**Subject:** `New Hungarian protein soda — wholesale enquiry`
+> 🛑 **This template used to headline a wholesale offer with a blank trade price. That was wrong and it has been removed.** At a 524 HUF landed cost, any trade price that leaves a shop a normal margin (470–520 HUF net) **loses 54–20 HUF on every can**, and wholesale does not become viable until roughly **10,000 cans** (COGS ~390 vs 470 net = +80). A trade price, once written down, cannot be withdrawn without losing the account. **Offer the same consignment structure you offer gyms.**
+
+**Subject:** `New Hungarian protein soda — introductory placement for [SHOP]`
 
 ```
 Hi [NAME],
 
 I'm launching a Hungarian-made protein soda: 330 ml can, 20 g protein
-(whey isolate + collagen peptides, with added leucine), zero sugar,
-~80 kcal, carbonated and clear.
+(whey isolate + collagen peptides), zero sugar, ~80 kcal, carbonated
+and clear.
 
 Positioning: 20 g of protein for roughly the price of an energy drink.
 
-I have a limited first production run and I'm offering it to a small
-number of shops first.
+The first production run is small and I'm placing it with a handful of
+shops rather than selling it in. So the offer is the same one I'm making
+to gyms — you carry no risk and no cash:
 
-  · RRP 799 Ft
-  · Trade price [XXX] Ft net
-  · Minimum order: 1 case (24 cans)
+  · You pay nothing upfront. I supply the stock on consignment.
+  · Recommended price to customers: 899 Ft
+  · You keep 100 Ft on every can sold
+  · Settlement every two weeks, on cans actually sold
+  · Anything that doesn't move, I collect
+
   · Free samples for you and your staff
-  · Consignment available for the first order if you prefer
 
-Would you like me to send samples and a one-page product sheet?
+If it sells through, I'd rather talk about a normal trade price on the
+second production run than guess at one now.
+
+Would you like me to bring samples and a one-page product sheet?
 
 [NAME] · [COMPANY] · [PHONE]
 ```
+
+> **If they push hard for a trade price:** the honest answer is *"not on this run — the first batch is too small for the price to be fair to either of us, and I'd rather not quote a number I'd have to raise later."* That is true, and it is a better position than a loss-making number in writing.
 
 ---
 

@@ -1,7 +1,8 @@
 # 28 — PRE-ORDER & DEMAND VALIDATION
 
-**How to find out whether anyone wants this BEFORE you spend €2,000–2,600 (726,000–943,800 HUF) on cans you cannot un-buy.**
-1 EUR = 363 HUF. Batch 1 = **1,700 cans**, landed COGS **491 HUF (€1.35)/can** = **834,700 HUF (€2,299)** at risk.
+**How to find out whether anyone wants this BEFORE you spend money on cans you cannot un-buy.**
+1 EUR = 363 HUF. Batch 1 = **1,700 cans**, **60 withheld as samples → 1,640 sellable**. Landed COGS **524 HUF (€1.44)/can** `ESTIMATE — range 460–620`. **RRP 899 HUF.**
+**At risk: €2,300 of inventory cash + €440 of setup/legal = €2,740 deployed**, out of €3,000 raised.
 
 ---
 
@@ -10,13 +11,15 @@
 > ### ✅ ORDER if: **8 or more gyms sign a free, non-binding Letter of Intent covering ≥1,000 cans (≥60% of batch 1).**
 > ### 🛑 DO NOT ORDER if: **fewer than 8 gyms will sign a free, non-binding LOI.**
 
-**Why the LOI and not a survey.** The LOI carries no money, no legal force and no obligation. Signing it costs a gym owner thirty seconds and nothing else. **That is exactly why refusing to sign is such clean information.** If a person who owns a fridge, has met you, tasted the concept and will risk zero forints still will not put a signature on a piece of paper — the answer is no, and you have just found out for **€0 instead of €2,299.**
+**Why the LOI and not a survey.** The LOI carries no money, no legal force and no obligation. Signing it costs a gym owner thirty seconds and nothing else. **That is exactly why refusing to sign is such clean information.** If a person who owns a fridge, has met you, tasted the concept and will risk zero forints still will not put a signature on a piece of paper — the answer is no, and you have just found out for **€0 instead of €2,740.**
+
+> ⚠️ **Everything in this file is priced at 899 HUF RRP with a 100 HUF gym cut.** An earlier draft used 799 with a 160 HUF cut. On the corrected 524 HUF COGS that combination **loses 20.85 HUF on every can** — it is forbidden. See `27_GYM_SALES_STRATEGY.md` §3. **If you have already printed LOIs, reprint them.**
 
 | Signal | What it means | What you do |
 |---|---|---|
 | 8+ LOIs, ≥1,000 cans | Demand is real enough to fund | **Order.** Proceed to Day 29 in `execution/30_FIRST_30_DAYS.md` |
 | 4–7 LOIs, 500–999 cans | Interest without conviction | **Do not order 1,700.** See §8 middle path |
-| 1–3 LOIs | The offer or the product is wrong | Stop. Fix or shelve. You are out ~€350 |
+| 1–3 LOIs | The offer or the product is wrong | Stop. Fix or shelve. You are out ~€430 of pre-order spend |
 | Lots of "sure, sounds great" but nobody signs | **A no.** Treat verbal enthusiasm as noise | Stop |
 
 **Deadline: Day 19** (`execution/30_FIRST_30_DAYS.md`). The decision itself is Day 28. Nothing is ordered before then.
@@ -33,7 +36,9 @@
 Ölgerðin's own press page states, in Icelandic: *"UPP er þróaður í samstarfi við World Class og er samstarfsverkefni Ölgerðarinnar, World Class og Brandenburg"* — UPP was developed in collaboration with World Class, as a joint project of Ölgerðin, World Class and the Brandenburg agency.
 `https://www.olgerdin.is/um-okkur/frettir/frett/upp-ferskasta-leidin-ad-proteini` · `https://vb.is/frettir/olgerdin-og-world-class-gefa-ut-proteindrykk/`
 
-UPP is a 330 ml carbonated protein drink: **20 g protein, zero sugar, clear whey isolate + hydrolysed collagen peptides** — the same architecture as your ARCH F. Launched June 2026, and it went into shops nationwide immediately.
+UPP is a carbonated protein drink: **20 g protein, zero sugar, clear whey isolate + hydrolysed collagen peptides** — the same architecture as your ARCH F. Launched June 2026, and it went into shops nationwide immediately.
+
+⚠️ **Its fill volume is ASSUMED, not verified.** `sales/29_COMPETITORS.csv` records UPP's size as **UNKNOWN — 330 ml assumed, NOT confirmed.** This matters because 330 ml is used elsewhere in the plan to justify our own format and our "7.6% more concentrated than the industry standard" risk statement. **Add "what is UPP's fill volume?" to the Ölgerðin email** (`manufacturing/14_FIRST_BATCH.md` §4.3). Do not state 330 ml as a fact to a co-packer or to your father.
 
 ### Read what that means for you
 
@@ -43,10 +48,10 @@ A company with its own filling lines, its own distribution network and its own r
 
 > ### **Securing a Hungarian gym-chain co-development is worth more than any supplier negotiation you will ever run.**
 >
-> Grinding a co-packer from 213 to 198 HUF/can on ingredients saves you **25,500 HUF (€70)** on batch 1.
+> Grinding a co-packer from 257 to 242 HUF/can on ingredients saves you **25,500 HUF (€70)** on batch 1.
 > A chain that guarantees placement across 10 clubs **sells the entire batch.**
 >
-> One is worth €70. The other is worth €3,700 of revenue and the next twelve months of your life. **Spend your negotiating energy accordingly.**
+> One is worth €70. The other is worth **1,640 × 707.87 HUF = 1,160,907 HUF ≈ €3,198 of net revenue** and the next twelve months of your life. **Spend your negotiating energy accordingly.**
 
 ### The Hungarian move — send it in week 1, in parallel with everything else
 
@@ -92,7 +97,7 @@ That is solvable, and honestly it is a better test — if a gym owner will sign 
 1. **Show the wrapped can first.** *„Így fog kinézni."* Let them hold it.
 2. **Open the sealed tub in front of them.** Mix one serving into 250–300 ml of chilled sparkling water in the shaker.
 3. **Pour into a clear cup.** *„Nem turmix. Nem tejes. Ez üdítő."* The clarity is the whole product story and a photograph will not sell it — seeing through the cup will.
-4. **Hand them the NOCCO.** *„Ilyen dobozban, ilyen polcon, ilyen áron — csak abban nincs fehérje, ebben 20 gramm van."*
+4. **Hand them the NOCCO.** *„Ilyen dobozban, ilyen polcon — csak abban nincs fehérje, ebben 20 gramm van."* (Don't say "ilyen áron": NOCCO is 690–940 HUF and you are asking 899. Compare the **Barebells at 890–999** if a price anchor is needed.)
 5. **Be straight about what they are drinking:** *„Ez még nem a végleges termék — ez a por, amiből lesz. A gyártó a szénsavas, dobozos változatot csinálja meg."*
 
 ⚠️ **`NEEDS PROFESSIONAL CONFIRMATION` — legal caution, do not skip.** Preparing and handing out a beverage before your food-business registration exists is not a settled question. Mitigate all three ways: (a) prepare it **from a sealed retail product** you bought in Hungary, **in front of the person**, for immediate tasting; (b) **never sell it, never leave it behind, never bottle it**; (c) present it as a tasting of an existing retail product plus a concept, **not as "my product"**. Ask the food lawyer you are already instructing (`execution/32_EMAILS_HUNGARIAN.md` §7) to confirm this is fine — it costs nothing to add to the same question list.
@@ -129,7 +134,7 @@ Run this at every gym **before** you pitch. It takes 6–8 minutes, it makes you
 | 9 | „Mennyi idő alatt fogyna el 24 doboz egy új terméknél?" | How long would 24 cans of something new take? | Their own estimate of the attach rate |
 | 10 | „Kérdezték már tagok, hogy van-e fehérjés ital?" | Have members asked for a protein drink? | A yes is your best possible quote — write it verbatim |
 | 11 | „Mi az az egy dolog, ami miatt nemet mondana erre?" | What's the one thing that would make you say no? | **The most valuable question in the list.** Patterns across 15 gyms tell you what to fix |
-| 12 | „Ha most a kezébe adnék 24 dobozt, amiért nem fizet, és minden eladott dobozon 160 forint maradna Önnél — kirakná?" | The close (see `27_GYM_SALES_STRATEGY.md` §8) | Yes → produce the LOI. Now, not later |
+| 12 | „Ha most a kezébe adnék 24 dobozt, amiért nem fizet, és minden eladott dobozon 100 forint maradna Önnél — kirakná?" | The close (see `27_GYM_SALES_STRATEGY.md` §8) | Yes → produce the LOI. Now, not later. **Concession limit: 160 Ft, never a lower RRP than 899** |
 
 > **Fifteen of these interviews answer more real questions than every dossier in this project.** Every researcher who worked on this hit the same wall: no Hungarian gym price, no margin norm, no purchasing model. **You can settle all three in one week, for free, and nobody else can do it for you.**
 
@@ -156,9 +161,11 @@ Run this at every gym **before** you pitch. It takes 6–8 minutes, it makes you
 | **Mid-size independent (your standard ask)** ⭐ | **5 cases** | **120** | = 40 cans/month × 3 months, the realistic steady state |
 | CrossFit box with an engaged owner | 5–8 cases | 120–192 | Owner endorsement drives attach rate |
 | Supplement store | 6–10 cases | 144–240 | Higher throughput, they already sell this class |
-| **Any single account — hard ceiling** | **10 cases** | **240** | Never let one account hold >14% of the batch. If it falls through you cannot recover |
+| **Any single account — hard ceiling** | **10 cases** | **240** | Never let one account hold >15% of your 1,640 sellable cans. If it falls through you cannot recover |
 
-**Cap total reservations at ~2,200 cans (130% of batch).** Over-collecting feels like winning and then you cannot deliver, which burns exactly the accounts you worked hardest for. Stop selling at 130% and put the extra names on a waiting list for batch 2 — a waiting list is a better opening line for batch 2 than any pitch.
+**Cap total reservations at ~2,100 cans (130% of your 1,640 sellable).** Over-collecting feels like winning and then you cannot deliver, which burns exactly the accounts you worked hardest for. Stop selling at 130% and put the extra names on a waiting list for batch 2 — a waiting list is a better opening line for batch 2 than any pitch.
+
+⚠️ **An LOI quantity is a 90-day intent, not a first delivery.** A 5-case LOI is delivered **1–2 cases at a time**. Consigned stock outstanding across all accounts is capped at **~720 cans / 30 cases** (`logistics/25_FULFILMENT.md` §6) — that is your capital sitting in other people's fridges.
 
 ---
 
@@ -185,11 +192,13 @@ Date:     [DATE]
 
 3. INDICATIVE TERMS DISCUSSED
    Model                     Consignment - we pay nothing on delivery
-   Settlement price          639 HUF (EUR 1.76) gross per can SOLD
-   Recommended retail price  799 HUF (EUR 2.20)
-   Our margin at 799 RRP     160 HUF (EUR 0.44) per can sold  (20%)
-   Maximum retail price      899 HUF
+   Settlement price          799 HUF (EUR 2.20) gross per can SOLD
+   Recommended retail price  899 HUF (EUR 2.48)
+   Our margin at 899 RRP     100 HUF (EUR 0.28) per can sold
+   Minimum retail price      899 HUF - we may price above it, not below
    Settlement                every 14 days, in person, on a physical count
+   First delivery            1-2 cases; the quantity above is a 90-day
+                             intent, not a single delivery
    Unsold stock              collected by the supplier at the supplier's
                              cost, no charge to us
    Review point              90 days from first delivery
@@ -239,13 +248,16 @@ Dátum:      [DÁTUM]
 
 3. A MEGBESZÉLT, TÁJÉKOZTATÓ JELLEGŰ FELTÉTELEK
    Konstrukció              bizomány - átvételkor nem fizetünk semmit
-   Elszámolási ár           639 Ft (1,76 EUR) bruttó, minden
+   Elszámolási ár           799 Ft (2,20 EUR) bruttó, minden
                             ELADOTT doboz után
-   Javasolt fogyasztói ár   799 Ft (2,20 EUR)
-   Nálunk maradó összeg     160 Ft (0,44 EUR) / eladott doboz  (20%)
-   Maximális fogyasztói ár  899 Ft
+   Javasolt fogyasztói ár   899 Ft (2,48 EUR)
+   Nálunk maradó összeg     100 Ft (0,28 EUR) / eladott doboz
+   Minimális fogyasztói ár  899 Ft - ennél magasabb áron adhatjuk,
+                            alacsonyabban nem
    Elszámolás               kéthetente, személyesen, tételes
                             leszámolás alapján
+   Első szállítás           1-2 karton; a fenti mennyiség 90 napra
+                            szóló szándék, nem egyszeri szállítás
    El nem adott készlet     a szállító elviszi, saját költségén,
                             nekünk ezzel költségünk nem merül fel
    Felülvizsgálat           az első szállítástól számított 90 nap
@@ -275,13 +287,13 @@ A szállító részéről: ___________________  Elérhetőség: _______________
 
 `DERIVED` — arithmetic shown. Realism judged against `C8_hu_fitness_market.md` §9: a mid-size Hungarian gym sells **40–60 cans/month** steady state (20–30 in month 1), and a solo founder opens **2–4 accounts/week**, i.e. **24–48 in 12 weeks at the absolute top of capacity, doing nothing else**.
 
-| Scenario | Cases | Cans | vs 1,700 batch | Cans/gym/month implied | **Realistic?** |
+| Scenario | Cases | Cans | vs **1,640 sellable** | Cans/gym/month implied | **Realistic?** |
 |---|---|---|---|---|---|
-| **10 gyms × 5 cases** ⭐ | 50 | **1,200** | **71%** | 40/month | ✅ **YES — this is the target** |
-| 12 gyms × 5 cases | 60 | 1,440 | 85% | 40/month | ✅ Yes — the comfortable version |
-| 15 gyms × 4 cases | 60 | 1,440 | 85% | 32/month | ✅ Yes — safest spread, most visits |
-| **20 gyms × 10 cases** | 200 | **4,800** | **282%** | **80/month, at all 20** | ❌ **No.** 80/month is C8's *"good account"* tier — assuming every one of 20 accounts performs at the top tier is fantasy, and you'd be promising 2.8× the stock you have |
-| **50 gyms × 5 cases** | 250 | **6,000** | **353%** | 40/month | ❌ **No.** 50 accounts exceeds the solo opening rate, and at fortnightly consignment visits (30–45 min each, `27` §3) 50 accounts is **~4 full days per fortnight** of servicing alone. Physically impossible alongside production and school |
+| **10 gyms × 5 cases** ⭐ | 50 | **1,200** | **73%** | 40/month | ✅ **YES — this is the target** |
+| 12 gyms × 5 cases | 60 | 1,440 | 88% | 40/month | ✅ Yes — the comfortable version |
+| 15 gyms × 4 cases | 60 | 1,440 | 88% | 32/month | ✅ Yes — safest spread, most visits |
+| **20 gyms × 10 cases** | 200 | **4,800** | **293%** | **80/month, at all 20** | ❌ **No.** 80/month is C8's *"good account"* tier — assuming every one of 20 accounts performs at the top tier is fantasy, and you'd be promising 2.9× the stock you have |
+| **50 gyms × 5 cases** | 250 | **6,000** | **366%** | 40/month | ❌ **No.** 50 accounts exceeds the solo opening rate, and at fortnightly consignment visits (30–45 min each, `27` §3) 50 accounts is **~4 full days per fortnight** of servicing alone. Physically impossible alongside production and school |
 
 ### The verdict
 
@@ -297,11 +309,13 @@ Assume **LOI slippage of 25–35%**: gyms that signed will take less than they w
 |---|---|
 | LOIs signed (target) | **1,200** |
 | less 30% slippage `ESTIMATE` | −360 |
-| **Realistically delivered to gyms** | **~840 (49% of batch)** |
-| Direct: events, D2C, hand-sold (`27` §6) | ~600–700 |
-| **Covered** | **~1,500 of 1,700 (88%)** |
+| **Realistically delivered to gyms** | **~840 (51% of sellable stock)** |
+| Direct: events, D2C, hand-sold (`27` §6) | ~640 |
+| **Covered** | **~1,480 of 1,640 (90%)** |
 
 **That is what a healthy pre-order position looks like.** It is not 100%, and it should not be — a batch fully committed before it exists means you priced too low or under-ordered.
+
+> **Check it against break-even.** You need **1,405 of 1,640 cans (86%)** to return the €2,740 deployed, at 899 direct. A 90% covered position clears it — **but only if the direct 640 actually happens.** That is ~7 cans a day for 90 days, hand-sold, each with an invoice. **If you cannot name three events by Day 19, this plan is short by ~400 cans and you should open more gym accounts instead of assuming the direct channel.**
 
 ---
 
@@ -309,13 +323,13 @@ Assume **LOI slippage of 25–35%**: gyms that signed will take less than they w
 
 | LOIs at Day 19 | Cans covered | Action |
 |---|---|---|
-| **8+** | **≥1,000** | ✅ **Order 1,700.** Complete the other three Day-28 conditions: adult legal entity registered · written co-packer quote ≤550 HUF/can landed · legal opinion confirms the DRS position |
+| **8+** | **≥1,000** | ✅ **Order 1,700.** Complete the other Day-28 conditions: adult legal entity registered · **written co-packer quote ≤555 HUF/can landed** (555 = the funded maximum, €2,600 ÷ 1,700; base case is 524) · legal opinion confirms the DRS position · **written confirmation of the thermal process and resulting ambient shelf life** · **a 30-minute EP/HU patent freedom-to-operate check** (`29_COMPETITORS.csv`, Fizzique row) |
 | 8+ | 600–999 | Order, but at the **bottom** of the range — ask the co-packer for the smallest run they will do |
 | **4–7** | 500–999 | ⚠️ **Middle path.** Do NOT order 1,700. Options, in order: (a) go back out for one more week — you are 3 signatures away; (b) ask the co-packer for a ~800–1,000 can run and accept the worse unit cost; (c) pivot to the powder SKU (~1,000 sachets, €700–1,500) per `execution/30_FIRST_30_DAYS.md`, which validates the flavour and the brand at a third of the risk |
 | 1–3 | <500 | 🛑 **Stop.** Read the question-11 answers. The problem is nameable and it is usually price, format, or you |
 | **0, but lots of verbal enthusiasm** | — | 🛑 **Stop, and take this seriously.** Universal verbal yes plus universal refusal to sign a free non-binding document is the clearest negative signal in commerce |
 
-> **Three of these outcomes cost you ~€350 and no debt.** Only one commits real money. The point of the whole exercise is to reach the expensive decision having already paid for the cheap information.
+> **Three of these outcomes cost you ~€430 of pre-order spend and no debt.** Only one commits real money. The point of the whole exercise is to reach the expensive decision having already paid for the cheap information.
 
 ### The trap to name out loud
 
@@ -333,7 +347,11 @@ Taking money from consumers before the product exists is a real option and a rea
 | Paid pre-orders / crowdfunding | ⚠️ **Not before Day 15.** Requires the legal entity, food-business registration and a working invoicing setup to exist first. Consumer distance selling carries a **14-day withdrawal right**, and advance payments for undelivered goods have their own rules. `NEEDS PROFESSIONAL CONFIRMATION` — add it to the food-law/accountant question list |
 | Taking cash at a gym before you have the product | 🛑 Never |
 
+**If you ever do take money before delivery, the price floor is the same as the shelf price.** A discounted pre-order at 599 HUF nets 471.65 HUF against a 524 HUF COGS — **it loses 52 HUF a can.** Even 699 HUF nets 550.39, i.e. **+26 HUF/can**, which is barely worth the liability. **Pre-sell at 899, or take a deposit against the 899 price. Never discount a can you have not made.**
+
 **Track the reservation list the same way as the LOIs.** 80 consumer emails plus 8 gym LOIs is a materially stronger position than either alone — and the email list is the only asset in this plan that no gym, chain or distributor can take away from you.
+
+⚠️ **A reservation list is personal data.** Before you collect the first email you need a lawful basis and a one-page *adatkezelési tájékoztató* (GDPR), and if you ever sell at distance you also need the 45/2014. (II. 26.) Korm. rendelet pre-contractual information and the 14-day withdrawal regime. **No file in this project covers any of it and a project-wide search returns zero hits.** Cost is €0 if done before the list opens; it is enforced by NAIH and the consumer-protection authority. `NEEDS PROFESSIONAL CONFIRMATION — add it to the same question list as the food-law opinion.`
 
 ---
 
@@ -374,14 +392,17 @@ Chain conversation    Life1: sent [ ]  reply [ ]
 | Assumption | Status | Test that settles it |
 |---|---|---|
 | A Hungarian gym will sign a non-binding LOI at all | **UNVERIFIED** — no Hungarian gym was reachable in research | Ask three gyms in week 2. If none will sign, the gate itself is wrong and you need a different validation instrument (a verbal yes plus a named delivery date) |
-| 40–60 cans/gym/month | `ESTIMATE`, derived at an assumed 1,400 HUF gym-bar price; yours is 799 | Measure at account #1 |
+| 40–60 cans/gym/month | `ESTIMATE`, derived at an assumed 1,400 HUF gym-bar price; yours is 899 | Measure at account #1 |
 | 25–35% LOI slippage | `ESTIMATE`, no Hungarian data | Measure against your own delivery numbers |
-| 799 HUF is the right RRP | `DERIVED` from the Hungarian shelf ladder — but `C2_hungary_retail_pricing.md` independently derived **950–1,150 HUF for specialist retail** and **1,250–1,800 HUF for a gym bar**, both above your price | **Question 5 in the interview.** If gyms are really charging 1,250+ for a can, you are underpriced and the 899 ceiling matters more than the 799 recommendation |
-| The 90-day sell-through window | Assumes shelf life comfortably exceeds it | ⚠️ **Ask every co-packer for shelf life in the first email.** If it is 6 months, a batch that takes 6 months to sell is a write-off. This should be a go/no-go criterion in supplier selection, not a detail confirmed at the end |
+| **899 HUF is the right RRP** | `DERIVED` — it is the price at which batch 1 actually returns the capital (+€458 at full sell-through vs +€102 at 799). `C2_hungary_retail_pricing.md` independently derived **950–1,150 HUF for specialist retail** and **1,250–1,800 HUF for a gym bar**, both still above it | **Question 5 in the interview.** If gyms are really charging 1,250+ for a can, batch 2 is underpriced. **899 is a floor for batch 1, not a ceiling** |
+| **The Icelandic "price validation"** | ⚠️ **Weaker than earlier drafts claimed.** The only verified Icelandic price is **Mist Uppbygging at 704.5 HUF — a 15 g collagen-only, caffeinated can.** UPP, the true 20 g whey+collagen comparable, has an **UNKNOWN shelf price** modelled at ~940 HUF `ESTIMATE`. **Do not use the cheap, weaker product to justify your price** | Ask Ölgerðin directly, in the same email as the fill-volume question |
+| **Landed COGS 524 HUF** | `ESTIMATE`, range 460–620. **No supplier has quoted anything, anywhere in this project** | The written quote at Day 28. Every number in this file moves with it |
+| The 90-day sell-through window | ⚠️ **Assumes shelf life comfortably exceeds it, and the product files do not agree that it does.** `product/05` and `06` both instruct **printing a 6-month best-before on batch 1**, and 06 warns that a cold-fill route with no thermal step could give **days-to-weeks** | ⚠️ **Ask every co-packer for the thermal process AND the resulting ambient shelf life in the first email, in writing.** At a 6-month date, a 90-day gym window leaves ~3 months of slack and any unsold residue is a **write-off, not carried stock.** This is a go/no-go criterion in supplier selection, not a detail confirmed at the end |
 | Preparing a tasting prototype pre-registration is permissible | `NEEDS PROFESSIONAL CONFIRMATION` | Food lawyer, same opinion you are already buying |
+| **The prospect list exists** | ❌ **It does not.** `26_GYM_PROSPECTS.csv` has ~7 real gym rows and **zero contact details of any kind** | **Build it Day 1–2, not Day 8.** If fewer than 30 rows or fewer than 10 in-person visits by Day 19, **extend the gate — do not lower the 8-LOI threshold** |
 
 ---
 
 ## THE ONE-LINE SUMMARY
 
-> **Eight signatures on a piece of paper that costs nobody anything is the difference between a €2,299 business and a €350 lesson. Get them before you order, and get a gym chain on the phone before you get anything else.**
+> **Eight signatures on a piece of paper that costs nobody anything is the difference between a €2,740 commitment and a €430 lesson. Get them before you order, and get a gym chain on the phone before you get anything else.**

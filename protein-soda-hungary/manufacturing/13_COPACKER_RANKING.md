@@ -10,10 +10,12 @@ Full data with sources: `12_COPACKERS.csv`. This file is the ranking and the rea
 | | |
 |---|---|
 | **#1 — send this email first** | **Opre' Label** — `sales@oprelabel.com` |
-| **Why** | The **only published MOQ in Europe reachable from Hungary that is in the same order of magnitude as your capital: "starting from just one pallet" ≈ 1,500–2,500 cans.** And **"collagen beverages" is already on their published product list.** |
+| **Why** | The **only published MOQ in Europe reachable from Hungary that is plausibly in the same order of magnitude as your capital: "starting from just one pallet."** And **"collagen beverages" is already on their published product list.** |
+| ⚠️ **But "one pallet" is not a can count** | **How many 330 ml cans are on one pallet is UNKNOWN.** This project's own two derivations give **1,680** (14_FIRST_BATCH §1) and **2,880** (`logistics/23_SHIPPING.md` §1.3) and **cannot both be right.** At 2,880 cans the order is ~EUR 4,157 — more than the entire capital. **Question #1 to Opre': "How many 330 ml SLEEK cans are on one pallet, and will you fill a PART pallet?"** |
 | **#2 — send it the same day** | **Bubee Hungary Kft.** — `info@bubee.eu` · **+36 30 240 0493** · Kiskőrös, ~110 km |
-| **Why** | Best *technical* fit in Hungary. Owns **0.2 / 0.25 / 0.33 L aluminium can filling**, explicitly advertises contract manufacture of **BCAA drinks, sports drinks, functional drinks**, and already runs a private-label energy drink for Slovakia's Jednota COOP. **Their MOQ is unpublished — that single number decides whether they are #1 or unusable.** |
+| **Why** | Best *technical* fit in Hungary. Owns **0.2 / 0.25 / 0.33 L aluminium can filling**, explicitly advertises contract manufacture of **BCAA drinks, sports drinks, functional drinks**, and already runs a private-label energy drink for Slovakia's Jednota COOP. **Their MOQ is unpublished — that single number decides whether they are usable at all.** |
 | **The number that ends the search** | Whoever answers **"our minimum FILLING quantity is X and our minimum CAN PURCHASE quantity is Y"** with two separate, small numbers wins. |
+| **The affordability rule that overrides all preference** | **Maximum acceptable MOQ = inventory capital ÷ quoted landed cost, and in no case above 4,000 cans in year one.** At the base-case 524 HUF and EUR 2,560 available that is **~1,770 cans.** See `14_FIRST_BATCH.md` §6. |
 | **Ruled out with a published number** | **RHODIUS — 250,000 cans per filling.** See §4. |
 
 ---
@@ -66,12 +68,16 @@ The 10 g of WPI:
 ### #1 — OPRE' LABEL / OPRE' BROTHERS 🥇
 `sales@oprelabel.com` · oprebrothers.hu/private-label/ · **filling site UNKNOWN — HU or SK**
 
-**Why #1:** it is the only route in this entire study where **the published minimum and your available cash are the same order of magnitude**. One pallet ≈ **1,500–2,500 cans** `DERIVED` — a 330 ml sleek can is ~53–58 mm diameter; on a 1200×800 Euro pallet ~280/layer × 6 layers ≈ 1,680; on a 1200×1000 industrial pallet ~350–400/layer × 5–6 ≈ 1,750–2,400. **That is arithmetic, not a quote.** Everything else about them is unknown, and it does not matter yet, because MOQ is the gate everyone else fails.
+**Why #1:** it is the only route in this entire study where **the published minimum is plausibly in the same order of magnitude as your cash**. Everything else about them is unknown, and it does not matter yet, because MOQ is the gate everyone else fails.
+
+> 🛑 **"One pallet" is UNKNOWN in cans, and the two derivations in this project conflict.**
+> This file previously printed "≈ 1,500–2,500 cans `DERIVED`" from ~280 cans/layer × 6 layers on a 1200×800 Euro pallet. **`logistics/23_SHIPPING.md` §1.3 independently computes 216 cans/layer and instructs "use 2,880 cans/pallet for planning", explicitly calling batch 1 "0.59 of a pallet".** 280 vs 216 cans/layer and 6 vs 12–15 layers are irreconcilable.
+> **Neither figure is a quote and no page was ever opened.** If a pallet is really ~2,880 cans, the minimum order is **1,509,120 HUF = EUR 4,157 at the base-case 524 HUF/can** — over the entire EUR 3,000 capital, and it consumes 64% of the 4,500-can DRS working cap in one go. **This is a hard gate before any budget is shown to the father.**
 
 Second reason: **collagen beverages are already on their published capability list**, alongside energy drinks, kombucha, carbonated beverages, colas, tonics, liquid vitamins and dietary supplements. They also list recipe development and packaging design. Canned cider ("Opre' Cider Dobozos") is a live SKU, so cans and carbonation are real.
 
 **Ask them, in this order:**
-1. **Exact cans per pallet at 330 ml** — the whole plan hangs on this number.
+1. **Exact cans per pallet at 330 ml SLEEK, and will you fill a PART pallet?** — 🛑 the whole plan hangs on this number, and our own two derivations differ by 1,200 cans.
 2. **Is the filling site in Hungary or Slovakia?** Changes freight, and changes who registers EPR/DRS.
 3. Price per can at **1 / 3 / 10 pallets**, delivered Budapest, itemised: filling, cans, sleeve, setup/changeover.
 4. **What protein load have you actually run, in g/can, and which protein?** ("Collagen beverages" could mean 2 g.)
@@ -94,7 +100,18 @@ Second reason: **collagen beverages are already on their published capability li
 
 **Why #2 and not #1:** everything about them is right **except the one number that decides it**. They own can filling in **exactly 0.2 / 0.25 / 0.33 L**, they carbonate (energy drinks, spritzers, sparkling wine), and their published capability statement — **"BCAA drinks, sports drinks, functional drinks"** — is the closest thing to a protein soda published by anyone in Hungary. They already manufacture a **private-label energy drink for Slovakia's Jednota COOP**, so third-party work is normal for them, not a favour. New plant handed over **April 2025**, ~**25 million cans/year** — small enough to answer your email, big enough to be real. A 1,700-can run is **0.007%** of their annual output `DERIVED: 1,700 ÷ 25,000,000`.
 
-**Their MOQ is unpublished and is the single most important unknown in the entire Hungarian workstream.** If it comes back at 3,000–5,000 cans, they become #1 outright — Hungarian, close, and technically the best fit. If it comes back at 50,000, they are a year-three partner.
+**Their MOQ is unpublished and is the single most important unknown in the entire Hungarian workstream.**
+
+> 🛑 **Correction to the previous version of this file, which said a 3,000–5,000-can MOQ would make Bubee "#1 outright". It would not. It would be a NO-GO.**
+>
+> | Bubee's answer | Inventory cost at 524 HUF/can | Verdict |
+> |---|---:|---|
+> | **~1,800 cans or a part-batch/trial route** | ~EUR 2,600 | ✅ **They become the launch partner.** |
+> | 3,000 cans | **EUR 4,331** | ❌ **NO-GO.** EUR 1,771 more inventory than you have. |
+> | 5,000 cans | **EUR 7,218** | ❌ **NO-GO twice over** — unaffordable, *and* it sits at the 5,000-unit DRS threshold, above the 4,500-can working cap in `10_DRS_REPONT.md`. |
+> | 50,000 cans | — | Year-three partner. |
+>
+> **Apply the affordability rule: maximum acceptable MOQ = inventory capital ÷ quoted landed cost, never above 4,000 cans in year one.** A great technical fit at an unaffordable minimum is not a fallback; it is a different company. **If their minimum is 3,000+, the useful question is "do you offer a trial or part-batch run?" — not "can we stretch?"**
 
 **Ask them (send this in Hungarian — see `32_EMAILS_HUNGARIAN.md`):**
 1. **Minimum batch in litres AND in cans at 0.33 L** — and separately, **minimum can purchase quantity**. Two numbers, always.
@@ -113,7 +130,9 @@ Second reason: **collagen beverages are already on their published capability li
 ### #3 — BEVERAGESCOUTS (AT), Hollabrunn — **best process, ~300 km**
 `office@beveragescouts.com` · **+43 2952 36063** · att. Michael Heinzl `LIKELY`
 
-**Why #3:** **test fillings from 1,000 cans** — the lowest published *can* MOQ anywhere in Austria or Germany — and the only supplier whose published process is the technically correct one for this product: *"All cans are pasteurised after filling, so no chemical preservatives are required."* Post-fill tunnel pasteurisation means you can **drop potassium sorbate entirely** and still have an ambient shelf life. 330 ml Sleek is on the micro-line; blank cans + labels applied in a second work step, which dodges the 150,000-can printed minimum. At ~300 km one pallet moves to Budapest on a single groupage line-haul.
+**Why #3:** **test fillings from 1,000 cans** — the lowest published *can* MOQ anywhere in Austria or Germany — and the only supplier whose published process is the technically correct one for this product: *"All cans are pasteurised after filling, so no chemical preservatives are required."* Post-fill tunnel pasteurisation means you can **drop potassium sorbate entirely** and still have an ambient shelf life.
+
+> ⚠️ **Note the live conflict inside this project, because it decides whether batch 1 is saleable.** `product/05_FOOD_CHEMISTRY.md` §7 recommends **cold fill with no pasteurisation** as the process, while `product/06_SAFETY_AND_SHELF_LIFE.md` warns that exactly that route gives a **fridge-only shelf life measured in days-to-weeks** and would "destroy the gym-fridge distribution model". **A thermal step, or a passed microbiological challenge test on the finished can, is a Gate 2 no-go item in `14_FIRST_BATCH.md` — it is not a preference.** BeverageScouts' published process is the one that satisfies it without a challenge test. 330 ml Sleek is on the micro-line; blank cans + labels applied in a second work step, which dodges the 150,000-can printed minimum. At ~300 km one pallet moves to Budapest on a single groupage line-haul.
 
 **Why not higher:** protein is not named anywhere in their published categories — "functional drinks" and "liquid food supplements" are the hooks, and neither is 20 g of protein. Their regular line starts at 20,000 cans, so the 1,000-can tier is explicitly a *test*, and no price exists for it.
 
@@ -205,7 +224,7 @@ tasteyourbrand.com/kontakt — **free 30–45 minute non-binding consultation**
 ### Also worth exactly one email each (zero cost, high information value)
 
 - **Ölgerðin Egill Skallagrímsson (Iceland)** — **the only European company identified that already manufactures a carbonated collagen drink in a can.** Mist Uppbygging (15 g hydrolysed collagen) and Collab (330 ml can, 5.9 g marine collagen, 105 mg caffeine, zero sugar) — and **Collab already sells into Germany and Denmark**, meaning it has already walked the EU compliance path for exactly this product. Ask: do you white-label, at what MOQ and price? Freight from Iceland is bad; **the answer is the prize**, because it is the only real benchmark that exists for this category in Europe. Contact **not captured — find it on olgerdin.is.**
-- **HELL Energy, Szikszó (~185 km)** — **the only dairy-capable aluminium can line confirmed in Hungary** (opened Sept 2020, up to 50,000 cans/hour). Send one enquiry to set the ceiling; **expect a no** — a 1,700-can batch is **two seconds of that line** `DERIVED: 1,700 ÷ 50,000 cans/h`. **Their B2B contact was not found and has deliberately not been guessed** — find it on their own site or LinkedIn.
+- **HELL Energy, Szikszó (~185 km)** — **the only dairy-capable aluminium can line identified in this research in Hungary** (reported opened Sept 2020, up to 50,000 cans/hour) `LIKELY — trade press only (origo.hu, feol.hu, Sept 2020); hellenergy.com was egress-blocked and never opened.` **This is not a confirmed finding and "the only" is an assertion about all of Hungary made by a research programme that could not open a single supplier page.** Send one enquiry to set the ceiling; **expect a no** — a 1,700-can batch is **about two minutes of that line** `DERIVED: 1,700 ÷ 50,000 cans/h = 0.034 h = 2.0 minutes`. **Their B2B contact was not found and has deliberately not been guessed** — find it on their own site or LinkedIn.
 - **Molkerei Gropper (DE)** — one email; a clean "no, bottles only" definitively closes the dairy-house hypothesis.
 
 ---
@@ -255,7 +274,7 @@ This is the honest answer to "what if no co-packer says yes at 1,700 cans."
 | Rank | Route | Realistic minimum | Total cash | Per unit | Verdict |
 |---|---|---|---|---|---|
 | **A1** | **Powder stick-pack / sachet SKU** — not a can at all | **~1,000 sachets** | **EUR 650–1,570** `ESTIMATE` / **236k–570k HUF** | EUR 0.65–1.57 | ✅ **The ONLY route that fits EUR 1,000.** |
-| **A2** | **Opre' Label — one pallet** | **~1,500–2,500 cans** | **EUR 1,500–2,600** `ESTIMATE` / **545k–944k HUF** | EUR 0.70–1.05 | ✅ **Cheapest real 330 ml cans. This is the plan.** |
+| **A2** | **Opre' Label — one pallet** | ⚠️ **UNKNOWN — 1,680 or 2,880 cans, our two derivations disagree** | **EUR 2,400 (at 1,680) to EUR 4,157 (at 2,880)** `ESTIMATE at 524 HUF/can` | EUR 1.44 | ✅ **The plan — but only if a pallet is ~1,700 cans or they will fill a part pallet. At 2,880 it is unaffordable.** |
 | **A3** | **BeverageScouts — 1,000-can test filling** | **1,000 cans** | **EUR 1,300–2,700** `UNANCHORED ESTIMATE` | 1.30–2.70 | ✅ Best process. Price entirely unknown. |
 | **A4** | **Taste Your Brand — 50 L prototype** | **~150 cans** | **EUR 800–2,500** `UNANCHORED ESTIMATE` | 5–17 | ⚠️ **A proof, not stock.** Book the free call anyway. |
 | **A5** | **330 ml glass via Drink Creator (HU)** | "low", no figure | UNKNOWN | UNKNOWN | ⚠️ Wrong pack, right people for the recipe. |
@@ -314,9 +333,27 @@ You asked for this to be priced properly rather than dismissed. Here it is, incl
 
 ---
 
-## 6. THE SEVEN QUESTIONS THAT GO IN EVERY SINGLE RFQ
+### 5.4 PRIVATE-LABELLING AN EXISTING BASE — the answer, which had not reached any deliverable
 
-Ask all seven in the **first** email. Each round trip costs days, and a filler who answers Q3 with "no dairy on site" saves you the rest.
+Dossier **B7** (49 KB, dedicated to this question) reached a headline finding that appeared nowhere in the plan until now:
+
+> **There is no evidence that any European manufacturer already produces a carbonated 20 g *whey*-protein soda that could simply be private-labelled.** What *does* already exist in Europe is a carbonated **COLLAGEN** drink.
+
+**Consequences you should act on:**
+
+1. **Stop treating "find an existing base" as a live route for ARCH F.** It is a live route only for a **collagen-only** product. Keep asking Füllkopf and Bubee the question (it costs one line in an email and a "yes" would reframe 2027), but do not plan against it.
+2. **B7 ran an explicit Option A/B/C comparison and its verdict went against the whey content of ARCH F:** *"Option C — a custom-but-simple collagen formulation at a one-pallet MOQ — beats both a whey custom formula and a hunt for a whey private-label base, on cash, on time, and on technical risk."*
+3. **That is a third independent research stream recommending against the 10 g of whey**, alongside the sold-out whey market (`16_INGREDIENT_SUPPLIERS.csv`) and the dairy-establishment gate (§1). **`01_FINAL_RECOMMENDATION.md` documents CONFLICT 1 (ARCH F vs G1+) but does not document this one. It should.**
+
+**The plan overrides B7 deliberately**, on one ground and it is worth stating plainly: **the 10 g of whey is what makes "20 g of complete protein" true.** Collagen alone has a DIAAS of effectively zero and no tryptophan. Dropping the whey saves ~164 HUF/can and roughly EUR 280 on the batch — and removes the only claim that differentiates the product from Ölgerðin's Mist. **That is the trade. Make it consciously, not by accident when a co-packer says "no dairy on site."**
+
+---
+
+## 6. THE EIGHT QUESTIONS THAT GO IN EVERY SINGLE RFQ
+
+Ask all eight in the **first** email. Each round trip costs days, and a filler who answers Q3 with "no dairy on site" saves you the rest.
+
+0. **Can you supply 330 ml SLEEK (Ø ~58 mm), not the standard 66.3 mm "211" body?** — **This is decided: batch 1 is SLEEK**, consistent with the Icelandic benchmark and the sleeve strategy. It drives cans-per-pallet, sleeve dimensions and sleeve artwork, and it is the reason `logistics/23_SHIPPING.md`'s pallet and weight tables (computed on the 66.3 mm standard can) must be recomputed.
 
 1. **Have you filled a >15 g/can protein beverage before? What was the fill-speed penalty?** — 20 g/can in a counter-pressure carbonated fill **foams severely**; most craft/soda fillers have never run it.
 2. **Which protein, specifically?** pH 3.2 is correct, not a problem — for the *right* protein. Whey isolate is deliberately run below its isoelectric point (~pH 4.6) to stay clear; that is how every clear-whey product works. Collagen is more forgiving still. **But hydrolysed vs native isolate behave very differently on heat — specify which.**
@@ -345,6 +382,8 @@ Ask all seven in the **first** email. Each round trip costs days, and a filler w
 ## 8. WHAT THIS FILE DOES NOT ESTABLISH — read before you build a spreadsheet on it
 
 - **No MOQ anywhere in this study was confirmed by opening the page.** Every figure — one pallet, 1,500 units, 1,000 test cans, 2,000 L, 10,000, 15,000/7,500, 25,000, 250,000 — came via a search-engine extract of a page nobody opened. **All must be confirmed in writing before any commitment.**
+- **"One pallet" is not even a quantity.** This project's two internal derivations of cans-per-pallet are **1,680** and **2,880** and cannot both be right. The entire batch size, budget and DRS headroom rest on the smaller one. **This is the single most load-bearing unknown in the file.**
+- **The smallest PUBLISHED sellable MOQ found anywhere is not Opre's.** It is **1,000 cans (BeverageScouts, Hollabrunn AT, post-fill pasteurised)**. The smallest non-sellable prototype is **~150 cans (Taste Your Brand)**. Opre's "one pallet" is derived arithmetic, not a published or quoted MOQ.
 - **Not one supplier price per can exists anywhere in this project.** The only cost anchor is a Forbes journalist's craft-lemonade benchmark. **Treat the whole cost model as a hypothesis to be destroyed by the first real quote.**
 - **No certification (IFS / BRC / ISO 22000) was verified for any company** except Füllkopf (IFS + BIO, second-hand).
 - **No dairy establishment approval number was found for any filler, anywhere.** This is the gating question for the 10 g of WPI in ARCH F and it is completely open.

@@ -10,8 +10,11 @@ Date: 2026-08-16 · **NO FORMULATION IN THIS FILE IS COMMERCIALLY VALIDATED.** E
 1. **pH is the entire game.** Whey stays clear only far below its isoelectric point; the target is **3.20 ± 0.10 measured in the finished carbonated can**, and there is **no safe corridor between pH 3.6 and pH 6.5**.
 2. **Collagen is easy, whey is hard.** Collagen peptides are 2–5 kDa random coils with no isoelectric precipitation problem — clear from pH 2 to pH 11, heat-stable, non-gelling. Whey is a globular protein with a pI at 5.2 that aggregates the moment you let the pH drift up.
 3. **The binding constraints are haze, astringency and foam — in that order of surprise, and reverse order of danger.** Viscosity is not a constraint; the drink will not feel thick.
-4. **Cold counter-pressure fill with a preservative, no pasteurisation, is the recommended process** — it is the mainstream carbonated soft-drink model, it is what the Icelandic reference product's potassium sorbate implies, it is the biggest cost lever in the project, and it is **conditional on a microbiological challenge test**.
-5. **Promise 6 months, not 12.** Haze and sediment are the clock that runs out first, and a product that fails at month 7 on a gym shelf with a 12-month date is worse than no product.
+4. **Cold counter-pressure fill with a preservative and no pasteurisation is the CHEAPEST CANDIDATE process — it is NOT a recommendation, and this file does not make one.** It is the mainstream carbonated soft-drink model and it is the biggest cost lever in the project, but it is **valid only if a microbiological challenge test on the finished can passes AND the co-packer confirms an AMBIENT shelf life in writing.** Without both, the same route gives a **fridge-only shelf life measured in days-to-weeks**, which destroys the gym-fridge distribution model. **The co-packer's validated process is the decision. Do not decide this yourself.** See §7.3.
+5. **Promise 6 months, not 12.** Haze and sediment are the clock that runs out first, and a product that fails at month 7 on a gym shelf with a 12-month date is worse than no product. *(Note the cross-file conflict: `finance/21_CASHFLOW.md` models a 9–12 month best-before and a sell-out at week 34. **6 months governs** — see `06_SAFETY_AND_SHELF_LIFE.md` §6.4.)*
+
+> ### ⚠️ SIXTH SENTENCE, AND IT IS NOT A CHEMISTRY QUESTION
+> **The formula contains 1.7 g of free L-leucine and 150 mg of free L-tryptophan. Whether free amino acids may lawfully be added to a BEVERAGE (as opposed to a food supplement) under Reg (EC) 1925/2006 and Hungarian national rules is UNVERIFIED — NEEDS PROFESSIONAL CONFIRMATION.** No primary source could be read under the egress policy and two independent research workstreams failed to resolve it. **It blocks raw-material purchase and artwork.** Every bench protocol in §10 that doses leucine or tryptophan is conditional on the answer. Fallback: **ARCH C unspiked**, leucine claim dropped. See §12 item 4.
 
 ---
 
@@ -113,6 +116,11 @@ Electrostatic repulsion is **screened by dissolved ions** (Debye screening), and
 | WPH (low DH ~5–15) | Excellent — small peptides barely scatter | Excellent — nothing left to denature | **Bitterness rises with DH** | High, and rising |
 
 > **"Standard WPI" is not automatically "clear WPI."** Clarity at pH 3.2 through a heat step is a specific grade and process attribute. Specifying the wrong grade is the classic cause of a failed first trial run.
+
+> ### 💰 THE COST CONSEQUENCE — THIS IS WHY THE COGS MOVED
+> **The clear / acid-stable grade is the BASE CASE, at 163.90 HUF/can for 10 g of declared protein** (16.39 HUF/g, `ESTIMATE` — a ~+25% clear-grade premium on the July 2026 WPI90 index). Commodity WPI90 at 131.08 HUF/can is the **optimistic** case and is valid **only** if a supplier certifies clarity at pH 3.2 in writing.
+> **Delta: +32.82 HUF/can, +EUR 154 on a 1,700-can batch.** It is the reason landed COGS at 1,700 cans is **524 HUF/can (range 460–620)**, not the 491 an earlier draft carried.
+> ⚠️ `16_INGREDIENT_SUPPLIERS.csv` states this single line **swings ARCH F by up to ±50 HUF/can**, and that a 25 kg buyer should budget the **index +10–25%** on top. **A written clear-WPI quote, with confirmed availability, is a hard gate before any deposit is paid.** See `04_FORMULATION_V1.csv`.
 
 ---
 
@@ -238,11 +246,21 @@ What you actually have to control:
 | **Cold counter-pressure fill + in-can TUNNEL PASTEURISATION** (spray tunnel, heated after sealing to ~60–72 °C core, then cooled) | **YES** — the standard route for carbonated cans needing heat (RTD cocktails, some kombucha) | **Yes at pH 3.2** — the thiol is protonated, covalent aggregation is switched off (§1.5) | **Limited.** A tunnel is expensive capital; many small canners do not have one | ⚠️ **TECHNICALLY BEST, AVAILABILITY-LIMITED** |
 | **Flash/HTST pasteurisation of the base + non-sterile cold fill** | Partially | Yes | Pasteuriser may exist, but **the canning line is not sterile** → post-pasteurisation recontamination is inevitable | Only meaningful **combined with preservatives** |
 | **Full aseptic canning** | Yes | Yes | Essentially unavailable at small scale | ❌ **RULED OUT ON COST** |
-| **Cold fill, NO heat: low pH + CO₂ + preservative** | Yes | Yes — **zero thermal damage; best clarity and best flavour** | **Widely available** — the standard soft-drink model | ✅ **RECOMMENDED, CONDITIONAL** |
+| **Cold fill, NO heat: low pH + CO₂ + preservative** | Yes | Yes — **zero thermal damage; best clarity and best flavour** | **Widely available** — the standard soft-drink model | ⚠️ **CHEAPEST CANDIDATE — CONDITIONAL ON A PASSED CHALLENGE TEST AND A WRITTEN AMBIENT SHELF LIFE. NOT A RECOMMENDATION.** |
 
-### 7.3 The recommendation, and the honest caveat
+### 7.3 The cheapest candidate process — and why this file does NOT recommend it
 
-> ## **RECOMMENDED PROCESS: cold, de-aerated, counter-pressure fill at 0–4 °C; pH 3.20; 2.0–2.4 vol CO₂; potassium sorbate at an EU-legal level; low dissolved oxygen; undercover gassing; validated CIP. NO PASTEURISATION.**
+> ## **CHEAPEST CANDIDATE PROCESS — VALID ONLY IF A MICROBIOLOGICAL CHALLENGE TEST ON THE FINISHED CAN PASSES:** cold, de-aerated, counter-pressure fill at 0–4 °C; pH 3.20; 2.0–2.4 vol CO₂; potassium sorbate at an EU-legal level; low dissolved oxygen; undercover gassing; validated CIP. **NO PASTEURISATION.**
+>
+> ### 🛑 **THIS IS NOT A RECOMMENDATION, AND IT MUST NOT BE READ AS ONE.** An earlier version of this section carried it as "RECOMMENDED PROCESS". **That recommendation is withdrawn.** The thermal route is **the co-packer's decision, made on their validated food-safety plan** — see `01_FINAL_RECOMMENDATION.md` CONFLICT 2. Do not specify it yourself, and do not hand this file to a technologist as an instruction.
+
+> ### ⚠️ THE WARNING FROM `06_SAFETY_AND_SHELF_LIFE.md` §4.7, REPRODUCED HERE VERBATIM BECAUSE IT BELONGS IN THIS FILE
+> **"Reconsider immediately if the manufacturing route turns out to be cold-fill with no pasteurisation.** `B6 warns that a mobile-canning / no-pasteurisation route gives a fridge-only shelf life measured in days-to-weeks.` That would be a **formulation and process problem, not a testing problem** — and it would **destroy the gym-fridge distribution model. Ask every co-packer what thermal process they apply. Put the answer in writing."**
+>
+> **What that means in money:** 1,700 cans distributed ambient on a days-to-weeks real shelf life is a **total loss of ~EUR 2,300 of inventory plus recall exposure.** `13_COPACKER_RANKING.md` §2 records that BeverageScouts publishes the opposite process — *"All cans are pasteurised after filling, so no chemical preservatives are required"* — and calls it the technically correct one for this product. **The two positions cannot both be acted on.**
+
+> ### 🛑 GATE-2 NO-GO — ADD THIS TO `manufacturing/14_FIRST_BATCH.md`, WHERE IT CURRENTLY DOES NOT APPEAR
+> **No deposit is paid until the co-packer has stated, in writing: (a) the thermal process they will apply, and (b) the resulting shelf life AND whether it is AMBIENT or CHILLED.** A chilled-only answer is a **NO-GO for this business model**, not a price negotiation. This is a documents gate; it costs one email and it is the cheapest item on the critical path.
 
 **Why this is worth so much money:** requiring a tunnel pasteuriser **collapses the list of co-packers in Hungary and the region that can make your product**, and every one that can will charge more. Eliminating the heat step widens the pool enormously (any counter-pressure canning line, including mobile canning services used by craft breweries), **lowers the tolling fee**, **shortens lead times, reduces minimum run sizes**, and **improves the product** — no thermal haze, no cooked note. *(Direction certain; magnitude UNKNOWN — QUOTE REQUIRED.)*
 
@@ -269,7 +287,7 @@ What you actually have to control:
 
 **Their answer is your process. Do not attempt to specify a PU value yourself.** *(For context: 1 PU is conventionally 1 minute at 60 °C with a z-value applied; z = 7 °C for beer, z = 10 °C commonly for soft drinks and juices — **LIKELY, unverified. The specific PU target for this product is UNKNOWN — SOURCE REQUIRED.** In the EU there is no prescribed numeric pasteurisation standard for this product type; the legal obligation is a HACCP-based system under Reg (EC) 852/2004 plus the microbiological criteria framework of Reg (EC) 2073/2005 — **LIKELY, unverified. In practice the co-packer's validated plan defines the process and you inherit it.**)*
 
-**FALLBACK RULE: if the co-packer has a tunnel and the price delta is small, take the tunnel** — it buys shelf life and a wider safety margin. **Do not pay a large premium for it at launch.**
+**DECISION RULE, CORRECTED: if the co-packer has a tunnel, take the tunnel unless the premium is large.** It buys ambient shelf life, a wider safety margin, a "no preservatives" declaration and — most importantly — it removes the challenge test from the critical path. **The cold-fill saving is only real if the challenge test passes and the shelf life comes back AMBIENT; priced against a total-loss downside of ~EUR 2,300, a modest tunnel premium is cheap insurance.** Do not pay a *large* premium at launch, but do not treat cold fill as the default either.
 
 ### 7.4 Does pasteurisation damage the protein?
 
@@ -403,8 +421,8 @@ In order of appearance, over months, even in a well-formulated product:
 | 28 | **Real-time shelf-life study** — cans at 20/25/35 °C, pull at 0/1/2/3/6/9 months; record turbidity, sediment (photographed), colour, pH, CO₂ volumes, sensory, micro | The only legitimate way to set the best-before |
 | 29 | **Sediment photography protocol** | So the "slight sediment is natural" wording is decided on evidence |
 | 30 | **Colour / browning measurement over time** | The Maillard clock |
-| 31 | ⚠️ **Nutritional analysis of the finished can** (accredited lab, Kjeldahl or Dumas nitrogen) | **LEGALLY REQUIRED to justify the 20 g protein declaration. Do NOT declare from a recipe calculation alone.** |
-| 32 | **Amino-acid profile of the finished can** | Substantiates the 3 g leucine claim and enables a real DIAAS computation |
+| 31 | ⚠️ **Nutritional analysis of the finished can** (accredited lab, Kjeldahl or Dumas nitrogen) | **NOT legally required — corrected.** Reg. (EU) 1169/2011 **Art. 31(4)** permits calculation from ingredient values as a full alternative to analysis (`06_SAFETY_AND_SHELF_LIFE.md` §2 is the authority). It is **commercially close to indispensable** for a front-of-pack "20 g" claim, because a rival can send your can to a lab. **~EUR 100–150 `QUOTE REQUIRED` — and it is UNFUNDED in every budget file.** |
+| 32 | **Amino-acid profile of the finished can** | Enables a real DIAAS computation. **It does NOT license a leucine claim on the front panel** — see `03_PRODUCT_ARCHITECTURE.md` §5. |
 | 33 | **Allergen verification** — milk (Annex II), bovine collagen source, cross-contact | Labelling |
 
 ---
@@ -417,7 +435,8 @@ To every collagen and clear-WPI supplier, and to the can supplier (adapted):
 > **Finished pH: 3.2 ± 0.1. Carbonation: 2.0–2.4 volumes CO₂. Zero sugar** (high-intensity sweeteners).
 > **Protein in the finished drink: 30 g/L whey + 30 g/L hydrolysed bovine collagen = 60 g/L total.**
 > Target: **no visible haze, no sediment, over 9 months at 25 °C**.
-> Process: **cold counter-pressure fill, no pasteurisation, potassium sorbate preserved** — OR — **cold fill + in-can tunnel pasteurisation to ≤72 °C core**.
+> Process: **NOT YET CHOSEN — please advise for both.** Either **cold counter-pressure fill, no pasteurisation, potassium sorbate preserved** — OR — **cold fill + in-can tunnel pasteurisation to ≤72 °C core**.
+> Grade: we require a **CLEAR / ACID-STABLE** whey isolate. **Do not quote standard WPI90 unless you certify clarity at pH 3.2 in writing.**
 > Please advise:
 > 1. Which of your grades you recommend, with the **exact product code and technical datasheet**.
 > 2. **Maximum recommended inclusion in g/L at pH 3.2** while remaining visually clear.
@@ -439,7 +458,7 @@ Every item is **UNKNOWN — SOURCE REQUIRED** or **NEEDS PROFESSIONAL CONFIRMATI
 1. **Reg (EC) 1333/2008 Annex II, category 14.1.4** — exact maximum levels for E200/E202, E210/E211 and their **combined** limit, E242, E900, and each sweetener, **including the footnotes**. This is where compliance is won or lost.
 2. **Reg (EU) 1169/2011** — Annex I exact point number and verbatim protein definition (**two dossiers disagree: point 8 vs point 11**); Annex X best-before rules; Art. 24.
 3. **Reg (EC) 1924/2006 Annex** — verbatim "source of protein" / "high protein" conditions.
-4. **Reg (EC) 1925/2006** — whether **free L-leucine and free L-tryptophan** may lawfully be added to a beverage in Hungary. **The single biggest unresolved regulatory question in ARCH F.**
+4. **Reg (EC) 1925/2006** — whether **free L-leucine and free L-tryptophan** may lawfully be added to a **beverage** (as opposed to a food supplement) in Hungary. **UNVERIFIED. THE SINGLE BIGGEST UNRESOLVED REGULATORY QUESTION IN ARCH F — it blocks raw-material purchase and artwork, and two independent research workstreams failed to resolve it.** Put it in the paid food-law opinion. Fallback if restricted: ARCH C unspiked, leucine claim dropped.
 5. **Reg (EU) 2024/3190** (BPA in food contact) — number, scope, transition dates.
 6. **Can supplier**: coating specification for this fill, rated internal pressure, maximum pasteurisation temperature for a 330 ml can and end.
 7. **PU targets** for pH < 4.0 carbonated beverages, with a citable source.
@@ -452,4 +471,4 @@ Every item is **UNKNOWN — SOURCE REQUIRED** or **NEEDS PROFESSIONAL CONFIRMATI
 
 ## 13. THE ONE-PARAGRAPH VERSION
 
-You cannot put 20 g of clear *whey* into 330 ml and have it still look like a soda in six months — that is 61 g/L, and the physics that makes clear whey work (running the pH far below the protein's isoelectric point, at 3.2) only holds comfortably to about 40–45 g/L. ARCH F solves this by splitting the load: **10 g of whey at 30 g/L, which is safe, plus 10 g of collagen peptides, which are 2–5 kDa random coils that stay clear from pH 2 to pH 11 and contribute essentially nothing to haze, astringency or foam.** Nail the pH to **3.20 ± 0.10 measured in the finished carbonated can**, never let it drift toward 3.8, keep the water soft and the calcium and chloride low, use citric acid because it chelates calcium for free, carbonate at **2.2 volumes**, and fill **ice-cold on a counter-pressure filler** — foam at the filler, not haze, is the thing most likely to stop your first production run. Because pH 3.2 makes this a high-acid food, no sterilisation is needed, and it can almost certainly be **cold-filled with potassium sorbate and no pasteurisation at all** — the mainstream soft-drink model, what the Icelandic reference product's sorbate declaration strongly implies, and the single biggest cost saving available, because it opens up every small canning line instead of the handful with a tunnel. But your drink is not a normal soft drink: it carries 60 g/L of protein, which is food for the organisms sorbate is supposed to stop, so **the challenge test against *Zygosaccharomyces bailii* is the gate, not a formality.** Zero sugar is a technical requirement rather than a marketing choice, because sucrose inverts at pH 3 and browns the protein. Promise six months, not twelve. And spend the first money on beakers, a pH meter and five honest tasters — that is the highest-return money in this entire project, and none of it has been spent yet.
+You cannot put 20 g of clear *whey* into 330 ml and have it still look like a soda in six months — that is 61 g/L, and the physics that makes clear whey work (running the pH far below the protein's isoelectric point, at 3.2) only holds comfortably to about 40–45 g/L. ARCH F solves this by splitting the load: **10 g of whey at 30 g/L, which is safe, plus 10 g of collagen peptides, which are 2–5 kDa random coils that stay clear from pH 2 to pH 11 and contribute essentially nothing to haze, astringency or foam.** Nail the pH to **3.20 ± 0.10 measured in the finished carbonated can**, never let it drift toward 3.8, keep the water soft and the calcium and chloride low, use citric acid because it chelates calcium for free, carbonate at **2.2 volumes**, and fill **ice-cold on a counter-pressure filler** — foam at the filler, not haze, is the thing most likely to stop your first production run. Because pH 3.2 makes this a high-acid food, no sterilisation is needed, and it **may** be possible to **cold-fill with potassium sorbate and no pasteurisation at all** — the mainstream soft-drink model, what the Icelandic reference product's sorbate declaration suggests, and the single biggest cost saving available, because it opens up every small canning line instead of the handful with a tunnel. **But this file does not recommend that route, and you must not choose it yourself.** Your drink is not a normal soft drink: it carries 60 g/L of protein, which is food for the organisms sorbate is supposed to stop, so **the challenge test against *Zygosaccharomyces bailii* is the gate, not a formality** — and if the answer comes back as a **fridge-only, days-to-weeks shelf life, the gym-fridge distribution model and the batch with it are gone.** The route is the co-packer's decision on their validated plan, and **"what thermal process, and is the resulting shelf life ambient or chilled — in writing" is a no-go gate before any deposit.** Zero sugar is a technical requirement rather than a marketing choice, because sucrose inverts at pH 3 and browns the protein. Promise six months, not twelve. Budget the whey at the **clear/acid-stable grade — 163.90 HUF/can, not 131.08** — because the cheap grade is a different product that hazes. And spend the first money on beakers, a pH meter and five honest tasters — that is the highest-return money in this entire project, and none of it has been spent yet.

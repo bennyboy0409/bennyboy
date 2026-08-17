@@ -16,11 +16,11 @@
 | 5 | Milk allergen | **`tejsavófehérje` in BOLD inside the ingredient list.** Non-negotiable. A missed milk allergen is a recall. §5 |
 | 6 | Biggest claim you own | **`MAGAS FEHÉRJETARTALMÚ`** — protein supplies **80–100 % of energy** against a **20 %** requirement. Survives to **400 kcal/can**. §16 |
 | 7 | Claim that will get you fined | **`alacsony kalóriatartalmú` / "low calorie" / "light" / "csak 80 kcal"** — arithmetically impossible on this product, forever. §17 |
-| 8 | DRS mark on artwork | **NOT on batch-1 artwork** (under ~5,000 cans). This is the single most expensive thing to get wrong in the other direction. §14 |
+| 8 | DRS mark on artwork | **NOT on batch-1 artwork** (under the reported ~5,000-can threshold — **LIKELY, NOT CONFIRMED; the decree was never read. Get MOHU's written answer first.** `10_DRS_REPONT.md` is the authority; plan to a 4,500-can cap). This is the single most expensive thing to get wrong in the other direction. §14 |
 | 9 | Caffeine warning | **Not applicable — batch 1 has no caffeine.** Rule and exact wording held for batch 2. §9 |
 | 10 | Gating dependency | **You cannot finalise artwork until the legal entity exists** — its name and address are a mandatory particular. §12 |
 
-**What is at risk if the label is wrong:** batch 1 is ~1,700 cans × 491 HUF landed COGS = **834,700 HUF ≈ 2,300 EUR** `DERIVED (1,700 × 491 = 834,700; ÷363 = 2,299.4)`. That is essentially the entire family capital. **One paid Hungarian food-law label review before print is cheaper than one scrapped batch.** Cost of that review: **UNKNOWN — QUOTE REQUIRED.**
+**What is at risk if the label is wrong:** batch 1 is ~1,700 cans produced / 1,640 sellable at a landed COGS of **524 HUF/can (range 460–620)** — **EUR 2,300 of inventory plus EUR 440 of setup = EUR 2,740 deployed ≈ 994,620 HUF** `DERIVED (2,740 × 363)`. That is essentially the entire family capital. **One paid Hungarian food-law label review before print is cheaper than one scrapped batch.** Cost of that review: **UNKNOWN — QUOTE REQUIRED.**
 
 **Cheap insurance you get for free from the packaging decision:** because batch 1 uses **blank silver cans + shrink sleeves**, not printed cans, artwork revision costs a sleeve re-print, not a 250,000-unit can origination. **Every "we may have to change this later" risk below is therefore cheap for you and expensive for a normal brand.** Use that.
 
@@ -69,7 +69,8 @@
 | Annex III pt 4.1 | Caffeine warning | **NO** — no caffeine in batch 1. §9 |
 | Annex III | Polyol laxative warning | **NO** — §8B |
 | Dir. 2011/91/EU | Lot / batch identification | **YES** — §10 |
-| Hungarian DRS | Deposit mark + deposit value | **NO below ~5,000 cans** — §14 |
+| **Reg. 1924/2006 Art. 10(2)** | **FOUR accompanying particulars whenever a health claim is used: (a) varied/balanced diet statement, (b) quantity and pattern of consumption needed for the effect, (c) who should avoid the food where appropriate, (d) excess-consumption warning where relevant** | **YES for (a) and (b) — §16 and §18.2. (c)/(d) assessed as not applicable; confirm.** |
+| Hungarian DRS | Deposit mark + deposit value | **NO below the ~5,000-can threshold — but that threshold is LIKELY, NOT CONFIRMED (see 10_DRS_REPONT.md)** — §14 |
 
 ### 2.1 Legibility and field of vision — Art. 12, 13
 
@@ -435,9 +436,17 @@ Recalled principles, **treat as a lead**:
 
 | Ingredient | Is QUID triggered? | The cheap fix |
 |---|---|---|
-| **Protein** | **Likely yes** — the name is `…fehérjetartalmú ital` and the front panel says `20 g FEHÉRJE`. There is an Annex VIII exception where the quantity is already given in the nutrition declaration, and protein *is* a mandatory nutrition-declaration nutrient — but this is genuinely arguable. `NEEDS PROFESSIONAL CONFIRMATION` | **Print `20 g fehérje / doboz` on the front panel.** You want to shout this anyway, it is true, and it satisfies QUID on any reading. **The question disappears. Do it.** |
-| **Collagen** | **Only if you emphasise it.** A front-panel `KOLLAGÉNNEL` flash, or a collagen graphic, triggers Art. 22 — and Annex VIII wants a **percentage**, not grams. `DERIVED`: 10 g ÷ 330 g = **3.0 %**; WPI powder ~11.1 g ÷ 330 = **3.4 %** | **Do not emphasise collagen on batch-1 artwork.** Declare it in the ingredient list only. If you later want a collagen flash, you must print `hidrolizált marhakollagén 3,0 %` — which reads far worse than the "10 g" you were hoping to say. |
-| Leucine / tryptophan | Same logic — a front-panel `+ LEUCIN` flash triggers QUID | Batch 1: keep off the front panel. |
+| **Protein** | **Likely yes** — the name is `…fehérjetartalmú ital` and the front panel says `20 g FEHÉRJE`. `NEEDS PROFESSIONAL CONFIRMATION` | **Print `20 g fehérje / doboz` — but do NOT assume it discharges Art. 22.** See the correction box below. Rely on the **Annex VIII Part A(2)(a)(ii) derogation** (quantity already required on the label by Union provisions — i.e. the mandatory nutrition declaration, in which protein is a mandatory nutrient). |
+| **Collagen** | **Only if you emphasise it.** A front-panel `KOLLAGÉNNEL` flash, or a collagen graphic, triggers Art. 22 — and Annex VIII wants a **percentage** of ingredient **at the time of its use**, not grams of nutrient. `PLACEHOLDER — NOT PRINTABLE`: collagen **powder** ~10.3–11.1 g (not the 10 g of protein) over finished-product weight → roughly **3,1–3,4 %**; WPI powder ~11.1 g → roughly **3,4 %**. Both must be recomputed on the co-packer's weighed recipe sheet, powder mass over finished-product weight, not over a nominal 330 g. | **Do not emphasise collagen on batch-1 artwork.** Declare it in the ingredient list only. If you later want a collagen flash, you must print a percentage in the low 3s — which reads far worse than the "10 g" you were hoping to say. |
+| Leucine / tryptophan | Same logic — a front-panel `+ LEUCIN` flash triggers QUID | Batch 1: keep off the front panel. **And note §7.4: whether these may lawfully be added to a normal beverage at all is UNRESOLVED and blocks raw-material purchase.** |
+
+> ### ⚠️ CORRECTION — "printing 20 g fehérje makes the QUID question disappear" is WRONG. It was carried over from dossier A4 §4.6 unchallenged.
+> **Annex VIII Part B requires the QUID indication to be expressed as a PERCENTAGE**, corresponding to the quantity of the **ingredient at the time of its use**. `20 g fehérje` is a **nutrient mass**, not an ingredient percentage. It does not discharge Art. 22 on any reading; it is simply a different statement.
+> **If QUID is engaged — which this section concedes is arguable — there are only two lawful discharges:**
+> 1. **The Annex VIII Part A(2)(a)(ii) derogation:** the quantity is already required on the label by Union provisions. Protein is a mandatory nutrition-declaration nutrient under FIC Art. 30(1), so the declaration itself carries it. **This is the route to rely on.** `NEEDS PROFESSIONAL CONFIRMATION`
+> 2. **Or print the ingredient percentages** for `tejsavófehérje-izolátum` and `hidrolizált marhakollagén` on the weighed recipe basis (roughly 3,4 % and 3,1–3,4 % — placeholders, see the table above).
+>
+> **Commercially, still print `20 g fehérje / doboz`.** It is true, it is what the gym channel reads, and it costs nothing. **Just do not record it in the Art. 6 substantiation file as your QUID answer.** The fallback percentages must be pre-calculated before artwork so that, if the reviewer says QUID is engaged and the derogation does not apply, the sleeve does not have to be redesigned. **This is now question 7 on the §19 paid-review list.**
 
 ---
 
@@ -733,6 +742,7 @@ Aluminium carries material code **`ALU 41`** under the EU packaging material ide
 **Two structural rules that decide everything below:**
 - **Art. 8(1) — closed list.** A nutrition claim may only be made if it is **listed in the Annex**. Anything not on the list is forbidden **however true it is**. This is why "low carb" fails.
 - **Art. 10(1) — closed list.** Health claims are prohibited unless authorised and in the Union list.
+- **Art. 10(2) — FOUR accompanying particulars, not one.** Whenever a health claim is used, the labelling must also carry: **(a)** a statement on the importance of a varied and balanced diet and a healthy lifestyle; **(b)** the **quantity of the food and pattern of consumption needed to obtain the claimed effect**; **(c)** where appropriate, a statement for persons who should avoid the food; **(d)** a warning where excess consumption is risky. **(a) alone is not compliance.** An earlier draft of §18.2 printed only (a) and labelled it "the" mandatory text — that has been corrected. **A mandatory particular missing from a printed sleeve run is a reprint of the whole batch.** `Wording of Art. 10(2): NEEDS PROFESSIONAL CONFIRMATION on verbatim text — reproduced from dossier A5 §2, EUR-Lex 403-blocked.`
 
 > # ⚠️⚠️ THE HUNGARIAN COLUMN IS A WORKING TRANSLATION AND IS **NOT PRINT-READY**.
 > Authorised health-claim wording is **legally prescribed**. A paraphrase invalidates the claim. **Every Hungarian string in the health-claim rows below must be copied character-for-character out of the HUNGARIAN-language version of Reg. (EU) No 432/2012 before artwork sign-off.** This is the single highest-risk content in this file.
@@ -778,11 +788,26 @@ Aluminium carries material code **`ALU 41`** under the EU packaging material ide
 STEP 1 — energy from protein
    20 g × 4 kcal/g = 80 kcal from protein
 
-STEP 2 — protein's share of total energy, P = 80 / E
-   E =  80 kcal  →  P = 80/80  = 100.0 %
-   E =  85 kcal  →  P = 80/85  =  94.1 %   ← ARCH F with the amino-acid nitrogen (§7B.4)
-   E =  90 kcal  →  P = 80/90  =  88.9 %
-   E = 100 kcal  →  P = 80/100 =  80.0 %
+STEP 2 — protein's share of total energy. USE ONE BASIS THROUGHOUT.
+   Numerator and denominator must be the SAME protein figure. Do not put
+   declared protein over analysed energy — that silently treats the free
+   amino-acid nitrogen as non-protein energy and understates the share.
+
+   SCENARIO 1 — DECLARED basis (what goes on the label):
+      protein 20 g   → 20 × 4 = 80 kcal from protein
+      total energy   = 80 kcal (no other energy source in ARCH F)
+      share = 80 / 80 = 100.0 %
+
+   SCENARIO 2 — ANALYSED basis (Kjeldahl on the finished can, §7B.4):
+      the free L-leucine and L-tryptophan add ~1.26 g of Kjeldahl
+      protein-equivalent  →  protein ~21.3 g  →  21.3 × 4 = 85.2 kcal
+      total energy   = ~85 kcal
+      share = 85.2 / 85.2 = 100.0 %
+
+   SENSITIVITY — if a later flavour or sweetener system adds real
+   non-protein energy X on top of the 80 kcal of protein energy:
+      X =  10 kcal  →  80/90  = 88.9 %
+      X =  20 kcal  →  80/100 = 80.0 %
 
 STEP 3 — test
    HIGH PROTEIN needs ≥ 20 %.  We have 80–100 %.  PASS by 4.0–5.0×
@@ -812,10 +837,15 @@ Checking the brief's 12 g question directly:
    ARCH F at 12 g protein would land at ~48–60 kcal per can  →  PASS
 ```
 
-> ## **HIGH PROTEIN qualifies at EVERY protein level down to 12 g — and far below it, down to roughly 1.3 g.**
+> ## **On the ENERGY-RATIO condition alone, HIGH PROTEIN qualifies at every protein level down to 12 g — and, arithmetically, far below it.**
 >
-> ### What this means for the money: **the 20 g is a MARKETING decision, not a legal one.**
-> The claim does not force 20 g. Consumer expectation and the competitive shelf force 20 g. **If ingredient cost ever becomes the binding constraint on unit economics — and at 213 HUF/can pilot ingredients ≈ 0.59 EUR it is the largest single line — you can reformulate downward and keep `MAGAS FEHÉRJETARTALMÚ` intact.** `DERIVED (213 ÷ 363 = 0.587 EUR)`. **Do not reformulate for batch 1** — "20 g" is the number the gym channel reads. But know the lever exists for batch 2.
+> ### ⛔ **BUT THE ENERGY RATIO IS NOT THE ONLY GATE. THE "~1.3 g" FIGURE IS LEGALLY UNAVAILABLE.**
+> The Annex condition is **necessary, not sufficient**. Reg. 1924/2006 **Art. 5(1)(b)** additionally requires the nutrient to be present **"in a significant quantity … or in a quantity that will produce the nutritional or physiological effect claimed"**, and **Art. 5(1)(d)** requires that the quantity **reasonably expected to be consumed** provides a significant quantity of it.
+> **A 1.3 g-protein soda passes the energy-ratio test and fails Art. 5 outright.** Do not treat the floor arithmetic as a reformulation option. It is presented here only so you can see that the ratio is not the binding constraint. `Art. 5 wording: NEEDS PROFESSIONAL CONFIRMATION on verbatim text — EUR-Lex was 403-blocked.`
+> **The 12 g statement is defensible** (12 g is a real protein level that a reasonable person would call significant), **and its condition is: total can energy must stay ≤ 240 kcal.** State that condition whenever the 12 g figure is used.
+>
+> ### What this means for the money: **the 20 g is a MARKETING decision, not purely a legal one.**
+> The claim does not force 20 g; consumer expectation and the competitive shelf do. **If ingredient cost ever becomes the binding constraint on unit economics — and at 256.88 HUF/can (EUR 0.708) ingredients are the largest single line in the build — a reformulation down to ~12 g keeps `MAGAS FEHÉRJETARTALMÚ` intact provided the can stays under 240 kcal.** `DERIVED (256.88 ÷ 363 = 0.7077 EUR). Ingredient source of record: product/04_FORMULATION_V1.csv.` **Do not reformulate for batch 1** — "20 g" is the number the gym channel reads. But know the lever exists for batch 2, and that it stops well above 1.3 g.
 
 **Protein is legally measured as total Kjeldahl nitrogen × 6.25** (FIC Annex I). **There is NO protein-quality requirement in the nutrition-claim Annex** — PDCAAS/DIAAS are irrelevant to the claim. Collagen counts. (See §16.6 for the residual risk this creates.)
 
@@ -930,7 +960,8 @@ EFSA issued **favourable** scientific opinions on caffeine and endurance perform
 | `természetes aroma` without written flavour-house confirmation | Reg. (EC) No 1334/2008 Art. 16 | `aromák` |
 | Hungarian flag, map, national colours, `magyar termék`, `hazai termék` | §12.2 — triggers Reg. (EU) 2018/775 and forces `A fehérje nem Magyarországról származik.` | `Budapesten alapítva` **off-pack only, wording to be checked** |
 | Claims that skipping the product harms health | **Art. 12(a)** | none |
-| `adagolás`, `napi 1 adag`, any dosing language | Drags an ordinary food toward **étrend-kiegészítő** classification and OGYÉI notification (§7.4) | none |
+| `adagolás`, `napi 1 adag`, any dosing language | Drags an ordinary food toward **étrend-kiegészítő** classification and OGYÉI notification (§7.4). ⚠️ **But Art. 10(2)(b) DOES require a consumption pattern whenever a health claim is used — see §18.2. This conflict is question 8 on the §19 paid-review list. Do not resolve it yourself.** | A non-dose-form intake statement, wording to be settled at the paid review |
+| **`3 g leucin dobozonként`, `+ LEUCIN`, or ANY leucine-content flash** | **Art. 8(1) closed list.** A leucine-content claim is **not in the Annex to Reg. 1924/2006**, so it is prohibited **however true it is** — the identical defect that kills `alacsony szénhidráttartalmú`. It would also trigger QUID (§8), and §7.4 makes the legality of the free amino acid itself UNKNOWN. **This was proposed in a top-level file. Do not print it.** | **None on-pack.** A factual leucine figure can only be **off-pack** copy, and only after §7.4 is answered |
 | Undisclosed influencer / affiliate content | Specific and actively enforced unfair commercial practice — **2008. évi XLVII. törvény** | Mark all paid content |
 
 ---
@@ -966,10 +997,10 @@ EFSA issued **favourable** scientific opinions on caffeine and endurance perform
 | 4 | `330 ml` character height **≥ 4 mm** — bigger than the ingredient list | Dir. 76/211/EEC, §13.1 — verify |
 | 5 | The **brand lockup does NOT replace the legal name** | Art. 17(4) |
 | 6 | `MAGAS FEHÉRJETARTALMÚ` and `CUKORMENTES` are permitted claims | §16 |
-| 7 | `20 g fehérje` also discharges QUID for protein | §8 |
+| 7 | `20 g fehérje` is desirable copy but does **NOT** discharge QUID — the QUID answer is the Annex VIII Part A(2)(a)(ii) nutrition-declaration derogation | §8 |
 | 8 | **NO** `energiaszegény` / `light` / `könnyű` / `alacsony kalóriatartalmú` | §16.2 |
 | 9 | **NO** Hungarian flag, map or national-colour device | §12.2 |
-| 10 | **NO** collagen flash, no `KOLLAGÉNNEL` — it triggers QUID and forces `3,0 %` | §8 |
+| 10 | **NO** collagen flash, no `KOLLAGÉNNEL` — it triggers QUID and forces an ingredient percentage in the low 3s | §8 |
 | 11 | **NO** DRS mark, **NO** `visszaváltási díj` text — batch 1 is under the threshold | §14.2 |
 | 12 | **NO** caffeine warning — no caffeine in batch 1 | §9.1 |
 | 13 | **NO** dosing language (`adagolás`, `napi 1 adag`) | §7.4 |
@@ -1022,9 +1053,32 @@ EGÉSZSÉGRE VONATKOZÓ ÁLLÍTÁS:
 "A fehérje hozzájárul az izomtömeg növekedéséhez."
 
 Egy kiegyensúlyozott, változatos étrend és egészséges életmód része.
-              [Art. 10(2) accompanying statement — working translation,
-               confirm wording; this text is MANDATORY whenever a
-               health claim is used, and it costs label space]
+              [Art. 10(2)(a) — importance of a varied, balanced diet and a
+               healthy lifestyle. Working translation, confirm wording.]
+
+A kedvező hatás napi [X] g fehérje bevitele esetén érvényesül.
+              [Art. 10(2)(b) — the quantity of the food and pattern of
+               consumption needed to obtain the claimed effect. THIS LINE
+               WAS MISSING FROM AN EARLIER DRAFT OF THIS LABEL. It is a
+               MANDATORY particular, not optional: a health claim printed
+               without it is a non-compliant sleeve, i.e. a reprint of the
+               whole run. Working translation, NOT print-ready.
+               ⚠ CONFLICT WITH THE §17 RED LIST — READ BEFORE ARTWORK.
+                 §17 forbids `adagolás`, `napi 1 adag` and dosing language
+                 because it reads as étrend-kiegészítő classification risk.
+                 Art. 10(2)(b) nonetheless requires a consumption pattern.
+                 The construction above is deliberately NON-dose-form: it
+                 states a daily protein intake, not a number of cans and
+                 not a "serving". Whether that is sufficient for (b) and
+                 safe against the classification risk is question 8 on the
+                 §19 paid-review list. DO NOT resolve this yourself.]
+
+              [Art. 10(2)(c) — statement for persons who should avoid the
+               food: NOT APPLICABLE ASSESSED. No basis identified for this
+               product. Confirm with the reviewer.
+               Art. 10(2)(d) — warning where excess consumption is risky:
+               NOT APPLICABLE ASSESSED. Confirm with the reviewer.
+               Both assessments: NEEDS PROFESSIONAL CONFIRMATION.]
 
 
 TÁROLÁS:
@@ -1095,13 +1149,13 @@ Reg. 1924/2006 **Art. 6** puts the burden of **justifying every claim** on you. 
 
 | Item | Cost | Verdict |
 |---|---|---|
-| **One paid Hungarian food-law label review before the first print run** | **`UNKNOWN — QUOTE REQUIRED`** | **The highest-return spend in this file.** It must cover, in one sitting: §4.3 szóda, §6.3 Annex VI point 4, §7.4 free amino acids, §14.2 DRS threshold, §16.6 collagen + muscle claim, and the verbatim HU wordings. **Six questions, one meeting.** |
+| **One paid Hungarian food-law label review before the first print run** | **`UNKNOWN — QUOTE REQUIRED`** | **The highest-return spend in this file.** It must cover, in one sitting: **(1)** §4.3 szóda; **(2)** §6.3 Annex VI point 4; **(3)** §7.4 free amino acids — *blocks raw-material purchase*; **(4)** §14.2 DRS threshold; **(5)** §16.6 collagen + muscle claim; **(6)** the verbatim HU wordings; **(7)** §8 — is QUID engaged, and does the Annex VIII Part A(2)(a)(ii) nutrition-declaration derogation discharge it, or must ingredient percentages be printed?; **(8)** §18.2 — what Art. 10(2)(b) consumption-pattern wording satisfies the Regulation **without** using the dosing language the §17 red list forbids as étrend-kiegészítő classification risk? **Eight questions, one meeting.** |
 | Nutrition lab analysis of a production batch | `UNKNOWN — QUOTE REQUIRED` | Mandatory — you cannot print the table without it |
 | GS1 Hungary GTIN | `UNKNOWN — QUOTE REQUIRED` | Get the figure before committing |
 | Written MOHU enquiry on the <5,000 threshold | **0 HUF / 0 EUR** | **Do it today** |
 | Supplier specs, allergen declarations, TSE statement, ℮ statement, line-allergen matrix | **0 HUF / 0 EUR** | Ask in writing, keep the replies |
 
-**Value at risk if the sleeve is wrong:** 1,700 cans × 491 HUF landed COGS = **834,700 HUF ≈ 2,300 EUR** `DERIVED`. Against a personal + family capital base of ~**1,089,000 HUF (EUR 3,000)** `DERIVED (3,000 × 363)`. **A forced relabel or a recall is not a setback here — it is the end of the project. That is the whole argument for the one paid review.**
+**Value at risk if the sleeve is wrong:** the whole batch — **EUR 2,300 of inventory plus EUR 440 of setup = EUR 2,740 deployed (994,620 HUF)** `DERIVED (2,740 × 363)`, at a landed COGS of **524 HUF/can, range 460–620**. Against a personal + family capital base of ~**1,089,000 HUF (EUR 3,000)** `DERIVED (3,000 × 363)`. **A forced relabel or a recall is not a setback here — it is the end of the project. That is the whole argument for the one paid review.**
 
 ---
 

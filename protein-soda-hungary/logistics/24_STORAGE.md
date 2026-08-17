@@ -1,6 +1,10 @@
 # 24 — STORAGE: CAN 1,700 CANS LIVE AT HOME?
 
-**Batch 1 = 1,704 cans (71 trays) · ~583 kg of cans · ~629 kg palletised · 0.96 m² on the pallet · inventory value 834,900 HUF (EUR 2,300).**
+**Batch 1 = 1,704 cans (71 trays) · 60 withheld as samples → 1,640 sellable · ~583 kg of cans · ~629 kg palletised · 0.96 m² on the pallet · inventory value 834,900 HUF (EUR 2,300).**
+
+> ⚠️ **Two inputs below are not settled and both change the physical tables.**
+> **(1) Cans per pallet is UNKNOWN** — `logistics/23_SHIPPING.md` §1.3 records two irreconcilable derivations (1,680 and 2,880). If Opre's one-pallet MOQ is really ~2,880 cans, everything in §1 scales by 1.7×: **~1,065 kg palletised, ~2.2 m² de-palletised, 120 cases to carry, and an order you cannot afford.**
+> **(2) The can format is UNDECIDED** — sleek (Ø ~58.1 mm × 145 mm) vs standard 211 (Ø ~66.3 mm × 115.2 mm). **The tables below are computed on standard 211.** A sleek case is roughly **233 × 349 × 150 mm** instead of 265 × 400 × 120 mm: **smaller footprint, taller stack, same weight.** Re-derive §1.1 and §1.2 once the co-packer confirms.
 
 ---
 
@@ -11,7 +15,9 @@
 | **Does it physically fit at home?** | **Yes, easily.** De-palletised and stacked 6 cases high it occupies **1.27 m² of floor, 72 cm tall** — a strip along one wall of a spare room. |
 | **Can you get it into the house?** | **Yes, with effort.** The pallet arrives at 629 kg on a **tail-lift truck**; you then carry **71 cases of 8.5 kg** inside. **~45–75 minutes with two people.** You cannot move the pallet itself. |
 | **Is it legal at a residential address?** | **UNKNOWN — NEEDS PROFESSIONAL CONFIRMATION. This is the gating question and it is free to answer: one phone call to your járási hivatal élelmiszerlánc-biztonsági osztály.** Make the call **before** you pay a co-packer deposit. |
-| **Is there a paid alternative you can afford?** | **Practically, no.** Any storage costing more than **~3,900 HUF/month** eats over 10 % of your entire batch-1 profit. **Home storage is not a preference — it is a requirement.** See §4. |
+| **Is there a paid alternative you can afford?** | **Practically, no.** Any storage costing more than **~7,500 HUF/month** eats ~15 % of your entire batch-1 contribution. **Home storage is not a preference — it is a requirement.** See §4. |
+
+> **This is also a REGISTRATION, not just a room.** Registering the storage establishment is one of the things you must do before you may sell at all — alongside the entity, FELIR, tax/ÁFA, EPR and the GS1 GTIN. **It belongs on the pre-sale registration list in `legal/11_LEGAL_CHECKLIST.md`, and G1/G2 below are the reason it cannot simply be assumed.**
 
 **And one hard product warning that overrides all of the above: DO NOT store this in an unheated garage.** A frozen can bursts its seam. A Hungarian garage below 0 °C in January is a **total-loss risk on 834,900 HUF of inventory**. See §5.2.
 
@@ -149,21 +155,24 @@ A 629 kg pallet cannot be moved by a person, and you do not own a pallet truck.
 
 ### 4.1 The affordability test comes first
 
-Total batch-1 contribution if every can sells direct at full RRP: **1,704 × 138 = 235,152 HUF ≈ EUR 648.** Assume you hold stock for **6 months**.
+Total batch-1 contribution if every sellable can goes direct at full RRP: **1,640 × 183.87 = 301,547 HUF ≈ EUR 831.** Assume you hold stock for **6 months** — which is also the best-before you are instructed to print (§5.2).
 
-| Monthly storage cost | 6-month total | **HUF/can** | **% of your entire batch-1 profit** |
+| Monthly storage cost | 6-month total | **HUF/sellable can** | **% of your entire batch-1 contribution** |
 |---|---|---|---|
 | **0 HUF (home)** | 0 | **0** | **0 %** |
-| 3,900 HUF | 23,400 | 13.7 | **10 %** |
-| 10,000 HUF | 60,000 | **35.2** | **26 %** |
-| 15,000 HUF | 90,000 | **52.8** | **38 %** |
-| 20,000 HUF | 120,000 | **70.4** | **51 %** |
-| 30,000 HUF | 180,000 | **105.6** | **77 %** |
-| 40,000 HUF | 240,000 | **140.8** | **102 % — the batch makes nothing** |
+| 7,500 HUF | 45,000 | 27.4 | **15 %** |
+| 10,000 HUF | 60,000 | **36.6** | **20 %** |
+| 15,000 HUF | 90,000 | **54.9** | **30 %** |
+| 20,000 HUF | 120,000 | **73.2** | **40 %** |
+| 30,000 HUF | 180,000 | **109.8** | **60 %** |
+| 40,000 HUF | 240,000 | **146.3** | **80 %** |
+| 55,000 HUF | 330,000 | **201.2** | **109 % — the batch makes nothing** |
 
-`DERIVED — monthly × 6 ÷ 1,704 cans, against 138 HUF/can contribution.`
+`DERIVED — monthly × 6 ÷ 1,640 sellable cans, against 183.87 HUF/can contribution.`
 
-> **🔴 VERDICT: your entire storage budget for batch 1 is about 3,900 HUF/month before it starts materially eating the business.** No commercial storage product is priced there. **Home or family premises is the only economically viable answer for batch 1.** If the járási hivatal blocks it, go to §2.4 fallback 1 (co-packer holds stock) — do not rent.
+> **🔴 VERDICT: your entire storage budget for batch 1 is about 7,500 HUF/month before it starts materially eating the business.** No commercial storage product is priced there. **Home or family premises is the only economically viable answer for batch 1.** If the járási hivatal blocks it, go to §2.4 fallback 1 (co-packer holds stock) — do not rent.
+>
+> **The 899 RRP roughly doubled this headroom** (it was ~3,900 HUF/month at a 799 RRP and 491 HUF COGS). **The verdict did not change, and neither should your behaviour** — the EUR 440 of setup and the EUR 260 contingency both sit outside this contribution figure, and the batch only returns **+EUR 458 net** after them.
 
 ### 4.2 Self-storage — prices not obtainable
 
@@ -206,7 +215,7 @@ Total batch-1 contribution if every can sells direct at full RRP: **1,704 × 138
 - **But 3PLs are built for B2C pick-and-pack and charge per order picked.** Your dominant channel is **B2B case drops to gyms**. **Ask specifically for a B2B/wholesale rate card, not the webshop rate card.**
 - **The monthly minimum is the number that kills small brands.** Ask first, in Hungarian: **"Mi a havi minimumdíj, ha csak 1 raklapom van? Van-e élelmiszer-raktározási engedélyük / FELIR-számuk?"**
 - At one pallet, a 3PL is usually **more expensive than self-storage in pure rent** and **cheaper in everything else** (handling, compliance, your hours). **The decision is not rent-vs-rent; it is rent vs. (rent + your unpaid hours + regulatory risk).**
-- **Against §4.1's 3,900 HUF/month budget, a 3PL is almost certainly unaffordable for batch 1.** Its role is as the **batch 2–3 answer**, and as the **emergency answer if G1 comes back "no".** Get one rate card now anyway, so you know the number when you need it.
+- **Against §4.1's 7,500 HUF/month budget, a 3PL is almost certainly unaffordable for batch 1.** Its role is as the **batch 2–3 answer**, and as the **emergency answer if G1 comes back "no".** Get one rate card now anyway, so you know the number when you need it.
 
 ---
 
@@ -234,7 +243,16 @@ Total batch-1 contribution if every can sells direct at full RRP: **1,704 × 138
 
 **Cheapest control: a 2,000–4,000 HUF min/max thermometer in the storage room, read and logged weekly.** `ESTIMATE — retail price band, NOT VERIFIED.` **That log is also exactly what an inspector wants to see.** It is the highest-value few thousand forints in this file.
 
-**⚠️ ASK THE CO-PACKER, BEFORE ORDERING: "Mennyi a szavatossági idő, és milyen tárolási hőmérséklet-tartományra érvényes a stabilitási adat?"** Then check it against your realistic sell-through: **1,704 cans over 9 months = 189/month = ~6 cans/day, every day.** If the declared shelf life is shorter than the time it will realistically take you to sell the batch, **you have an inventory write-off built into the plan before you start.** `UNKNOWN — QUOTE REQUIRED. This is the storage question with the largest money attached.`
+**⚠️ ASK THE CO-PACKER, BEFORE ORDERING: "Milyen hőkezelést alkalmaznak, mennyi a szavatossági idő szobahőmérsékleten, és milyen tárolási hőmérséklet-tartományra érvényes a stabilitási adat?"** `UNKNOWN — QUOTE REQUIRED. This is the storage question with the largest money attached.`
+
+> ### 🔴 PLAN ON SIX MONTHS, NOT NINE
+> `product/05_FOOD_CHEMISTRY.md` and `product/06_SAFETY_AND_SHELF_LIFE.md` both instruct **printing a 6-month best-before on batch 1**. An earlier cashflow model assumed 9–12 months and showed the batch clearing in week 34 — **roughly two months after the date you are told to print.**
+>
+> **Sell-through required against a 6-month date: 1,640 sellable cans ÷ 26 weeks = 63/week = ~9 cans a day, every day.** `DERIVED.`
+>
+> **And residual stock at the date is a write-off, not carried inventory.** Any "we'll sell it next quarter" row in a cashflow model is wrong if the date has passed.
+>
+> ⚠️ **Worse case still open:** 06 warns that if the co-packer's route turns out to be **cold-fill with no pasteurisation**, the real shelf life could be **days-to-weeks under ambient**, which destroys the gym-fridge model entirely. **Get the thermal process and the resulting ambient shelf life in writing BEFORE you pay a deposit.** This is a go/no-go, not a detail.
 
 ### 5.3 Ongoing — the inspector's list
 
@@ -251,7 +269,7 @@ Total batch-1 contribution if every can sells direct at full RRP: **1,704 × 138
 
 ### 5.4 What you do NOT have to deal with
 
-- **No deposit returns, no empties, no reverse logistics, no deposit float.** Below ~5,000 cans/year the DRS/MOHU deposit system very probably does not apply. **Your storage holds forward stock only.** `LIKELY — NEEDS PROFESSIONAL CONFIRMATION. Keep year-one volume under ~5,000 cans and this stays true.`
+- **No deposit returns, no empties, no reverse logistics, no deposit float.** Below the DRS threshold the MOHU deposit system very probably does not apply. **Your storage holds forward stock only.** `LIKELY — NEEDS PROFESSIONAL CONFIRMATION.` ⚠️ **The legal threshold is ~5,000 units/year; the OPERATING cap you should plan to is 4,500** (`legal/10_DRS_REPONT.md` §13, which is the authority on DRS). The 10% buffer exists because it is unknown whether the count is per calendar year or rolling 12 months, whether it aggregates across SKUs, and whether crossing bites retrospectively. **At 1,704 cans you are at 38 % of the 4,500 cap — enough headroom for one more small run in the same year, not two.**
 - **No refrigeration.** The product is ambient shelf-stable. **Do not let a gym or a store tell you it needs chilled storage** — chilled *display* is a sales choice, not a storage requirement.
 - **No racking, no forklift, no pallet truck.** Once the pallet is broken into cases, everything is hand-handled.
 
@@ -265,7 +283,9 @@ Total batch-1 contribution if every can sells direct at full RRP: **1,704 × 138
 | **G2 — does whey trigger the animal-origin APPROVAL regime for the warehouse?** | Same call, question 2. Also the Hungarian food-law classification opinion already budgeted at EUR 150–400 | 0 HUF by phone; otherwise folded into the paid opinion |
 | G3 — 57/2010 FVM r. notification vs approval for dry storage | Same call / njt.hu | 0 HUF |
 | G4 — landlord, *társasházi SZMSZ*, zoning | Read the deed and house rules; ask the landlord in writing | 0 HUF |
-| Declared shelf life + validated storage temperature range | **Opre Label — sales@oprelabel.com**; **Bubee Hungary Kft — info@bubee.eu, +36 30 240 0493** | 0 HUF, one email |
+| **Thermal process + declared AMBIENT shelf life + validated storage temperature range, in writing** | **Opre Label — sales@oprelabel.com**; **Bubee Hungary Kft — info@bubee.eu, +36 30 240 0493** | 0 HUF, one email. **Treat a cold-fill / no-pasteurisation answer as a NO-GO until a challenge test says otherwise** |
+| **Cans per pallet, and will they fill a part-pallet?** | Same two. **See `23_SHIPPING.md` §1.3 — this decides whether the batch is affordable at all** | 0 HUF, same email |
+| **Can format: 330 ml SLEEK or standard 211?** | Same two. Changes case dimensions, footprint and stack height throughout §1 | 0 HUF, same email |
 | Co-packer stock-holding: possible, and price per pallet per month? | Same two | 0 HUF, add one line to the RFQ |
 | National GHP guide for *kereskedelem* — exact URL and title | portal.nebih.gov.hu | 0 HUF |
 | Self-storage prices, ground-floor + heated + floor loading | The §4.2 to-call list | 0 HUF, ~1 hour of calls |

@@ -5,17 +5,22 @@
 **This is the file you tick off.** Everything here is expanded in `07_HUNGARY_BUSINESS_SETUP.md`, `08_HUNGARY_FOOD_COMPLIANCE.md`, `09` (labelling) and `10_DRS_REPONT.md`. Where this file and a deeper file disagree, the deeper file wins — but nothing should be missing from here.
 
 **FX: 1 EUR = 363 HUF. Today: 2026-08-16.**
-**Scope assumed: ONE SKU. ARCH F, Lemon-Lime, 330 ml, zero sugar, no caffeine, no taurine. Batch 1 ≈ 1,700 cans. Sold DIRECT / on consignment. Year-one volume held under ~5,000 cans.**
+**Scope assumed: ONE SKU. ARCH F, Lemon-Lime, 330 ml, zero sugar, no caffeine, no taurine. Batch 1 ≈ 1,700 cans produced / 1,640 sellable. Sold DIRECT / on consignment at 899 HUF RRP. Year-one volume held under a 4,500-can PLANNING CAP (~5,000 is the reported DRS legal threshold, LIKELY only — `10_DRS_REPONT.md` is the authority).**
 
 ---
 
 ## STATUS KEY
 
-| Tag | Means |
-|---|---|
-| **CONFIRMED REQUIREMENT** | The obligation itself is established. It applies to you. |
-| **LIKELY REQUIREMENT** | Multi-source corroboration, no primary text read. Plan on it applying. |
-| **NEEDS PROFESSIONAL CONFIRMATION** | Genuinely open. A lawyer, the authority, or the bookkeeper must settle it before you spend money on it. |
+**Two questions, not one. An obligation can be certain while the number attached to it is not.**
+
+| Tag | Obligation exists? | Figure / verbatim wording verified? |
+|---|---|---|
+| **CONFIRMED REQUIREMENT** | Yes — the obligation follows from an instrument whose existence and general effect are not in doubt, and it plainly applies to you | ⚠️ **Not necessarily.** **No primary text was read anywhere in this project.** This tag asserts *that you must do the thing*, never *that a specific number or Hungarian string attached to it is correct.** Any figure inside such a row still needs checking |
+| **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** | Yes, structurally certain; plan on it | **NO.** The specific threshold, dimension or Hungarian string was never read from primary text and **must be verified before print or filing** |
+| **LIKELY REQUIREMENT** | Multi-source corroboration, no primary text read | Not verified |
+| **NEEDS PROFESSIONAL CONFIRMATION** | Genuinely open | — |
+
+> ⚠️ **TAG CORRECTION APPLIED.** Every primary source (EUR-Lex, njt.hu, net.jogtar.hu, NÉBIH, NAV, MOHU) was egress-blocked during research. `09_LABEL_COMPLIANCE.md`'s own integrity statement reads **"Nothing in this file is tagged CONFIRMED"** and tags every FIC/claims item `CORE-UNVERIFIED`. An earlier version of this checklist re-tagged those same items **CONFIRMED REQUIREMENT** — i.e. the escalation became invisible exactly in the file the founder ticks off. **Items #35–#44 have been downgraded to OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED**, and the specific unverified numbers are collected in the **VERIFY-BEFORE-PRINT** sub-list at the end of Phase 4. **Where this file and a deeper file disagree, the deeper file wins — and it is your job to notice, so this file no longer hides it.**
 
 **No fee, form number, portal URL, email address or phone number in this file was invented. Where a figure is not known it says UNKNOWN — QUOTE REQUIRED.**
 
@@ -26,9 +31,10 @@
 | Date | What | Why it matters to you |
 |---|---|---|
 | **2026-09-01** | **e-nyugta: receipt DATA reporting to NAV becomes mandatory** — for everyone issuing receipts, including hand-written ones | **Two weeks away.** Resolve item **#22** before you take a single forint in cash at a gym or an event. The free fix is: **issue a full invoice for every sale.** |
-| **2026-12-09** | **Directive (EU) 2024/2853** (new Product Liability Directive) transposition deadline | Puts **own-brand sellers in the manufacturer's liability position**. You sell a contract-manufactured can under your own name → squarely in scope. Item **#35**. |
+| **TODAY** | **Strict producer liability is ALREADY live.** **Ptk. 6:552-6:553 §** treats the own-brand seller as *gyártó* (transposing 85/374/EEC, in force since 1993) | **You are strictly liable, uninsured, from can #1 — not from December.** Get three insurance quotes before batch 1 ships. Item **#54**. |
+| **2026-12-09** | **Directive (EU) 2024/2853** (recast Product Liability Directive) transposition deadline | **BROADENS** the regime (importers, fulfilment providers, substantial modifiers). **It does NOT create the own-brand rule and it is NOT the start of your exposure** — see the row above. Item **#54**. |
 | **2027-03-31** | Chamber contribution (*kamarai hozzájárulás*) 5,000 HUF for 2027 | Item **#11**. Annual, every year, forever. |
-| **2027-05-31** | *Beszámoló* (annual report) filing for business year 2026 | Item **#54**. Free, but a missed filing escalates to tax-number suspension. |
+| **2027-05-31** | *Beszámoló* (annual report) filing for business year 2026 | Item **#60**. Free, but a missed filing escalates to tax-number suspension. |
 
 ---
 
@@ -51,7 +57,7 @@
 
 | # | Obligation | Authority | When | Cost HUF / EUR | Status | ☐ |
 |---|---|---|---|---|---|---|
-| 5 | **An ADULT must front the entity.** A minor **cannot** be an *egyéni vállalkozó* (**Evectv. 2009. évi CXV. 3. § (2)**) and **cannot** be an *ügyvezető* (**Ptk. 3:22 § (1)**). **No parental consent cures either.** A minor **can** be a Kft. *tag* via *törvényes képviselő*, and can be an **employee from 16** | Law — not a filing | Before anything | **0 / 0** | **CONFIRMED REQUIREMENT** (hard constraint) | ☐ |
+| 5 | **An ADULT must front the entity.** A minor **cannot** be an *egyéni vállalkozó* (**Evectv. 2009. évi CXV. 3. § (2)**) and **cannot** be an *ügyvezető* (**Ptk. 3:22 § (1)**). **No parental consent cures either.** A minor **can** be a Kft. *tag* via *törvényes képviselő*, and can be an **employee from 16** | Law — not a filing | Before anything | **0 / 0** | **Ptk. 3:22 § (1): CONFIRMED — operative sentence quoted verbatim in `07` §1.1. Evectv. 3. § (2): SEARCH-VERIFIED — njt.hu was egress-blocked, verbatim text NOT read; re-read before filing.** Both are hard constraints and safe to plan against | ☐ |
 | 6 | **Confirm the existing family company's registered activities** before creating anything new. Cheapest route by an order of magnitude | `https://e-cegjegyzek.hu` | Day 1 | **0 / 0** | — | ☐ |
 | 7 | **Add TEÁOR'25 activity codes: 4634 *Ital nagykereskedelme*** (+ **4725 *Ital-kiskereskedelem*** for D2C; **1107** only if contract-manufacturing in own name). **TEÁOR 4791 "internetes kiskereskedelem" was ABOLISHED 2025-01-01 — online retail is now classified by the product sold** | NAV form **26T201T** (companies) / **26T101E**. Sole traders: `https://ugyfelportal.nav.gov.hu/vallalkozoi-ugyseged/main` (nyilvantarto.hu closed to new applications 2026-03-01) | Before trading | **0 / 0** | LIKELY REQUIREMENT — **code numbers are LIKELY; verify at `https://www.ksh.hu/osztalyozasok_ovtj25` before filing** | ☐ |
 | 8 | **Electronic identity (DÁP)** for whoever files. Plain Ügyfélkapu login ended 2025-01-16; from 2026 Hungarian citizens use DÁP. **Available from age 14 — but digital identity is NOT legal capacity (see #5)** | `https://dap.gov.hu/` | Day 1 | **0 / 0** | LIKELY REQUIREMENT | ☐ |
@@ -67,7 +73,7 @@
 
 | # | Obligation | Authority | When | Cost HUF / EUR | Status | ☐ |
 |---|---|---|---|---|---|---|
-| 14 | **Make the ÁFA election.** **RECOMMENDATION: register as a NORMAL VAT PAYER. Do NOT elect *alanyi adómentesség*.** It is worth ~EUR 175 on batch 1 in a pure-D2C scenario, but it collapses the moment you use a foreign co-packer or sell to a VAT-registered gym, and re-election is barred for the year of cessation **plus two calendar years**. 2026 threshold: **20,000,000 HUF = EUR 55,096** | NAV — at formation in the *cégbejegyzési kérelem adózási nyilatkozatai*, otherwise the **"F" sheet** of **26T101 / 26T101E / 26T201T**, or via **ONYA** | At formation. To switch for a following year: **31 December** of the preceding year | **0 / 0** | **CONFIRMED REQUIREMENT** to make an election. **The rate on your product is 27%** — the 18% milk band is a VTSZ question, see #4 | ☐ |
+| 14 | **Make the ÁFA election.** **RECOMMENDATION: register as a NORMAL VAT PAYER. Do NOT elect *alanyi adómentesség*.** It is worth ~EUR 224 on batch 1 in a pure-D2C scenario, but it collapses the moment you use a foreign co-packer or sell to a VAT-registered gym, and re-election is barred for the year of cessation **plus two calendar years**. 2026 threshold: **20,000,000 HUF = EUR 55,096** | NAV — at formation in the *cégbejegyzési kérelem adózási nyilatkozatai*, otherwise the **"F" sheet** of **26T101 / 26T101E / 26T201T**, or via **ONYA** | At formation. To switch for a following year: **31 December** of the preceding year | **0 / 0** | **CONFIRMED REQUIREMENT** to make an election. **The rate on your product is expected to be 27% — LIKELY, NOT CONFIRMED: no Áfa tv. annex was ever opened (`07` §5.1). The 18% milk band is a VTSZ question, see #4. Plan every price sheet at 27%** | ☐ |
 | 15 | **Obtain a *közösségi adószám* (EU VAT number) BEFORE the first foreign purchase or the first foreign co-packing SERVICE.** Required **in advance** under **Áfa tv. 37. § (1)** for services — the EUR 10,000 goods threshold does **not** apply to services | NAV | **Before the first cross-border transaction.** Relevant the moment a non-Hungarian co-packer or ingredient supplier is used | **0 / 0** | **CONFIRMED REQUIREMENT** if any non-HU supplier is used | ☐ |
 | 16 | **HIPA registration** in the seat municipality. Simplified banded base available where revenue ≤ 25,000,000 HUF; bottom band ≈ **50,000 HUF/yr** at a 2% municipal rate. **Compare the banded base against the normal COGS-deducting base — a high-COGS beverage business often does better on the normal base** | Municipal tax authority / NAV form **26HIPAK** | On starting activity | **0 to register**; tax **≈50,000 / 138 per year** (ESTIMATE) | LIKELY REQUIREMENT | ☐ |
 | 17 | **Online Számla real-time invoice reporting.** **No value threshold** — reporting must be immediate. Penalty for errors in 2026: **up to 1,000,000 HUF (EUR 2,755) per invoice** | NAV — `onlineszamla.nav.gov.hu` | From the first invoice | **0 / 0** — use **NAV Online Számlázó**, **Számlázz.hu #free** or **Billingo Free**. Spend nothing on invoicing software in year 1 | **CONFIRMED REQUIREMENT** | ☐ |
@@ -104,16 +110,34 @@
 | 32 | **Verify the max levels for every additive in ARCH F in food category 14.1.4** | **EU Food Additives Database** — `https://webgate.ec.europa.eu/foods_system/main/?sector=FAD&auth=SANCAS` | **Before artwork and before the first commercial run** | **0 / 0** — ~90 minutes | **CONFIRMED REQUIREMENT** (that the levels are respected). **The specific levels are UNVERIFIED and must be read** | ☐ |
 | 33 | **Confirm collagen non-novel status** for the exact source species and tissue, and obtain the **TSE/BSE statement per Reg. (EC) 999/2001** with hide country of origin | **EU Novel Food Catalogue** — `https://ec.europa.eu/food/food-feed-portal/screen/novel-food-catalogue/search` + the supplier | Before artwork | **0 / 0** | **NEEDS PROFESSIONAL CONFIRMATION** | ☐ |
 | 34 | **Resolve the free amino acid question**: may **L-leucine 1.7 g** and **L-tryptophan 150 mg** be added to a **normal beverage** in Hungary? **Two independent workstreams failed to settle this.** Part of letter #1 | NÉBIH | **Hard gate before artwork** | **0 to ask.** Reformulation fallback costs **~10.31 HUF/can ≈ EUR 0.028** and the leucine claim | **NEEDS PROFESSIONAL CONFIRMATION** | ☐ |
-| 35 | **FIC Art. 9(1) mandatory particulars, in HUNGARIAN**: name of the food · full ingredients list · **allergen MILK emphasised in the ingredients list (*tejsavófehérje*)** · nutrition declaration · net quantity **330 ml** · date of minimum durability · **lot / batch mark** · storage conditions · **FBO name and address (yours — Art. 8(1))**. Printable can body ≈ **238 cm² ≫ 80 cm² → no small-pack concession; every mandatory particular needs x-height ≥ 1.2 mm** | Reg. (EU) No 1169/2011 | Artwork v1 | **0 / 0** (design time) | **CONFIRMED REQUIREMENT** | ☐ |
-| 36 | **Lift the Hungarian Annex II (allergen) and Annex III wording VERBATIM from the HU language version** of Reg. 1169/2011. Do not translate it yourself | EUR-Lex, HU version | Before print | **0 / 0** | **CONFIRMED REQUIREMENT** | ☐ |
-| 37 | **Annex III additional particulars**: ***"édesítőszerrel"*** in the same field of vision as the name; **polyol laxative warning if polyols exceed the threshold** — check against the final recipe. **(No caffeine in batch 1 → the caffeine warning does NOT apply. It becomes mandatory above 49.5 mg/can if a caffeine SKU is ever added.)** | Reg. 1169/2011 Annex III | Artwork v1 | **0 / 0** | **CONFIRMED REQUIREMENT** (conditional on the final recipe) | ☐ |
+| 35 | **FIC Art. 9(1) mandatory particulars, in HUNGARIAN**: name of the food · full ingredients list · **allergen MILK emphasised in the ingredients list (*tejsavófehérje*)** · nutrition declaration · net quantity **330 ml** · date of minimum durability · **lot / batch mark** · storage conditions · **FBO name and address (yours — Art. 8(1))**. Printable can body ≈ **238 cm² ≫ 80 cm² → no small-pack concession; every mandatory particular needs x-height ≥ 1.2 mm** | Reg. (EU) No 1169/2011 | Artwork v1 | **0 / 0** (design time) | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** | ☐ |
+| 36 | **Lift the Hungarian Annex II (allergen) and Annex III wording VERBATIM from the HU language version** of Reg. 1169/2011. Do not translate it yourself | EUR-Lex, HU version | Before print | **0 / 0** | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** | ☐ |
+| 37 | **Annex III additional particulars**: ***"édesítőszerrel"*** in the same field of vision as the name; **polyol laxative warning if polyols exceed the threshold** — check against the final recipe. **(No caffeine in batch 1 → the caffeine warning does NOT apply. It becomes mandatory above 49.5 mg/can if a caffeine SKU is ever added.)** | Reg. 1169/2011 Annex III | Artwork v1 | **0 / 0** | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** (conditional on the final recipe) | ☐ |
 | 38 | **Check whether "szóda" / "szikvíz" is a reserved designation** before locking the product name | **Magyar Élelmiszerkönyv** via NÉBIH | Before the name is locked | **0 / 0** | **NEEDS PROFESSIONAL CONFIRMATION** — **could make a brand name unusable** | ☐ |
-| 39 | **Nutrition and health claims — Reg. (EC) 1924/2006.** *"Magas fehérjetartalmú"* requires ≥20% of energy from protein and clears comfortably. **Sugar and fat claims are open. COLLAGEN HAS ZERO AUTHORISED HEALTH CLAIMS — say nothing about skin, joints or hair** | Reg. 1924/2006 + Reg. (EU) 432/2012 | Artwork and every marketing asset | **0 / 0** | **CONFIRMED REQUIREMENT** | ☐ |
-| 40 | **Lot / batch marking** — Directive 2011/91/EU. Where the durability date includes at least the day and month, that can serve as the lot mark | Reg./Directive | Artwork v1 | **0 / 0** | **CONFIRMED REQUIREMENT** | ☐ |
+| 39 | **Nutrition and health claims — Reg. (EC) 1924/2006.** *"Magas fehérjetartalmú"* requires **≥20% of energy from protein** — **the 20% figure itself is UNVERIFIED (A5 tags it `LIKELY — UNVERIFIED`; EUR-Lex was 403-blocked).** On the plan's numbers ARCH F clears it by 4-5x, so the *conclusion* is safe; the *number* still has to be read. At 12 g protein the claim survives only while total can energy stays ≤240 kcal. **Sugar and fat claims are open. COLLAGEN HAS ZERO AUTHORISED HEALTH CLAIMS — say nothing about skin, joints or hair** | Reg. 1924/2006 + Reg. (EU) 432/2012 | Artwork and every marketing asset | **0 / 0** | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** | ☐ |
+| 40 | **Lot / batch marking** — Directive 2011/91/EU. Where the durability date includes at least the day and month, that can serve as the lot mark | Reg./Directive | Artwork v1 | **0 / 0** | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** | ☐ |
 | 41 | **`ALU 41` material identification code** (Commission Decision 97/129/EC) | — | Artwork v1 | **0 / 0** | **Voluntary at EU level.** Near-universal on cans. Put it on | ☐ |
 | 42 | **GTIN / barcode.** **NOT a food-law requirement** (Reg. 1169/2011 Art. 9 does not list it) — commercial only for batch 1. **It becomes mandatory the moment DRS applies, and a reseller barcode very likely will NOT be acceptable for DRS registration** | **GS1 Hungary** — `https://gs1hu.org` | Before print if wanted | **UNKNOWN — QUOTE REQUIRED** | Not required for batch 1. **Get the quote anyway — it feeds the >5,000 decision** | ☐ |
 | 43 | **The "℮" mark** may only be printed if the **co-packer holds the authorisation** (Directive 76/211/EEC) | Co-packer | Before print | **0 / 0** | Ask the co-packer. **If unsure, omit it** | ☐ |
-| 44 | **Language** — all mandatory particulars in Hungarian. A **multilingual label is permitted** and matters for any future Austrian variant | Reg. 1169/2011 Art. 15 + Hungarian implementation | Artwork v1 | **0 / 0** | **CONFIRMED REQUIREMENT** | ☐ |
+| 44 | **Language** — all mandatory particulars in Hungarian. A **multilingual label is permitted** and matters for any future Austrian variant | Reg. 1169/2011 Art. 15 + Hungarian implementation | Artwork v1 | **0 / 0** | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED** | ☐ |
+| **44b** | 🔴 **TRADE-MARK CLEARANCE ON THE BRAND LOCKUP BEFORE IT IS PRINTED.** Free sweep of the chosen name in **Nice class 32** (and 5, 29, 30) on **TMview**, **EUIPO eSearch** and the **SZTNH** national register. `sales/30_BRAND_AND_AUSTRIA.md` records that **zero trade-mark searches and zero domain lookups were performed anywhere in this project**, and that class 32 is one of the most crowded classes that exists. **A conflict found after 1,700 sleeves are printed is the whole print run plus a rebrand.** This step does not register anything — it only tells you whether the name is already taken | TMview · EUIPO eSearch · SZTNH | **Before artwork sign-off** | **0 / 0** (searching is free; filing is a separate later decision, cost **UNKNOWN — QUOTE REQUIRED**) | 🛑 **BLOCKING** — this phase is irreversible and this was missing from it | ☐ |
+| **44c** | **Art. 10(2) accompanying particulars — FOUR items, not one.** A health claim on the sleeve requires (a) the varied/balanced-diet statement **AND (b) the quantity and pattern of consumption needed to obtain the effect**, plus (c)/(d) where relevant. **(b) was missing from the draft label and has been added at `09` §18.2.** ⚠️ It conflicts with `09` §17's ban on dosing language — resolve at the paid review, not yourself | Reg. (EC) 1924/2006 Art. 10(2) | Artwork v1 | **0 / 0** | **OBLIGATION LIKELY — FIGURE/WORDING UNVERIFIED.** A missing mandatory particular = reprint of the whole run | ☐ |
+
+### 🔴 VERIFY-BEFORE-PRINT — the specific numbers and strings in Phase 4 that were NEVER read from primary text
+
+**Every item below is used in this checklist as if settled. None of it was read. Tick each one against the primary source, or put it on the paid label review, before artwork sign-off.**
+
+| Figure / string used above | Where it appears | Primary source to read |
+|---|---|---|
+| **≥ 20 % of energy from protein** for *MAGAS FEHÉRJETARTALMÚ* (#39) | Front panel — the whole proposition | **Annex to Reg. (EC) 1924/2006, HU version.** Dossier A5 tags this `LIKELY — UNVERIFIED`; `08` §10.7 calls it `UNVERIFIED RECALL`; `09` §16.1 says `NEEDS PROFESSIONAL CONFIRMATION on verbatim text`. **Condition that makes the claim true: total can energy ≤ 240 kcal at 12 g protein** |
+| **x-height ≥ 1.2 mm** (#35) | Every mandatory particular | Reg. 1169/2011 **Art. 13(2) + Annex IV** |
+| **4 mm net-quantity character height** (`09` §13.1) | `330 ml` on the front panel | **Directive 76/211/EEC** — flagged "verify" in `09` |
+| **Annex III thresholds** — polyol laxative level, caffeine 150 mg/l (#37) | Sweetener and (future) caffeine warnings | Reg. 1169/2011 **Annex III, HU version** |
+| **Verbatim HU Annex II allergen wording** (#36) | Ingredient list | Reg. 1169/2011 **Annex II, HU version** |
+| **Verbatim HU Reg. 432/2012 health-claim string** (#39) | Back panel — **a paraphrase invalidates the claim** | Reg. (EU) 432/2012, **HU version** |
+| **Art. 10(2) four accompanying items** (#44c) | Back panel | Reg. (EC) 1924/2006 **Art. 10(2)** |
+| **Is QUID engaged, and does the Annex VIII Part A(2)(a)(ii) derogation discharge it?** | Whether ingredient percentages must be printed | Reg. 1169/2011 **Annex VIII** — see `09` §8 |
+| **~5,000-unit DRS carve-out** (#29) | **Whether the DRS mark goes on the sleeve** | **450/2023. (X. 4.) Korm. r.** — never opened. Six sub-questions open (`10_DRS_REPONT.md` §3.2). **Get MOHU's written answer** |
 
 ---
 
@@ -123,7 +147,7 @@
 |---|---|---|---|---|---|---|
 | 45 | **Obtain from the co-packer**: establishment registration/approval number, signed finished-product specification (pH, °Brix, CO₂, fill volume, protein, best-before period), **CoAs**, allergen statement, **shelf-life justification**, and written confirmation of the micro release | Opre Label / Bubee — in the supply agreement | With the RFQ | **0 / 0** | **CONFIRMED REQUIREMENT** — this is your Art. 8(1) evidence base | ☐ |
 | 46 | **Obtain from ingredient suppliers**: **WPI dairy establishment approval number**; **collagen Reg. 853/2004 Annex III Section XV approval number**, source species and tissue, and the **TSE statement per Reg. 999/2001**; exact current E-numbers on every sweetener CoA | Suppliers | With the RFQ | **0 / 0** | **CONFIRMED REQUIREMENT** | ☐ |
-| 47 | **Nutrition declaration.** **Reg. 1169/2011 Art. 31(4) permits it to be CALCULATED** from the recipe. **No laboratory analysis is legally mandatory for batch 1.** One protein assay is recommended commercially, not legally | Self / lab | Before print | **Calculation 0 / 0.** Protein assay **UNKNOWN — QUOTE REQUIRED** (WESSLING, Bálint Analitika, Eurofins, SGS, Bureau Veritas — **no prices or contacts were obtainable**) | **CONFIRMED: no lab legally required** | ☐ |
+| 47 | **Nutrition declaration.** **Reg. 1169/2011 Art. 31(4) permits it to be CALCULATED** from the recipe. **No laboratory analysis is legally mandatory for batch 1.** One protein assay is recommended commercially, not legally | Self / lab | Before print | **Calculation 0 / 0.** Protein assay **UNKNOWN — QUOTE REQUIRED** (WESSLING, Bálint Analitika, Eurofins, SGS, Bureau Veritas — **no prices or contacts were obtainable**) | **LIKELY: no lab legally required — Art. 31(4) offers calculation as one of several permitted routes, but EUR-Lex was 403-blocked and the Article was never read. NEEDS PROFESSIONAL CONFIRMATION.** ⚠️ Note the distinction the reviewer must resolve: the nutrition DECLARATION may be calculated; a front-of-pack **20 g CLAIM** may be treated differently. One finished-can nitrogen assay is commercially indefensible to skip and is **not currently funded in any budget file** | ☐ |
 | 48 | **Ask every co-packer, verbatim**: *"Which finished-product analyses are included in the tolling price, and which are charged separately? Do you release the batch on your own micro result, or must we commission an external laboratory?"* | Co-packer | With the RFQ | **0 to ask** | **A "yes, included" answer can reduce the batch-1 lab budget to zero** | ☐ |
 | 49 | **Barcode verification report (ISO/IEC 15416)** as a print deliverable, if a barcode is used | Printer | In the print quote | **Usually 0 to request** | Free insurance | ☐ |
 
@@ -137,7 +161,9 @@
 | 51 | **Ask the co-packer FIRST who is the EPR-obligated party**: *"Ki minősül a csomagolás első forgalomba hozójának (EPR-kötelezettnek) ebben a konstrukcióban — Önök vagy mi? Vállalják-e az EPR regisztrációt és a negyedéves adatszolgáltatást?"* **If they carry it, you skip KÜJ, OKIRkapu and four filings a year** | Opre Label / Bubee | With the RFQ | **0 to ask** | **NEEDS PROFESSIONAL CONFIRMATION** | ☐ |
 | 52 | **Resolve the cash-register question BEFORE 2026-09-01.** **Wholesale/B2B on invoice → NO cash register required.** Direct cash sales at a gym or an event = retail sale of drink and **would** trigger it (48/2013. (XI. 15.) NGM r. Annex 1) — **unless you issue a full invoice for every single transaction, which is the legal, free escape hatch** | NAV | **Before 2026-09-01** | **Invoice-everything route: 0 / 0.** Online pénztárgép: **UNKNOWN — QUOTE REQUIRED** | **CONFIRMED REQUIREMENT** — with a confirmed exemption route | ☐ |
 | 53 | **NETA — *népegészségügyi termékadó*.** **Your batch-1 SKU is expected to be 0 HUF**: no methyl-xanthine → not an *energiaital*; no added sugar → not a taxable *üdítőital*. Residual risk bounded at **2.64–7.59 HUF/can**. **RULE FOR ANY FUTURE CAFFEINE SKU: NO TAURINE, NO GINSENG, NO L-ARGININE — they multiply the bill 6× (21.45 → 128.70 HUF/can).** De minimis: **50 litres = 151 cans/year, and crossing it taxes the WHOLE year retrospectively** | NAV — form **26NETA**; payment account **10032000-01077003** | If it ever applies: with the VAT return period | **0 / 0 expected** on batch 1 | **NEEDS PROFESSIONAL CONFIRMATION** — sources conflict on whether a sweetener-only drink is taxable | ☐ |
-| 54 | **Product liability insurance.** **No general statutory mandate was found** — but **Directive (EU) 2024/2853, transposition due 2026-12-09, puts own-brand sellers in the MANUFACTURER'S liability position** | Colonnade · CIG Pannónia EMABIT · Marsh · biztositson.hu | **Get three quotes now, before you need it** | **UNKNOWN — QUOTE REQUIRED.** No Hungarian insurer publishes a list price | **NEEDS PROFESSIONAL CONFIRMATION** that it is not mandatory. **Strongly advisable regardless** | ☐ |
+| 54 | **Product liability insurance.** **No general statutory mandate to CARRY cover was found** — but you are **already STRICTLY LIABLE as producer from can #1**. **Ptk. 6:553 § (1)** treats as *gyártó* whoever puts their own name or mark on the product (transposing **85/374/EEC** Art. 3(1), in force since 1993). **Directive (EU) 2024/2853, due 2026-12-09, BROADENS the regime — it does NOT create the own-brand rule and it is NOT the start of your exposure.** An earlier version of this row said otherwise and, on that basis, three files deferred cover past batch 1 | Colonnade · CIG Pannónia EMABIT · Marsh · biztositson.hu | **Get three quotes BEFORE batch 1 ships** — 0 HUF to ask. Decide buy/skip on the quoted premium, not on a date | **UNKNOWN — QUOTE REQUIRED.** No Hungarian insurer publishes a list price | **Ptk. 6:552–6:553 § wording: LIKELY — njt.hu blocked, section not read verbatim. NEEDS PROFESSIONAL CONFIRMATION of section numbers. The substance — strict producer liability for own-brand sellers — is not in doubt.** Cover is not mandatory but **the exposure is unbounded and uninsured today** | ☐ |
+| **54b** | **GDPR + adatkezelési tájékoztató.** You will hold a gym-contact and customer database and, if there is a webshop, order data. **Reg. (EU) 2016/679 requires a privacy notice, a lawful basis per processing purpose, and a record of processing.** Enforced by **NAIH**. **No file in this project previously mentioned GDPR at all** — a project-wide search returned zero hits, while `07` §4 tells you to register TEÁOR 4725 expressly for D2C and the webshop, and `09` §18.2 prints a `[weboldal]` on the can | Self; NAIH is the authority | **Before the first contact list is built and before the shop opens** | **0 / 0** if done in advance | **LIKELY REQUIREMENT** — the obligation is not in doubt; the document set was never drafted | ☐ |
+| **54c** | **Distance-selling and e-commerce information duties.** **45/2014. (II. 26.) Korm. rendelet** — mandatory pre-contractual information and the **14-day withdrawal right**; **2001. évi CVIII. törvény** — e-commerce service-provider information duties; plus **ÁSZF** (terms) for the webshop. ⚠️ **Analyse the sealed-goods / foodstuffs exception to the withdrawal right rather than assuming it** — it is exactly the kind of point a consumer-protection inspection tests | Self; consumer-protection authority | **Before the webshop takes a single order** | **0 / 0** if done in advance | **LIKELY REQUIREMENT** — statute numbers **SEARCH-VERIFIED, not read**; the sealed-goods exception **NEEDS PROFESSIONAL CONFIRMATION** | ☐ |
 
 ---
 
@@ -157,7 +183,9 @@
 
 ---
 
-# WHAT YOU DO **NOT** HAVE TO DO — THE SAVINGS, CONFIRMED
+# WHAT YOU DO **NOT** HAVE TO DO — THE SAVINGS
+
+> ⚠️ **This section previously carried the word CONFIRMED in its heading. It has been removed.** No primary text was read for any row below. Each row now carries its real status.
 
 **Read this before anyone sells you a compliance service.**
 
@@ -165,13 +193,13 @@
 |---|---|---|
 | **Pre-market product notification / product registration** | A 330 ml RTD beverage is a **normal food**, not an *étrend-kiegészítő* (dose-form test) and not an FSMP. You register the **business**, not the **product** | LIKELY — item #27 |
 | **DRS registration, deposit, DRS mark, 45-day gate** | Below ~5,000 cans/year you are a *csekély mennyiségű kibocsátó* | LIKELY — **NEEDS PROFESSIONAL CONFIRMATION.** Item #29 |
-| **Statutory audit (*könyvvizsgálat*)** | Exempt below **600,000,000 HUF revenue (EUR 1,652,893)** and 50 employees. **You will not need an auditor for many years** | CONFIRMED |
-| **Kiskereskedelmi adó (retail tax)** | **0%** below a **1,000,000,000 HUF** tax base | CONFIRMED |
+| **Statutory audit (*könyvvizsgálat*)** | Exempt below **600,000,000 HUF revenue (EUR 1,652,893)** and 50 employees. **You will not need an auditor for many years** | SEARCH-VERIFIED — thresholds not read from Szt. |
+| **Kiskereskedelmi adó (retail tax)** | **0%** below a **1,000,000,000 HUF** tax base | SEARCH-VERIFIED (NAV leaflet 96, not opened) |
 | **Környezetvédelmi termékdíj on packaging** | The packaging *termékdíj* obligation was **abolished 2025-01-01**. **0 HUF.** ⚠️ A registration/reporting duty may survive at a 0 rate | LIKELY — NEEDS PROFESSIONAL CONFIRMATION |
-| **Online cash register (*pénztárgép*)** | Not required for B2B invoice sales; and issuing a **full invoice for every transaction** exempts you even for direct sales | CONFIRMED — item #52 |
+| **Online cash register (*pénztárgép*)** | Not required for B2B invoice sales; and issuing a **full invoice for every transaction** exempts you even for direct sales | SEARCH-VERIFIED — item #52. **Decide before 2026-09-01** |
 | **Paid invoicing software** | NAV Online Számlázó, Számlázz.hu #free and Billingo Free all satisfy Online Számla | LIKELY |
-| **Laboratory analysis for the nutrition panel** | Art. 31(4) permits calculation from the recipe | CONFIRMED — item #47 |
-| **Caffeine warning label / NETA / under-18 rules** | **No caffeine SKU in batch 1.** All three fall away | CONFIRMED by the plan |
+| **Laboratory analysis for the nutrition panel** | Art. 31(4) is understood to permit calculation from the recipe **for the DECLARATION**. ⚠️ A front-of-pack **20 g CLAIM** may be treated differently, and `product/03_PRODUCT_ARCHITECTURE.md` §6 asserts the opposite | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION. Article never read (EUR-Lex 403-blocked).** Item #47. **Budget ~EUR 100-150 for one finished-can nitrogen assay anyway — it is currently unfunded in every budget file** |
+| **Caffeine warning label / NETA / under-18 rules** | **No caffeine SKU in batch 1.** All three fall away | Follows from the agreed plan, not from a source |
 | **GTIN / barcode** | Not a food-law requirement; commercial only, and batch 1 is direct/consignment | LIKELY — item #42 |
 
 ---
@@ -181,13 +209,13 @@
 | Line | HUF | EUR | Status |
 |---|---|---|---|
 | Commercial-activity notification (#23, if required) | ~3,000 | ~8.26 | LIKELY |
-| Chamber contribution, year 1 (#11) | 5,000 | 13.77 | CONFIRMED |
+| Chamber contribution, year 1 (#11) | 5,000 | 13.77 | SEARCH-VERIFIED |
 | EPR fees on batch 1, 1,700 cans (#50) | ~8,704 | ~24 | ESTIMATE |
 | Food-business registration + FELIR (#21) | 0 | 0 | LIKELY |
 | Product notification (#27) | 0 | 0 | LIKELY |
 | Supervision fee, year 1 (#61) | 0 | 0 | ESTIMATE |
-| DRS / deposit / MOHU (#29) | 0 | 0 | LIKELY — under the ceiling |
-| Beszámoló, audit, retail tax, termékdíj, invoicing software | 0 | 0 | CONFIRMED |
+| DRS / deposit / MOHU (#29) | 0 | 0 | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION.** Assumes the carve-out applies; if it does not, add **50 HUF/can of deposit float + an UNKNOWN MOHU fee + DRS marking on the sleeve** |
+| Beszámoló, audit, retail tax, termékdíj, invoicing software | 0 | 0 | SEARCH-VERIFIED |
 | **TOTAL VERIFIABLE STATUTORY CASH COST TO GET BATCH 1 LEGALLY SOLD** | **≈ 16,700** | **≈ 46** | **DERIVED** |
 | — | — | — | — |
 | **Bookkeeping, 12 months, micro Kft. (#13)** | **360,000 – 840,000** | **992 – 2,314** | **LIKELY — the real cost** |
@@ -206,19 +234,20 @@
 
 ---
 
-# THE SEVEN THINGS THAT COULD ACTUALLY STOP YOU
+# THE EIGHT THINGS THAT COULD ACTUALLY STOP YOU
 
-**Ranked by what they cost if they go wrong. Every one of the first four is free to ask about.**
+**Ranked by what they cost if they go wrong. Every one of the first four is free to ask about. (There are eight — the trade-mark item was missing.)**
 
 | # | Question | Item | Cost of being wrong |
 |---|---|---|---|
-| 1 | **Does a whey/collagen beverage need a Reg. 853/2004 DAIRY-APPROVED filler, or is 852/2004 registration enough?** | #1 | **Determines the entire co-packer pool.** Could kill the EUR 2,000–2,600 batch-1 path outright |
+| 1 | **Does a whey/collagen beverage need a Reg. 853/2004 DAIRY-APPROVED filler, or is 852/2004 registration enough?** | #1 | **Determines the entire co-packer pool.** Could kill the EUR 2,300 batch-1 inventory path outright |
 | 2 | **Is the ~5,000-unit DRS de minimis real, current, per-unit, per-calendar-year and automatic?** | #29 | **The whole sleeve run.** Irreversible at print |
 | 3 | **May free L-leucine (1.7 g) and L-tryptophan (150 mg) go into a normal beverage in Hungary?** | #34 | Reformulation before artwork — bounded at ~10.31 HUF/can and the leucine claim, **if caught in time** |
 | 4 | **Can the founder lawfully store stock at home, and does the whey content make the WAREHOUSE approval-required?** | #20, #22 | Forces a 3PL or co-packer-held stock — a fixed cost this budget cannot carry |
 | 5 | **Is the product definitively a normal food and not an *étrend-kiegészítő*?** | #27 | Adds an OGYÉI notification, an unknown fee, and marketing-format restrictions |
 | 6 | **Is "szóda" a reserved designation?** | #38 | A brand name you cannot use, discovered after the artwork |
 | 7 | **The current max levels in food category 14.1.4 for every additive in ARCH F** | #32 | An illegal formulation discovered after paying for the run. **90 minutes in a free database prevents it** |
+| **8** | **Is the brand name free in Nice class 32?** | **#44b** | **The entire 1,700-sleeve print run plus a rebrand. Zero trade-mark searches were performed anywhere in this project, and class 32 is one of the most crowded classes that exists. Free to check.** |
 
 ---
 
@@ -227,8 +256,9 @@
 1. **This week:** items **#1–#4** (four letters, roughly one hour) and item **#52** (the 2026-09-01 cash-register deadline).
 2. **Weeks 1–2:** Phase 1 — the vehicle. Track A (existing family company) is the recommended route and skips most of it.
 3. **Weeks 2–6:** Phase 3 — food law. Item **#21** takes 2–4 weeks of calendar time and everything downstream waits on it. **Start it early.**
-4. **Do not send artwork to print** until every ☐ in Phase 4 is ticked. That phase is the one you cannot undo.
-5. **Re-read Phase 7 once a quarter.** The recurring filings are what quietly kill micro-companies — not the big decisions.
+4. **Do not send artwork to print** until every ☐ in Phase 4 is ticked **AND every row of the VERIFY-BEFORE-PRINT table under Phase 4 has been read against its primary source.** That phase is the one you cannot undo.
+5. **Before the webshop opens or the first contact list is built:** items **#54b** (GDPR) and **#54c** (distance selling). Both are zero-cost if done in advance and were absent from every file in this project.
+6. **Re-read Phase 7 once a quarter.** The recurring filings are what quietly kill micro-companies — not the big decisions.
 
 ---
 

@@ -95,7 +95,7 @@ A Hungarian retailer's own product listing carries the deposit **inside the prod
 
 ### 2.2 Three independent reasons it does not rescue your product
 
-**(1) The exclusion is drawn by customs code on *milk*, not by "contains milk protein."** Every European milk carve-out — and the derogation in the EU Single-Use Plastics Directive (Directive (EU) 2019/904) these national carve-outs descend from — is written around **milk and milk products** by CN/KN headings **0401 and 0402** and the milk-products list in Regulation (EU) No 1308/2013. Those headings cover **milk and cream**. They do not cover a water-based flavoured carbonated drink containing whey protein isolate as a functional ingredient. **Status: reasoning shown so it can be checked, not relied on.**
+**(1) The exclusion is drawn by customs code on *milk*, not by "contains milk protein."** National milk carve-outs are written around **milk and milk products** by CN/KN headings **0401 and 0402** and the milk-products list in Regulation (EU) No 1308/2013. *(An earlier draft traced these carve-outs to "the derogation in the EU Single-Use Plastics Directive (Directive (EU) 2019/904)". **Drop that ancestry claim** — the SUP Directive's Annex derogations concern glass/metal containers and food for special medical purposes, not milk. The CN-heading reasoning below stands on its own; the SUP lineage was unverified reasoning about a different instrument.)* Those headings cover **milk and cream**. They do not cover a water-based flavoured carbonated drink containing whey protein isolate as a functional ingredient. **Status: reasoning shown so it can be checked, not relied on.**
 
 **(2) Your own product definition defeats it.** The agreed product is a **clear, carbonated, soda experience — explicitly not a milkshake**. A clear carbonated flavoured beverage classifies as **CN 2202** (waters, including flavoured, and other non-alcoholic beverages) — the archetypal in-scope DRS category. **The very positioning that makes the product commercially interesting is the positioning that puts it inside DRS. You cannot have the clear-soda brand and the dairy-drink exemption.**
 
@@ -178,16 +178,16 @@ The same milk / non-milk classification question also drives:
 | Deposit on **reusable** packaging | Set by the producer under a separate limb | **UNKNOWN** |
 | Must the **amount** be printed on the can? | See §6.2 | **UNKNOWN — HIGH RISK** |
 
-**What 50 HUF does to your price (DERIVED, at the agreed RRP of 799 HUF):**
+**What 50 HUF does to your price (DERIVED, at the agreed batch-1 RRP of 899 HUF):**
 
 | | HUF | EUR |
 |---|---|---|
-| RRP ex-deposit | **799** | **2.201** |
+| RRP ex-deposit | **899** | **2.476** |
 | Deposit | **50** | **0.138** |
-| **Price the consumer hands over** | **849** | **2.339** |
-| Deposit as % of RRP | **50 ÷ 799 = 6.26%** | — |
+| **Price the consumer hands over** | **949** | **2.614** |
+| Deposit as % of RRP | **50 ÷ 899 = 5.56%** | — |
 
-**A 6.26% headline price uplift that buys the consumer nothing at the point of sale**, against a competitive set whose RRP range you have already fixed at 699–899 HUF. **In the gym channel, where the buyer is standing at a reception desk making a snap decision, that is not nothing.**
+**A 5.56% headline price uplift that buys the consumer nothing at the point of sale**, against a competitive set whose RRP range you have already fixed at 699–899 HUF. **In the gym channel, where the buyer is standing at a reception desk making a snap decision, that is not nothing.**
 
 ---
 
@@ -230,14 +230,14 @@ The same milk / non-milk classification question also drives:
 
 **Do not put a placeholder in the financial model.** Run it as a break-even question instead: *at what MOHU per-unit service fee does the >5,000-unit route stop working?*
 
-**DERIVED sensitivity against your own RRP of 799 HUF:**
+**DERIVED sensitivity against your own RRP of 899 HUF:**
 
-| Assumed service fee | HUF/can | As % of 799 RRP | Effect on the decision |
+| Assumed service fee | HUF/can | As % of 899 RRP | Effect on the decision |
 |---|---|---|---|
-| 5 HUF | 5.00 (EUR 0.014) | 0.63% | Irrelevant |
-| **10 HUF** | **10.00 (EUR 0.028)** | **1.25%** | Irrelevant |
-| 25 HUF | 25.00 (EUR 0.069) | 3.13% | Noticeable, still not decisive |
-| 50 HUF | 50.00 (EUR 0.138) | 6.26% | Would need a price review |
+| 5 HUF | 5.00 (EUR 0.014) | 0.56% | Irrelevant |
+| **10 HUF** | **10.00 (EUR 0.028)** | **1.11%** | Irrelevant |
+| 25 HUF | 25.00 (EUR 0.069) | 2.78% | Noticeable, still not decisive |
+| 50 HUF | 50.00 (EUR 0.138) | 5.56% | Would need a price review |
 
 > **Conclusion: the service fee is very unlikely to be a go/no-go item.** Get the quote — but **do not let it block anything else.** The things that actually decide this are the 45 days, the artwork, the float and the gyms.
 
@@ -382,7 +382,7 @@ The printable body area of a 330 ml can is **≈238 cm²** (π × 66 mm × 115 m
 | **TOTAL recurring non-recoverable, excl. deposit** | **≈ 4.94 – 5.31 HUF (EUR 0.0136 – 0.0146)** | **2.52 + UNKNOWN** | ESTIMATE |
 | **Deposit working capital per can in channel** | **0** | **50.00 (EUR 0.1377)** | LIKELY |
 
-**On batch 1 (1,700 cans, under the ceiling), DERIVED:** (2.60 + 2.52) × 1,700 = **8,704 HUF = EUR 23.98.** Against a 491 HUF landed COGS and a 799 HUF RRP, **the entire Hungarian packaging-levy burden on batch 1 is about EUR 24. It is not a decision factor.**
+**On batch 1 (1,700 cans, under the ceiling), DERIVED:** (2.60 + 2.52) × 1,700 = **8,704 HUF = EUR 23.98.** Against a 524 HUF landed COGS and an 899 HUF RRP, **the entire Hungarian packaging-levy burden on batch 1 is about EUR 24. It is not a decision factor.**
 
 > ### THE HEADLINE
 > **On a per-can recurring basis, DRS is nearly free — and may be cheaper than staying out of it, because DRS packaging is EPR-exempt.**
@@ -460,7 +460,7 @@ The printable body area of a 330 ml can is **≈238 cm²** (π × 66 mm × 115 m
 
 > **Quote every price "ex-deposit" and show `+ 50 Ft visszaváltási díj` as a separate line — exactly as Aldi does.**
 >
-> Folding the deposit into the shelf price inflates your apparent price by 50 HUF against every competitor and misstates your margin. **Your RRP of 799 HUF is an ex-deposit figure and must stay one in every price list, pitch deck and shelf talker.**
+> Folding the deposit into the shelf price inflates your apparent price by 50 HUF against every competitor and misstates your margin. **Your RRP of 899 HUF is an ex-deposit figure and must stay one in every price list, pitch deck and shelf talker.**
 
 ---
 
@@ -524,7 +524,7 @@ The printable body area of a 330 ml can is **≈238 cm²** (π × 66 mm × 115 m
 
 ## 13. THE DECISION TABLE
 
-**All EUR at 363 HUF/EUR. Assumes the ARCH F Lemon-Lime SKU, 491 HUF landed COGS, 799 HUF RRP ex-deposit.**
+**All EUR at 363 HUF/EUR. Assumes the ARCH F Lemon-Lime SKU, 524 HUF landed COGS (range 460-620), 899 HUF RRP ex-deposit.**
 
 | Dimension | **STAY UNDER ~5,000 CANS/YEAR** ✅ | **CROSS ~5,000 CANS/YEAR** |
 |---|---|---|
@@ -537,7 +537,7 @@ The printable body area of a 330 ml can is **≈238 cm²** (π × 66 mm × 115 m
 | **GTIN** | Commercially useful, **not legally required** | **Required, registered to your entity — reseller barcode very likely will not do** |
 | **Reporting** | EPR quarterly (OKIRkapu) only | EPR quarterly **plus** DRS reporting, frequency UNKNOWN, second portal |
 | **Gym channel** | **One clean price. No explanation, no empties, no reclaim.** | Gym charges +50 HUF, books it separately, handles or redirects empties |
-| **Revenue ceiling at 799 HUF** | **5,000 × 799 = 3,995,000 HUF = EUR 11,006/yr** | Uncapped |
+| **Revenue ceiling at 899 HUF** | **5,000 x 899 = 4,495,000 HUF = EUR 12,383/yr** (at the 4,500-can planning cap: 4,045,500 HUF = EUR 11,145/yr) | Uncapped |
 | **What settles it** | **Do you need more than ~5,000 cans in year one?** Your plan says no. Batch 1 is 1,700. | Only cross when a **funded** plan needs >5,000 cans AND the float is funded AND MOHU has answered §14 in writing |
 | **Compliance status** | **LIKELY exempt — NEEDS PROFESSIONAL CONFIRMATION of the threshold** | LIKELY in scope, near-certain |
 | **VERDICT** | ✅ **THIS IS THE PLAN.** Three independent reasons converge: cost of capital, calendar, and gym account-opening rate. | ❌ **Not on EUR 3,000 of capital.** Revisit only with outside funding. |
@@ -545,7 +545,7 @@ The printable body area of a 330 ml can is **≈238 cm²** (π × 66 mm × 115 m
 ### 13.1 The hard operating rule that keeps you on the right side of it
 
 > **Institute a unit counter from can #1 and never let the calendar-year total pass 4,500.**
-> **Why 4,500 and not 5,000:** you do not know whether the count is per calendar year or rolling 12 months, whether it aggregates across SKUs, or whether crossing bites retrospectively. **A 10% buffer costs you 500 cans of revenue (399,500 HUF ≈ EUR 1,101) and protects you from a retrospective obligation on an entire year's production that carries no DRS mark.**
+> **Why 4,500 and not 5,000:** you do not know whether the count is per calendar year or rolling 12 months, whether it aggregates across SKUs, or whether crossing bites retrospectively. **A 10% buffer costs you 500 cans of revenue (449,500 HUF at 899 HUF RRP ≈ EUR 1,238) and protects you from a retrospective obligation on an entire year's production that carries no DRS mark.**
 > **Track it in the same spreadsheet as your traceability records.** One extra column. Zero cost.
 
 ---
@@ -587,7 +587,7 @@ The printable body area of a 330 ml can is **≈238 cm²** (π × 66 mm × 115 m
 | U4 | **Register for EPR:** Ügyfélkapu/DÁP → KÜJ → OKIRkapu → KG:KGYF-NY, before first placing on market | 0 to register |
 | U5 | **File EPR quarterly**, by the 20th of the month after quarter-end | ~8,704 HUF/yr on batch 1 |
 | U6 | **Do NOT print the DRS mark** on cans you cannot register | 0 |
-| U7 | **Do NOT charge a deposit.** There is no legal basis, and it would be a consumer-protection problem | 0 |
+| U7 | **Do NOT charge a deposit — you are outside the mandatory regime, and a voluntary deposit adds cost and channel friction for no benefit.** (An earlier draft said "there is no legal basis". That is very likely wrong and has been corrected: 450/2023 is reported to distinguish *kötelezően* from *önként visszaváltási díjas termék*, i.e. a producer outside mandatory scope can **opt in**. Since this file states repeatedly that the decree was never read, it must not assert the absence of a legal basis either. `LIKELY — NEEDS PROFESSIONAL CONFIRMATION`) | 0 |
 | U8 | **Reserve the DRS mark zone and the RVM-grade barcode zone in the layout anyway** — free insurance for version 2 | 0 |
 
 ---

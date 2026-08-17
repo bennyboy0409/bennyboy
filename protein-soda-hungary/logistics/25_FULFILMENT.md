@@ -1,6 +1,6 @@
 # 25 — FULFILMENT: HOW THE CANS ACTUALLY REACH THE GYMS
 
-**Batch 1 = 1,704 cans = 71 cases of 24 · 8.5 kg per case · contribution 138 HUF/can · total batch contribution 235,152 HUF (EUR 648).**
+**Batch 1 = 1,704 cans = 71 cases of 24 · 60 withheld as samples → 1,640 sellable · 8.5 kg per case · RRP 899 HUF · COGS 524 HUF · contribution 183.87 HUF/can sold direct · total batch contribution 1,640 × 183.87 = 301,547 HUF (EUR 831).**
 
 ---
 
@@ -21,9 +21,11 @@
 > | **CASH COST PER CAN** | **~15 HUF / EUR 0.041** — ~25,500 HUF (EUR 70) for the whole batch |
 > | **Cost per can incl. notional driver time** | **~44–75 HUF** — not a cash cost, but it is what caps this model |
 
-**Why: at 491 HUF COGS you cannot afford anyone between you and the shelf.** Every channel with an intermediary is loss-making in batch 1 (see `23_SHIPPING.md` §5). **Fulfilment is therefore not a logistics choice — it is forced by the margin.** The only question is how cheaply you can put cans in front of a gym member with your own hands.
+**Why: at 524 HUF COGS you cannot afford much between you and the shelf.** Wholesale at 470 net loses 54 HUF/can and a 799 RRP with a 160 HUF gym cut loses 20.85 HUF/can — both are forbidden in batch 1 (see `23_SHIPPING.md` §5). **Fulfilment is therefore not a logistics choice — it is forced by the margin.** The only question is how cheaply you can put cans in front of a gym member with your own hands.
 
 **The whole batch can be physically placed in 3 delivery days.** 6 drops × 5 cases = 720 cans/day; 1,704 ÷ 720 = 2.4 days. **Placement is not the hard part. Sell-through is.**
+
+> ⚠️ **This 15 HUF/can appears in NO COGS line anywhere in the project.** Neither `finance/19_UNIT_ECONOMICS.csv` (which builds the 524) nor `18_COMPLETE_STARTUP_COSTS.csv` carries it. **It is a real cost and it is unbudgeted.** The all-in view — 524 COGS + sample dilution + corrected freight + this 15 HUF ≈ **588 HUF per sellable can delivered** — is set out in `23_SHIPPING.md` §5.2. **Against 707.87 HUF net at 899 RRP that is still +120 HUF/can, so the plan survives it. Do not let it stay invisible.**
 
 ---
 
@@ -84,29 +86,31 @@
 
 **Isolated single drop (dedicated trip, 630 HUF fuel, driver time notional at 3,630 HUF/h = EUR 10/h, 1 h per drop):**
 
-| Drop size | Cash HUF/can | **Incl. notional driver time** | **As % of 138 HUF contribution** |
+| Drop size | Cash HUF/can | **Incl. notional driver time** | **As % of 183.87 HUF contribution** |
 |---|---|---|---|
-| **1 case (24 cans)** | 26.3 | **177.5 HUF** | **129 % — YOU LOSE MONEY ON THE TRIP** |
-| **2 cases (48)** | 13.1 | **88.8 HUF** | 64 % |
-| **3 cases (72)** | 8.8 | **59.2 HUF** | 43 % |
-| **5 cases (120)** | 5.3 | **35.5 HUF** | 26 % |
-| **10 cases (240)** | 2.6 | **17.8 HUF** | 13 % |
-| **20 cases (480)** | 1.3 | **8.9 HUF** | 6 % |
+| **1 case (24 cans)** | 26.3 | **177.5 HUF** | **97 % — THE TRIP EATS THE WHOLE SALE** |
+| **2 cases (48)** | 13.1 | **88.8 HUF** | 48 % |
+| **3 cases (72)** | 8.8 | **59.2 HUF** | 32 % |
+| **5 cases (120)** | 5.3 | **35.5 HUF** | 19 % |
+| **10 cases (240)** | 2.6 | **17.8 HUF** | 10 % |
+| **20 cases (480)** | 1.3 | **8.9 HUF** | 5 % |
 
 **Routed day (6 drops, 60 km, 8 h, 2,520 HUF fuel + 29,040 HUF notional time = 31,560 HUF):**
 
 | Cases per drop | Cans placed that day | Cash HUF/can | **Incl. notional time** | % of contribution |
 |---|---|---|---|---|
-| 2 cases | 288 | 8.8 | **109.6** | 79 % |
-| **3 cases** | **432** | **5.8** | **73.1** | 53 % |
-| **5 cases** | **720** | **3.5** | **43.8** | **32 %** |
-| 10 cases | 1,440 | 1.8 | 21.9 | 16 % |
+| 2 cases | 288 | 8.8 | **109.6** | 60 % |
+| **3 cases** | **432** | **5.8** | **73.1** | 40 % |
+| **5 cases** | **720** | **3.5** | **43.8** | **24 %** |
+| 10 cases | 1,440 | 1.8 | 21.9 | 12 % |
 
 `DERIVED — arithmetic exact. The 3,630 HUF/h driver rate is a NOTIONAL opportunity cost (dossier B10's EUR 10/h), not a wage anyone is paid. UNKNOWN — the founder's and the family driver's real opportunity cost.`
 
 > **THE OPERATING RULE, and it is the highest-leverage line in this file:**
-> **A one-case delivery costs 177 HUF/can in loaded cost against a 138 HUF contribution. It destroys value even though it feels like a sale.**
+> **A one-case delivery costs 177 HUF/can in loaded cost against a 183.87 HUF contribution. It consumes 97 % of the sale even though it feels like a win.**
 > **Minimum 3 cases per drop. Minimum 5 drops per day. Below either, don't get in the car.**
+>
+> ⚠️ **At a 160 HUF gym cut the contribution is 57.89 HUF/can and a one-case drop costs 3× what the case earns.** If you conceded the bigger cut, the minimum drop is not 3 cases — it is 5.
 
 ### 2.4 Car capacity
 
@@ -143,11 +147,11 @@
 
 **All tariffs UNKNOWN — QUOTE REQUIRED (GLS, DPD, MPL, Packeta, FoxPost — see `23_SHIPPING.md` §3).** The scenarios below bracket the plausible range and are **SCENARIO INPUTS, not quotes.**
 
-| Parcel cost per 24-case | **HUF/can** | **% of 138 HUF contribution** |
+| Parcel cost per 24-case | **HUF/can** | **% of 183.87 HUF contribution** |
 |---|---|---|
-| 1,500 HUF | **62.5** | **45 %** |
-| 2,200 HUF | **91.7** | **66 %** |
-| 3,000 HUF | **125.0** | **91 %** |
+| 1,500 HUF | **62.5** | **34 %** |
+| 2,200 HUF | **91.7** | **50 %** |
+| 3,000 HUF | **125.0** | **68 %** |
 
 `DERIVED — parcel cost ÷ 24.`
 
@@ -180,10 +184,11 @@
 | Domestic HU pallet delivery (1 pallet, ~630–1,040 kg, tail-lift) | **UNKNOWN — QUOTE REQUIRED** |
 | Freight per can if a pallet costs 15,000 HUF, over 2,880 cans | **5.2 HUF/can** `DERIVED` |
 | Freight per can if a pallet costs 30,000 HUF, over 2,880 cans | **10.4 HUF/can** `DERIVED` |
-| **Distributor contribution per can at batch-1 COGS** | **−93 to −141 HUF** (see `23_SHIPPING.md` §5) |
+| **Distributor contribution per can at batch-1 COGS** | **−179 to −206 HUF** (see `23_SHIPPING.md` §5) |
+| **Gym wholesale @470 net at batch-1 COGS** | **−54 HUF** |
 
-> **Verdict: a distributor pallet drop costs you ~5–10 HUF/can in freight and ~100–140 HUF/can in margin. Net destruction of value at 491 HUF COGS.**
-> **Not a batch-1 option. Becomes viable at ~25,000 cans, when COGS falls to ~420 HUF.** Keep the number; you will need it in 2027.
+> **Verdict: a distributor pallet drop costs you ~5–10 HUF/can in freight and ~180–206 HUF/can in margin. Net destruction of value at 524 HUF COGS.**
+> **Not a batch-1 option. Wholesale to a gym or store becomes contribution-positive at ~10,000 cans (COGS ~390 HUF), not at 25,000** — the earlier 25,000 figure came from a broken cost curve and has been corrected in your favour. **A distributor, who takes another 25–40 % off wholesale, needs materially more volume still.** Keep the number; you will need it in 2027.
 
 ---
 
@@ -191,20 +196,21 @@
 
 Consignment feels free. It is not: **you are lending the gym your inventory.**
 
-| Consignment position | Cans out | **Your capital parked (at 491 HUF cost)** |
+| Consignment position | Cans out | **Your capital parked (at 524 HUF cost)** |
 |---|---|---|
-| 1 gym × 5 cases | 120 | **58,920 HUF (EUR 162)** |
-| 6 gyms × 5 cases | 720 | **353,520 HUF (EUR 974)** |
-| **14 gyms × 5 cases** | **1,680** | **824,880 HUF (EUR 2,272) — YOUR ENTIRE BATCH, ZERO CASH BACK** |
+| 1 gym × 1 case | 24 | 12,576 HUF (EUR 35) |
+| 1 gym × 5 cases | 120 | **62,880 HUF (EUR 173)** |
+| **30 cases across all accounts (the cap)** | **720** | **377,280 HUF (EUR 1,039)** |
+| **14 gyms × 5 cases** | **1,680** | **880,320 HUF (EUR 2,425) — YOUR ENTIRE BATCH, ZERO CASH BACK** |
 
-`DERIVED — cans × 491 HUF landed COGS.`
+`DERIVED — cans × 524 HUF landed COGS.`
 
-**You have EUR 3,000 in total. If you consign the whole batch you have nothing left, no cash, and 14 counterparties who owe you money on no fixed date.**
+**You have EUR 3,000 in total, of which EUR 2,740 is already deployed. If you consign the whole batch you have nothing left, no cash, and 14 counterparties who owe you money on no fixed date.**
 
 **Rules:**
-- [ ] **Cap consignment at ~6 gyms / 720 cans (42 % of the batch).** Sell the rest for cash, direct, or on invoice with a 15-day term.
-- [ ] **Agree the settlement cycle in writing before the first drop: count and pay every 30 days.** No cycle = no payment.
-- [ ] **Agree the gym's cut in writing. Maximum 15 % of the 799 HUF RRP (120 HUF/can) — at 22 % you break even and at 25 % you lose 19 HUF/can.** See `23_SHIPPING.md` §5.
+- [ ] **Cap CONSIGNED STOCK OUTSTANDING at ~720 cans / 30 cases (44 % of your 1,640 sellable) at any one moment.** ⚠️ **This is a cap on cans in other people's fridges, NOT a cap on accounts.** `sales/27_GYM_SALES_STRATEGY.md` §6 targets **12–15 gym accounts** — that is compatible, because each account holds **1–2 cases at a time**, not 5. **12–15 accounts × 1–2 cases = 288–720 cans out. It fits.** What does not fit is treating an LOI's "5 cases" as a first delivery.
+- [ ] **Agree the settlement cycle in writing before the first drop: count and pay every 14 days**, in person, on the physical count — matching the offer, the placement agreement and the LOI in `27` and `28`. *(An earlier version of this file said 30 days. 14 is the number of record; a 30-day cycle doubles the capital you have parked.)*
+- [ ] **Agree the gym's cut in writing. Open at 100 HUF; maximum 160 HUF of the 899 HUF RRP.** At 233 HUF you break even and above it you lose money. **Never combine a 160 HUF cut with a 799 RRP — that combination loses 20.85 HUF/can.** See `23_SHIPPING.md` §5.
 - [ ] **Count the stock yourself at every restock visit.** The count is the invoice.
 - [ ] **Prefer cash-on-delivery to consignment wherever a gym will accept it**, even at a slightly better price for them. Cash now beats margin later at EUR 3,000 of capital.
 
@@ -252,7 +258,24 @@ Every drop must record: **date · customer name and address · product · quanti
 | **TOTAL CASH LAST-MILE, BATCH 1** | **~25,000–30,000 HUF (EUR 69–83)** | **~15 HUF/can** | **`ESTIMATE`** |
 | *Memo: same work valued at 3,630 HUF/h notional* | *~180,000–280,000 HUF* | *44–75 HUF/can* | *Not a cash cost* |
 
-**Book 15 HUF/can for last-mile. It is ~11 % of your 138 HUF contribution — acceptable. Nothing else in this file is.**
+**Book 15 HUF/can for last-mile. It is ~8 % of your 183.87 HUF contribution — acceptable. Nothing else in this file is.**
+
+⚠️ **It is booked nowhere else.** Add it to `finance/18_COMPLETE_STARTUP_COSTS.csv` as a real EUR 69–83 line, or accept that the EUR 3,000 total is short by that much. **A cost that only exists in the logistics file is a cost the budget does not have.**
+
+### 8.1 The direct-sales workload nobody has costed
+
+`27_GYM_SALES_STRATEGY.md` §6 assigns **~640 cans to direct sale** — events, D2C multipacks and hand-selling. That is not a residual; it is **39 % of your sellable stock** and it is the difference between clearing the batch and not.
+
+| Line | Value |
+|---|---|
+| Cans to be sold direct | **~640** |
+| Over 90 days | **~7 cans/day, every day** |
+| Invoicing | **One invoice per sale** (`legal/07_HUNGARY_BUSINESS_SETUP.md` §8) |
+| Who does it | **A minor, around school** |
+| Scheduled anywhere in the 30-day plan | **No** |
+| Costed anywhere | **No** |
+
+**The only channel that moves this in usable blocks is events** — 200–400 cans across a handful of weekends, at full RRP with no margin given away, and often free to attend as a product sponsor. **If you cannot name three events by Day 19, do not assume the 640 cans. Open more gym accounts instead and re-run §6's consignment cap against the larger consigned position.**
 
 ---
 
@@ -270,10 +293,12 @@ At 6 drops × 5 cases per delivery day = **720 cans placed per day**:
 `ESTIMATE — derivation shown.`
 
 > **The hand-delivery model runs out of hours at roughly 5,000 cans a year.**
-> **The DRS/MOHU deposit obligation also very probably begins at roughly 5,000 cans a year.**
+> **The DRS/MOHU deposit obligation also very probably begins at roughly 5,000 cans a year** — legal threshold ~5,000, **operating cap 4,500** per `legal/10_DRS_REPONT.md` §13.
 > **These two ceilings land in the same place, and that is not a coincidence — it is the natural size of a one-person, one-car, one-pallet business.**
 >
-> **Batch 1 should not try to escape either ceiling. Stay under 5,000 cans, deliver by hand, keep the whole 138 HUF/can, and let the volume decision wait until you have real sell-through data and a COGS below 420 HUF.**
+> **Batch 1 should not try to escape either ceiling. Stay under 4,500 cans, deliver by hand, keep the whole 183.87 HUF/can, and let the volume decision wait until you have real sell-through data and a COGS below 390 HUF — which the rebuilt cost curve puts at ~10,000 cans.**
+>
+> ⚠️ **Note the tension that creates.** Wholesale becomes viable at ~10,000 cans, but 10,000 cans is **more than double the 4,500-can DRS operating cap** and **~81 days a year of your own delivery time**. **Crossing into wholesale means taking on DRS registration, the deposit float and the artwork change at the same time.** That is a batch-3 decision made deliberately, not a growth curve you drift up.
 
 ---
 
@@ -281,7 +306,8 @@ At 6 drops × 5 cases per delivery day = **720 cans placed per day**:
 
 | Item | Ask | Blocks what |
 |---|---|---|
-| **Is an adult family driver actually available, and on which day?** | **Your father / family — have this conversation this week** | The entire model (§1) |
+| **Is an adult family driver actually available, and on which day?** | **Your father / family — have this conversation this week** | The entire model (§1). ⚠️ **`36_THE_26_QUESTIONS.md` Q19 answers "you deliver them personally by car or public transport". That is not executable — a category B licence is not available at the founder's age, and public transport with a hand truck carries 4 cases (96 cans) against a 71-case initial placement.** The correct answer is: an adult drives, you ride along, and the hours are agreed in writing before you order |
+| **Can you name three sport events for the ~640 direct cans?** | **Race organisers, CrossFit box comps, university sport days — by Day 19** | §8.1. Without them the direct channel is 7 hand-sales a day for 90 days |
 | Hungarian fuel price (HUF/l) | holtankoljak.hu | Precise §2 costs |
 | Budapest parking zone tariffs | budapest.hu / parkolas.hu | Precise §2 costs |
 | BKK monthly pass price | bkk.hu | §3 fallback costing |

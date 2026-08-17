@@ -1,7 +1,9 @@
 # 07 — HUNGARY BUSINESS SETUP: THE EXECUTABLE CHECKLIST
 
 **Written 2026-08-16. FX used throughout: 1 EUR = 363 HUF.**
-Every material figure is tagged. Tags: **CONFIRMED** · **SEARCH-VERIFIED** (seen in a search result attributed to a named URL; page not opened) · **DERIVED** (arithmetic, shown) · **ESTIMATE** (derivation shown) · **QUOTE REQUIRED** · **NEEDS PROFESSIONAL CONFIRMATION** · **UNKNOWN**.
+Every material figure is tagged. Tags: **CONFIRMED** (primary text quoted) · **SEARCH-VERIFIED** (seen in a search result attributed to a named URL; page not opened) · **LIKELY** (corroborated across several secondary sources; no primary text read) · **DERIVED** (arithmetic, shown) · **ESTIMATE** (derivation shown) · **QUOTE REQUIRED** · **NEEDS PROFESSIONAL CONFIRMATION** · **UNKNOWN**.
+
+> **CONFIRMED is used ONCE in this file, for Ptk. 3:22 § (1), where the operative sentence is quoted verbatim.** Everything else that was previously tagged CONFIRMED — the DRS carve-out, the ÁFA annexes, the deposit amount, the 45-day gate — has been **downgraded**, because no primary text was read. If you find a CONFIRMED tag anywhere else in this file, treat it as an error and demote it.
 
 > **RESEARCH INTEGRITY WARNING.** Every primary source (njt.hu, net.jogtar.hu, nav.gov.hu, ksh.hu, mohu.hu) was **blocked** by the network policy during research. Nothing below was read verbatim from statute or from a NAV page. Statute section numbers, portal URLs and figures are all reproduced with their source URL so you can open them in one click. **Re-read every statute citation and every fee before you file anything.** Where nothing was found, this file says UNKNOWN. It does not guess.
 
@@ -13,12 +15,12 @@ Every material figure is tagged. Tags: **CONFIRMED** · **SEARCH-VERIFIED** (see
 |---|---|---|
 | Can you (under 18) be the **egyéni vállalkozó**? | **NO.** Evectv. 2009. évi CXV. **3. § (2)** bars a *kiskorú*. No parental consent cures it — it is a status bar, not a capacity gap. | SEARCH-VERIFIED |
 | Can you be **ügyvezető**? | **NO.** Ptk. **3:22 § (1)**: only a *nagykorú* (adult) may be a vezető tisztségviselő. | CONFIRMED (wording quoted consistently across sources) |
-| Can you **own** part of it? | **YES** — Kft. *tag*, Bt. *kültag*, Zrt. shareholder, acting through your **törvényes képviselő** (Ptk. 2:12 § (1)). Never Bt. *beltag*. | SEARCH-VERIFIED |
+| Can you **own** part of it? | **YES** — Kft. *tag*, Bt. *kültag*, Zrt. shareholder, acting with the consent of your **törvényes képviselő** (Ptk. 2:11 § defines your limited capacity; Ptk. 2:12 § (1) is the consent rule). Never Bt. *beltag*. | SEARCH-VERIFIED |
 | Can you **earn** from it? | **YES.** Employee from **16** (Mt. 34. §). Ptk. **2:12 § (2) c)**: income from your own work is yours to dispose of **without** parental involvement. | SEARCH-VERIFIED |
 | **What vehicle do you actually use for batch 1?** | **An existing adult family company** + add TEÁOR **4634** and **4725**. Cost **≈ 0–60,000 HUF (EUR 0–165)** in year one. | ESTIMATE, derived below |
 | Fallback if there is no family company | **Father as SECONDARY-occupation egyéni vállalkozó.** ≈ **185,000 HUF/yr (EUR 510)**. | ESTIMATE |
 | Do NOT do | **Full-time (főfoglalkozású) EV** = **101,682 HUF/month (EUR 280)** in contributions with **zero revenue**. **New Kft.** = **624,000–723,000 HUF/yr (EUR 1,719–1,992)** to run. | DERIVED |
-| Why | Your total capital is **EUR 3,000 ≈ 1,089,000 HUF**. Batch 1 alone costs **EUR 2,000–2,600**. A new Kft.'s first-year running cost **on its own** exceeds what is left. | DERIVED |
+| Why | Your total capital is **EUR 3,000 ≈ 1,089,000 HUF**, of which **EUR 2,300 is batch-1 inventory and EUR 440 setup/legal (EUR 2,740 deployed, EUR 260 contingency)**. A new Kft.'s first-year running cost **on its own** exceeds what is left. | DERIVED |
 
 **The one-line version: an adult fronts the entity, you own a slice and draw a wage, and you use a company that already exists.**
 
@@ -30,8 +32,10 @@ Every material figure is tagged. Tags: **CONFIRMED** · **SEARCH-VERIFIED** (see
 
 | Rule | Content | Where to verify | Status |
 |---|---|---|---|
-| **Ptk. 2:10 § / 2:11 §** | Under 18 = *kiskorú*. Under 14 = *cselekvőképtelen* (no capacity at all). | https://njt.jog.gov.hu/jogszabaly/2013-5-00-00 | SEARCH-VERIFIED |
-| **Ptk. 2:12 § (1)** | A minor who has reached **14** is *korlátozottan cselekvőképes*. Their legal statements need the **consent or subsequent approval of the törvényes képviselő**. | same | SEARCH-VERIFIED |
+| **Ptk. 2:10 §** | *[A kiskorúság]* — under 18 = *kiskorú*. | https://njt.jog.gov.hu/jogszabaly/2013-5-00-00 | SEARCH-VERIFIED |
+| **Ptk. 2:11 §** | *[A korlátozottan cselekvőképes kiskorú]* — a minor who has reached **14** and is not *cselekvőképtelen* is **limited-capacity**. | same | SEARCH-VERIFIED |
+| **Ptk. 2:12 § (1)** | A limited-capacity minor's legal statements need the **consent or subsequent approval of the törvényes képviselő**. | same | SEARCH-VERIFIED |
+| **Ptk. 2:13 §** | *[A cselekvőképtelen kiskorú]* — under **14** = no capacity at all. | same | SEARCH-VERIFIED |
 | **Ptk. 2:12 § (2) c)** | A limited-capacity minor **may dispose of income earned by their own work without the legal representative**, and may take on obligations up to that amount. | same | SEARCH-VERIFIED |
 | **Ptk. 2:15 §** | Certain statements by the legal representative are valid **only with gyámhatóság approval**. | https://kuria-birosag.hu/hu/ptk/ptk-215-ss | SEARCH-VERIFIED |
 | **Ptk. 3:22 § (1)** | *"Vezető tisztségviselő az a **nagykorú** személy lehet, akinek cselekvőképességét a tevékenysége ellátásához szükséges körben nem korlátozták."* → **only an adult may be ügyvezető.** | https://njt.jog.gov.hu/jogszabaly/2013-5-00-00 ; commentary https://ptk2013.hu/uj-ptk-normaszoveg/uj-ptk-iii-konyv/704 | CONFIRMED |
@@ -63,9 +67,22 @@ Print this list and take it to the meeting.
 | P3 | **Létesítő okirat (társasági szerződés / alapító okirat)** — signed *on behalf of the minor member* as **törvényes képviselő** | at founding | Kft. / Bt. only |
 | P4 | **Bank account agreement** for the entity | within 15 days of adószám | all company routes; VAT-liable EV |
 | P5 | **NÉBIH / FELIR food-business notification** as the responsible operator | before first sale | **all routes** |
-| P6 | **Consent to the minor's employment contract** (Mt., under-18 rule) | before first payday | all routes where you draw a wage |
+| P6 | **Consent to the minor's employment contract** (Mt. 34. §, under-18 rule) | before first payday | all routes where you draw a wage |
+| P6b | **Pre-employment foglalkozás-egészségügyi alkalmassági vizsgálat** (occupational-health fitness examination). Mandatory for an under-18 before starting work — **33/1998. (VI. 24.) NM rendelet**. Cost: paid by the employer; **QUOTE REQUIRED** (small, but it is a real prerequisite, not a formality). **Status: SEARCH-VERIFIED / NEEDS PROFESSIONAL CONFIRMATION of the current rendelet number and scope.** | **before the first day of work**, not before the first payday | all routes where you draw a wage |
 | P7 | **Every co-packer contract, ingredient purchase order and gym consignment agreement** — a minor's signature on a commercial contract is voidable without P7 | ongoing | **all routes** |
 | P8 | Gyámhatóság application / eseti gyám request, **if** §1.2 turns out to apply | before Kft. filing | Kft. with minor member only |
+
+> ### ⚠️ IF YOU TAKE A WAGE, THE *FIATAL MUNKAVÁLLALÓ* REGIME APPLIES TO YOU — AND IT IS RESTRICTIVE.
+> Parental consent under Mt. 34. § is only the entry ticket. An employee under 18 is a **fiatal munkavállaló** and **Mt. 114. §** then caps how you may work. Reported content of the regime:
+> - **Maximum 8 hours' daily and 40 hours' weekly working time** — measured across *all* jobs held.
+> - **No rendkívüli munkaidő (overtime) and no night work.**
+> - **Minimum 12 hours' uninterrupted daily rest** between shifts.
+> - **A 30-minute break after 4.5 hours** worked.
+>
+> **This is exactly the fact pattern a munkaügyi ellenőrzés polices:** a founder working every available hour in his own venture, on a formal employment contract, under 18. A finding is real and avoidable.
+> **Status: SEARCH-VERIFIED — Mt. 114. § was not read verbatim (njt.hu egress-blocked). NEEDS PROFESSIONAL CONFIRMATION of the exact limits with the könyvelő or an ügyvéd before the contract is signed.**
+>
+> **The alternative, and its price:** unpaid family contribution, or a **megbízási** (mandate) construction rather than employment, sidesteps the Mt. young-worker limits — **but it forfeits the Ptk. 2:12 § (2) c) wage-autonomy benefit**, i.e. the rule that lets you spend what you earn without parental involvement. Decide which one you actually want before drafting anything.
 
 ### 1.4 What you CAN do at your age, without a parent in the room
 
@@ -108,7 +125,7 @@ Sources: capital & 2-year deferral https://rozgonyiugyved.hu/szakteruleteim/tars
 | ⑤ New **Kft.** (capital deferred, unpaid non-member ügyvezető) | 50,720–150,000 / 140–413 | 5,000 + 480,000 + 88,392 seat | **≈ 624,000 – 723,000** | **≈ 1,719 – 1,992** | **limited** | ✓ **tag** |
 | ⑥ New **Zrt.** | ≥180,000 + 5M capital | ≥700,000 | **≫ 900,000** | ≫ 2,479 | limited | ✓ shareholder |
 
-**Why ③ is a trap (DERIVED, arithmetic shown).** Minimálbér 2026 = **322,800 HUF/month** (SEARCH-VERIFIED; decree cited variously as 394/2024. (XII.12.) or 426/2025. (XII.23.) Korm. r. — **verify in Magyar Közlöny**). From 2026-01-01 the szocho minimum base for a főfoglalkozású EV fell from 112.5% to **100%** of the minimum wage (NAV, https://nav.gov.hu/ado/szocialis_hozzajarulasi_ado/Csokken_a_szocialis_hozzajarulasi_ado_alapja_es_valtozik_az_egyeni_vallalkozok_bevallasi_gyakorisaga — CONFIRMED).
+**Why ③ is a trap (DERIVED, arithmetic shown).** Minimálbér 2026 = **322,800 HUF/month** (SEARCH-VERIFIED; decree cited variously as 394/2024. (XII.12.) or 426/2025. (XII.23.) Korm. r. — **verify in Magyar Közlöny**). From 2026-01-01 the szocho minimum base for a főfoglalkozású EV fell from 112.5% to **100%** of the minimum wage (NAV, https://nav.gov.hu/ado/szocialis_hozzajarulasi_ado/Csokken_a_szocialis_hozzajarulasi_ado_alapja_es_valtozik_az_egyeni_vallalkozok_bevallasi_gyakorisaga — SEARCH-VERIFIED).
 - TB járulék 18.5% × 322,800 = **59,718 HUF**
 - Szocho 13% × 322,800 = **41,964 HUF**
 - **Total 101,682 HUF/month = EUR 280/month = 1,220,184 HUF/yr = EUR 3,362/yr — payable with zero revenue.**
@@ -164,7 +181,7 @@ Sources: capital & 2-year deferral https://rozgonyiugyved.hu/szakteruleteim/tars
 | **B11** | Your employment contract (16+), parental consent | **You + parent** | Mt. 34. § | 0 / 0 | ID, TAJ, adóazonosító | 1 day | B2 |
 | **B12** | Product liability quote | **Father** | §11 | **QUOTE REQUIRED** | — | 1–2 weeks | B7 |
 
-Notes on the portal: since **2026-02-19** the EV registration interface is the NAV Ügyfélportál **Vállalkozói Ügysegéd**. The old **www.nyilvantarto.hu Webes Ügysegéd stopped accepting new applications on 2026-03-01 23:59** — from 2026-03-02 only the ÜPO interface works. **CONFIRMED (official NAV pages** https://nav.gov.hu/ugyfeliranytu/vallalkozoknak/indulo-vallalkozas/kapcsolodo-tartalmak/megujult-az-ugyseged **and** https://nav.gov.hu/fooldal-elemei/fooldali-csempek/uj-ugyseged/tajekoztatok/a-megujult-ugysegedrol**).** The portal also handles modification, termination, **suspension (szüneteltetés)** and resumption, and a proxy may act throughout. In-person alternative: any NAV ügyfélszolgálat. **Fee 0 HUF.**
+Notes on the portal: since **2026-02-19** the EV registration interface is the NAV Ügyfélportál **Vállalkozói Ügysegéd**. The old **www.nyilvantarto.hu Webes Ügysegéd stopped accepting new applications on 2026-03-01 23:59** — from 2026-03-02 only the ÜPO interface works. **SEARCH-VERIFIED (official NAV pages** https://nav.gov.hu/ugyfeliranytu/vallalkozoknak/indulo-vallalkozas/kapcsolodo-tartalmak/megujult-az-ugyseged **and** https://nav.gov.hu/fooldal-elemei/fooldali-csempek/uj-ugyseged/tajekoztatok/a-megujult-ugysegedrol**).** The portal also handles modification, termination, **suspension (szüneteltetés)** and resumption, and a proxy may act throughout. In-person alternative: any NAV ügyfélszolgálat. **Fee 0 HUF.**
 
 **Track B total realistic timeline: 3–5 weeks, gated by B7.**
 
@@ -195,7 +212,7 @@ Notes on the portal: since **2026-02-19** the EV registration interface is the N
 
 ## 4. TEÁOR'25 ACTIVITY CODES — AND THE 4791 TRAP
 
-**System change:** TEÁOR'08 → **TEÁOR'25** (built on NACE Rev. 2.1) on **2025-01-01**; ÖVTJ'08 → **ÖVTJ'25** for sole traders. All old secondary activities were **closed ex officio on 2024-12-31**; the correction deadline was 2025-07-01. Forms **25T101 / 25T101E** (numbering rolls annually → 26T101 / 26T101E / 26T201T). **CONFIRMED (NAV** https://nav.gov.hu/ado/egyeb/2025._januar_1-jei_TEAOR-valtas_es_az_ezzel_jaro_ugyfeli_kotelezettsegek **).**
+**System change:** TEÁOR'08 → **TEÁOR'25** (built on NACE Rev. 2.1) on **2025-01-01**; ÖVTJ'08 → **ÖVTJ'25** for sole traders. All old secondary activities were **closed ex officio on 2024-12-31**; the correction deadline was 2025-07-01. Forms **25T101 / 25T101E** (numbering rolls annually → 26T101 / 26T101E / 26T201T). **SEARCH-VERIFIED (NAV** https://nav.gov.hu/ado/egyeb/2025._januar_1-jei_TEAOR-valtas_es_az_ezzel_jaro_ugyfeli_kotelezettsegek **).**
 
 | Purpose | Code | Title | Take it? |
 |---|---|---|---|
@@ -207,7 +224,7 @@ Notes on the portal: since **2026-02-19** the EV registration interface is the N
 | Other food retail | **4727** | Egyéb élelmiszer-kiskereskedelem | Optional |
 | Non-specialised food retail (physical store) | **4711** | Élelmiszer jellegű bolti vegyes kiskereskedelem | No |
 
-Sources: https://teaor2025.teaorszamok.hu/1107/ ; https://www.teaorszamok.hu/4634/ ; https://www.teaor2025.hu/4725/Ital-kiskereskedelem/ ; https://welldata.hu/teaor-szamok-lista/4727-egyeb-elelmiszer-kiskereskedelem — all **SEARCH-VERIFIED, not CONFIRMED.**
+Sources: https://teaor2025.teaorszamok.hu/1107/ ; https://www.teaorszamok.hu/4634/ ; https://www.teaor2025.hu/4725/Ital-kiskereskedelem/ ; https://welldata.hu/teaor-szamok-lista/4727-egyeb-elelmiszer-kiskereskedelem — all **SEARCH-VERIFIED, not SEARCH-VERIFIED.**
 
 > ### ⚠ THE TRAP: **TEÁOR 4791 "Csomagküldő, internetes kiskereskedelem" WAS ABOLISHED with effect 2025-01-01.**
 > Channel-based classification is gone. **Online retail is now classified by the PRODUCT SOLD.** A D2C webshop selling protein soda needs **4725**, not an "internet retail" code. Any guide, template or accountant telling you to register 4791 is working from a pre-2025 list. Sources: https://aztajournal.com/hu/teaor-4791-megszunese-webshop-valtozasok ; https://virtualjog.hu/2025/01/07/2025-januar-1-jen-valtozott-a-teaor-rendszer-mit-jelent-ez-a-webshopok-szamara/ ; https://www.webaruhazkeszitesarak.hu/hir/hogyan-erinti-webaruhazakat-az-uj-teaor-rendszer — **SEARCH-VERIFIED (consistent across three independent sources).**
@@ -224,13 +241,15 @@ Sources: https://teaor2025.teaorszamok.hu/1107/ ; https://www.teaorszamok.hu/463
 
 ### 5.1 The rate on your product: **27%**
 
+> **No Áfa tv. annex was opened during research — net.jogtar.hu was egress-blocked. Nothing in this table is CONFIRMED.** The structure below is corroborated across multiple practitioner sources and is safe to *plan* against; it is not safe to *file* against without your accountant confirming it.
+
 | Rate | Applies to | Status |
 |---|---|---|
-| **27%** | General rate, Áfa tv. **82. § (1)** — everything not in an annex | **CONFIRMED** |
-| 18% | Áfa tv. **3/A. sz. melléklet I. rész** — includes certain **milk and milk-based products** (VTSZ 0401, 0403, 0404 90 partially), bakery, commercial accommodation | **CONFIRMED** |
-| 5% | Áfa tv. **3. sz. melléklet** — medicines, books, new residential property | **CONFIRMED** |
+| **27%** | General rate, Áfa tv. **82. § (1)** — everything not in an annex | **SEARCH-VERIFIED** |
+| 18% | Áfa tv. **3/A. sz. melléklet I. rész** — includes certain **milk and milk-based products** (VTSZ 0401, 0403, 0404 90 partially), bakery, commercial accommodation | **SEARCH-VERIFIED** |
+| 5% | Áfa tv. **3. sz. melléklet** — medicines, books, new residential property | **SEARCH-VERIFIED** |
 
-**A carbonated, clear, non-alcoholic canned beverage = 27%.** There is **no reduced rate for "functional", "sports nutrition" or "high protein"** — CONFIRMED by absence from the annexes. Sources: NAV *2026/1. Adózási kérdés* https://nav.gov.hu/print/ado/adozasi_kerdes/20261.-adozasi-kerdes---a-18-os-afakulcs-ala-tartozo-termekekrol ; Áfa tv. https://net.jogtar.hu/jogszabaly?docid=a0700127.tv
+**A carbonated, clear, non-alcoholic canned beverage = 27%.** There is **no reduced rate for "functional", "sports nutrition" or "high protein"** — inferred from absence from the annexes, but **the annexes were never opened, so this is LIKELY, not SEARCH-VERIFIED. NEEDS PROFESSIONAL CONFIRMATION.** It is one of the five Tier-1 questions the paid food-law/tax opinion exists to answer. Sources: NAV *2026/1. Adózási kérdés* https://nav.gov.hu/print/ado/adozasi_kerdes/20261.-adozasi-kerdes---a-18-os-afakulcs-ala-tartozo-termekekrol ; Áfa tv. https://net.jogtar.hu/jogszabaly?docid=a0700127.tv
 
 > **THE 18% MILK QUESTION — worth exactly one email to your accountant, no more.**
 > ARCH F contains **10 g whey protein isolate**, a milk derivative. The 18% band covers certain milk and milk-based products by **VTSZ/CN heading**, not by marketing description. A **clear, carbonated water-base drink with isolated whey and collagen peptides will almost certainly land at 27%** — SEARCH-VERIFIED reasoning, https://szamoldki.hu/hu/hirek/18-os-afa-kulcs-ala-tartozo-termekek-szolgaltatasok
@@ -239,39 +258,39 @@ Sources: https://teaor2025.teaorszamok.hu/1107/ ; https://www.teaorszamok.hu/463
 
 ### 5.2 Alanyi adómentesség — threshold, and whether it helps you
 
-**Threshold 2026 = 20,000,000 HUF = EUR 55,096. CONFIRMED (NAV** https://nav.gov.hu/ado/afa/Emelkedik_az_alanyi_adomentesseg_ertekhatara **).** Not 12,000,000 (obsolete since 2024) and not 18,000,000 (that was 2025). Enacted: 22,000,000 in 2027, 24,000,000 in 2028.
+**Threshold 2026 = 20,000,000 HUF = EUR 55,096. SEARCH-VERIFIED (NAV** https://nav.gov.hu/ado/afa/Emelkedik_az_alanyi_adomentesseg_ertekhatara **).** Not 12,000,000 (obsolete since 2024) and not 18,000,000 (that was 2025). Enacted: 22,000,000 in 2027, 24,000,000 in 2028.
 
-**Test for 2026:** total domestic consideration neither exceeded 20,000,000 HUF in calendar 2025 nor is reasonably expected to exceed it in 2026. For a start-up with no 2025 history only the "reasonably expected" limb applies. **CONFIRMED.**
+**Test for 2026:** total domestic consideration neither exceeded 20,000,000 HUF in calendar 2025 nor is reasonably expected to exceed it in 2026. For a start-up with no 2025 history only the "reasonably expected" limb applies. **SEARCH-VERIFIED.**
 
-**How to elect:** at company formation, in the **cégbejegyzési kérelem adózási nyilatkozatai**; otherwise on the **"F" sheet** of the matching NAV form (**26T101 / 26T101E / 26T201T**) or via **ONYA**. **Deadline to switch in for a following year: 31 December of the preceding year.** **CONFIRMED.** Exceeding mid-year: exemption ceases, the breaching transaction is already taxable, and re-election is barred for the year of cessation plus **two** calendar years (**LIKELY — NEEDS PROFESSIONAL CONFIRMATION**).
+**How to elect:** at company formation, in the **cégbejegyzési kérelem adózási nyilatkozatai**; otherwise on the **"F" sheet** of the matching NAV form (**26T101 / 26T101E / 26T201T**) or via **ONYA**. **Deadline to switch in for a following year: 31 December of the preceding year.** **SEARCH-VERIFIED.** Exceeding mid-year: exemption ceases, the breaching transaction is already taxable, and re-election is barred for the year of cessation plus **two** calendar years (**LIKELY — NEEDS PROFESSIONAL CONFIRMATION**).
 
 ### 5.3 ⚠ THE DOSSIERS CONTRADICT EACH OTHER HERE — and both are partly right
 
 - **A1 (business-setup dossier), Track B step B3**, tells you to elect **átalányadó + alanyi ÁFA-mentesség**.
 - **A2 (tax dossier), §2.3 and §17.1**, says in bold: **"Do NOT elect alanyi adómentesség. Register as a normal VAT payer from day one."**
 
-A2's derivation assumed a **wholesale** business at 350 HUF/can net and 250 HUF COGS. **Your agreed plan is not that.** Batch 1 is **1,700 cans, 491 HUF landed COGS, 799 HUF RRP, sold DIRECT / on consignment, explicitly NOT wholesale.** Redo the arithmetic with your own numbers.
+A2's derivation assumed a **wholesale** business at 350 HUF/can net and 250 HUF COGS. **Your agreed plan is not that.** Batch 1 is **1,700 cans produced / 1,640 sellable, 524 HUF landed COGS (range 460–620), 899 HUF RRP, sold DIRECT / on consignment, explicitly NOT wholesale.** Redo the arithmetic with your own numbers.
 
-**DERIVED — batch 1 as planned (1,700 cans, 491 HUF net COGS, 799 HUF gross to the consumer):**
+**DERIVED — batch 1 as planned (524 HUF net landed COGS, 899 HUF gross to the consumer, 1,640 sellable cans):**
 
 | | **Normal VAT payer** | **Alanyi adómentes** |
 |---|---|---|
-| Net COGS | 491.00 HUF | 491.00 HUF |
-| Irrecoverable input VAT @27% | 0 (deducted) | 491 × 0.27 = **132.57 HUF** |
-| **Effective COGS** | **491.00 HUF** | **623.57 HUF** |
-| Net revenue per can | 799 ÷ 1.27 = **629.13 HUF** | **799.00 HUF** (no VAT) |
-| **Margin per can** | **138.13 HUF / EUR 0.381** | **175.43 HUF / EUR 0.483** |
-| **Margin on 1,700 cans** | **234,821 HUF / EUR 647** | **298,231 HUF / EUR 822** |
+| Net COGS | 524.00 HUF | 524.00 HUF |
+| Irrecoverable input VAT @27% | 0 (deducted) | 524 × 0.27 = **141.48 HUF** |
+| **Effective COGS** | **524.00 HUF** | **665.48 HUF** |
+| Net revenue per can | 899 ÷ 1.27 = **707.87 HUF** | **899.00 HUF** (no VAT) |
+| **Margin per can** | **183.87 HUF / EUR 0.507** | **233.52 HUF / EUR 0.643** |
+| **Margin on 1,640 sellable cans** | **301,547 HUF / EUR 831** | **382,973 HUF / EUR 1,055** |
 
-**In pure direct-to-consumer, alanyi adómentesség is worth +37.30 HUF/can = +63,410 HUF = +EUR 175 on batch 1.** That is real money on your budget.
+**In pure direct-to-consumer, alanyi adómentesség is worth +49.65 HUF/can = +81,426 HUF = +EUR 224 on batch 1.** That is real money on your budget.
 
-**But now the same arithmetic on the wholesale price your plan already rejected (470 HUF to a gym):**
+**But now the same arithmetic on the wholesale price your plan already rejected (470 HUF net to a gym):**
 
 | | Normal VAT payer | Alanyi adómentes |
 |---|---|---|
 | Revenue kept per can | 470.00 | 470.00 |
-| Effective COGS | 491.00 | 623.57 |
-| **Margin** | **−21.00 HUF** (matches the plan) | **−153.57 HUF** |
+| Effective COGS | 524.00 | 665.48 |
+| **Margin** | **−54.00 HUF** (matches the plan — wholesale is FORBIDDEN in batch 1) | **−195.48 HUF** |
 
 **And a VAT-registered gym pays the same either way** — it deducts the VAT — so the exemption buys the buyer **nothing** while burning 27% of every input you buy.
 
@@ -279,19 +298,19 @@ A2's derivation assumed a **wholesale** business at 350 HUF/can net and 250 HUF 
 
 1. **Are you using the existing family company (Track A)?** → **The question is already decided for you.** You inherit that company's ÁFA status. If it is a normal VAT payer, stay there. Do not switch it for your project. **STOP HERE.**
 2. **Will ANY part of your supply chain be a foreign (non-Hungarian) co-packer or a foreign service?** → **Register normal VAT.** See §6 — the exemption collapses.
-3. **Will you sell to VAT-registered gyms or shops on invoice within 12 months?** Your plan says wholesale becomes viable from ~25,000 cans. → **Register normal VAT** now and avoid a disruptive mid-stream status change plus a 2-year re-election bar.
-4. **Only if 1–3 are all "no" and batch 1 is genuinely 100% direct-to-consumer** → alanyi adómentesség is worth EUR 175 on batch 1. Take it knowingly, and understand it is a one-way door for ~3 years.
+3. **Will you sell to VAT-registered gyms or shops on invoice within 12 months?** Your plan says wholesale becomes contribution-positive from ~10,000 cans (COGS 390 vs 470 net = +80/can), and is **forbidden in batch 1** (−54/can at 524 COGS). → **Register normal VAT** now and avoid a disruptive mid-stream status change plus a 2-year re-election bar.
+4. **Only if 1–3 are all "no" and batch 1 is genuinely 100% direct-to-consumer** → alanyi adómentesség is worth EUR 224 on batch 1. Take it knowingly, and understand it is a one-way door for ~3 years.
 
-**RECOMMENDATION: register as a NORMAL VAT PAYER.** EUR 175 on a single pilot batch is not worth a three-year lock-in on a business whose own plan targets wholesale. **A2's conclusion is the right one; A1's step B3 is wrong for this business and should be overridden.**
+**RECOMMENDATION: register as a NORMAL VAT PAYER.** EUR 224 on a single pilot batch is not worth a three-year lock-in on a business whose own plan targets wholesale from ~10,000 cans. **A2's conclusion is the right one; A1's step B3 is wrong for this business and should be overridden.**
 
 **Headroom check (DERIVED), so you know the threshold is not the binding constraint:**
-- 20,000,000 ÷ 799 = **25,031 cans/year** direct
+- 20,000,000 ÷ 899 = **22,247 cans/year** direct
 - 20,000,000 ÷ 470 = **42,553 cans/year** wholesale
-- Your **DRS ceiling is ~5,000 cans/year** (§10). **5,000 × 799 = 3,995,000 HUF = EUR 11,006 — only 20% of the VAT threshold.** The DRS gate bites first by a factor of five. You will not accidentally breach the VAT threshold in year one.
+- Your **DRS planning cap is 4,500 cans/year** (§10.4; the ~5,000 legal threshold is LIKELY, not confirmed). **4,500 × 899 = 4,045,500 HUF = EUR 11,145 — only 20% of the VAT threshold.** The DRS gate bites first by a factor of five. You will not accidentally breach the VAT threshold in year one.
 
 ### 5.4 Cash-flow warning for the normal-VAT route (DERIVED)
 
-Batch 1 at 1,700 × 491 = **834,700 HUF net (EUR 2,299)**. A Hungarian co-packer invoices **1,060,069 HUF gross (EUR 2,920)**; you front **225,369 HUF (EUR 621) of input VAT** and reclaim it in the monthly return. On EUR 3,000 of capital, that float is **20% of everything you have**, for up to ~7 weeks.
+Batch-1 inventory is budgeted at **EUR 2,300 = 834,900 HUF net** (the co-packer invoice; the 524 HUF/can *landed* figure additionally carries freight, EPR, waste and amortised setup, so do not multiply 524 × 1,700 to get the invoice). A Hungarian co-packer invoices **1,060,323 HUF gross (EUR 2,921)**; you front **225,423 HUF (EUR 621) of input VAT** and reclaim it in the monthly return. On EUR 3,000 of capital, that float is **20% of everything you have**, for up to ~7 weeks — **and it is not in the EUR 3,000. It is an additional temporary requirement.**
 **Ask the bookkeeper before signing the co-packer PO: what is the minimum refundable amount and the payout timeline for a VAT reclaim position, and does the "paid invoice" rule delay it?** **NEEDS PROFESSIONAL CONFIRMATION — not researched.**
 
 **Filing frequency:** a company formed without a legal predecessor is on **monthly** VAT returns in its formation year **and the following business year**. From year 3 NAV re-assesses annually. Sources: https://www.ey.com/hu_hu/insights/tax/indul-az-afa-bevallasi-idoszak ; https://iriszoffice.hu/egypercesek/milyen-gyakorisagu-az-afa-bevallas-indulo-vallalkozas-eseten/ — SEARCH-VERIFIED. **This is what pushes a bookkeeping quote to the top of the range.**
@@ -307,7 +326,7 @@ Your plan targets **Hungarian** co-packers (Opre Label, Bubee). This section onl
 - The foreign co-packer invoices **0% / exempt intra-Community supply** against your EU VAT number.
 - You self-assess **27% Hungarian VAT** on the *Közösségen belüli termékbeszerzés* **and deduct it in the same return**. **Net cash effect: ZERO.**
 - Filings: monthly **'65** VAT return + **'A60** recapitulative statement.
-- **CONFIRMED** — NAV information leaflet 29 https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2Frejtett%2FInformacios-fuzetek---Aktualis%2F29.-informacios-fuzet---Az-altalanos-szabalyok-szerint-adozo-afaalanyok-kozossegi-ugyletei
+- **SEARCH-VERIFIED** — NAV information leaflet 29 https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2Frejtett%2FInformacios-fuzetek---Aktualis%2F29.-informacios-fuzet---Az-altalanos-szabalyok-szerint-adozo-afaalanyok-kozossegi-ugyletei
 
 ### 6.2 Alanyi adómentes — the exemption collapses
 
@@ -316,7 +335,7 @@ Your plan targets **Hungarian** co-packers (Opre Label, Bubee). This section onl
 | Intra-EU **goods** ≤ **EUR 10,000** in the current AND preceding calendar year, no közösségi adószám requested | Foreign supplier charges **its own domestic VAT** | Foreign VAT is a **sunk, unrecoverable cost** |
 | Goods **> EUR 10,000**, or you request a közösségi adószám | Supplier zero-rates; you **self-assess 27% Hungarian VAT and CANNOT deduct it**; you file a **'65** (main sheet block (E), amount in **line 18**) plus an **'A60** | **27% straight cost** |
 
-**CONFIRMED.** Sources: NAV leaflet 27 *Tájékoztató a közösségi adószámról* https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2F2025%2F27.-Tajekoztato-a-kozossegi-adoszamrol-2025.-01.-31 ; https://pbkik.hu/2025/02/07/hirek/alanyi-adomentesseg-kozossegen-beluli-beszerzes-eseten/
+**SEARCH-VERIFIED.** Sources: NAV leaflet 27 *Tájékoztató a közösségi adószámról* https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2F2025%2F27.-Tajekoztato-a-kozossegi-adoszamrol-2025.-01.-31 ; https://pbkik.hu/2025/02/07/hirek/alanyi-adomentesseg-kozossegen-beluli-beszerzes-eseten/
 
 ### 6.3 ⚠ THE TRAP: co-packing is usually a **SERVICE**, and there is **no EUR 10,000 de minimis for services**
 
@@ -324,7 +343,7 @@ If the foreign co-packer supplies a **service** (tolling / contract filling, whe
 
 > *"Más közösségi adóalanytól igénybe vett főszabály szerinti (Áfa tv. 37. § (1) bekezdés) szolgáltatás esetén az **alanyi adómentes adóalanynak a szolgáltatás igénybevételét megelőzően közösségi adószámot kell igényelnie**"* … *"a felszámított áfát … **nem helyezhetik levonásba**."*
 
-**CONFIRMED.** Sources: https://www.saldo.hu/cikk/default/kulfoldrol-igenybe-vett-szolgaltatasok-afakotelezettsege-alanyi-adomentes-adoalanyoknal ; https://www.online-adotanacsadas.hu/alanyi-mentes-adozok-nemzetkozi-szolgaltatas/
+**SEARCH-VERIFIED.** Sources: https://www.saldo.hu/cikk/default/kulfoldrol-igenybe-vett-szolgaltatasok-afakotelezettsege-alanyi-adomentes-adoalanyoknal ; https://www.online-adotanacsadas.hu/alanyi-mentes-adozok-nemzetkozi-szolgaltatas/
 
 **The very first euro** of foreign co-packing *service* forces an alanyi adómentes company to get a közösségi adószám, self-assess 27% with **no deduction**, and file monthly '65 + 'A60 anyway.
 
@@ -379,20 +398,20 @@ Sources: https://granitbank.hu/vallalati-ugyfelek/bankszamlak ; https://bankmoni
 
 | Item | Date | Status |
 |---|---|---|
-| Voluntary e-nyugta phase started | 1 July 2025 | CONFIRMED |
-| **Mandatory receipt DATA reporting to NAV** | **1 September 2026** | **CONFIRMED** |
+| Voluntary e-nyugta phase started | 1 July 2025 | SEARCH-VERIFIED |
+| **Mandatory receipt DATA reporting to NAV** | **1 September 2026** | **SEARCH-VERIFIED** |
 | Mandatory replacement of existing online cash registers with **e-pénztárgép** | from 2028 | SEARCH-VERIFIED |
 
 **What becomes mandatory on 1 September 2026 is the transmission of RECEIPT DATA to NAV — not the e-pénztárgép device.** From that date **anyone issuing receipts**, including people who previously used hand-written or computer-generated receipts and were **not** on an online cash register, must supply the receipt data to NAV electronically. Receipts land in NAV's **nyugtatár**. Sources: https://5percado.hu/nyugta-adatszolgaltatas-szeptember-1-jetol-nem-az-e-penztargep-a-kotelezo-hanem-az-adat-dr-sztanko-daniel/ ; https://www.bookkeepie.com/hu/blog/e-nyugta-2026 ; FAQ https://enyugta.szamlazz.hu/gyik
 
 ### 8.2 Do you need a cash register? **It depends entirely on how you structure the gym deal.**
 
-**The rule.** Under the *Pénztárgéprendelet* (**48/2013. (XI. 15.) NGM rendelet**), businesses whose activity falls in **Annex 1** must discharge the receipt obligation **with an online cash register**. **Annex 1 point b) covers kiskereskedelem, specifically the retail sale of food and drink.** A stand at a gym, a fitness expo or a pop-up selling cans **for cash to consumers** is retail sale of drink. **CONFIRMED in substance.** Sources: https://kiskerjogtar.hu/i11-szamla-es-nyugtaadasi-kotelezettseg-online-penztargep-hasznalat ; NAV information leaflet 18 https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2Frejtett%2FInformacios-fuzetek---Aktualis%2F18.-informacios-fuzet---A-szamla-nyugta-kibocsatasanak-alapveto-szabalyai
+**The rule.** Under the *Pénztárgéprendelet* (**48/2013. (XI. 15.) NGM rendelet**), businesses whose activity falls in **Annex 1** must discharge the receipt obligation **with an online cash register**. **Annex 1 point b) covers kiskereskedelem, specifically the retail sale of food and drink.** A stand at a gym, a fitness expo or a pop-up selling cans **for cash to consumers** is retail sale of drink. **SEARCH-VERIFIED in substance.** Sources: https://kiskerjogtar.hu/i11-szamla-es-nyugtaadasi-kotelezettseg-online-penztargep-hasznalat ; NAV information leaflet 18 https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2Frejtett%2FInformacios-fuzetek---Aktualis%2F18.-informacios-fuzet---A-szamla-nyugta-kibocsatasanak-alapveto-szabalyai
 
 **Two escape hatches, both free:**
 
-1. **The TEÁOR gate.** If the company's TEÁOR'25 activity is **not** in Annex 1, no cash register is required at all. **A wholesale-only (nagykereskedelem, 4634) beverage business selling to gyms on invoice does NOT trigger the rule. CONFIRMED.**
-2. **Invoice every single sale.** *"Ha nyugta helyett minden egyes ügyletről számlát állítasz ki, akkor mentesülsz a pénztárgépes (és így az e-pénztárgépes) nyugtaadási kötelezettség alól."* If you issue a proper **számla** for **every** transaction — including every consumer sale — you are **exempt** from the cash-register obligation. **CONFIRMED** (Áfa tv. 166. § / Pénztárgéprendelet mechanism).
+1. **The TEÁOR gate.** If the company's TEÁOR'25 activity is **not** in Annex 1, no cash register is required at all. **A wholesale-only (nagykereskedelem, 4634) beverage business selling to gyms on invoice does NOT trigger the rule. SEARCH-VERIFIED.**
+2. **Invoice every single sale.** *"Ha nyugta helyett minden egyes ügyletről számlát állítasz ki, akkor mentesülsz a pénztárgépes (és így az e-pénztárgépes) nyugtaadási kötelezettség alól."* If you issue a proper **számla** for **every** transaction — including every consumer sale — you are **exempt** from the cash-register obligation. **SEARCH-VERIFIED** (Áfa tv. 166. § / Pénztárgéprendelet mechanism).
 
 ### 8.3 What this means for YOUR batch 1 — decision table
 
@@ -417,7 +436,9 @@ Your plan sells batch 1 **direct / on consignment**. Those are two different ans
 - Whether **B2C invoice** reporting is mandatory in 2026: sources conflict. **NEEDS PROFESSIONAL CONFIRMATION.** **Practical rule: use software that reports everything. Over-reporting carries no penalty; under-reporting does.**
 - Sources: RSM https://www.rsm.hu/tax-to-know/online-invoice-data-reporting ; https://www.rsm.hu/blog/adoellenorzes/nav-ellenorzesi-terv-online-szamlaadatok-fokusza
 
-**Coming change:** multiple 2026 professional sources report that, transposing **Council Directive (EU) 2024/1846** (ViDA), Hungary makes **structured e-invoicing mandatory for domestic B2B from 1 July 2026**, phased, on **Online Számla XML schema 4.0** / a Hungarian EN 16931 adaptation. **Status: SEARCH-VERIFIED / NEEDS PROFESSIONAL CONFIRMATION** — reported by law-firm and vendor blogs, not by a readable NAV page, and "phased" suggests micro taxpayers may not be in the first wave. **Ask the bookkeeper before committing to software.** https://drnagyildiko.hu/blog/e-szamlazas-nav-megfeleles-2026/ ; https://www.leitnerleitner.hu/hirek/vida-2026-eu-s-afareform/
+**Coming change:** multiple 2026 professional sources report that Hungary makes **structured e-invoicing mandatory for domestic B2B from 1 July 2026**, phased, on **Online Számla XML schema 4.0** / a Hungarian EN 16931 adaptation.
+**Citation correction:** the VAT in the Digital Age package is **Council Directive (EU) 2025/516 of 11 March 2025** amending Directive 2006/112/EC. **(EU) 2024/1846 is NOT the ViDA directive** — an earlier draft of this file cited it in error. **ViDA's own e-invoicing mandate for intra-EU transactions runs from 2030.** What ViDA did immediately was remove the need for a Member State derogation before imposing a **domestic** e-invoicing obligation. **A Hungarian 1 July 2026 domestic B2B mandate would therefore be a national measure, not a transposition — do not describe it as "transposing ViDA" to your accountant.**
+**Status of the 1 July 2026 Hungarian mandate itself: SEARCH-VERIFIED / NEEDS PROFESSIONAL CONFIRMATION** — reported by law-firm and vendor blogs, not by a readable NAV page, and "phased" suggests micro taxpayers may not be in the first wave. **Ask the bookkeeper before committing to software.** https://drnagyildiko.hu/blog/e-szamlazas-nav-megfeleles-2026/ ; https://www.leitnerleitner.hu/hirek/vida-2026-eu-s-afareform/
 
 ### 8.5 Invoicing software — spend 0 HUF
 
@@ -431,7 +452,7 @@ Your plan sells batch 1 **direct / on consignment**. Those are two different ans
 
 **→ Use a free tier. All of them satisfy the Online Számla obligation. Do not spend a forint on invoicing software in year 1.**
 
-### 8.6 Mandatory invoice content (Áfa tv. 169. §) — CONFIRMED
+### 8.6 Mandatory invoice content (Áfa tv. 169. §) — SEARCH-VERIFIED
 
 Issue date · **unique sequential number (sorszám)** · seller's name, address, **adószám** · buyer's name and address, plus buyer's **adószám** where required (mandatory for domestic taxable buyers above the statutory VAT limit, and for reverse-charge and intra-Community transactions) · **teljesítés időpontja** if different from issue date · description and quantity · net unit price and **adóalap** · **VAT rate** · **VAT amount** · where applicable the statutory wording (*"fordított adózás"*, *"pénzforgalmi elszámolás"*, or the exemption reference — an alanyi adómentes seller must state *"Alanyi adómentes"* / Áfa tv. XIII. fejezet). Sources: https://www.rsm.hu/kisokos/szamla-kotelezo-tartalma ; Áfa tv. https://net.jogtar.hu/jogszabaly?docid=a0700127.tv
 
@@ -445,11 +466,11 @@ Issue date · **unique sequential number (sorszám)** · seller's name, address,
 
 | Item | 2026 | Status |
 |---|---|---|
-| Still exists? | Yes, post-2022 "new KATA" | CONFIRMED |
-| Who may use it | **Only a főfoglalkozású egyéni vállalkozó.** No Kft., no Bt. | CONFIRMED |
-| Customer restriction | **May invoice only private individuals.** Sole exception: taxi drivers | CONFIRMED |
-| Effect of one B2B invoice | **Terminates KATA status immediately** | CONFIRMED |
-| Amount | **50,000 HUF/month (EUR 138) = 600,000 HUF/yr (EUR 1,653)**, no proration — full month for every started month | CONFIRMED |
+| Still exists? | Yes, post-2022 "new KATA" | SEARCH-VERIFIED |
+| Who may use it | **Only a főfoglalkozású egyéni vállalkozó.** No Kft., no Bt. | SEARCH-VERIFIED |
+| Customer restriction | **May invoice only private individuals.** Sole exception: taxi drivers | SEARCH-VERIFIED |
+| Effect of one B2B invoice | **Terminates KATA status immediately** | SEARCH-VERIFIED |
+| Amount | **50,000 HUF/month (EUR 138) = 600,000 HUF/yr (EUR 1,653)**, no proration — full month for every started month | SEARCH-VERIFIED |
 
 Source: NAV information leaflet 99 (2026-02-20) https://nav.gov.hu/pfile/file?path=%2Fugyfeliranytu%2Fnezzen-utana%2Finf_fuz%2F2026%2F99.-Kisadozo-vallalkozok-teteles-adoja-kata-2026.-02.-20
 
@@ -466,15 +487,15 @@ Source: NAV information leaflet 99 (2026-02-20) https://nav.gov.hu/pfile/file?pa
 | Entry thresholds 2026 | — | revenue **and** balance-sheet total ≤ **6 bn HUF**; headcount ≤ **100** |
 | Entry window for 1 Jan entry | — | **1–20 December** of the preceding year |
 
-**CONFIRMED.** NAV leaflet 41 (2026-02-02) and leaflet 92 (2026-05-18). Free comparison calculator: https://www.rsm.hu/kalkulatorok/kiva-tao-osszehasonlito-kalkulator
+**SEARCH-VERIFIED.** NAV leaflet 41 (2026-02-02) and leaflet 92 (2026-05-18). Free comparison calculator: https://www.rsm.hu/kalkulatorok/kiva-tao-osszehasonlito-kalkulator
 
 **KIVA wins when the wage bill is large relative to profit.** A one-person beverage start-up with almost no payroll and heavy COGS is **better on TAO at 9%**. **→ Choose TAO for year 1.** SEARCH-VERIFIED (professional consensus); run the RSM calculator with real numbers.
 
-**Dividend out (DERIVED, rates CONFIRMED):** SZJA **15%** + szocho **13%** (szocho payable only until the individual's aggregate szocho base reaches **24 × minimum wage = 7,747,200 HUF = EUR 21,342** — the minimum wage figure is **NEEDS PROFESSIONAL CONFIRMATION**). On 100 HUF of profit: TAO 9 → 91 distributable → SZJA 13.65, szocho 11.83 → **65.52 in hand. Total burden 34.48%** under the cap, **22.65%** above it.
+**Dividend out (DERIVED, rates SEARCH-VERIFIED):** SZJA **15%** + szocho **13%** (szocho payable only until the individual's aggregate szocho base reaches **24 × minimum wage = 7,747,200 HUF = EUR 21,342** — the minimum wage figure is **NEEDS PROFESSIONAL CONFIRMATION**). On 100 HUF of profit: TAO 9 → 91 distributable → SZJA 13.65, szocho 11.83 → **65.52 in hand. Total burden 34.48%** under the cap, **22.65%** above it.
 
 ### 9.3 HIPA (helyi iparűzési adó) — **run both bases, do not default to the banded one**
 
-- **Statutory maximum 2%.** Budapest is **2%** citywide, unchanged for 2026 — **Budapest Főváros Önkormányzata Közgyűlésének 1/2026. (I. 30.) önkormányzati rendelete**, https://or.njt.hu/onkormanyzati-rendelet/2026-1-SP-4191 — **CONFIRMED.** **120 municipalities raised their rate for 2026**; some small municipalities apply 1%, 1.5% or 0%. **Worth checking before choosing a registered seat.**
+- **Statutory maximum 2%.** Budapest is **2%** citywide, unchanged for 2026 — **Budapest Főváros Önkormányzata Közgyűlésének 1/2026. (I. 30.) önkormányzati rendelete**, https://or.njt.hu/onkormanyzati-rendelet/2026-1-SP-4191 — **SEARCH-VERIFIED.** **120 municipalities raised their rate for 2026**; some small municipalities apply 1%, 1.5% or 0%. **Worth checking before choosing a registered seat.**
 - **Simplified banded base** (available to a *kisvállalkozó* with revenue ≤ 25,000,000 HUF, or ≤ 120,000,000 HUF for a retail átalányadózó EV):
 
 | Revenue band | Deemed base | HIPA at 2% | EUR |
@@ -483,25 +504,25 @@ Source: NAV information leaflet 99 (2026-02-20) https://nav.gov.hu/pfile/file?pa
 | 12–18,000,000 HUF | 6,000,000 | 120,000 HUF | 331 |
 | 18–25,000,000 HUF | 8,500,000 | 170,000 HUF | 468 |
 
-Band structure **CONFIRMED**; HUF amounts **DERIVED** (base × 2%).
+Band structure **SEARCH-VERIFIED**; HUF amounts **DERIVED** (base × 2%).
 
 > **⚠ For YOUR business the banded option is the EXPENSIVE one.** The normal HIPA base is *net revenue − COGS − subcontractor charges − material costs*. A beverage trader has very high COGS.
-> **DERIVED on batch 1:** net revenue 1,700 × 629.13 = **1,069,521 HUF**; minus COGS 834,700 = base **234,821 HUF**; × 2% = **4,696 HUF (EUR 12.9)**.
+> **DERIVED on batch 1, sold out at 899 HUF:** net revenue 1,640 × 707.87 = **1,160,907 HUF**; minus material cost 834,900 = base **326,007 HUF**; × 2% = **6,520 HUF (EUR 18.0)**.
 > **Versus the banded base: 50,000 HUF (EUR 138).**
-> **The normal base saves 45,304 HUF (EUR 125) — about 10× cheaper. Run both every year.** Base mechanics: SEARCH-VERIFIED, not re-verified from Htv. primary text.
+> **The normal base saves 43,480 HUF (EUR 120) — about 8× cheaper. Run both every year.** Base mechanics: SEARCH-VERIFIED, not re-verified from Htv. primary text.
 
 - Filing: form **26HIPAK**, filed **to NAV**, which forwards it to the municipality. Portals **ONYA** and **ÁNYK** (ÁNYK available until 31 December 2026). **Deadline 31 May** following the tax year. **Payment goes to the municipality's HIPA account, not to NAV.**
-- **⚠ UJEGYKE prerequisite that trips up first-time filers:** the filer must hold the **E/2 UJEGYKE ügycsoport** right (*ADÓÜGYEK … Jövedelem típusú és egyéb közvetlen adókhoz kapcsolódó ügyek*) **before** submitting a HIPAK. If not, a new UJEGYKE declaration must be filed first. **CONFIRMED.** https://nav.gov.hu/ado/egyeb/A_HIPAK_is_elerheto_az_ONYA_feluleten
+- **⚠ UJEGYKE prerequisite that trips up first-time filers:** the filer must hold the **E/2 UJEGYKE ügycsoport** right (*ADÓÜGYEK … Jövedelem típusú és egyéb közvetlen adókhoz kapcsolódó ügyek*) **before** submitting a HIPAK. If not, a new UJEGYKE declaration must be filed first. **SEARCH-VERIFIED.** https://nav.gov.hu/ado/egyeb/A_HIPAK_is_elerheto_az_ONYA_feluleten
 
 ### 9.4 Kiskereskedelmi adó (retail tax) — **0 HUF, ignore**
 
-Tax-free band **doubled to 1,000,000,000 HUF (EUR 2,754,821)** for tax years beginning in 2026; 0% below it. **CONFIRMED**, NAV leaflet 96 (2026-02-02). **Mentioned only to close the question.**
+Tax-free band **doubled to 1,000,000,000 HUF (EUR 2,754,821)** for tax years beginning in 2026; 0% below it. **SEARCH-VERIFIED**, NAV leaflet 96 (2026-02-02). **Mentioned only to close the question.**
 
 ### 9.5 Beszámoló and audit
 
-- **Annual report deadline: last day of the 5th month after the balance-sheet date = 31 May** for a calendar year. Filed via the Ministry of Justice **e-beszámoló portal** (`e-beszamolo.im.gov.hu`); one submission satisfies both közzététel and letétbe helyezés. **Fee: 0 HUF.** Micro companies use the **mikrogazdálkodói egyszerűsített éves beszámoló** — the lightest and cheapest form. **CONFIRMED / SEARCH-VERIFIED.**
+- **Annual report deadline: last day of the 5th month after the balance-sheet date = 31 May** for a calendar year. Filed via the Ministry of Justice **e-beszámoló portal** (`e-beszamolo.im.gov.hu`); one submission satisfies both közzététel and letétbe helyezés. **Fee: 0 HUF.** Micro companies use the **mikrogazdálkodói egyszerűsített éves beszámoló** — the lightest and cheapest form. **SEARCH-VERIFIED / SEARCH-VERIFIED.**
 - Sanction for missing it: escalating — NAV can suspend the tax number and ultimately initiate deletion of the company.
-- **Audit: exempt if net revenue ≤ 600,000,000 HUF (EUR 1,652,893) averaged over the two preceding years AND average headcount ≤ 50.** **CONFIRMED.** **You will not need an auditor for many years. Audit cost = 0 HUF.**
+- **Audit: exempt if net revenue ≤ 600,000,000 HUF (EUR 1,652,893) averaged over the two preceding years AND average headcount ≤ 50.** **SEARCH-VERIFIED.** **You will not need an auditor for many years. Audit cost = 0 HUF.**
 
 ### 9.6 Bookkeeping — the largest recurring cost in the whole stack
 
@@ -528,10 +549,10 @@ Tax-free band **doubled to 1,000,000,000 HUF (EUR 2,754,821)** for tax years beg
 
 Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs füzet 53, published 2026-01-23** — https://nav.gov.hu/pfile/file?path=/ugyfeliranytu/nezzen-utana/inf_fuz/2026/53.-Nepegeszsegugyi-termekado-2026.-01.-23
 
-**Who pays:** the person making the **first domestic sale**. If you have cans co-packed and sell them in Hungary, **you are the NETA taxpayer**. **CONFIRMED.**
+**Who pays:** the person making the **first domestic sale**. If you have cans co-packed and sell them in Hungary, **you are the NETA taxpayer**. **SEARCH-VERIFIED.**
 
 **Your batch-1 SKU (Lemon-Lime, zero sugar, no caffeine):**
-- Not an **energiaital** — no methyl-xanthine. The energy-drink limbs are: contains taurine **and** methyl-xanthine >1 mg/100 ml **or** taurine >100 mg/100 ml; **or** methyl-xanthine >15 mg/100 ml. **CONFIRMED.**
+- Not an **energiaital** — no methyl-xanthine. The energy-drink limbs are: contains taurine **and** methyl-xanthine >1 mg/100 ml **or** taurine >100 mg/100 ml; **or** methyl-xanthine >15 mg/100 ml. **SEARCH-VERIFIED.**
 - Not an **üdítőital** if there is **no added sugar** and sweetening is by high-intensity sweeteners only. The taxable üdítőital limb is a pre-packaged beverage **containing added sugar** above **8 g/100 ml**, or containing **both added sugar AND sweetener**.
 - **Expected NETA = 0 HUF/can. Status: LIKELY.**
 
@@ -540,13 +561,13 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 - Worst case at 23 Ft/l (the üdítőital rate): 23 × 0.33 = **7.59 HUF/can (EUR 0.0209)**
 - **On 1,700 cans that is 4,488–12,903 HUF (EUR 12–36). Material for a price sheet; not fatal.**
 
-**De minimis (CONFIRMED, NAV leaflet 53):** *"Az adóalany mentesül a termékadó megfizetése alól, ha a naptári évben az adóköteles termékből 50 liternél vagy 50 kilogrammnál kisebb mennyiséget értékesít."* **50 l ÷ 0.33 = 151.5 cans.** 151 cans = 49.83 l (under); **152 cans = 50.16 l → over, and the WHOLE quantity becomes taxable.** It is a cliff, not a slope. **Irrelevant for a zero-NETA SKU; decisive if you ever add caffeine.**
+**De minimis (SEARCH-VERIFIED, NAV leaflet 53):** *"Az adóalany mentesül a termékadó megfizetése alól, ha a naptári évben az adóköteles termékből 50 liternél vagy 50 kilogrammnál kisebb mennyiséget értékesít."* **50 l ÷ 0.33 = 151.5 cans.** 151 cans = 49.83 l (under); **152 cans = 50.16 l → over, and the WHOLE quantity becomes taxable.** It is a cliff, not a slope. **Irrelevant for a zero-NETA SKU; decisive if you ever add caffeine.**
 
 > **RULE TO CARRY INTO ANY FUTURE CAFFEINE SKU: NO TAURINE, NO GINSENG, NO L-ARGININE.**
 > Caffeine alone = **65 Ft/l = 21.45 HUF/can (EUR 0.059)**. Add taurine/ginseng/L-arginine = **390 Ft/l = 128.70 HUF/can (EUR 0.355)** — a **6× multiplier, +107.25 HUF/can of pure tax for zero consumer benefit.** On 10,000 cans that is **1,072,500 HUF (EUR 2,954)** — nearly your entire capital, thrown away on one ingredient line. **L-arginine is a common "performance" additive; this must be in every formulation brief.**
 > Rates **SEARCH-VERIFIED** at 65/390 (they replaced 50/300 on 2022-07-01). **The 2026 leaflet's rate table could not be read; several Hungarian taxes are now inflation-indexed (https://nav.gov.hu/ugyfeliranytu/adokulcsok_jarulekmertekek/valorizalt-adomertekek) — VERIFY the 2026 Ft/litre figures before any price sheet.**
 
-**Filing if it ever applies:** form **26NETA**, frequency **follows the VAT return period** for a VAT payer (by **25 February** of the following year for a non-VAT-filer). Payment account **10032000-01077003**. **CONFIRMED.**
+**Filing if it ever applies:** form **26NETA**, frequency **follows the VAT return period** for a VAT payer (by **25 February** of the following year for a non-VAT-filer). Payment account **10032000-01077003**. **SEARCH-VERIFIED.**
 
 ### 10.2 Környezetvédelmi termékdíj on packaging — **0 HUF**
 
@@ -580,7 +601,7 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 
 **On batch 1 (1,700 cans): ≈ (2.60 + 2.52) × 1,700 = 8,704 HUF = EUR 24. DERIVED. The fee is trivial; the compliance is not.**
 
-**Registration and reporting mechanics (CONFIRMED as to mechanism):**
+**Registration and reporting mechanics (SEARCH-VERIFIED as to mechanism):**
 1. Pre-registration on the MOHU website — https://mohu.hu/pdf/EPR-regisztracio.pdf ; https://epr.hu/epr-regisztracioval-kapcsolatos-informaciok
 2. Registration via **OKIRkapu**, submitting the **KG: KGYF-NY** data package
 3. Prerequisites: **Ügyfélkapu/DÁP access, a valid meghatalmazás, and a KÜJ number** (plus KTJ where a site is involved)
@@ -594,26 +615,31 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 > Whether the co-packer or the brand owner is the EPR-obligated *gyártó* when the co-packer sells finished, packaged cans to you is **NEEDS PROFESSIONAL CONFIRMATION** — it was not settled in the research. If the co-packer carries it, you skip KÜJ, OKIRkapu and four filings a year. **This is a real, free saving worth one line in an email.**
 > **Whether a small-quantity EPR exemption exists (mirroring the DRS one): UNKNOWN — not researched. Assume EPR applies and register.**
 
-### 10.4 DRS — the 5,000-can ceiling that governs your artwork
+### 10.4 DRS — the ~5,000-can ceiling that governs your artwork
+
+> **`10_DRS_REPONT.md` IS THE AUTHORITY ON DRS.** Where this section and 10 differ, 10 wins. **Nothing in this table was read from 450/2023 itself** — net.jogtar.hu and mohu.hu were both egress-blocked during research (see 35_SOURCES). Dossier A6 §5.2 tags the whole carve-out **LIKELY** and instructs: treat as **NEEDS PROFESSIONAL CONFIRMATION before any irreversible spend.** This section now matches A6 and 10. No row here is SEARCH-VERIFIED.
 
 | Item | Rule | Status |
 |---|---|---|
-| Legal basis | **450/2023. (X. 4.) Korm. rendelet** — https://net.jogtar.hu/jogszabaly?docid=a2300450.kor | CONFIRMED |
-| Scope | Plastic, **metal** and glass consumer beverage packaging **0.1–3 litres** — a 330 ml can is squarely in scope | CONFIRMED |
-| Deposit | **50 HUF per unit**, not subject to VAT | CONFIRMED / VAT point LIKELY |
-| **EPR interaction** | *"A visszaváltási díjjal érintett csomagolások mentesülnek az EPR-díj alól."* DRS packaging is **exempt from EPR** | **CONFIRMED** |
-| Registration | Since 2024-07-01 DRS products may not be placed on the market without MOHU registration; the producer must register the product on the concession platform **at least 45 days before** placing on market | CONFIRMED |
-| **Small-emitter carve-out (*csekély mennyiségű kibocsátó*)** | Producers whose plastic/metal/glass consumer beverage units of 0.1–3 l placed on the market **do not exceed 5,000 units in the year** | **CONFIRMED** |
-| Operator | MOL MOHU Hulladékgazdálkodási Zrt. | CONFIRMED |
+| Legal basis | **450/2023. (X. 4.) Korm. rendelet** — https://net.jogtar.hu/jogszabaly?docid=a2300450.kor | **LIKELY — decree text never opened (egress-blocked). NEEDS PROFESSIONAL CONFIRMATION** |
+| Scope | Plastic, **metal** and glass consumer beverage packaging **0.1–3 litres** — a 330 ml can appears to be squarely in scope | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION** |
+| Deposit | **50 HUF per unit** reported, not subject to VAT. **Whether the amount changed for 2026: UNKNOWN** (A6 records this expressly) | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION** |
+| **EPR interaction** | *"A visszaváltási díjjal érintett csomagolások mentesülnek az EPR-díj alól."* DRS packaging is reported **exempt from EPR** | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION** (A6 records that a sibling file over-tagged this SEARCH-VERIFIED) |
+| Registration | Since 2024-07-01 DRS products may not be placed on the market without MOHU registration; the producer must register the product on the concession platform **at least 45 days before** placing on market | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION** |
+| **Small-emitter carve-out (*csekély mennyiségű kibocsátó*)** | Producers whose plastic/metal/glass consumer beverage units of 0.1–3 l placed on the market **do not exceed ~5,000 units in the year** | **LIKELY — NEEDS PROFESSIONAL CONFIRMATION. This is the single figure the artwork, the batch size and the year-one volume cap all rest on, and it is irreversible once the sleeve prints.** |
+| Operator | MOL MOHU Hulladékgazdálkodási Zrt. | SEARCH-VERIFIED |
 
 > ### 🔴 THE IRREVERSIBLE DECISION
-> **Below 5,000 cans/year:** outside mandatory DRS. **No 50 HUF deposit, no 45-day pre-registration, no DRS marking on the artwork, no MOHU product registration, no deposit float.** EPR applies instead (~2.4–2.8 HUF/can — trivial).
-> **Above 5,000 cans/year:** DRS is mandatory. MOHU product registration **45 days** before launch, **DRS marking must be on the artwork at printing**, a 50 HUF/can deposit flows through pricing and accounting — and the EPR fee on the can disappears.
-> **The real cost of crossing 5,000 is not money. It is 45 days and the artwork.** A pilot printed (or sleeved) without DRS marking **cannot legally exceed 5,000 units**.
+> **Below the threshold (reported as ~5,000 cans/year — LIKELY, unread):** outside mandatory DRS. **No 50 HUF deposit, no 45-day pre-registration, no DRS marking on the artwork, no MOHU product registration, no deposit float.** EPR applies instead (~2.4–2.8 HUF/can — trivial).
+> **Above it:** DRS is mandatory. MOHU product registration **45 days** before launch, **DRS marking must be on the artwork at printing**, a 50 HUF/can deposit flows through pricing and accounting — and the EPR fee on the can disappears.
+> **The real cost of crossing the threshold is not money. It is 45 days and the artwork.** A pilot printed (or sleeved) without DRS marking **cannot safely exceed the threshold**.
 > **DECIDE BEFORE THE SHRINK SLEEVE GOES TO PRINT. It is irreversible once printed.**
-> **Your plan already holds year-one volume under ~5,000 cans. Batch 1 at ~1,700 cans has 3,300 cans of headroom. Do not spend it accidentally.**
-> **The MOHU producer-side handling fee per unit (beyond the 50 HUF deposit) is UNKNOWN — QUOTE REQUIRED from MOHU** before pricing any >5,000-unit scenario.
-> **Status of the whole carve-out: the 5,000-unit rule is CONFIRMED in the dossier, but the conclusion that it exempts YOUR specific configuration is LIKELY and NEEDS PROFESSIONAL CONFIRMATION. Get it in writing from MOHU or a lawyer before printing.**
+> **PLANNING CAP: 4,500 cans in year one, not 5,000** — per `10_DRS_REPONT.md` §13. 5,000 is the *reported legal threshold*; 4,500 is the *operating limit*, because you do not know whether the count is per calendar year or rolling 12 months, whether it aggregates across SKUs, or whether crossing bites retrospectively. Batch 1 at ~1,700 cans leaves ~2,800 cans of headroom against the 4,500 cap. **Do not spend it accidentally.**
+> **The MOHU producer-side handling fee per unit (beyond the reported 50 HUF deposit) is UNKNOWN — QUOTE REQUIRED from MOHU** before pricing any above-threshold scenario.
+>
+> ### **STATUS OF THE WHOLE CARVE-OUT — read this before you rely on any number above.**
+> **The ~5,000-unit rule is LIKELY only.** Dossier A6 could not read 450/2023 — net.jogtar.hu and mohu.hu were egress-blocked. **Six sub-questions are open** and are listed in `10_DRS_REPONT.md` §3.2: the threshold value itself; whether the unit basis is units, litres or per material stream; whether the figure is current for 2026; whether the exemption is automatic or must be notified; whether the count is per calendar year, rolling 12 months or aggregated across SKUs; and whether crossing it bites retrospectively.
+> **Get MOHU's written answer before the sleeve goes to print.** Do not treat the threshold as settled and only its application to you as open — the threshold itself is unread.
 
 ### 10.5 Consolidated levy stack on your batch-1 can (DERIVED)
 
@@ -624,28 +650,35 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 | Környezetvédelmi termékdíj | **0 HUF** (SEARCH-VERIFIED) |
 | EPR on the can (under 5,000 units) | **2.42–2.79 HUF / EUR 0.0067–0.0077** |
 | EPR on the shipper carton | **~2.52 HUF / EUR 0.0069** |
-| DRS deposit | **0 HUF** — below the 5,000-unit ceiling |
+| DRS deposit | **0 HUF assumed** — on the reading that you sit below the ~5,000-unit ceiling. **LIKELY — NEEDS PROFESSIONAL CONFIRMATION (§10.4; the decree was never read). If the carve-out does not apply as assumed, this line becomes 50 HUF/can of deposit float plus an UNKNOWN MOHU handling fee, and the artwork must carry DRS marking.** |
 | Kiskereskedelmi adó | **0 HUF** |
-| **Total non-recoverable product levies** | **≈ 5 HUF / EUR 0.014 per can** |
+| **Total non-recoverable product levies** | **≈ 5 HUF / EUR 0.014 per can — CONDITIONAL on the DRS line above** |
 
-**The Hungarian product-levy stack on a zero-sugar, caffeine-free protein soda is about EUR 0.014 per can — negligible against a 491 HUF COGS. The tax system is not your obstacle. Fixed compliance overhead is.**
+**On the assumed carve-out, the Hungarian product-levy stack on a zero-sugar, caffeine-free protein soda is about EUR 0.014 per can — negligible against a 524 HUF landed COGS (range 460–620). The tax system is not your obstacle. Fixed compliance overhead is — and the one line in this table that could move is the DRS line, which is unverified.**
 
 ---
 
-## 11. INSURANCE — NOT MANDATORY, BUT THE LAW CHANGES ON 9 DECEMBER 2026
+## 11. INSURANCE — NOT MANDATORY, BUT YOU ARE ALREADY STRICTLY LIABLE AS PRODUCER
+
+> ### 🔴 **CORRECTION — READ THIS BEFORE THE REST OF §11.**
+> An earlier version of this file (and of `08` §1.2 and `11` #54) framed "own-brand seller liable as manufacturer" as a **NEW** exposure arriving with Directive (EU) 2024/2853 on 2026-12-09, and deferred product liability cover past batch 1 on that basis. **That was wrong.**
+> **Ptk. 6:552–6:553 § already puts you in the producer's position, and has since 1993.** Ptk. **6:553 § (1)** treats as *gyártó* — alongside the actual manufacturer — *"aki a terméken elhelyezett nevével, védjegyével vagy egyéb megkülönböztető jelzés alkalmazásával önmagát a termék gyártójaként tünteti fel"*: the person who holds themselves out as producer by putting their name or mark on the product. That transposes Directive **85/374/EEC** Art. 3(1). A contract-manufactured can sold under your own brand name is exactly this fact pattern.
+> **Consequence: your entity is strictly liable as producer for can #1, uninsured, today.** Directive 2024/2853 **broadens** the range of liable operators (importers, fulfilment providers, software, digital manufacturing files) and modernises the regime — **it does not create the own-brand limb.** Do not read "9 December 2026" as the date your exposure begins.
+> **Status: LIKELY — the Ptk. wording is reproduced from practitioner sources; njt.hu was egress-blocked and the section was not read verbatim. NEEDS PROFESSIONAL CONFIRMATION of the section numbers. The substance — strict producer liability for own-brand sellers under transposed 85/374/EEC — is not in doubt.**
+> **Re-price the batch-1 insurance decision on that basis: the question is not "do I need cover once the new directive lands", it is "am I willing to sell 1,700 cans of a whey-containing beverage with unlimited personal exposure and no cover".** Get the three quotes below **before** batch 1 ships, not before batch 2, and make the buy/skip decision on a real number.
 
 | Question | Answer | Status |
 |---|---|---|
 | Is product liability insurance **legally mandatory** for a food distributor in Hungary? | **No general statutory mandate was found.** | SEARCH-VERIFIED by absence — **NEEDS PROFESSIONAL CONFIRMATION** |
 | Is it advisable? | **Yes, strongly.** Brokers state any company manufacturing, distributing or selling consumer goods should carry **product liability AND product recall** cover. A single contaminated batch ends the company. | SEARCH-VERIFIED — https://www.marsh.com/hu-hu/services/product-liability.html |
-| Who actually sells it in Hungary | **Colonnade Biztosító** https://www.colonnade.hu/vallalati-termekek/vallalati-felelossegbiztositasok/termekfelelossegbiztositas · **CIG Pannónia EMABIT** (published wording, product code 21100) https://www.cigpannonia.hu/docs/default-source/emabit/vallalat/21100_kszf_ugyfeltaj_term_felelosseg_20211001.pdf · **Marsh** (broker) · **biztositson.hu** (broker) https://biztositson.hu/termekfelelosseg-biztositas.php | CONFIRMED — these providers exist and publish the product |
+| Who actually sells it in Hungary | **Colonnade Biztosító** https://www.colonnade.hu/vallalati-termekek/vallalati-felelossegbiztositasok/termekfelelossegbiztositas · **CIG Pannónia EMABIT** (published wording, product code 21100) https://www.cigpannonia.hu/docs/default-source/emabit/vallalat/21100_kszf_ugyfeltaj_term_felelosseg_20211001.pdf · **Marsh** (broker) · **biztositson.hu** (broker) https://biztositson.hu/termekfelelosseg-biztositas.php | SEARCH-VERIFIED — these providers exist and publish the product |
 | Premium for a food-beverage brand owner | **UNKNOWN — QUOTE REQUIRED.** No Hungarian insurer publishes a list price; premiums are rated on revenue, product category and risk class. | — |
 
-> ### **Directive (EU) 2024/2853 — the new Product Liability Directive — must be transposed by 2026-12-09. That is under four months away.**
-> It broadens the definition of "product" and the range of liable economic operators — importers, fulfilment providers and **own-brand sellers**. **A brand owner selling a contract-manufactured can under its own name is squarely in scope and is put in the MANUFACTURER'S liability position.**
-> **CONFIRMED** — https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng ; https://www.faegredrinker.com/en/insights/publications/2026/6/transposing-the-eus-new-product-liability-directive-a-member-state-progress-report
+> ### **Directive (EU) 2024/2853 — the recast Product Liability Directive — must be transposed by 2026-12-09.**
+> It **broadens** the definition of "product" and the range of liable economic operators — importers, fulfilment service providers, and operators who substantially modify a product. **It does NOT introduce the own-brand-seller rule: that already exists in Ptk. 6:553 § (see the correction box above) and has since the transposition of 85/374/EEC.**
+> **Directive exists and the transposition deadline is as stated: SEARCH-VERIFIED** — https://eur-lex.europa.eu/eli/dir/2024/2853/oj/eng ; https://www.faegredrinker.com/en/insights/publications/2026/6/transposing-the-eus-new-product-liability-directive-a-member-state-progress-report. **Hungarian transposing text: NOT PUBLISHED / NOT READ — UNKNOWN.**
 >
-> **Structural consequence:** this materially raises the cost of the "father as EV with unlimited personal liability" route once volumes are real. It does not change the batch-1 decision (1,700 cans, sold to people you can call by name). **It does mean: migrate to a Kft. and buy product liability cover at the same time, before the first production run above ~10,000 cans.**
+> **Structural consequence:** the "father as EV with unlimited personal liability" route means the father's **personal** assets stand behind a strict-liability producer claim **from can #1**, not from December. The recast directive raises the cost of that route further once volumes are real. **Decision for batch 1: get the quotes now (zero cost) and buy cover if the premium is inside the contingency; migrate to a Kft. before the first production run above ~10,000 cans regardless.**
 >
 > **ACTION NOW, at zero cost: get three quotes (Colonnade, CIG Pannónia, biztositson.hu) so you know the number before you need it.** Send them the product spec, the batch size and a 12-month revenue forecast.
 
@@ -655,7 +688,7 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 
 | # | Conflict | Resolution |
 |---|---|---|
-| 1 | **A1 Track B step B3 tells you to elect alanyi ÁFA-mentesség. A2 §17.1 says in bold: do NOT.** | **A2 is right for this business.** A1's checklist was written for a generic micro-business; A2 did the input-VAT arithmetic. **Test:** if you use the family company, its status is already fixed (question moot). If any foreign co-packer or service is involved, or you will sell wholesale to VAT-registered gyms within 12 months, **register normal VAT.** See §5.3 — but note A2's own derivation used 350/250 HUF placeholders, not your 799/491, so the D2C-only case is genuinely closer than A2 implies (+EUR 175 on batch 1). **Recommendation stands: normal VAT.** |
+| 1 | **A1 Track B step B3 tells you to elect alanyi ÁFA-mentesség. A2 §17.1 says in bold: do NOT.** | **A2 is right for this business.** A1's checklist was written for a generic micro-business; A2 did the input-VAT arithmetic. **Test:** if you use the family company, its status is already fixed (question moot). If any foreign co-packer or service is involved, or you will sell wholesale to VAT-registered gyms within 12 months, **register normal VAT.** See §5.3 — but note A2's own derivation used 350/250 HUF placeholders, not your 899/524, so the D2C-only case is genuinely closer than A2 implies (+EUR 224 on batch 1). **Recommendation stands: normal VAT.** |
 | 2 | **EV bookkeeping range: A1 says 10,000–30,000 HUF/mo; A2 says 17,000–35,000 HUF/mo.** | Both are list-price scrapes. **Budget A2's range and get a written quote with the scope in §9.6.** |
 | 3 | **Gyámhatóság threshold for a minor's üzletrész: "above 100,000 HUF" vs "ten times the minimum old-age pension".** | Sources conflict inside A1 itself. **NEEDS PROFESSIONAL CONFIRMATION.** **Test:** ask the ügyvéd in writing before drafting the deed. **Or sidestep it entirely by not founding a Kft. for batch 1.** |
 | 4 | **NETA: is a sweetener-only, zero-added-sugar drink taxable? 8 g/100 ml vs 5 g/100 ml; 8 Ft/l vs 23 Ft/l vs 0.** | **NEEDS PROFESSIONAL CONFIRMATION.** **Test:** read NAV leaflet 53 (2026-01-23 edition) and put the question to the bookkeeper in writing. **Bounded at 7.59 HUF/can worst case — do not let it hold up the launch.** |
@@ -681,7 +714,7 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 7. Whether an unpaid **non-member ügyvezető** genuinely avoids all contribution liability in your configuration
 8. The 2026 **minimálbér / garantált bérminimum** as gazetted (322,800 / 373,200 HUF are SEARCH-VERIFIED, decree cited inconsistently)
 9. **Minimum refundable VAT amount and payout timeline** for a reclaim position — the EUR 621 float in §5.4
-10. Whether **B2B e-invoicing (ViDA) from 2026-07-01** applies to a micro taxpayer or only to a first wave
+10. Whether the reported **domestic B2B e-invoicing mandate from 2026-07-01** is real, and whether it applies to a micro taxpayer or only to a first wave. (It is a **national** measure — ViDA is Council Directive (EU) **2025/516** and its own mandate runs from 2030.)
 11. Whether **B2C invoice reporting** in Online Számla is mandatory in 2026
 12. Whether a **registration/reporting duty survives** the abolition of the packaging termékdíj at a 0 Ft rate
 13. The **2-year re-election bar** after exceeding the alanyi adómentesség threshold
@@ -696,7 +729,7 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 20. **Bookkeeper**, with the full scope in §9.6 in writing
 21. **Ügyvéd fee for a Kft. founding involving a MINOR member** — non-standard, above the 36,000 HUF standard-mandate price
 22. **Empty weight in grams of the 330 ml can + end** — from Opre Label / Bubee / the can supplier. Needed for EPR
-23. **MOHU producer-side DRS handling fee per unit** — only if you ever exceed 5,000 cans
+23. **MOHU producer-side DRS handling fee per unit** — and, in the same letter, **written confirmation of the carve-out threshold, its unit basis, its counting period and whether crossing it bites retrospectively** (§10.4; six open sub-questions in `10_DRS_REPONT.md` §3.2)
 24. **Whether the co-packer or you is the EPR-obligated *gyártó*** — one line in the RFQ
 25. **Online pénztárgép purchase/lease + annual service fee** — only if you decide not to invoice every sale
 26. **Slovak (or other foreign) domestic VAT rate** — only if the co-packer moves out of Hungary
@@ -730,8 +763,8 @@ Legal basis **2011. évi CIII. törvény**. Primary source: **NAV Információs 
 
 **Weeks 3–4 — before you place the production order.**
 
-13. **🔴 CONFIRM THE DRS ANSWER IN WRITING BEFORE THE SHRINK SLEEVE GOES TO PRINT.** Under 5,000 cans/year = no deposit, no 45-day gate, **no DRS mark on the artwork**. **Once printed, it is irreversible.** Batch 1 at 1,700 cans leaves 3,300 cans of headroom for the calendar year — **track the running total.**
-14. **Get three product liability quotes** (Colonnade, CIG Pannónia, biztositson.hu). **0 HUF to ask.** You will not buy it for batch 1; you need the number before batch 2, and **Directive (EU) 2024/2853 transposes on 2026-12-09.**
+13. **🔴 CONFIRM THE DRS ANSWER IN WRITING BEFORE THE SHRINK SLEEVE GOES TO PRINT.** The reported carve-out (under ~5,000 cans/year = no deposit, no 45-day gate, **no DRS mark on the artwork**) is **LIKELY — NEEDS PROFESSIONAL CONFIRMATION**; the decree was never read. **Once printed, it is irreversible.** Batch 1 at 1,700 cans leaves ~2,800 cans of headroom against the **4,500-can planning cap** (`10_DRS_REPONT.md` §13) — **track the running total.**
+14. **Get three product liability quotes** (Colonnade, CIG Pannónia, biztositson.hu). **0 HUF to ask.** **Get them BEFORE batch 1 ships, not before batch 2** — you are already strictly liable as producer under **Ptk. 6:552–6:553 §** from the first can sold (§11 correction box). Directive (EU) 2024/2853 broadens the regime from 2026-12-09; it is not the start of your exposure. **Buy or skip on the quoted number, not on a date.**
 15. **Your employment contract** (16+), signed with **written parental consent** (Mt. 34. §). Your wages are yours under **Ptk. 2:12 § (2) c)**.
 16. **Every commercial contract — co-packer, ingredients, gym consignment — is signed by the ADULT.** Your signature alone is voidable. Non-negotiable.
 

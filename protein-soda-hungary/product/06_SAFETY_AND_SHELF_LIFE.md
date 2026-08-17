@@ -1,8 +1,10 @@
 # 06 — SAFETY, TESTING AND SHELF LIFE
 ## The cheapest legitimate way to prove this drink can be sold
 
-**Product:** 330 ml aluminium can, carbonated, clear, zero sugar, **20 g protein** — Formula ARCH F (10 g hydrolysed bovine collagen + 10 g whey protein isolate + 1.7 g L-leucine + 150 mg L-tryptophan), Lemon-Lime, one SKU, **no caffeine**.
-**Batch 1:** ~1,700 cans. **FX: 1 EUR = 363 HUF.** Date: 2026-08-16.
+**Product:** 330 ml aluminium can, carbonated, clear, zero sugar, **20 g protein** — Formula ARCH F (10 g hydrolysed bovine collagen + 10 g **clear/acid-stable** whey protein isolate + 1.7 g free L-leucine + 150 mg free L-tryptophan), Lemon-Lime, one SKU, **no caffeine**.
+**Batch 1:** 1,700 cans produced, **1,640 sellable** (60 reserved non-sellable — see §6.3, which competes with the free-sample budget for those 60). **Landed COGS 524 HUF/can** (range 460–620). **RRP 899 HUF.** **FX: 1 EUR = 363 HUF.** Date: 2026-08-16.
+
+> ⚠️ **REGULATORY FLAG CARRIED FROM `03_PRODUCT_ARCHITECTURE.md` §5 AND `04_FORMULATION_V1.csv`:** whether the **1.7 g free L-leucine and 150 mg free L-tryptophan** may lawfully be added to a **beverage** (as opposed to a food supplement) under **Reg (EC) 1925/2006** and Hungarian national rules is **UNVERIFIED — NEEDS PROFESSIONAL CONFIRMATION.** It blocks raw-material purchase and artwork. Everything in this file about the nitrogen basis of the "20 g" figure (§2.3) is downstream of that answer.
 
 ---
 
@@ -14,6 +16,8 @@
 > You are very probably not legally required to buy a single laboratory test to sell batch 1 in Hungary. The three things that replace testing are all free: **(1) a nutrition table built by calculation under Reg. (EU) 1169/2011 Art. 31(4)**, **(2) the co-packer's own release micro and Certificate of Analysis**, and **(3) a short best-before date backed by cans you store in a cupboard yourself.**
 >
 > `Status of the overall position: LIKELY — see §2 for the tag on each limb. The Art. 31(4) point must be confirmed in writing in the classification opinion before you print artwork.`
+>
+> ### ⚠️ **ONE ANSWER CAN BREAK THIS BOX.** If the co-packer turns out to **cold-fill with no pasteurisation**, a **microbiological challenge test becomes mandatory, not optional** (§4.7) — and it is **funded nowhere.** "0 HUF" is the target for a **thermally processed** batch. **Get the thermal process and the ambient-vs-chilled shelf life in writing BEFORE you pay a deposit** (§5.1). That single email decides whether this file's headline survives.
 
 **What this saves:** the finance file already books this. `finance/18_COMPLETE_STARTUP_COSTS.csv` line "Nutrition analysis (laboratory)" = **0 HUF / EUR 0, NOT REQUIRED**, avoiding **EUR 800–2,000 / 290,400–726,000 HUF**. This file is the justification for that line. `DERIVED from the avoided-cost range recorded in the cost file; the range itself is ESTIMATE — no Hungarian lab price could be sourced (see §9).`
 
@@ -70,6 +74,8 @@ Record both answers next to the calculation spreadsheet. If they differ from 6.2
 
 **Second-order point on free amino acids:** the 1.7 g L-leucine and 150 mg L-tryptophan carry nitrogen and will show up in a nitrogen-based assay. Whether they may be counted toward the declared "protein" figure — and how you describe them in marketing — is `NEEDS PROFESSIONAL CONFIRMATION`. **Conservative and honest position: declare protein from the collagen + whey only, and treat the leucine/tryptophan as a bonus you name separately in the ingredients list.** If the two proteins alone reach 20 g, this question never has to be answered.
 
+⚠️ **AND THE PRIOR QUESTION, WHICH IS BIGGER: may they be in the drink at all?** Free amino acids added to a **beverage** rather than a food supplement may fall under **Reg (EC) No 1925/2006** and Hungarian national rules. **UNVERIFIED — NEEDS PROFESSIONAL CONFIRMATION.** No primary source was readable under the egress policy. This is not a labelling detail: **it blocks the purchase of the raw material and the commissioning of artwork.** Ask it in the same food-law opinion, in the same email. Fallback if restricted: drop both amino acids (ARCH C unspiked, −10.31 HUF/can) and drop the leucine claim.
+
 ---
 
 # 3. THE THREE BUCKETS — the only classification that matters
@@ -109,7 +115,7 @@ Everything anyone will try to sell you falls into exactly one of these. **Only b
 **Verdict: `CO-PACKER REQUIRED (bucket B). Do not commission your own pathogen panel. 0 HUF / EUR 0.`**
 
 - **Reg. 2073/2005 sets no named criterion for this food category.** No *Salmonella*, *Listeria* or *E. coli* limit is written for carbonated soft drinks. `LIKELY — VERIFY Annex I Ch.1 and Ch.2.`
-- The *Listeria* limb applies to ready-to-eat foods, and the Regulation treats products at **pH ≤ 4.4** as **not able to support *L. monocytogenes* growth**. Your target is **pH ~3.2–3.8** — far below. `LIKELY — VERIFY THE FOOTNOTE WORDING; the numeric threshold is the part to double-check.`
+- The *Listeria* limb applies to ready-to-eat foods, and the Regulation treats products at **pH ≤ 4.4** as **not able to support *L. monocytogenes* growth**. Your target is **pH 3.20 ± 0.10** — far below. `LIKELY — VERIFY THE FOOTNOTE WORDING; the numeric threshold is the part to double-check.`
 - **Pathogen testing on a thermally processed pH-3.x canned beverage is money burned.**
 
 **But micro is not irrelevant — the risk is spoilage, not pathogens.** The organisms that ruin a low-pH sweetened protein drink are **acid-tolerant yeasts, moulds, lactic acid bacteria** and, in fruit-flavour systems, ***Alicyclobacillus***. A hazy, ropy or blown can in a gym fridge is a brand-ending event.
@@ -133,6 +139,8 @@ Everything anyone will try to sell you falls into exactly one of these. **Only b
 
 **Price: `UNKNOWN — QUOTE REQUIRED`. Decision rule: if one protein assay quotes above 36,300 HUF / EUR 100, get three quotes including a foreign Eurofins entity and MATE before accepting.** `ESTIMATE — budgeting heuristic. Arithmetic: 0.10 × EUR 1,000 personal capital = EUR 100; 100 × 363 = 36,300 HUF.`
 
+⚠️ **IT IS UNFUNDED.** `01_FINAL_RECOMMENDATION.md` recommends budgeting ~EUR 100–150 for this assay, but `18_COMPLETE_STARTUP_COSTS.csv` carries **0/0/0** on both lab lines and the EUR 3,000 total does not contain it. **It can only come out of the EUR 260 contingency (§7.4), which is also the only cover for a challenge test (§4.7) and every other overrun.** Decide, in writing, which one you are buying — you cannot buy both and keep a contingency.
+
 ## 4.3 Shelf-life / stability
 
 **Verdict: `NOT LEGALLY MANDATORY. Run it yourself, free. Declare a SHORT date on batch 1.` See §6 for the full protocol.**
@@ -143,7 +151,9 @@ Everything anyone will try to sell you falls into exactly one of these. **Only b
 
 The filler runs these in-line as a matter of course. You should own a **pH meter and a refractometer** anyway — they cost a one-time amount, they never expire, and they let you check every retention can you open for free. `Equipment price: UNKNOWN — price it yourself in five minutes on a Hungarian marketplace. Do not let anyone quote you a "laboratory" price for a consumer meter.`
 
-**pH is your primary safety hurdle.** It is what removes the *Listeria* question (§4.1), it is what makes a short thermal process sufficient, and it is what you will be asked for by every co-packer. **Fix a target pH and a tolerance band in the product specification** (e.g. target 3.4, band 3.2–3.6 — `PLACEHOLDER: set with the co-packer, not from this file`) and put it in the contract as a release criterion.
+**pH is your primary safety hurdle.** It is what removes the *Listeria* question (§4.1), it is what makes a short thermal process sufficient, and it is what you will be asked for by every co-packer. **Fix a target pH and a tolerance band in the product specification and put it in the contract as a release criterion.**
+
+> **THE SPECIFICATION IS `pH 3.20 ± 0.10`, MEASURED IN THE FINISHED, CARBONATED, SEALED CAN AT 20 °C — not a syrup pH.** `05_FOOD_CHEMISTRY.md` §1.4 is the authority and this file now matches it. An earlier draft of this section carried a placeholder of "target 3.4, band 3.2–3.6"; **that placeholder is withdrawn** — 3.4 sits closer to the forbidden zone (β-lactoglobulin's pI at ~5.2, with no safe corridor between 3.6 and 6.5) and clarity is the constraint that runs out first. Confirm the measurement method with the co-packer, **not the target.**
 
 ## 4.5 Sweetener and preservative quantification
 
@@ -161,19 +171,29 @@ Reg. (EU) 2023/915 risk enters through **ingredients and water**, not through a 
 
 **This verdict changes if** you ever add cocoa, botanical extracts or natural colours. `LIKELY — flag as NEEDS PROFESSIONAL CONFIRMATION if the recipe changes.`
 
-## 4.7 Challenge test (deliberate inoculation)
+## 4.7 Challenge test (deliberate inoculation) — **CONDITIONAL, NOT A FLAT SKIP**
 
-**Verdict: `SKIP for batch 1. 0 HUF / EUR 0.`**
+**Verdict: `SKIP ONLY IF the co-packer applies a validated thermal process AND confirms an AMBIENT shelf life in writing. If the route is cold-fill with no pasteurisation, this test is NOT optional — it is the gate, and it is UNFUNDED.`**
 
-A challenge test validates a hurdle system. It becomes relevant only if (a) you claim ambient stability with **no thermal step**, relying on pH + CO₂ + preservative alone, (b) a co-packer or retailer demands validation, or (c) you are in the *Listeria*-relevant space — which at pH 3.x you are not.
+A challenge test validates a hurdle system. It becomes relevant if (a) you claim ambient stability with **no thermal step**, relying on pH + CO₂ + preservative alone, (b) a co-packer or retailer demands validation, or (c) you are in the *Listeria*-relevant space — which at pH 3.x you are not. **Limb (a) is live**: cold fill is the cheapest candidate route and `05_FOOD_CHEMISTRY.md` §7.3 calls the challenge test **"THE GATE FOR THE NO-PASTEURISATION DECISION. DO NOT SKIP."** Your product carries **60 g/L of protein** — a rich nitrogen source that ordinary soft drinks do not have — so the standard soft-drink hurdle set cannot be assumed sufficient, and *Zygosaccharomyces bailii* is sorbate-resistant at legal levels.
 
 ⚠️ **Reconsider immediately if the manufacturing route turns out to be cold-fill with no pasteurisation.** `B6 warns that a mobile-canning / no-pasteurisation route gives a fridge-only shelf life measured in days-to-weeks.` That would be a **formulation and process problem, not a testing problem** — and it would destroy the gym-fridge distribution model. **Ask every co-packer what thermal process they apply. Put the answer in writing.**
+
+> ### 🛑 THE DECISION RULE THAT REPLACES THE FLAT "SKIP"
+> | The co-packer's written answer | What you do |
+> |---|---|
+> | **Tunnel-pasteurised, AMBIENT shelf life stated** | Skip the challenge test. **0 HUF.** This is the clean path and it is worth a modest price premium. |
+> | **Cold fill, but they will put the product on their food-safety plan and state an AMBIENT shelf life** | **Buy the challenge test, or do not fill.** Cost `UNKNOWN — QUOTE REQUIRED`, and **it is in no budget file.** Price it before you accept the cheaper tolling fee — the "saving" may not survive it. |
+> | **Cold fill, shelf life CHILLED-ONLY or days-to-weeks** | **NO-GO. Do not pay a deposit.** 1,700 ambient-distributed cans on a chilled shelf life is a ~EUR 2,300 write-off plus recall exposure. |
+> | **No clear answer** | **No deposit.** Treat silence as the third row. |
+>
+> **This belongs in `manufacturing/14_FIRST_BATCH.md` as a Gate 2 no-go, where it currently does not appear.**
 
 ## 4.8 ⚠️ Packaging compatibility — the test nobody puts on the list, and the biggest physical risk
 
 **Verdict: `NOT A TEST YOU BUY. A FREE EMAIL YOU SEND.`**
 
-**A protein drink at pH ~3.2–3.8 inside an aluminium can is a corrosion question before it is a microbiology question.** The failure modes:
+**A protein drink at pH 3.2 inside an aluminium can is a corrosion question before it is a microbiology question.** The failure modes:
 
 | Failure | What it looks like | When it shows up |
 |---|---|---|
@@ -185,7 +205,7 @@ A challenge test validates a hurdle system. It becomes relevant only if (a) you 
 **The free actions, in order:**
 
 1. **Email the can supplier (via `B9_packaging` / the blank-silver-can supplier):**
-   > *"Is your internal lacquer validated for a pH 3.2–3.8, high-protein, carbonated beverage? Do you have compatibility data, or a recommended coating specification for this application?"*
+   > *"Is your internal lacquer validated for a pH 3.1–3.3 (target 3.20), high-protein (60 g/L), carbonated beverage? Do you have compatibility data, or a recommended coating specification for this application?"*
    **This email costs nothing and de-risks the single largest physical failure mode in the project.**
 2. **Ask the co-packer whether they have filled a low-pH protein beverage in aluminium before, and what shelf life it achieved.** Their answer is worth more than any test you can afford.
 3. **In your own retention study (§6), photograph the can base at every opening.** Doming is visible with the naked eye and is free to detect.
@@ -196,7 +216,7 @@ A challenge test validates a hurdle system. It becomes relevant only if (a) you 
 
 **Verdict: `NO LEGAL REQUIREMENT OF ANY KIND. 0 HUF / EUR 0.`**
 
-A trained ISO panel is for brands with budgets. Yours is: **8–12 gym members, a one-page scoring sheet, blind if possible.** Score sweetness, acidity, carbonation bite, off-notes (metallic, cardboard, sulphur, "protein" note), aftertaste, and "would you buy this at 799 HUF". Run it at month 0 and repeat at each retention opening — that is your shelf-life sensory data and it costs nothing.
+A trained ISO panel is for brands with budgets. Yours is: **8–12 gym members, a one-page scoring sheet, blind if possible.** Score sweetness, acidity, carbonation bite, off-notes (metallic, cardboard, sulphur, "protein" note), aftertaste, and "would you buy this at 899 HUF" (the batch-1 RRP). Run it at month 0 and repeat at each retention opening — that is your shelf-life sensory data and it costs nothing.
 
 ---
 
@@ -206,7 +226,7 @@ A trained ISO panel is for brands with budgets. Yours is: **8–12 gym members, 
 
 Send this **verbatim** to Opre' Label (`sales@oprelabel.com`), Bubee Hungary (`info@bubee.eu`), MONYO, Sajátital and Private Label Drink — **before you commission anything from any laboratory:**
 
-> *"Which finished-product analyses are included in the tolling price, and which are charged separately? Please send the list with per-test prices, and confirm whether you release the batch on your own microbiological result or whether we must commission an external laboratory. Please also confirm which thermal process you apply, and whether you provide a Certificate of Analysis per batch."*
+> *"Which finished-product analyses are included in the tolling price, and which are charged separately? Please send the list with per-test prices, and confirm whether you release the batch on your own microbiological result or whether we must commission an external laboratory. Please also confirm which thermal process you apply, WHAT SHELF LIFE IT DELIVERS, AND WHETHER THAT SHELF LIFE IS AMBIENT OR CHILLED, and whether you provide a Certificate of Analysis per batch."*
 
 **A "yes, included" answer here reduces your external lab budget for batch 1 to zero.** `Status: this question has NOT yet been asked of anyone. It is the largest open item in this workstream.`
 
@@ -267,7 +287,11 @@ Send this **verbatim** to Opre' Label (`sales@oprelabel.com`), Bubee Hungary (`i
 
 ⚠️ **Clause 6 is the one founders forget.** If the co-packer recommends "12 months" and you print it, **you** carry it under FIC Art. 8(1). Ask them to say in writing *why* 12 months. If they cannot, print 6 (§6.4).
 
-⚠️ **Product-liability context:** `A3 §12.2` records that **Directive (EU) 2024/2853 sharpens product-liability exposure for own-brand sellers from 2026-12-09 (CONFIRMED by A1).** You are the own-brand seller. The genuine financial risk in this business is **not a fine — it is a recall plus liability.** Clauses 7–10 are what stand between you and that.
+⚠️ **Product-liability context — CORRECTED. The exposure does not start in December; it starts with can #1.**
+
+`A3 §12.2` records that **Directive (EU) 2024/2853 sharpens product-liability exposure for own-brand sellers from 2026-12-09.** `Tag downgraded from CONFIRMED to LIKELY — NEEDS PROFESSIONAL CONFIRMATION: no primary text was readable in this project.` **But 2024/2853 broadens the scope of existing rules; it is not the origin of the own-brand rule.** Hungarian law already treats whoever puts their **name, trade mark or other distinguishing mark** on a product as its **producer**, strictly liable — **Ptk. 6:552–6:553 §**, transposing Directive 85/374/EEC Art. 3(1), in force since 1993. `LIKELY — NEEDS PROFESSIONAL CONFIRMATION; statute text not read in this project.`
+
+> **Read plainly: your entity is strictly liable as producer for the first can you sell, uninsured, today — not from 2026-12-09.** Any decision to defer product-liability cover past batch 1 must be made knowing that, and re-priced on that basis. The genuine financial risk in this business is **not a fine — it is a recall plus liability.** Clauses 7–10 are what stand between you and that, and they are free to ask for.
 
 ---
 
@@ -297,17 +321,22 @@ A **date of minimum durability** (`Minőségét megőrzi:`) is mandatory. **The 
 
 `ESTIMATE — practical method design, not a sourced protocol.`
 
-**Pull 40–60 cans off the line** at start, middle and end of the run. Mark each with run position and date in permanent marker. Split them:
+> ### 🛑 RESERVE ARITHMETIC — READ THIS BEFORE YOU PULL A SINGLE CAN. **CONFLICT DECLARED.**
+> The plan produces **1,700 cans and counts 1,640 as sellable — a reserve of exactly 60.** The founder-facing files spend **all 60 of those on free samples** (sample budget capped at 60 cans; break-even is 1,405 of 1,640 at the 899 HUF RRP, and every extra can given away or opened moves it). **This protocol also needs cans, and they come out of the same 60.**
+> **Do not double-count.** Either the sample cap drops to ~30, or sellable stock drops below 1,640 and break-even moves. **The protocol below is therefore sized at 24 cans, not the 40–60 an earlier draft specified.** Whoever owns `finance/19_UNIT_ECONOMICS.csv` and `manufacturing/14_FIRST_BATCH.md` must pick one split and publish it. **24 stability cans + 36 samples = 60. That is the split this file assumes.**
+
+**Pull 24 cans off the line** at start, middle and end of the run. Mark each with run position and date in permanent marker. Split them:
 
 | Set | Cans | Storage | Opened at |
 |---|---|---|---|
-| **Retention** | 20 | Ambient, untouched | Not opened — held for the full shelf life as your reference |
-| **Real-time** | 12 | Ambient 20–25 °C | **0, 1, 2, 3, 6, 9, 12 months** |
-| **Accelerated** | 8 | **30–37 °C** (a warm cupboard, a boiler room) | **2, 4, 6, 8 weeks** |
-| **Lab reserve** | 6–8 | Ambient | Held in case you commission any assay |
-| **Photo / pitch** | 6 | Ambient | Marketing |
+| **Real-time** | 10 | Ambient 20–25 °C | **0, 1, 2, 3, 6 months** — two cans each opening (one sleeved, one unsleeved) |
+| **Accelerated** | 6 | **30–37 °C** (a warm cupboard, a boiler room) | **2, 4, 6, 8 weeks**, plus 2 spare |
+| **Untouched reference** | 6 | Ambient | **Not opened** — held to the end of the declared shelf life |
+| **Photo / pitch** | 2 | Ambient | Marketing |
 
-**Keep 6–8 of these cans UNSLEEVED** so the metal is visible (§4.8).
+**Keep 8 of these 24 cans UNSLEEVED** so the metal is visible (§4.8).
+
+⚠️ **If you commission the protein assay (§4.2) the lab typically needs 3 cans** — take them from the untouched reference set and record the reduction, **do not add cans to the reserve.** The real-time series stops at month 6 because that is the date you print (§6.4); if you extend the date on batch 2, extend the series then.
 
 **Record at every opening — one page, a phone camera, a pH meter:**
 date · storage temperature · **pH** · **°Brix** · visual (haze / sediment / colour) · aroma · taste · **can condition (doming, denting, corrosion, base profile)** · carbonation on opening.
@@ -319,9 +348,19 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 > **Print a 6-month best-before on batch 1.** Extend to 9 or 12 on batch 2, once you have real-time data from your own cupboard.
 
 **Why this is right for you, not just cheap:**
-- At gym-channel velocity a **1,700-can batch sold direct/on consignment will clear long before 6 months**. A short date costs you nothing in practice.
 - A long declared date with no data behind it **is** the exposure. A short date with a stack of dated tasting notes behind it is defensible.
 - It removes the need to buy a stability study you cannot afford.
+- If the process turns out to be cold-fill with no validated kill step, **6 months is already the optimistic end** (`05_FOOD_CHEMISTRY.md` §9.4) and a chilled-only answer makes the date question moot (§4.7).
+
+> ### ⚠️ CONFLICT DECLARED — AND IT IS NOT A ROUNDING ISSUE
+> An earlier version of this section said a 1,700-can batch "will clear long before 6 months". **That is not what the project's own sales model shows, and the claim is withdrawn.** `finance/21_CASHFLOW.md` assumes a **9–12 month best-before** `ESTIMATE` and runs its sell-through timeline to **week 34 (~8 months)** — i.e. roughly two months **after** the date this file tells you to print. Its "what if the batch does not sell" table then treats 50% and 25% sell-through as recoverable, which is **false if the residual stock is at or past its printed date.**
+>
+> **6 months governs.** The consequences, which the finance files must absorb rather than this one:
+> - The sell-through curve has to **complete by week 26**, not week 34.
+> - Residual stock at the date is a **write-off, not carried inventory**.
+> - **Print the production date on your own stock list** and work FEFO from week 1 — the shelf life is the real deadline on the batch, not the cash-flow model.
+
+**And ask the co-packer for their number in writing** (§5.5 clause 6). If they recommend 12 months, ask *why*, and if they cannot answer, print 6.
 
 ⚠️ **THE LOT-CODE TRAP — `A4 §9.3`, and it is free to avoid.** Directive 2011/91/EU exempts you from a separate lot code **only where the best-before date shows at least the uncoded day and month**. A 6-month shelf life permits month+year (`Minőségét megőrzi: 2027.03. végéig`) — **but that format kills the exemption and makes an "L" lot code MANDATORY.**
 
@@ -337,7 +376,7 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 |---|---|---|---|---|
 | 1 | Nutrition declaration — **calculated** | **0** | **0** | Reg. 1169/2011 Art. 31(4)(b) |
 | 2 | Micro release on finished batch | **0** | **0** | Co-packer's HACCP — **confirm it is in the tolling fee (§5.1)** |
-| 3 | Real-time shelf-life study | **0** | **0** | 40–60 cans in a cupboard + your notes |
+| 3 | Real-time shelf-life study | **0** | **0** | **24 cans** in a cupboard + your notes (§6.3 — they come out of the 60-can non-sellable reserve, not on top of it) |
 | 4 | Sensory | **0** | **0** | Gym-member panel, one-page scoring sheet |
 | 5 | Ingredient CoAs + spec sheets | **0** | **0** | Free from every supplier — **demand them** |
 | 6 | pH meter + refractometer (one-time, reusable) | `UNKNOWN — price it yourself` | `UNKNOWN` | Consumer equipment, not a lab purchase |
@@ -385,7 +424,9 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 | **3** | The protein assay alone quotes above **36,300 HUF / EUR 100** | Get **three** quotes — one Hungarian commercial lab, one foreign Eurofins entity, one university — before accepting. |
 | **4** | Any test at all | **Write the decision down before ordering: *"If this comes back at X, we will do Y."* If you cannot complete that sentence, do not order the test.** |
 
-**Context on the ceiling:** total capital ≈ **EUR 3,000 / 1,089,000 HUF** (EUR 1,000 personal + ~EUR 2,000 family). Base-case batch 1 costs **EUR 2,300 / 834,900 HUF**, leaving **EUR 700 / 254,100 HUF**. A **EUR 150 / 54,450 HUF** lab spend is **21% of everything you have left after production.** `DERIVED: 3,000 − 2,300 = 700; 150 ÷ 700 = 21.4%.` **That is why the recommendation is LOW.**
+**Context on the ceiling — corrected, and it is tighter than an earlier draft said:** total capital **EUR 3,000 / 1,089,000 HUF** (EUR 1,000 founder + EUR 2,000 father). Deployed: **EUR 2,300 inventory + EUR 440 setup/legal = EUR 2,740**. That leaves **EUR 260 / 94,380 HUF of contingency — not EUR 700.** A **EUR 150 / 54,450 HUF** lab spend is **58% of the entire contingency.** `DERIVED: 3,000 − 2,740 = 260; 150 ÷ 260 = 57.7%.`
+
+> **That is why the recommendation is LOW — and it is now a real trade-off, not a comfortable one.** The same EUR 260 is the only cover for: the finished-can protein assay (~EUR 100–150, §4.2, **unfunded in every budget file**), a challenge test if the co-packer turns out to be cold-fill (`UNKNOWN — QUOTE REQUIRED`, §4.7, **also unfunded**), and every other overrun in the project. **You cannot buy all three. Decide which one, in writing, before you order any of them.**
 
 ---
 
@@ -398,7 +439,7 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 | **Sweetener quantification** | Reg. 1333/2008 maxima demonstrated by **dosing records** | Dosing error | Co-packer batch sheets; flavour-house compliance warranty **in writing** (free) |
 | **Preservative quantification** | Same — **unless** preservative is the sole hurdle | Spoilage | Prefer a thermal process (`A4 §7.4`); one BASE micro panel |
 | **Heavy metals on the finished drink** | **Reg. (EU) 2023/915** risk sits in ingredients | Rises materially if cocoa/botanicals/colours are added | **Ingredient CoAs — free, and you need them anyway** |
-| **Challenge test** | Validation tool; not required where pH + thermal step give a robust hurdle | Rises to significant if the process is cold-fill | Ask every co-packer what thermal process they run |
+| **Challenge test** — *conditional skip only* | Validation tool; not required where pH + a validated **thermal step** give a robust hurdle | **Not skippable if the process is cold-fill with no kill step** — see §4.7. Unfunded if it becomes mandatory | Get the thermal process **and ambient-vs-chilled shelf life in writing before any deposit**; a chilled-only answer is a NO-GO |
 | **External shelf-life study** | **No method mandated**; the FBO sets the date | A long date with no data is the real exposure | **Declare 6 months**; run the cupboard study (§6.3) |
 | **Trained sensory panel** | No legal requirement whatsoever | None legally | 8–12 gym members and a scoring sheet |
 | **Caffeine assay** | No caffeine in the product | None | No caffeine SKU in batch 1 |
@@ -436,7 +477,7 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 
 **Comparability matters more than politeness. Copy-paste, do not personalise.**
 
-> *"We are launching a 330 ml canned, carbonated, zero-sugar protein beverage (pH approx. 3.4, containing hydrolysed bovine collagen and whey protein isolate). Please quote for:*
+> *"We are launching a 330 ml canned, carbonated, zero-sugar protein beverage (pH 3.20 ± 0.10, containing hydrolysed bovine collagen and clear whey protein isolate). Please quote for:*
 > *1. Protein determination (Dumas or Kjeldahl) on finished product*
 > *2. Spoilage microbiology panel: total viable count, yeasts, moulds, lactic acid bacteria*
 > *3. Optionally: full nutrition declaration panel (energy, fat, saturates, carbohydrate, sugars, protein, salt)*
@@ -466,7 +507,7 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 | 6 | Send the §9.1 quote request to 4–5 labs, so you know the number even if you never spend it | **0 HUF / EUR 0** | This week |
 | 7 | Send the §9.2 MATE thesis email | **0 HUF / EUR 0** | This week |
 | 8 | Agree the specification + the §5.5 contract clauses **before** paying the deposit | **0 HUF / EUR 0** | Before deposit |
-| 9 | On production day: pull 40–60 cans, split per §6.3, keep 6–8 unsleeved | **0 HUF / EUR 0** | Production day |
+| 9 | On production day: pull **24** cans, split per §6.3, keep **8** unsleeved | **0 HUF / EUR 0** (but they are 24 of your 60 reserved cans) | Production day |
 | 10 | Print **6-month** best-before, **full DD.MM.YYYY**, **plus an "L" lot code** | **0 HUF / EUR 0** | Artwork + coder setup |
 | 11 | Open the accelerated set at weeks 2/4/6/8; the real-time set at months 1/2/3/6 | **0 HUF / EUR 0** | Ongoing |
 | 12 | Decide on the BASE assays **only after** rules 1–4 in §7.4 have been applied | ≤ **54,450 HUF / EUR 150** | After quotes land |
@@ -480,10 +521,13 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 | 1 | **Art. 31(4) verbatim wording** — that calculation is a full alternative to analysis | `CONFIRMED-BY-SEARCH` — **not read from EUR-Lex; every attempt returned 403** | Read CELEX 32011R1169 Art. 31(4); confirm in the classification opinion |
 | 2 | Whether a **documented stability study** is required to justify the best-before date (the A4/A9 conflict, §6.1) | `NEEDS PROFESSIONAL CONFIRMATION` | The same classification opinion, same email |
 | 3 | **Nitrogen-to-protein conversion factor** for a collagen + whey blend, and whether free leucine/tryptophan count toward declared protein | `NEEDS PROFESSIONAL CONFIRMATION` | Ingredient suppliers (free) + the lab in the quote request (free) |
+| 3a | ⚠️ **May free L-leucine and L-tryptophan lawfully be added to a BEVERAGE at all** (Reg (EC) 1925/2006 + HU national rules) | `UNVERIFIED — NEEDS PROFESSIONAL CONFIRMATION.` **Blocks raw-material purchase AND artwork.** Two research workstreams failed on it | The paid food-law opinion — put it in the same email as items 1 and 2 |
+| 3b | **Collagen protein spec — is it actually 90%?** The whole 20 g declaration doses off this number | `ASSUMED, NOT CONFIRMED — CONFIRM ON THE CoA` per `16_INGREDIENT_SUPPLIERS.csv` | The supplier, free, with the first sample request |
+| 3c | **Whether the "60 non-sellable cans" reserve covers samples AND the §6.3 stability set** | `CONFLICT — 24 + 36 assumed here; not agreed across the file set` | Whoever owns `19_UNIT_ECONOMICS.csv` and `14_FIRST_BATCH.md` |
 | 4 | That **Reg. 2073/2005 sets no criterion** for this food category, and the **pH ≤ 4.4** *Listeria* threshold | `LIKELY — RECOLLECTION, NOT VERIFIED` | Read CELEX 32005R2073 Annex I Ch.1 and Ch.2 |
 | 5 | **Which analyses are inside each co-packer's tolling fee**, and whether they release on their own micro | `UNKNOWN — NOT YET ASKED OF ANYONE` | The §5.1 email. **Highest-leverage open item in the file.** |
-| 6 | **Thermal process** each co-packer applies — pasteurised/hot-fill vs cold-fill | `UNKNOWN` | The §5.1 email. **A cold-fill answer changes §4.7 and §6.4 immediately.** |
-| 7 | **Can internal lacquer validated for pH 3.2–3.8 high-protein**? | `UNKNOWN` | The §4.8 email to the can supplier |
+| 6 | **Thermal process** each co-packer applies — pasteurised/hot-fill vs cold-fill — **AND whether the resulting shelf life is AMBIENT or CHILLED** | `UNKNOWN — GATE 2 NO-GO. NO DEPOSIT WITHOUT A WRITTEN ANSWER.` | The §5.1 email. **A cold-fill answer makes the challenge test mandatory and unfunded (§4.7); a chilled-only answer is a NO-GO for the whole business model.** |
+| 7 | **Can internal lacquer validated for pH 3.20 ± 0.10, 60 g/L protein**? | `UNKNOWN` | The §4.8 email to the can supplier |
 | 8 | **Any Hungarian laboratory price, email or phone** | `UNKNOWN — QUOTE REQUIRED, for every lab in 17_LABS.csv` | The §9.1 quote request |
 | 9 | Protein tolerance band in the **Dec 2012 Commission tolerances guidance** | `NEEDS PROFESSIONAL CONFIRMATION` — food.ec.europa.eu blocked | Food lawyer, or read the guidance |
 | 10 | That the product is a **normal food**, not an *étrend-kiegészítő* — no product notification, no OGYÉI fee | `LIKELY` per A3 §8.2 | Hungarian food lawyer or NÉBIH. **Load-bearing for this entire file.** |
@@ -492,7 +536,7 @@ date · storage temperature · **pH** · **°Brix** · visual (haze / sediment /
 
 # 12. THE PARAGRAPH TO REMEMBER
 
-You almost certainly do not need to buy a single laboratory test to sell batch 1 legally in Hungary. The nutrition table on your can may be **calculated** from ingredient specification sheets rather than measured — Reg. (EU) 1169/2011 Art. 31(4) says so explicitly — and there is **no EU microbiological criterion written for a low-pH carbonated soft drink**, so no pathogen test is mandated either. Your co-packer will run pH, Brix, CO₂, fill, seam and a micro release check as part of normal production; **ask each of them in writing whether that sits inside the tolling price, because it probably does.** Keep the calculation spreadsheet, the ingredient CoAs and a two-tab traceability spreadsheet — an inspection is a paperwork inspection far more often than a laboratory one. **Print a 6-month best-before with a full day-month-year date and an "L" lot code**, and extend it on batch 2 using cans you stored in a cupboard for free. Spend one free email asking the can supplier whether their internal lacquer is validated for a pH 3.2 high-protein drink, and one asking MATE whether a student would take your product's stability as a thesis. **Those two emails are worth more than any test you could afford — and your target external lab spend for batch 1 is 0 HUF / EUR 0.**
+You almost certainly do not need to buy a single laboratory test to sell batch 1 legally in Hungary. The nutrition table on your can may be **calculated** from ingredient specification sheets rather than measured — Reg. (EU) 1169/2011 Art. 31(4) says so explicitly — and there is **no EU microbiological criterion written for a low-pH carbonated soft drink**, so no pathogen test is mandated either. Your co-packer will run pH, Brix, CO₂, fill, seam and a micro release check as part of normal production; **ask each of them in writing whether that sits inside the tolling price, because it probably does.** Keep the calculation spreadsheet, the ingredient CoAs and a two-tab traceability spreadsheet — an inspection is a paperwork inspection far more often than a laboratory one. **Print a 6-month best-before with a full day-month-year date and an "L" lot code**, and extend it on batch 2 using **24** cans you stored in a cupboard for free — cans that come out of the 60-can non-sellable reserve, not on top of it. **Two things can break the 0 HUF answer, and both are settled by one email before any deposit: if the co-packer cold-fills with no pasteurisation, the challenge test becomes mandatory; if the shelf life comes back chilled-only, do not fill at all.** Spend one free email asking the can supplier whether their internal lacquer is validated for a pH 3.2 high-protein drink, and one asking MATE whether a student would take your product's stability as a thesis. **Those two emails are worth more than any test you could afford — and your target external lab spend for batch 1 is 0 HUF / EUR 0.**
 
 ---
 
