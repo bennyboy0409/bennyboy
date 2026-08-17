@@ -129,6 +129,57 @@ Related family to hand the attorney: US7205018B2, WO2006042222A2, US7897192B2, U
 
 ---
 
+## CONFLICTS BETWEEN RESEARCH STREAMS — AND HOW THEY ARE RESOLVED
+
+Different researchers reached different conclusions. Rather than hide that, here is each conflict and the decision.
+
+### CONFLICT 1 — Should protein be 20 g (ARCH F) or 15–16 g (ARCH G1+)?
+
+The formulation research recommended **ARCH G1+ at 15–16 g** as the primary architecture, not ARCH F at 20 g. It is **67 HUF/can cheaper** (145.52 vs 212.76 HUF of ingredients) — **€315 on a 1,700-can batch**.
+
+**The arithmetic that decides it:**
+
+| Option | Ingredients | Landed COGS (pilot) | RRP | Contribution/can |
+|---|---|---|---|---|
+| **ARCH F — 20 g @ 799** ⭐ | 212.76 | 491 | 799 | **+138** |
+| ARCH G1+ — 15–16 g @ 799 | 145.52 | 424 | 799 | **+205** |
+| ARCH G1+ — 15–16 g @ 699 | 145.52 | 424 | 699 | **+126** |
+
+**Decision: keep 20 g.** Reasoning:
+
+- **15 g at 799 HUF only wins if the market pays the same price for 25% less protein.** It probably won't — protein content *is* the product
+- **15 g at 699 HUF earns less than 20 g at 799 HUF** (126 vs 138). The cheaper formula does not actually produce more money once you price it honestly
+- Every shipped European competitor sits at **5.9–15 g**. Going to 15 g puts you at parity with them; 20 g is the only thing that differentiates you
+- At pilot scale **neither option reaches the 300 HUF COGS target** — setup and tolling dominate, not ingredients. So the 20 g decision costs you nothing you were going to get anyway
+
+**But treat ARCH G1+ as a live lever, not a rejected option.** Switch to it if either happens:
+1. Tolling quotes come back high enough that ARCH F's landed COGS exceeds ~550 HUF
+2. Scale-up needs to reach 300 HUF **before** 100,000 units — G1+ gets there around 25,000–30,000
+
+> **Worth knowing: your own inspiration product is 15 g.** Mist Uppbygging is 15 g of hydrolysed collagen. Dropping to 15 g would not be a climbdown — it is parity with the can that started this project.
+
+**The test that settles it:** get can + tolling quotes first. ARCH F fits the box only if can + tolling + pack + freight comes in at **≤ ~100 HUF/can at scale**.
+
+### CONFLICT 2 — Preservative or not?
+
+One stream recommended **no preservative** (assuming tunnel pasteurisation makes it redundant); another recommended **cold fill + potassium sorbate and no heat**. The Icelandic Mist product **does declare potassium sorbate**.
+
+**Resolution: potassium sorbate is CONDITIONAL on the co-packer's process.** Do not decide this yourself — ask them (question 7 in the co-packer email, plus item 9 in `34_OPEN_QUOTES.md`). Cold fill is far cheaper and widens the co-packer pool; tunnel pasteurisation is safer. Their equipment decides.
+
+### CONFLICT 3 — Can the 20 g claim rest on a calculation?
+
+`Reg. 1169/2011 Art. 31(4)` permits the **nutrition declaration** to be established by calculation — that is real and it saves €800–2,000.
+
+**But a front-of-pack "20 g PROTEIN" claim is a different thing**, and half your protein is collagen. A nitrogen-conversion-factor mismatch (6.25 basis vs collagen-basis assay) is the most plausible way the claim gets publicly disproved.
+
+**Resolution: declare by calculation, but budget one finished-can nitrogen analysis (~€100–150) before making 20 g a headline claim.** This is cheap insurance on the single number your entire proposition rests on.
+
+### CONFLICT 4 — Whey price vintage
+
+One model used WPI90 at €25,750/t (April 2026), another at €32,500/t (July 2026). **All costings in this project use the July figure**, which is the conservative one. The Iceland reverse-engineering retains the April figure because it describes Iceland at that date.
+
+---
+
 ## THE COMPETITIVE CLOCK
 
 - **Fizzique** (US) shipped this exact spec in 2017 with 7 patents

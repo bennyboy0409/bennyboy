@@ -18,8 +18,14 @@ This file exists because the research for this project ran under a network polic
 | **4** | **ÁFA rate: 27% standard or 18% milk-product?** | Food lawyer / accountant | included in #1 | **Worth ~57 HUF/can.** At 18% your margin roughly doubles. |
 | **5** | **Whey protein isolate: can you actually buy 25–100 kg, and at what price?** | Ingredient suppliers | €0 | European producers were reported **sold out** in April 2026 with WPC80 at €20,250/t. If you cannot buy whey, ARCH F is dead and you go collagen-only. |
 | **6** | **Co-packer setup / changeover / allergen-cleaning fees** | Each co-packer | €0 | At 1,700 cans these fees can exceed the product cost. Currently a total unknown. |
+| **7** | **May free L-leucine and free L-tryptophan lawfully be added to a BEVERAGE in Hungary?** (Reg. (EC) 1925/2006 + national rules) | Food lawyer — add to the same opinion | included in #1 | ⚠️ **The single biggest unresolved question hanging over ARCH F.** The leucine spike is what makes the collagen fraction defensible to gym buyers. If free amino acids may not be added to a beverage, ARCH F loses its amino-acid rescue and you fall back to a straight whey/collagen blend. **Ask before artwork.** |
+| **8** | **Can the "20 g protein" front-of-pack claim rest on a recipe calculation, or does it need finished-can nitrogen analysis?** | Food lawyer + accredited lab | €0–150 | Reg. 1169/2011 Art. 31(4) permits the *nutrition declaration* by calculation. But **half your protein is collagen**, and a nitrogen-conversion-factor mismatch (6.25 basis vs a collagen-basis assay) is the most likely way a "20 g" claim gets publicly disproved. See `product/06_SAFETY_AND_SHELF_LIFE.md` §2.3 |
+| **9** | **Does the co-packer have a counter-pressure (isobaric) filler and a tunnel pasteuriser? What PU target for a pH 3.2 carbonated beverage?** | Each co-packer | €0 | Decides whether potassium sorbate is needed at all, and whether they can fill a carbonated protein product without foaming losses |
+| **10** | **Can supplier: written coating recommendation for pH 3.2, 60 g/L protein, 2.2 vol CO2** + rated internal pressure and max pasteurisation temperature | Can supplier via co-packer | €0 | **Do not buy cans before this answer.** Also confirm compliance with the BPA food-contact rules |
 
-> **Items 1, 3 and 4 are answered by ONE food-law opinion.** Buy it first. It is the highest-leverage €275 in the project.
+> **Items 1, 3, 4, 7 and 8 are answered by ONE food-law opinion.** Buy it first. It is the highest-leverage €275 in the project.
+>
+> ⚠️ **Item 7 is new and important.** It was raised by the product writer as *"the single biggest unresolved question hanging over ARCH F."* Add it to the lawyer's brief in `32_EMAILS_HUNGARIAN.md` §7 as a fourth question.
 
 ---
 

@@ -279,6 +279,19 @@ A HÁROM KÉRDÉS
 3. NETA (népegészségügyi termékadó): a termék a hatálya alá tartozik-e
    (a) koffein nélkül és (b) 70–100 mg koffeinnel 330 ml-enként?
 
+4. SZABAD AMINOSAVAK: hozzáadható-e jogszerűen szabad L-leucin és
+   szabad L-triptofán egy ÜDÍTŐITALHOZ Magyarországon az 1925/2006/EK
+   rendelet és a vonatkozó nemzeti szabályok alapján? Ha igen, van-e
+   mennyiségi korlát? (Tervezett mennyiség: 1,7 g L-leucin és 150 mg
+   L-triptofán / 330 ml.)
+
+5. TÁPÉRTÉKJELÖLÉS: az 1169/2011/EU rendelet 31. cikk (4) bekezdése
+   alapján elfogadható-e a tápértékadatok SZÁMÍTÁSSAL történő
+   megállapítása? Külön kérdés: a csomagolás előlapján szereplő
+   „20 g FEHÉRJE" állítás alátámasztható-e receptúra-számítással, vagy
+   szükséges-e késztermék nitrogénvizsgálat? (A fehérje fele kollagén,
+   és a nitrogén-átváltási tényező eltérhet.)
+
 Kérem, jelezze a díját és a vállalási határidőt. Írásos állásfoglalást
 szeretnék, amelyre a beszállítóim és a könyvelőm felé hivatkozhatok.
 
