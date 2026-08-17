@@ -18,7 +18,17 @@ Ranking and reasoning: `13_COPACKER_RANKING.md`. Supplier data and sources: `12_
 | **Landed cost** | **491 HUF/can** = **EUR 1.35** `ESTIMATE` (range 428–620) |
 | **RRP** | **799 HUF** incl. 27% ÁFA (band 699–899) |
 | **Channel** | **DIRECT / consignment only. NOT wholesale.** At 491 HUF COGS a 470 HUF wholesale price **loses 21 HUF per can.** |
-| **Total cash needed** | **~EUR 2,900–3,250 = 1,053,000–1,180,000 HUF** (production EUR 2,300 + setup/compliance ~EUR 500–900) |
+| **Total cash needed** | **EUR 3,000 = 1,089,000 HUF** — the project-standard figure |
+
+> **Reconciliation of the three cash numbers used across this project** (they measure different things and all three are correct):
+>
+> | Figure | What it is |
+> |---|---|
+> | **€2,300** | Inventory only — the co-packer invoice for ~1,700 cans landed |
+> | **€2,740** | **Cash actually deployed** = €2,300 inventory + €440 setup/legal. **Break-even (~1,581 cans) is computed on this** |
+> | **€3,000** | **Total to raise** = €2,740 + ~€260 unspent contingency. This is what to ask your father for |
+>
+> Setup/legal €440 = food-law opinion €275 + registration and chamber €95 + benchmark products €25 + domain €45. See `finance/18_COMPLETE_STARTUP_COSTS.csv`.
 | **Hard ceiling** | ⚠️ **Stay under ~5,000 cans in year one.** Below that the Hungarian DRS/MOHU deposit system very probably does not apply. **`LIKELY — NEEDS PROFESSIONAL CONFIRMATION.`** |
 
 **NO caffeine SKU in batch 1.** It would add NETA exposure (~21.45 HUF/can), a mandatory caffeine warning, a second GTIN and under-18 restrictions — for zero learning you cannot get from SKU 1.
@@ -252,7 +262,7 @@ Work top to bottom. **Do not pass a gate until it is green. Do not pay for the n
 - [ ] ❌ **NO-GO on any contractual annual minimum volume.** MONYO's published 6,000 L/year (~18,180 cans) would destroy the DRS exemption on its own.
 
 ### Gate 3 — MONEY (before placing the order)
-- [ ] **Total cash confirmed ≥ EUR 2,900** (production + setup + compliance), with the **15% contingency held separately and not spent.**
+- [ ] **Total cash confirmed ≥ EUR 3,000** (EUR 2,300 inventory + EUR 440 setup/legal + EUR 260 contingency), with the **contingency held separately and not spent.**
 - [ ] Landed cost per can from the actual quote is **≤ 550 HUF**. ⚠️ **At 629 HUF net revenue, a landed cost above 550 leaves under 80 HUF/can and the batch cannot absorb a single mistake.**
 - [ ] **WPI price and availability confirmed in writing** (European producers reported sold out April 2026).
 - [ ] Collagen-only fallback formula costed, so a dairy refusal does not stop the batch.
