@@ -73,7 +73,7 @@ Three decisions inside that are worth understanding:
 
 **Where the EUR 3,000 goes:** ~EUR 2,300 (834,700 HUF) into the cans themselves, ~EUR 600 (217,800 HUF) into name, label artwork, food-business registration, a Hungarian food-law opinion and admin, leaving almost nothing.
 
-**Break-even is roughly 1,670 of the 1,700 cans — about 98% sell-through.** `DERIVED: total cash out ~EUR 2,900 (1,052,700 HUF) ÷ 629 HUF net per can = 1,673 cans` At the higher 899 HUF RRP, contribution rises to 217 HUF/can and EUR 1,013 (367,700 HUF) for the batch.
+**Break-even is roughly 1,581 of the 1,700 cans — about 93% sell-through.** `DERIVED: total cash out EUR 2,740 (inventory EUR 2,300 + setup EUR 440 = 994,620 HUF) ÷ 629 HUF net revenue per can = 1,581 cans` At the higher 899 HUF RRP, contribution rises to 217 HUF/can and EUR 1,013 (367,700 HUF) for the batch, and break-even falls to ~1,405 cans.
 
 **Two things the father is actually being asked for, and only one of them is money.**
 
