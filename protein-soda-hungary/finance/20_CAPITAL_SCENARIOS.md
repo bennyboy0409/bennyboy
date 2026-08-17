@@ -97,8 +97,8 @@ There is a **capital dead zone between roughly €6,000 and €20,000**. Spendin
 | **Cash buffer** | **~€350** |
 | **COGS/can** | **~491 HUF** |
 | **Revenue potential** (799 direct) | **~€2,944** net of VAT |
-| **Gross contribution** | **~€644** |
-| **Break-even** | ~1,670 of 1,700 cans |
+| **Gross contribution** | **~€644** (less €440 setup → **~€204 net**) |
+| **Break-even** | **~1,581 cans (93% of the batch)** to recover all €2,740 deployed |
 | **Capital at risk** | €3,000 |
 
 **Verdict:** ⭐ **This is the recommendation.** Real cans, sub-DRS, a genuine contingency, and enough product to supply 8–15 gyms and learn whether the product sells.

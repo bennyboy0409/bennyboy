@@ -43,9 +43,9 @@ The plan below is built around that fact instead of pretending otherwise.
 | **Wholesale price** | ⚠️ **Do NOT wholesale batch 1** — see below |
 | **Suggested retail price** | **799 HUF** (+50 HUF deposit only if you exceed 5,000 units/yr) |
 | **Contribution/can** | **+138 HUF** at 799 RRP sold direct · **−21 HUF** if wholesaled at 470 |
-| **Break-even** | ~1,670 cans sold direct at 799 HUF |
+| **Break-even** | **~1,581 cans** (93% of the batch) to recover all €2,740 of cash deployed |
 | **First-batch revenue** | **~€2,944** net of VAT (1,700 × 629 HUF) |
-| **First-batch profit** | **~€644** before setup costs → realistically **break-even** |
+| **First-batch profit** | **~€204** after setup costs → effectively **break-even** |
 | **Biggest risk** | Batch 1 is *paid market validation*, not a profit centre. If you treat it as a profit centre you will be disappointed and will over-order. |
 
 ### The single most important structural decision

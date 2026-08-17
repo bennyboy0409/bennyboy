@@ -94,11 +94,20 @@ Ingredients alone are **198 HUF at scale**. Can + end + sleeve + filling + freig
 | less landed COGS | −491 | −1.35 |
 | **Contribution/can** | **+138** | **+0.38** |
 
-**Batch total:** net revenue **€2,944** · COGS **€2,300** · **contribution €644**
+**Batch total:** net revenue **€2,944** · COGS **€2,300** · **contribution €644** · less setup **€440** → **net ~€204**
 
-At 899 HUF RRP: contribution/can **+217 HUF**, batch contribution **€1,013**.
+At 899 HUF RRP: contribution/can **+217 HUF**, batch contribution **€1,013**, net after setup **~€573**.
 
-> **Break-even ≈ 1,670 of 1,700 cans.** Batch 1 is **paid market validation**, not a profit centre. Plan for it, price it, and do not over-order.
+**Break-even arithmetic (the number that matters):**
+
+| | |
+|---|---|
+| Total cash deployed | €2,300 inventory + €440 setup = **€2,740** |
+| Net revenue per can at 799 HUF | 629 HUF = **€1.733** |
+| **Cans to recover all cash** | **€2,740 ÷ €1.733 = ~1,581 cans** |
+| As a share of the batch | **93%** |
+
+> **You must sell 93% of the batch to get your money back.** Batch 1 is **paid market validation**, not a profit centre. Plan for it, price it, and do not over-order.
 
 ---
 
