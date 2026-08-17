@@ -79,7 +79,7 @@ With the originally-planned 175 sample cans it was **−€97: a guaranteed loss
 
 ### Why not wholesale to gyms in batch 1
 
-At ~491 HUF landed cost, a 470 HUF wholesale price **loses money on every can**. Batch 1 must be sold where you keep the retail margin:
+At **524 HUF** landed cost, a 470 HUF wholesale price **loses 54 HUF on every can**. Batch 1 must be sold where you keep the retail margin:
 
 - **Consignment into gym fridges** — you own the stock, gym takes a cut per can sold
 - **Direct sales** at gyms, events, university sport centres
